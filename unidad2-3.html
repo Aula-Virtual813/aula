@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #000000 0%, #044756 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta principal */
+        .unidad-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Encabezado */
+        .unidad-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px dashed #1294db;
+        }
+
+        .unidad-materia {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .unidad-titulo-principal {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .unidad-subtitulo {
+            color: #5e7f97;
+            font-size: 1rem;
+        }
+
+        /* Navegación entre unidades */
+        .nav-unidades {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #ecf3f9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1f3e54;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #cbdde9;
+        }
+
+        .nav-btn:hover {
+            background: #dfe9f2;
+            transform: translateX(-3px);
+        }
+
+        .nav-btn-right:hover {
+            transform: translateX(3px);
+        }
+
+        .nav-indicador {
+            font-size: 0.85rem;
+            color: #5e7f97;
+            background: rgba(18, 148, 219, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+        }
+
+        /* Contenido principal */
+        .contenido {
+            margin: 2rem 0;
+        }
+
+        .contenido h2 {
+            color: #1f3e54;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+            border-left: 4px solid #1294db;
+            padding-left: 1rem;
+        }
+
+        .contenido h3 {
+            color: #2c6280;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contenido p {
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .contenido img {
+            max-width: 100%;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Caja para enlaces */
+        .enlaces-box {
+            background: rgba(18, 148, 219, 0.08);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 3px solid #1294db;
+        }
+
+        .enlaces-box h4 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .enlace {
+            display: block;
+            margin: 0.5rem 0;
+            color: #1294db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .enlace:hover {
+            color: #044756;
+            text-decoration: underline;
+        }
+
+        /* Caja de actividad */
+        .actividad-box {
+            background: linear-gradient(135deg, #f0f7fc, #e8f0f6);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cbdde9;
+        }
+
+        .actividad-box h4 {
+            color: #1f3e54;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Botones importantes */
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(105deg, #1e3e5c, #2c4863);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-volver:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+
+        /* Listas */
+        .contenido ul, .contenido ol {
+            margin: 1rem 0 1rem 2rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .contenido li {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .unidad-card { padding: 1.5rem; }
+            .unidad-titulo-principal { font-size: 1.5rem; }
+            .nav-unidades { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="unidad-card">
+        <!-- Encabezado -->
+        <div class="unidad-header">
+            <span class="unidad-materia" id="materiaNombre">【Nombre de la Materia】</span>
+            <h1 class="unidad-titulo-principal" id="unidadTitulo">Unidad 【Número】: 【Título de la Unidad】</h1>
+            <p class="unidad-subtitulo" id="unidadDescripcion">【Breve descripción de lo que aprenderás en esta unidad】</p>
+        </div>
+
+        <!-- Navegación entre unidades -->
+        <div class="nav-unidades" id="navUnidades">
+            <!-- Se llena con JS -->
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <div class="contenido">
+            <h2 style="font-size:2rem;">📌 Introducción</h2>
+
+
+            <p>En esta unidad, nos adentraremos en dos temas fundamentales de las matemáticas que, aunque parecen diferentes, están más conectados de lo que imaginamos: la geometría y los números decimales.
+
+La geometría nos ayudará a descubrir las formas que nos rodean: desde los objetos cotidianos hasta las estructuras más complejas de la naturaleza y la arquitectura. Aprenderemos a calcular perímetros, áreas y volúmenes, desarrollando nuestra capacidad de observación y razonamiento espacial.
+
+Por otro lado, los decimales nos permitirán medir con mayor precisión el mundo real: longitudes, pesos, capacidades y distancias. Estos números surgen naturalmente cuando dividimos unidades enteras, algo que hacemos constantemente al comprar, cocinar, construir o realizar experimentos.
+
+La magia ocurre cuando combinamos ambos conocimientos. Para calcular el área de un terreno, la longitud de una circunferencia o el volumen de una caja, necesitamos operar con medidas decimales. Así, geometría y decimales trabajan juntos para darnos herramientas útiles y prácticas para entender y transformar nuestro entorno.
+
+Prepárate para explorar, calcular y descubrir cómo las formas y los números precisos hacen posible lo que nos rodea. ¡Comencemos!</p>
+
+            <h2 style="font-size:2rem;">📖 Contenido Principal</h2>
+
+            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
+            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+
+            <h3 style="font-size:1.6rem;">Objetivo general</h3>
+            <p>Comprender y aplicar conceptos básicos de geometría (figuras, perímetro, área y volumen) junto con el uso de números decimales en mediciones y cálculos geométricos, para resolver problemas prácticos del entorno cotidiano.</p>
+            <h3 style="font-size:1.6rem;">Objetivos específicos</h3>
+            <ol>
+                <li>Identificar y clasificar figuras geométricas planas (triángulos, cuadriláteros, círculos) y cuerpos geométricos (cubos, prismas, cilindros) según sus propiedades.</li>
+                <li>Reconocer y leer números decimales en contextos de medición (longitud, masa, capacidad) y representarlos en la recta numérica.</li>
+                <li>Realizar operaciones básicas (suma, resta, multiplicación y división) con números decimales aplicadas a problemas geométricos.</li>
+            </ol>
+
+            <h3 style="font-size:1.6rem;">📌 Punto importante 1</h3>
+            <h4 style="font-size:1.4rem;">Ejercicios con decimales</h4>
+            <img src="imagenes/41.jpg" alt="">
+            <img src="imagenes/38.jpg" alt="">
+            <img src="imagenes/39.jpg" alt="">
+            <img src="imagenes/40.jpg" alt="">
+
+            <h2>Ejercicios de geometría</h2>
+            <h3>Conceptos básicos</h3>
+            <img src="imagenes/42.jpg" alt="">
+            
+
+            <h2>Figuras planas 2D</h2>
+            <img src="imagenes/43.jpg" alt="">
+            <img src="imagenes/44.jpg" alt="">
+            <img src="imagenes/45.jpg" alt="">
+            <img src="imagenes/46.jpg" alt="">
+
+            <h2>Figuras 3D</h2>
+            <img src="imagenes/47.jpg" alt="">
+            <img src="imagenes/48.jpg" alt="">
+            <img src="imagenes/49.jpg" alt="">
+            <img src="imagenes/50.jpg" alt="">
+
+            <h2>Figuras geométricas 2D y 3D</h2>
+            <img src="imagenes/51.jpg" alt="">
+
+            <h2>Medición de figuras geométricas</h2>
+            <img src="imagenes/52.jpg" alt="">
+            <img src="imagenes/53.jpg" alt="">
+            <img src="imagenes/54.jpg" alt="">
+            <img src="imagenes/55.jpg" alt="">
+
+            <h4>Ejemplos de mediciones en geometría</h4>
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1IvaFIL8R5LaAlQiQ9hIfAfP71N__5Wfn/view?usp=drive_link" class="enlace" target="_blank">📘 Ejemplos</a></li>
+            </ul>
+        </div>
+
+        <!-- Enlaces útiles -->
+        <div class="enlaces-box">
+            <h4>🔗 Enlaces de interés</h4>
+            <a href="https://www.youtube.com/watch?v=KK4mh4dkneY&list=PLeySRPnY35dGneDgVJS5mUhX5Ed2R81Wj" class="enlace" target="_blank">📘 VIDEO DE DECIMALES</a>
+            <a href="https://www.youtube.com/watch?v=yY5beo7bXao" class="enlace" target="_blank">🎥 PERIMETRO, VOLUMEN Y AREA DEL CUADRADO</a>
+            <a href="https://www.youtube.com/watch?v=5Ifbq_EQSxU" class="enlace" target="_blank">📄 PERIMETRO, AREA Y VOLUMEN DEL CIRCULO</a>
+            <a href="https://www.youtube.com/watch?v=9n7s8Xo2l3k" class="enlace" target="_blank">📄 PERIMETRO, AREA Y VOLUMEN DEL RECTANGULO</a>
+            <a href="https://www.youtube.com/watch?v=BPl5ecBvsiY" class="enlace" target="_blank">📄 PERIMETRO, AREA Y VOLUMEN DEL TRIANGULO</a>
+              
+       
+
+        
+        </div>
+
+        <!-- Actividad -->
+        <div class="actividad-box">
+            <h4>✍️ Actividad de la unidad</h4>
+            
+            <ul>
+                <li>TALLER GEOMETRIA <a href="https://drive.google.com/file/d/1c_PKRUeEjmyTui3YT0xC91iZfrD72WqT/view?usp=sharing">aquí </a>.</li>
+                
+            </ul>
+        </div>
+
+        <!-- Botón para volver al curso -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+                ⬅️ Volver al curso
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Toast de notificación -->
+<div id="toastMessage" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1f3e54e6; backdrop-filter:blur(8px); color:white; padding:0.8rem 1.8rem; border-radius:60px; z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; white-space:nowrap;">✨</div>
+
+<script>
+    // =============================================
+    // IDENTIFICAR LA MATERIA Y UNIDAD ACTUAL
+    // =============================================
+    
+    // Extraer de la URL qué curso y unidad es
+    // Formato esperado: unidadX-Y.html donde X = materia (1-7), Y = unidad (1-4)
+    const pathName = window.location.pathname;
+    const fileName = pathName.split('/').pop();
+    const match = fileName.match(/unidad(\d+)-(\d+)\.html/);
+    
+    let materiaId = 1;
+    let unidadNum = 1;
+    
+    if (match) {
+        materiaId = parseInt(match[1]);
+        unidadNum = parseInt(match[2]);
+    }
+    
+    // Datos de las materias para la navegación
+    const materias = {
+        1: { nombre: "📖 Español y Filosofía", id: 1, volverLink: "detalle-curso.html?id=1" },
+        2: { nombre: "🧮 Matemáticas", id: 2, volverLink: "detalle-curso.html?id=2" },
+        3: { nombre: "🌍 Sociales", id: 3, volverLink: "detalle-curso.html?id=3" },
+        4: { nombre: "⚡ Física", id: 4, volverLink: "detalle-curso.html?id=4" },
+        5: { nombre: "🧪 Química", id: 5, volverLink: "detalle-curso.html?id=5" },
+        6: { nombre: "🇬🇧 Inglés", id: 6, volverLink: "detalle-curso.html?id=6" },
+        7: { nombre: "🧬 Biología", id: 7, volverLink: "detalle-curso.html?id=7" }
+    };
+    
+    // Títulos de unidades por materia
+    const unidadesTitulos = {
+        1: { // Español y Filosofía
+            1: "Comprensión Lectora",
+            2: "Gramática Española",
+            3: "Introducción a la Filosofía",
+            4: "Ética y Valores"
+        },
+        2: { // Matemáticas
+            1: "Potenciación y Radicación",
+            2: "Recta Numérica y Fracciones",
+            3: "Geometría y Decimales",
+            4: "Repaso de la materia"
+        },
+        3: { // Sociales
+            1: "Historia Universal",
+            2: "Geografía Mundial",
+            3: "Historia de Colombia",
+            4: "Democracia y Participación"
+        },
+        4: { // Física
+            1: "Cinemática",
+            2: "Dinámica",
+            3: "Energía y Trabajo",
+            4: "Electricidad Básica"
+        },
+        5: { // Química
+            1: "Estructura Atómica",
+            2: "Tabla Periódica",
+            3: "Reacciones Químicas",
+            4: "Química en la Vida"
+        },
+        6: { // Inglés
+            1: "Greetings & Basics",
+            2: "Present Simple",
+            3: "Everyday Activities",
+            4: "Travel & Culture"
+        },
+        7: { // Biología
+            1: "La Célula",
+            2: "Reinos de la Naturaleza",
+            3: "Cuerpo Humano",
+            4: "Ecología"
+        }
+    };
+    
+    // Descripciones cortas de unidades
+    const unidadesDescripciones = {
+        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
+        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
+        4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
+        5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
+        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
+        7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
+    };
+    
+    // Actualizar el encabezado de la página
+    const materia = materias[materiaId];
+    const unidadTitulo = unidadesTitulos[materiaId]?.[unidadNum] || `Unidad ${unidadNum}`;
+    const unidadDescripcion = unidadesDescripciones[materiaId]?.[unidadNum - 1] || "Aprende los fundamentos de esta unidad";
+    
+    if (materia) {
+        document.getElementById('materiaNombre').textContent = materia.nombre;
+        document.getElementById('unidadTitulo').innerHTML = `Unidad ${unidadNum}: ${unidadTitulo}`;
+        document.getElementById('unidadDescripcion').textContent = unidadDescripcion;
+        document.title = `${materia.nombre} - Unidad ${unidadNum}: ${unidadTitulo} | Aula Virtual`;
+    }
+    
+    // Generar navegación entre unidades de la misma materia
+    function generarNavegacion() {
+        const navContainer = document.getElementById('navUnidades');
+        if (!navContainer) return;
+        
+        let html = '';
+        
+        // Unidad anterior
+        if (unidadNum > 1) {
+            html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`;
+        } else {
+            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`;
+        }
+        
+        // Indicador
+        html += `<span class="nav-indicador">📚 Unidad ${unidadNum} de 4</span>`;
+        
+        // Unidad siguiente
+        if (unidadNum < 4) {
+            html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`;
+        } else {
+            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">Unidad siguiente ➡️</span>`;
+        }
+        
+        navContainer.innerHTML = html;
+    }
+    
+    // Actualizar el botón de volver
+    function actualizarBotonVolver() {
+        const btnVolver = document.querySelector('.btn-volver');
+        if (btnVolver && materia) {
+            btnVolver.href = `detalle-curso.html?id=${materiaId}`;
+        }
+    }
+    
+    // Toast
+    let toastTimeout = null;
+    function showToast(message) {
+        const toast = document.getElementById('toastMessage');
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 2000);
+    }
+    
+    // Inicializar
+    generarNavegacion();
+    actualizarBotonVolver();
+</script>
+</body>
+</html>

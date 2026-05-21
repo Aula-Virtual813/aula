@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Aula Virtual | Todos los Cursos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #000000 0%, #044756 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .courses-page {
+            background: rgba(255, 255, 255, 0.591);
+            border-radius: 2.5rem;
+            padding: 2rem 2rem 3rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 240, 0.7);
+        }
+
+        .courses-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .courses-header h1 {
+            font-size: 2.8rem;
+            color: #05101b;
+            font-weight: 700;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .courses-header p {
+            color: #4a627a;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .course-btn {
+            background: rgba(255, 255, 255, 0.677);
+            border: none;
+            border-radius: 1.8rem;
+            padding: 1.4rem 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1f3e54;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+            border: 1px solid rgba(100, 148, 180, 0.2);
+            width: 100%;
+        }
+
+        .course-btn:hover {
+            transform: translateY(-8px);
+            background: linear-gradient(145deg, #ffffff, #f6fafd);
+            box-shadow: 0 20px 25px -12px rgba(31, 62, 84, 0.25);
+            border-color: #9bbdd0;
+        }
+
+        .course-emoji {
+            font-size: 2.8rem;
+            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1d3e57, #2a5a78);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .course-badge {
+            background: #eef3fc;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #2c6280;
+            margin-top: 4px;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background: #1f3e54e6;
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+            pointer-events: none;
+            box-shadow: 0 6px 14px black;
+            white-space: nowrap;
+        }
+
+        .toast-msg.show {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem;
+            }
+            .courses-header h1 {
+                font-size: 2rem;
+            }
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .toast-msg {
+                white-space: normal;
+                text-align: center;
+                width: 90%;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="courses-page">
+        <div class="courses-header">
+            <h1>📖 Nuestros Cursos</h1>
+            <p>Selecciona cualquiera para comenzar tu formación</p>
+        </div>
+        <div class="courses-grid" id="coursesGrid">
+            <!-- Los 7 cursos se generarán con JavaScript -->
+        </div>
+        <div style="text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5e7f97;">
+            🌟 7 cursos exclusivos para ti 🌟
+        </div>
+    </div>
+</div>
+
+<div id="toastMessage" class="toast-msg">✨ Mensaje</div>
+
+<script>
+// Definición de los 7 cursos (orden personalizado solicitado)
+const coursesData = [
+    { id: 1, title: "Español y Filosofía", emoji: "📖", description: "Mes 1." },
+    { id: 5, title: "Química", emoji: "🧪", description: "Mes 2." },
+    { id: 2, title: "Matemáticas", emoji: "🧮", description: "Mes 3." },
+    { id: 4, title: "Física", emoji: "⚡", description: "Mes 4." },
+    { id: 7, title: "Biología", emoji: "🧬", description: "Mes 5." },
+    { id: 6, title: "Inglés", emoji: "🇬🇧", description: "Mes 6." },
+    { id: 3, title: "Sociales", emoji: "🌍", description: "Mes 7." }
+];
+
+    let toastTimeout = null;
+    function showToast(message) {
+        const toast = document.getElementById('toastMessage');
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add('show');
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }
+
+    function handleCourseClick(course) {
+        showToast(`✅ Abriendo: ${course.title} 🎓`);
+        setTimeout(() => {
+            window.location.href = `detalle-curso.html?id=${course.id}`;
+        }, 1000);
+    }
+
+    function renderCourses() {
+        const gridContainer = document.getElementById('coursesGrid');
+        if (!gridContainer) return;
+
+        let html = '';
+        coursesData.forEach(course => {
+            html += `
+                <button class="course-btn" data-id="${course.id}" data-title="${course.title.replace(/"/g, '&quot;')}">
+                    <div class="course-emoji">${course.emoji}</div>
+                    <div class="course-title">${course.title}</div>
+                    <div class="course-badge">${course.description}</div>
+                </button>
+            `;
+        });
+        gridContainer.innerHTML = html;
+
+        const buttons = document.querySelectorAll('.course-btn');
+        buttons.forEach(btn => {
+            const courseId = parseInt(btn.getAttribute('data-id'));
+            const course = coursesData.find(c => c.id === courseId);
+            if (course) {
+                btn.addEventListener('click', () => handleCourseClick(course));
+            }
+        });
+    }
+
+    renderCourses();
+</script>
+</body>
+</html>

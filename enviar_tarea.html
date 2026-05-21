@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrega de Trabajos</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:system-ui,-apple-system,sans-serif;
+}
+
+body{
+    background:
+    linear-gradient(145deg,#02131d 0%,#044756 100%);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:2rem;
+}
+
+.form-container{
+    width:100%;
+    max-width:700px;
+}
+
+.form-card{
+    background:rgba(255,255,255,0.96);
+    border-radius:2rem;
+    padding:2.5rem;
+    box-shadow:
+    0 25px 45px rgba(0,0,0,0.25);
+    backdrop-filter:blur(10px);
+}
+
+.top-badge{
+    display:inline-block;
+    background:
+    linear-gradient(135deg,#0d2230,#136b9f);
+    color:white;
+    padding:0.5rem 1.2rem;
+    border-radius:50px;
+    font-size:0.9rem;
+    margin-bottom:1rem;
+}
+
+h1{
+    font-size:2.2rem;
+    margin-bottom:0.5rem;
+    background:
+    linear-gradient(135deg,#02131d,#1294db);
+    background-clip:text;
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.subtitle{
+    color:#05121c;
+    margin-bottom:2rem;
+}
+
+.form-group{
+    margin-bottom:1.5rem;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:0.7rem;
+    color:#1d3b4f;
+    font-weight:700;
+}
+
+.input-style{
+    width:100%;
+    padding:1rem;
+    border-radius:1rem;
+    border:2px solid #dbe9f4;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+.input-style:focus{
+    outline:none;
+    border-color:#1294db;
+    box-shadow:0 0 0 5px rgba(18,148,219,0.15);
+}
+
+.file-upload{
+    position:relative;
+    width:100%;
+}
+
+.file-upload input[type=file]{
+    display:none;
+}
+
+.upload-box{
+    background:
+    linear-gradient(145deg,#ffffff,#eef7ff);
+    border:2px dashed #1294db;
+    border-radius:1.3rem;
+    padding:2rem;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.upload-box:hover{
+    transform:translateY(-3px);
+    box-shadow:
+    0 15px 30px rgba(18,148,219,0.18);
+}
+
+.upload-icon{
+    font-size:3rem;
+    margin-bottom:0.8rem;
+}
+
+.upload-title{
+    color:#1d3b4f;
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.upload-sub{
+    color:#668196;
+    font-size:0.9rem;
+    margin-top:0.4rem;
+}
+
+.file-name{
+    margin-top:1rem;
+    background:#eef7ff;
+    padding:0.9rem;
+    border-radius:1rem;
+    color:#1f3e54;
+    font-size:0.95rem;
+    word-break:break-word;
+}
+
+.submit-btn{
+    width:100%;
+    border:none;
+    padding:1rem;
+    border-radius:1rem;
+    background:
+    linear-gradient(135deg,#1294db,#0d6fa5);
+    color:white;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:1rem;
+    box-shadow:
+    0 12px 30px rgba(18,148,219,0.25);
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+    0 15px 35px rgba(18,148,219,0.35);
+}
+
+.status{
+    margin-top:1.5rem;
+    padding:1rem;
+    border-radius:1rem;
+    display:none;
+    font-weight:600;
+}
+
+.success{
+    background:#d4edda;
+    color:#155724;
+}
+
+.error{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+h3{
+    color:#7a0000;
+    background:
+    linear-gradient(135deg,#000000,#1294db);
+    background-clip:text;
+    -webkit-background-clip:text;}
+
+@media(max-width:700px){
+
+    body{
+        padding:1rem;
+    }
+
+    .form-card{
+        padding:1.5rem;
+    }
+
+    h1{
+        font-size:1.7rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+<div class="form-card">
+
+<div class="top-badge">
+📚 Aula Virtual
+</div>
+
+<h1>
+Entrega de Trabajos
+</h1>
+
+<p class="subtitle">
+Sube tu trabajo en PDF directamente 
+</p>
+
+<h3>¡recuerda enviar tus tranajos en las fechas establecidas para cada materia o tu trabajo podria perderse y no ser calificado!</h2>
+<br>
+
+<form id="uploadForm">
+
+<div class="form-group">
+
+<label>
+👤 Nombre completo del estudiante
+</label>
+
+<input
+type="text"
+id="studentName"
+class="input-style"
+placeholder="Ej: María Camila Pérez González"
+required
+>
+
+</div>
+
+<div class="form-group">
+
+<label>
+📄 Trabajo en PDF
+</label>
+
+<div class="file-upload">
+
+<input
+type="file"
+id="pdfFile"
+accept="application/pdf"
+required
+>
+
+<label for="pdfFile" class="upload-box">
+
+<div class="upload-icon">
+📄
+</div>
+
+<div class="upload-title">
+Seleccionar PDF
+</div>
+
+<div class="upload-sub">
+Haz clic aquí para subir tu trabajo
+</div>
+
+</label>
+
+</div>
+
+<div class="file-name" id="fileName">
+Ningún archivo seleccionado
+</div>
+
+</div>
+
+<button
+type="submit"
+class="submit-btn"
+id="submitBtn"
+>
+🚀 Enviar Trabajo
+</button>
+
+</form>
+
+<div id="status" class="status"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const form =
+document.getElementById("uploadForm");
+
+const fileInput =
+document.getElementById("pdfFile");
+
+const fileName =
+document.getElementById("fileName");
+
+const statusDiv =
+document.getElementById("status");
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+
+// ==========================================
+// MOSTRAR NOMBRE DEL PDF
+// ==========================================
+
+fileInput.addEventListener("change",function(){
+
+    if(this.files[0]){
+
+        const file = this.files[0];
+
+        fileName.innerHTML =
+        `✅ ${file.name}<br>
+        📦 ${(file.size/1024/1024).toFixed(2)} MB`;
+
+    }else{
+
+        fileName.innerHTML =
+        "Ningún archivo seleccionado";
+    }
+});
+
+
+// ==========================================
+// ENVIAR PDF
+// ==========================================
+
+form.addEventListener("submit",async function(e){
+
+    e.preventDefault();
+
+    statusDiv.style.display = "none";
+
+    const studentName =
+    document
+    .getElementById("studentName")
+    .value
+    .trim();
+
+    const file =
+    fileInput.files[0];
+
+    if(!studentName){
+
+        showError("Ingresa tu nombre");
+
+        return;
+    }
+
+    if(!file){
+
+        showError("Selecciona un PDF");
+
+        return;
+    }
+
+    if(file.type !== "application/pdf"){
+
+        showError("Solo se permiten archivos PDF");
+
+        return;
+    }
+
+    const maxMB = 5;
+
+    if(file.size > maxMB * 1024 * 1024){
+
+        showError(`El PDF supera ${maxMB} MB`);
+
+        return;
+    }
+
+    submitBtn.disabled = true;
+
+    submitBtn.innerHTML =
+    "⏳ Subiendo PDF...";
+
+    try{
+
+        const reader =
+        new FileReader();
+
+        reader.onload = async function(){
+
+            const base64 =
+            reader.result.split(",")[1];
+
+            const formData =
+            new FormData();
+
+            const finalFileName =
+            `${studentName} ${file.name}`;
+
+            formData.append(
+                "file",
+                base64
+            );
+
+            formData.append(
+                "fileName",
+                finalFileName
+            );
+
+            const response =
+            await fetch(
+            "https://script.google.com/macros/s/AKfycbxWYUpQwvgb4rvT8CRVf-DPJ1vOCtR9YhpBjkcNyP5KO6iSCnGoD3C7YaO4mFijctW6aA/exec",
+            {
+                method:"POST",
+                body:formData
+            });
+
+            const result =
+            await response.json();
+
+            if(result.success){
+
+                statusDiv.className =
+                "status success";
+
+                statusDiv.style.display =
+                "block";
+
+                statusDiv.innerHTML =
+                `✅ PDF enviado correctamente<br><br>
+                <a href="${result.url}" target="_blank">
+                Ver archivo en Drive
+                </a>`;
+
+                form.reset();
+
+                fileName.innerHTML =
+                "Ningún archivo seleccionado";
+
+            }else{
+
+                showError(result.error);
+            }
+
+            submitBtn.disabled = false;
+
+            submitBtn.innerHTML =
+            "🚀 Enviar Trabajo";
+        };
+
+        reader.readAsDataURL(file);
+
+    }catch(error){
+
+        showError("Error al subir el PDF");
+
+        submitBtn.disabled = false;
+
+        submitBtn.innerHTML =
+        "🚀 Enviar Trabajo";
+    }
+});
+
+
+// ==========================================
+// MOSTRAR ERROR
+// ==========================================
+
+function showError(message){
+
+    statusDiv.className =
+    "status error";
+
+    statusDiv.style.display =
+    "block";
+
+    statusDiv.innerHTML =
+    `❌ ${message}`;
+}
+
+</script>
+
+</body>
+</html>

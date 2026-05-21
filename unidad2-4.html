@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #000000 0%, #044756 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta principal */
+        .unidad-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Encabezado */
+        .unidad-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px dashed #1294db;
+        }
+
+        .unidad-materia {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .unidad-titulo-principal {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .unidad-subtitulo {
+            color: #5e7f97;
+            font-size: 1rem;
+        }
+
+        /* Navegación entre unidades */
+        .nav-unidades {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #ecf3f9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1f3e54;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #cbdde9;
+        }
+
+        .nav-btn:hover {
+            background: #dfe9f2;
+            transform: translateX(-3px);
+        }
+
+        .nav-btn-right:hover {
+            transform: translateX(3px);
+        }
+
+        .nav-indicador {
+            font-size: 0.85rem;
+            color: #5e7f97;
+            background: rgba(18, 148, 219, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+        }
+
+        /* Contenido principal */
+        .contenido {
+            margin: 2rem 0;
+        }
+
+        .contenido h2 {
+            color: #1f3e54;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+            border-left: 4px solid #1294db;
+            padding-left: 1rem;
+        }
+
+        .contenido h3 {
+            color: #2c6280;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contenido p {
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .contenido img {
+            max-width: 100%;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Caja para enlaces */
+        .enlaces-box {
+            background: rgba(18, 148, 219, 0.08);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 3px solid #1294db;
+        }
+
+        .enlaces-box h4 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .enlace {
+            display: block;
+            margin: 0.5rem 0;
+            color: #1294db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .enlace:hover {
+            color: #044756;
+            text-decoration: underline;
+        }
+
+        /* Caja de actividad */
+        .actividad-box {
+            background: linear-gradient(135deg, #f0f7fc, #e8f0f6);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cbdde9;
+        }
+
+        .actividad-box h4 {
+            color: #1f3e54;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Botones importantes */
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(105deg, #1e3e5c, #2c4863);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-volver:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+
+        /* Listas */
+        .contenido ul, .contenido ol {
+            margin: 1rem 0 1rem 2rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .contenido li {
+            margin: 0.5rem 0;
+        }
+
+        /* Caja de resumen */
+        .resumen-box {
+            background: linear-gradient(135deg, rgba(18, 148, 219, 0.1), rgba(44, 98, 128, 0.1));
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #1294db;
+        }
+
+        .resumen-box h4 {
+            color: #1f3e54;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .unidad-card { padding: 1.5rem; }
+            .unidad-titulo-principal { font-size: 1.5rem; }
+            .nav-unidades { flex-direction: column; }
+        }
+    </style>
+    <!-- MathJax para renderizar fórmulas matemáticas -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+</head>
+<body>
+<div class="container">
+    <div class="unidad-card">
+        <!-- Encabezado -->
+        <div class="unidad-header">
+            <span class="unidad-materia" id="materiaNombre">【Nombre de la Materia】</span>
+            <h1 class="unidad-titulo-principal" id="unidadTitulo">Unidad 【Número】: 【Título de la Unidad】</h1>
+            <p class="unidad-subtitulo" id="unidadDescripcion">【Breve descripción de lo que aprenderás en esta unidad】</p>
+        </div>
+
+        <!-- Navegación entre unidades -->
+        <div class="nav-unidades" id="navUnidades">
+            <!-- Se llena con JS -->
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <div class="contenido">
+            <h2 style="font-size:2rem;">📌 Introducción</h2>
+
+            <p>¡Bienvenido a la unidad 4! En este módulo de repaso, vamos a consolidar y sintetizar los conceptos más importantes que hemos aprendido en las tres unidades anteriores.</p>
+
+            <p>Hemos recorrido un camino fascinante a través de las matemáticas fundamentales:</p>
+            <ul>
+                <li><strong>Unidad 1: Potenciación y Radicación</strong> – Aprendimos cómo expresar multiplicaciones repetidas y a encontrar raíces de números.</li>
+                <li><strong>Unidad 2: Recta Numérica y Fraccionarios</strong> – Exploramos cómo ubicar números en una línea y trabajar con partes de un todo.</li>
+                <li><strong>Unidad 3: Geometría y Decimales</strong> – Descubrimos cómo medir formas con precisión usando números decimales.</li>
+            </ul>
+
+            <p>Este repaso te preparará para dominar los conceptos clave y aplicarlos en situaciones reales. ¡Adelante!</p>
+
+            <h2 style="font-size:2rem;">📖 Contenido Principal: Síntesis de Conceptos</h2>
+
+            <h3 style="font-size:1.6rem;">Objetivo general</h3>
+            <p>Consolidar, integrar y aplicar los conceptos fundamentales de potenciación, radicación, fraccionarios, recta numérica, geometría y decimales para fortalecer el pensamiento matemático y resolver problemas complejos del entorno cotidiano.</p>
+
+            <h3 style="font-size:1.6rem;">Objetivos específicos</h3>
+            <ol>
+                <li>Sintetizar y recordar los elementos clave de potenciación, radicación, recta numérica y fraccionarios.</li>
+                <li>Integrar conceptos de decimales y geometría (perímetro, área, volumen) en contextos de medición real.</li>
+                <li>Aplicar múltiples operaciones matemáticas en la resolución de problemas contextualizados.</li>
+                <li>Evaluar la comprensión de la relación entre potencias, raíces, fracciones y medidas.</li>
+            </ol>
+
+            <h3 style="font-size:1.6rem;">📌 Tema 1: Potenciación y Radicación (Repaso)</h3>
+            <div class="resumen-box">
+                <h4>🔑 Conceptos clave:</h4>
+                <ul>
+                    <li><strong>Potenciación:</strong> Operación que expresa multiplicaciones repetidas. Base y exponente son sus elementos fundamentales.</li>
+                    <li><strong>Radicación:</strong> Operación inversa a la potenciación. Permite encontrar la raíz n-ésima de un número.</li>
+                    <li><strong>Relación:</strong> Si $a^n = b$, entonces $\sqrt[n]{b} = a$.</li>
+                    <li><strong>Propiedades:</strong> Multiplicación, división, potencia de potencia, exponente cero y negativo.</li>
+                </ul>
+                <h4 style="margin-top: 1.5rem; color: #1f3e54;">📝 Ejemplos:</h4>
+                <p><strong>Ejemplo 1 - Potenciación:</strong> Calcula $2^5$. Solución: $2^5 = 2 \times 2 \times 2 \times 2 \times 2 = 32$.</p>
+                <p><strong>Ejemplo 2 - Radicación:</strong> Encuentra la raíz cúbica de 64: $\sqrt[3]{64} = 4$, porque $4^3 = 64$.</p>
+                <p><strong>Ejemplo 3 - Relación inversa:</strong> Si $3^4 = 81$, entonces $\sqrt[4]{81} = 3$. La radicación invierte la potenciación.</p>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Tema 2: Recta Numérica y Fraccionarios (Repaso)</h3>
+            <div class="resumen-box">
+                <h4>🔑 Conceptos clave:</h4>
+                <ul>
+                    <li><strong>Recta numérica:</strong> Herramienta visual para ubicar números en orden. Tiene origen (0), dirección (positiva a la derecha) y unidad de medida.</li>
+                    <li><strong>Fraccionarios:</strong> Representan partes de un todo. Elementos: numerador (partes tomadas) y denominador (partes totales).</li>
+                    <li><strong>Tipos de fracciones:</strong> Propias (numerador &lt; denominador), impropias (numerador ≥ denominador), mixtas (entero + fracción).</li>
+                    <li><strong>Operaciones:</strong> Suma, resta, multiplicación y división con diferente y mismo denominador.</li>
+                </ul>
+                <h4 style="margin-top: 1.5rem; color: #1f3e54;">📝 Ejemplos:</h4>
+                <p><strong>Ejemplo 1 - Ubicación en recta:</strong> La fracción $\frac{3}{4}$ se ubica en la recta entre 0 y 1, a 0.75 unidades del origen (tres cuartas partes).</p>
+                <p><strong>Ejemplo 2 - Tipos de fracciones:</strong> $\frac{2}{5}$ es propia (menor que 1), $\frac{7}{3}$ es impropia (mayor que 1), y $2\frac{1}{3}$ es mixta (entero + fracción).</p>
+                <p><strong>Ejemplo 3 - Suma de fracciones:</strong> Suma $\frac{1}{4} + \frac{1}{4} = \frac{2}{4} = \frac{1}{2}$. Con diferente denominador: $\frac{1}{3} + \frac{1}{6} = \frac{2}{6} + \frac{1}{6} = \frac{3}{6} = \frac{1}{2}$.</p>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Tema 3: Números Decimales</h3>
+            <div class="resumen-box">
+                <h4>🔑 Conceptos clave:</h4>
+                <ul>
+                    <li><strong>Decimales:</strong> Números con parte entera y parte decimal, separadas por coma (,) o punto (.).</li>
+                    <li><strong>Relación con fracciones:</strong> Todo decimal exacto proviene de una fracción (ej: 0.5 = 1/2).</li>
+                    <li><strong>Operaciones:</strong> Suma, resta, multiplicación y división respetando la posición del punto decimal.</li>
+                    <li><strong>Aplicación:</strong> Mediciones precisas: longitudes, masas, capacidades y distancias en contextos reales.</li>
+                </ul>
+                <h4 style="margin-top: 1.5rem; color: #1f3e54;">📝 Ejemplos:</h4>
+                <p><strong>Ejemplo 1 - Conversión fracción a decimal:</strong> $\frac{3}{4} = 0.75$, $\frac{1}{2} = 0.5$, $\frac{7}{10} = 0.7$. Divide el numerador entre el denominador.</p>
+                <p><strong>Ejemplo 2 - Operaciones con decimales:</strong> Suma: $2.5 + 3.7 = 6.2$. Multiplicación: $1.5 \times 2.4 = 3.6$. Alinea el punto decimal en sumas y restas.</p>
+                <p><strong>Ejemplo 3 - Mediciones en la vida real:</strong> Una tabla mide 2.35 metros, un clavo mide 0.08 metros. Longitud total: $2.35 + 0.08 = 2.43$ metros. Los decimales son precisos en construcción y ciencia.</p>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Tema 4: Geometría Básica (Repaso)</h3>
+            <div class="resumen-box">
+                <h4>🔑 Conceptos clave:</h4>
+                <ul>
+                    <li><strong>Figuras planas 2D:</strong> Triángulos, cuadriláteros (cuadrado, rectángulo), círculos. Se miden perímetro y área.</li>
+                    <li><strong>Cuerpos 3D:</strong> Cubos, prismas, cilindros, esferas. Se miden volumen y área de superficie.</li>
+                    <li><strong>Fórmulas básicas:</strong></li>
+                    <ul>
+                        <li>Cuadrado: Perímetro = 4L, Área = L²</li>
+                        <li>Rectángulo: Perímetro = 2(L+A), Área = L×A</li>
+                        <li>Círculo: Perímetro = 2πr, Área = πr²</li>
+                        <li>Volumen cubo: V = L³, Volumen prisma: V = Área base × altura</li>
+                    </ul>
+                    <li><strong>Unidades de medida:</strong> Longitud (m, cm), Área (m², cm²), Volumen (m³, cm³).</li>
+                </ul>
+                <h4 style="margin-top: 1.5rem; color: #1f3e54;">📝 Ejemplos:</h4>
+                <p><strong>Ejemplo 1 - Rectángulo:</strong> Un rectángulo mide 6 m de largo y 4 m de ancho. Perímetro: $P = 2(6 + 4) = 2(10) = 20$ m. Área: $A = 6 \times 4 = 24$ m².</p>
+                <p><strong>Ejemplo 2 - Círculo:</strong> Un círculo tiene radio $r = 5$ cm. Perímetro (circunferencia): $C = 2\pi r = 2\pi(5) = 10\pi \approx 31.4$ cm. Área: $A = \pi r^2 = \pi(5)^2 = 25\pi \approx 78.5$ cm².</p>
+                <p><strong>Ejemplo 3 - Cubo:</strong> Un cubo tiene arista $L = 3$ cm. Volumen: $V = L^3 = 3^3 = 27$ cm³. Si duplicamos la arista: $V = 6^3 = 216$ cm³ (8 veces mayor).</p>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Tema 5: Integración de Conceptos</h3>
+            <div class="resumen-box">
+                <h4>🔑 Ejercicios prácticos:</h4>
+                <p><strong>Ejemplo 1:</strong> Un terreno rectangular mide 12.5 metros de largo y 8.3 metros de ancho. Calcula su área y perímetro.</p>
+                <p><strong>Ejemplo 2:</strong> Una caja cúbica tiene una arista de $\sqrt[3]{216}$ cm. ¿Cuál es su volumen?</p>
+                <p><strong>Ejemplo 3:</strong> Si una fracción es $\frac{3}{4}$ y la representas como decimal, ¿cuánto mide en una recta numérica del 0 al 2?</p>
+                <p><strong>Ejemplo 4:</strong> Aplicar potencias: un microorganismo se duplica cada hora. Si comenzamos con 2, después de 5 horas, ¿cuántos hay? (Respuesta: 2^5 = 32)</p>
+            </div>
+
+        </div>
+
+        <!-- Enlaces útiles -->
+        <div class="enlaces-box">
+            <h4>🔗 Enlaces de interés</h4>
+            <a href="https://www.youtube.com/playlist?list=PLeySRPnY35dH80rVcROHhNygoI258UYLP" class="enlace" target="_blank">📘 Repaso: Potenciación y Radicación</a>
+            <a href="https://www.youtube.com/watch?v=6MwdfLuIyNI" class="enlace" target="_blank">🎥 Recta Numérica y Fraccionarios</a>
+            <a href="https://www.youtube.com/watch?v=KK4mh4dkneY&list=PLeySRPnY35dGneDgVJS5mUhX5Ed2R81Wj" class="enlace" target="_blank">📄 Decimales en Mediciones</a>
+            <a href="https://www.youtube.com/watch?v=yY5beo7bXao" class="enlace" target="_blank">📊 Geometría: Perímetro, Área y Volumen</a>
+        </div>
+
+        <!-- Actividad -->
+        <div class="actividad-box">
+            <h1>✍️ EXAMEN FINAL</h1>
+            <div></div><br>
+
+            <ul>
+                <li>La presente actividad es una evaluación de selección múltiple con única respuesta.</li>
+                <li>limite de tiempo: 1 hora</li>
+                <li>intentos por persona 1</li>
+                            
+            </ul>
+        </div>
+
+        <a href="https://forms.gle/xYqmkehWr7HppkzUA" class="enlace" target="_blank">📘 EXAMEN FINAL</a><br>
+
+        <h3>BUENA SUERTE A TODOS!</h3>
+
+
+
+        <!-- Botón para volver al curso -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+                ⬅️ Volver al curso
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Toast de notificación -->
+<div id="toastMessage" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1f3e54e6; backdrop-filter:blur(8px); color:white; padding:0.8rem 1.8rem; border-radius:60px; z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; white-space:nowrap;">✨</div>
+
+<script>
+    // =============================================
+    // IDENTIFICAR LA MATERIA Y UNIDAD ACTUAL
+    // =============================================
+    
+    // Extraer de la URL qué curso y unidad es
+    // Formato esperado: unidadX-Y.html donde X = materia (1-7), Y = unidad (1-4)
+    const pathName = window.location.pathname;
+    const fileName = pathName.split('/').pop();
+    const match = fileName.match(/unidad(\d+)-(\d+)\.html/);
+    
+    let materiaId = 1;
+    let unidadNum = 1;
+    
+    if (match) {
+        materiaId = parseInt(match[1]);
+        unidadNum = parseInt(match[2]);
+    }
+    
+    // Datos de las materias para la navegación
+    const materias = {
+        1: { nombre: "📖 Español y Filosofía", id: 1, volverLink: "detalle-curso.html?id=1" },
+        2: { nombre: "🧮 Matemáticas", id: 2, volverLink: "detalle-curso.html?id=2" },
+        3: { nombre: "🌍 Sociales", id: 3, volverLink: "detalle-curso.html?id=3" },
+        4: { nombre: "⚡ Física", id: 4, volverLink: "detalle-curso.html?id=4" },
+        5: { nombre: "🧪 Química", id: 5, volverLink: "detalle-curso.html?id=5" },
+        6: { nombre: "🇬🇧 Inglés", id: 6, volverLink: "detalle-curso.html?id=6" },
+        7: { nombre: "🧬 Biología", id: 7, volverLink: "detalle-curso.html?id=7" }
+    };
+    
+    // Títulos de unidades por materia
+    const unidadesTitulos = {
+        1: { // Español y Filosofía
+            1: "Comprensión Lectora",
+            2: "Gramática Española",
+            3: "Introducción a la Filosofía",
+            4: "Ética y Valores"
+        },
+        2: { // Matemáticas
+            1: "Potenciación y Radicación",
+            2: "Recta Numérica y Fracciones",
+            3: "Geometría y Decimales",
+            4: "Repaso de la materia" // Esta unidad es un repaso general de las anteriores
+        },
+        3: { // Sociales
+            1: "Historia Universal",
+            2: "Geografía Mundial",
+            3: "Historia de Colombia",
+            4: "Democracia y Participación"
+        },
+        4: { // Física
+            1: "Cinemática",
+            2: "Dinámica",
+            3: "Energía y Trabajo",
+            4: "Electricidad Básica"
+        },
+        5: { // Química
+            1: "Estructura Atómica",
+            2: "Tabla Periódica",
+            3: "Reacciones Químicas",
+            4: "Química en la Vida"
+        },
+        6: { // Inglés
+            1: "Greetings & Basics",
+            2: "Present Simple",
+            3: "Everyday Activities",
+            4: "Travel & Culture"
+        },
+        7: { // Biología
+            1: "La Célula",
+            2: "Reinos de la Naturaleza",
+            3: "Cuerpo Humano",
+            4: "Ecología"
+        }
+    };
+    
+    // Descripciones cortas de unidades
+    const unidadesDescripciones = {
+        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        2: ["Propiedades y operaciones básicas", "Recta numérica y fracciones", "Figuras, áreas y perímetros", "Repaso y aplicación de los conceptos anteriores"],
+        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
+        4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
+        5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
+        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
+        7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
+    };
+    
+    // Actualizar el encabezado de la página
+    const materia = materias[materiaId];
+    const unidadTitulo = unidadesTitulos[materiaId]?.[unidadNum] || `Unidad ${unidadNum}`;
+    const unidadDescripcion = unidadesDescripciones[materiaId]?.[unidadNum - 1] || "Aprende los fundamentos de esta unidad";
+    
+    if (materia) {
+        document.getElementById('materiaNombre').textContent = materia.nombre;
+        document.getElementById('unidadTitulo').innerHTML = `Unidad ${unidadNum}: ${unidadTitulo}`;
+        document.getElementById('unidadDescripcion').textContent = unidadDescripcion;
+        document.title = `${materia.nombre} - Unidad ${unidadNum}: ${unidadTitulo} | Aula Virtual`;
+    }
+    
+    // Generar navegación entre unidades de la misma materia
+    function generarNavegacion() {
+        const navContainer = document.getElementById('navUnidades');
+        if (!navContainer) return;
+        
+        let html = '';
+        
+        // Unidad anterior
+        if (unidadNum > 1) {
+            html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`;
+        } else {
+            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`;
+        }
+        
+        // Indicador
+        html += `<span class="nav-indicador">📚 Unidad ${unidadNum} de 4</span>`;
+        
+        // Unidad siguiente
+        if (unidadNum < 4) {
+            html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`;
+        } else {
+            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">Unidad siguiente ➡️</span>`;
+        }
+        
+        navContainer.innerHTML = html;
+    }
+    
+    // Actualizar el botón de volver
+    function actualizarBotonVolver() {
+        const btnVolver = document.querySelector('.btn-volver');
+        if (btnVolver && materia) {
+            btnVolver.href = `detalle-curso.html?id=${materiaId}`;
+        }
+    }
+    
+    // Toast
+    let toastTimeout = null;
+    function showToast(message) {
+        const toast = document.getElementById('toastMessage');
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 2000);
+    }
+    
+    // Inicializar
+    generarNavegacion();
+    actualizarBotonVolver();
+</script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Aula Virtual | Detalle del Curso</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(145deg, #000000 0%, #044756 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .detail-page {
+            position: relative;
+            background: rgba(255, 255, 255, 0.591);
+            border-radius: 2.5rem;
+            padding: 2rem 2rem 3rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 240, 0.7);
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .course-emoji-big {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 1rem;
+            filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.15));
+        }
+
+        .detail-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .detail-header p {
+            color: #041123;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* SECCIÓN DE UNIDADES - 4 BOTONES GRANDES */
+        .unidades-section {
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin: 2rem 0 1.5rem;
+            text-align: center;
+        }
+
+        .unidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .unidad-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(18, 148, 219, 0.2);
+            text-decoration: none;
+            display: block;
+        }
+
+        .unidad-card:hover {
+            transform: translateY(-8px);
+            border-color: #1294db;
+            box-shadow: 0 15px 30px -12px rgba(0,0,0,0.2);
+            background: white;
+        }
+
+        .unidad-numero {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .unidad-titulo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1f3e54;
+            margin-bottom: 0.5rem;
+        }
+
+        .unidad-desc {
+            font-size: 0.85rem;
+            color: #5e7f97;
+            line-height: 1.4;
+        }
+
+        .unidad-icono {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        /* Info adicional del curso */
+        .course-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(255,255,255,0.4);
+            border-radius: 1.5rem;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 0.8rem;
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            color: #5e7f97;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1f3e54;
+            margin-top: 0.3rem;
+        }
+
+        .toast-msg {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background: #1f3e54e6;
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.2s, transform 0.2s;
+            pointer-events: none;
+            box-shadow: 0 6px 14px black;
+            white-space: nowrap;
+        }
+
+        .toast-msg.show {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .admin-controls {
+            position: absolute;
+            top: 1.8rem;
+            right: 1.8rem;
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            z-index: 10;
+        }
+
+        .admin-btn,
+        .switch-btn {
+            background: linear-gradient(135deg, #1294db, #0d6fa5);
+            color: white;
+            padding: 0.8rem 1.3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 25px rgba(18,148,219,0.25);
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .switch-btn {
+            background: linear-gradient(135deg, #0d6fa5, #1294db);
+        }
+
+        .admin-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .admin-btn:hover,
+        .switch-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(18,148,219,0.35);
+        }
+
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .detail-header h1 { font-size: 1.8rem; }
+            .section-title { font-size: 1.4rem; }
+            .unidades-grid { grid-template-columns: 1fr; }
+            .toast-msg {
+                white-space: normal;
+                text-align: center;
+                width: 90%;
+                font-size: 0.9rem;
+            }
+
+            .admin-controls {
+                position: static;
+                margin: 1rem auto 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+
+            .admin-btn {
+                position: static;
+                margin: 0;
+                right: auto;
+                top: auto;
+                display: inline-flex;
+                font-size: 0.9rem;
+                padding: 0.7rem 1rem;
+            }
+
+            .switch-btn {
+                position: static;
+                width: auto;
+                padding: 0.7rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="detail-page">
+
+        <div class="admin-controls">
+            <button id="sendWorkBtn" class="admin-btn" type="button" disabled>⚠️ Envíos deshabilitados</button>
+        </div>
+
+        <div class="detail-header">
+            <span class="course-emoji-big" id="courseEmoji">📚</span>
+            <h1 id="courseTitle">Cargando curso...</h1>
+            <p id="courseDesc">Descripción del curso</p>
+        </div>
+
+        <!-- Información del curso -->
+        <div class="course-info-grid" id="courseInfo">
+            <!-- Se llena con JS -->
+        </div>
+
+        <!-- SECCIÓN DE 4 UNIDADES -->
+        <h2 class="section-title">📚 Unidades del Curso</h2>
+        <div class="unidades-grid" id="unidadesGrid">
+            <!-- Los 4 botones de unidades se generan con JS -->
+        </div>
+    </div>
+</div>
+
+<div id="toastMessage" class="toast-msg">✨ Mensaje</div>
+
+<script>
+// =============================================
+// DATOS DE CADA CURSO (LOS 7 CURSOS)
+// =============================================
+const cursosDetalle = {
+    1: { // Español y Filosofía
+        title: "Español y Filosofía",
+        emoji: "📖",
+        desc: "Literatura, gramática y pensamiento crítico",
+        duracion: "4 semanas",
+        nivel: "Básico",
+        unidades: [
+            { num: 1, titulo: "Comprensión Lectora", desc: "Semana 1", icono: "📖", link: "unidad1-1.html" },
+            { num: 2, titulo: "Gramática Española", desc: "Semana 2", icono: "✍️", link: "unidad1-2.html" },
+            { num: 3, titulo: "Introducción a la Filosofía", desc: "Semana 3", icono: "💭", link: "unidad1-3.html" },
+            { num: 4, titulo: "Ética y Valores", desc: "Semana 4", icono: "⚖️", link: "unidad1-4.html" }
+        ]
+    },
+    5: { // Química
+        title: "Química",
+        emoji: "🧪",
+        desc: "Estructura de la materia y reacciones",
+        duracion: "4 semanas",
+        nivel: "Intermedio",
+        unidades: [
+            { num: 1, titulo: "Reino de los animales", desc: "Semana 1", icono: "⚛️", link: "unidad5-1.html" },
+            { num: 2, titulo: "Tabla Periódica", desc: "Semana 2", icono: "📊", link: "unidad5-2.html" },
+            { num: 3, titulo: "Reacciones Químicas", desc: "Semana 3", icono: "🧪", link: "unidad5-3.html" },
+            { num: 4, titulo: "Química en la Vida", desc: "Semana 4", icono: "🧴", link: "unidad5-4.html" }
+        ]
+    },
+    2: { // Matemáticas
+        title: "Matemáticas",
+        emoji: "🧮",
+        desc: "Aritmética, álgebra y razonamiento lógico",
+        duracion: "4 semanas",
+        nivel: "Básico",
+        unidades: [
+            { num: 1, titulo: "Potenciación y Radicación", desc: "Semana 1", icono: "🔢", link: "unidad2-1.html" },
+            { num: 2, titulo: "Recta Numérica y Fracciones", desc: "Semana 2", icono: "✖️", link: "unidad2-2.html" },
+            { num: 3, titulo: "Geometría y Decimales", desc: "Semana 3", icono: "📐", link: "unidad2-3.html" },
+            { num: 4, titulo: "Repaso de la materia", desc: "Semana 4", icono: "📊", link: "unidad2-4.html" }
+        ]
+    },
+    4: { // Física
+        title: "Física",
+        emoji: "⚡",
+        desc: "Movimiento, energía y leyes del universo",
+        duracion: "4 semanas",
+        nivel: "Intermedio",
+        unidades: [
+            { num: 1, titulo: "Cinemática", desc: "Semana 1", icono: "🏃", link: "unidad4-1.html" },
+            { num: 2, titulo: "Dinámica", desc: "Semana 2", icono: "⚙️", link: "unidad4-2.html" },
+            { num: 3, titulo: "Energía y Trabajo", desc: "Semana 3", icono: "💡", link: "unidad4-3.html" },
+            { num: 4, titulo: "Electricidad Básica", desc: "Semana 4", icono: "🔌", link: "unidad4-4.html" }
+        ]
+    },
+    7: { // Biología
+        title: "Biología",
+        emoji: "🧬",
+        desc: "Células, seres vivos y ecosistemas",
+        duracion: "4 semanas",
+        nivel: "Básico",
+        unidades: [
+            { num: 1, titulo: "La Célula", desc: "Semana 1", icono: "🦠", link: "unidad7-1.html" },
+            { num: 2, titulo: "Reinos de la Naturaleza", desc: "Semana 2", icono: "🌿", link: "unidad7-2.html" },
+            { num: 3, titulo: "Cuerpo Humano", desc: "Semana 3", icono: "🧠", link: "unidad7-3.html" },
+            { num: 4, titulo: "Ecología", desc: "Semana 4", icono: "🌎", link: "unidad7-4.html" }
+        ]
+    },
+    6: { // Inglés
+        title: "Inglés",
+        emoji: "🇬🇧",
+        desc: "Vocabulario, gramática y conversación",
+        duracion: "4 semanas",
+        nivel: "Básico",
+        unidades: [
+            { num: 1, titulo: "Greetings & Basics", desc: "Semana 1", icono: "👋", link: "unidad6-1.html" },
+            { num: 2, titulo: "Present Simple", desc: "Semana 2", icono: "📝", link: "unidad6-2.html" },
+            { num: 3, titulo: "Everyday Activities", desc: "Semana 3", icono: "🏠", link: "unidad6-3.html" },
+            { num: 4, titulo: "Travel & Culture", desc: "Semana 4", icono: "✈️", link: "unidad6-4.html" }
+        ]
+    },
+    3: { // Sociales
+        title: "Sociales",
+        emoji: "🌍",
+        desc: "Historia, geografía y cultura general",
+        duracion: "4 semanas",
+        nivel: "Básico",
+        unidades: [
+            { num: 1, titulo: "Historia Universal", desc: "semana 1", icono: "🏛️", link: "unidad3-1.html" },
+            { num: 2, titulo: "Geografía Mundial", desc: "semana 2", icono: "🗺️", link: "unidad3-2.html" },
+            { num: 3, titulo: "Historia de Colombia", desc: "semana 3", icono: "🇨🇴", link: "unidad3-3.html" },
+            { num: 4, titulo: "Democracia y Participación", desc: "semana 4", icono: "🗳️", link: "unidad3-4.html" }
+        ]
+    }
+};
+
+// =============================================
+// CONFIGURACIÓN: MES VISIBLE POR CADA CURSO
+// Pon el número del mes (1=Ene ... 12=Dic).
+// Usa 0 para que ese curso sea siempre visible.
+// =============================================
+const VISIBLE_MONTH_POR_CURSO = {
+    1: 3,  // Español y Filosofía
+    2: 5,  // Matemáticas         
+    3: 9,  // Sociales            
+    4: 6,  // Física              
+    5: 5,  // Química             
+    6: 8,   // Inglés              
+    7: 7,  // Biología           
+};
+
+function getMonthName(monthNumber) {
+    const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    if (!monthNumber || monthNumber < 1 || monthNumber > 12) return 'mes inválido';
+    return meses[monthNumber - 1];
+}
+
+// Recibe el id del curso y comprueba si el mes actual coincide con el configurado
+function isVisibleThisMonth(cursoId) {
+    const mes = VISIBLE_MONTH_POR_CURSO[cursoId];
+    if (!mes || mes === 0) return true; // 0 o no definido → siempre visible
+    const hoy = new Date();
+    return (hoy.getMonth() + 1) === mes;
+}
+
+// =============================================
+// Leer parámetros de la URL
+// =============================================
+const params = new URLSearchParams(window.location.search);
+const courseId = parseInt(params.get('id')) || 1;
+const curso = cursosDetalle[courseId];
+
+// Rellenar la página con los datos del curso
+if (curso) {
+    document.getElementById('courseEmoji').textContent = curso.emoji;
+    document.getElementById('courseTitle').textContent = curso.title;
+    document.getElementById('courseDesc').textContent = curso.desc;
+    document.title = `Aula Virtual | ${curso.title}`;
+
+    const infoContainer = document.getElementById('courseInfo');
+    const unidadesGrid = document.getElementById('unidadesGrid');
+
+    if (!isVisibleThisMonth(courseId)) {
+        // Si no es el mes configurado para este curso, mostrar mensaje y ocultar unidades
+        const mesNombre = getMonthName(VISIBLE_MONTH_POR_CURSO[courseId]);
+        infoContainer.innerHTML = `<p style="text-align:center; grid-column:1/-1;">Este curso está disponible sólo en ${mesNombre}.</p>`;
+        unidadesGrid.innerHTML = `<p style="text-align:center; grid-column:1/-1;">No hay unidades visibles este mes.</p>`;
+        const sendButton = document.getElementById('sendWorkBtn');
+        if (sendButton) sendButton.disabled = true;
+        showToast(`Curso disponible sólo en ${mesNombre}`);
+    } else {
+        // Información adicional
+        infoContainer.innerHTML = `
+            <div class="info-item"><div class="info-label">📅 Duración</div><div class="info-value">${curso.duracion}</div></div>
+            <div class="info-item"><div class="info-label">📊 Nivel</div><div class="info-value">${curso.nivel}</div></div>
+            <div class="info-item"><div class="info-label">🎓 Certificado</div><div class="info-value">Incluido</div></div>
+            <div class="info-item"><div class="info-label">💻 Modalidad</div><div class="info-value">Virtual</div></div>
+        `;
+
+        // Generar los 4 botones de unidades ordenados por número
+        if (curso.unidades && curso.unidades.length > 0) {
+            const unidadesOrdenadas = [...curso.unidades].sort((a, b) => a.num - b.num);
+            unidadesGrid.innerHTML = unidadesOrdenadas.map(unidad => `
+                <a href="${unidad.link}" class="unidad-card">
+                    <span class="unidad-icono">${unidad.icono}</span>
+                    <div class="unidad-numero">${unidad.num}</div>
+                    <div class="unidad-titulo">${unidad.titulo}</div>
+                    <div class="unidad-desc">${unidad.desc}</div>
+                </a>
+            `).join('');
+        } else {
+            unidadesGrid.innerHTML = '<p style="text-align:center; grid-column:1/-1;">Unidades en construcción 🚧</p>';
+        }
+    }
+}
+
+// =============================================
+// Control de envíos: prioridad a hoja remota (Google Sheets CSV), fallback a localStorage
+const sendBtn = document.getElementById('sendWorkBtn');
+const STORAGE_KEY = 'enviosActivos';
+
+// Si vas a usar Google Sheets, publica la hoja y copia el enlace de export CSV.
+// Ejemplo: https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid=0
+const REMOTE_SHEET_CSV = ''; // Pega aquí la URL pública de export CSV si quieres control remoto
+
+function parseFirstCellFromCsv(text) {
+    if (!text) return null;
+    const firstLine = text.split('\n')[0] || '';
+    const firstCell = (firstLine.split(',')[0] || '').trim().toLowerCase();
+    if (!firstCell) return null;
+    return ['true', 'verdadero', '1', 'si', 'sí'].includes(firstCell);
+}
+
+async function fetchRemoteEnvios() {
+    if (!REMOTE_SHEET_CSV) return null;
+    try {
+        const resp = await fetch(REMOTE_SHEET_CSV, { cache: 'no-store' });
+        if (!resp.ok) throw new Error(`status ${resp.status}`);
+        const txt = await resp.text();
+        return parseFirstCellFromCsv(txt);
+    } catch (err) {
+        console.warn('No se pudo leer la hoja remota:', err);
+        return null;
+    }
+}
+
+function getLocalState() {
+    return localStorage.getItem(STORAGE_KEY) === 'true';
+}
+
+function isSendDay() {
+    const hoy = new Date();
+    const dia = hoy.getDay(); // 0=domingo, 4=jueves, 5=viernes
+    return dia === 4 || dia === 5;
+}
+
+function updateSendButtonState(enabled) {
+    const sendToday = isSendDay();
+    const active = Boolean(enabled) && sendToday;
+
+    sendBtn.disabled = !active;
+    if (active) {
+        sendBtn.textContent = '✅ Enviar tarea disponible';
+        sendBtn.title = 'Haz clic para enviar tu tarea';
+    } else if (!sendToday) {
+        sendBtn.textContent = '⚠️ Envíos sólo jueves y viernes';
+        sendBtn.title = 'Hoy no es día de envío';
+    } else {
+        sendBtn.textContent = '⚠️ Envíos deshabilitados';
+        sendBtn.title = 'Configura envíos desde la página protegida';
+    }
+}
+
+function handleSendButton() {
+    if (!sendBtn.disabled) {
+        window.location.href = 'enviar_tarea.html';
+    } else if (!isSendDay()) {
+        showToast('Hoy no es jueves ni viernes. El envío sólo está activo esos días.');
+    } else {
+        showToast('El envío está deshabilitado. Pídele al docente que active el botón.');
+    }
+}
+
+async function initEnviosControl() {
+    const remote = await fetchRemoteEnvios();
+    const enabled = (remote === null) ? getLocalState() : remote;
+    updateSendButtonState(Boolean(enabled));
+}
+
+async function pollRemote() {
+    if (!REMOTE_SHEET_CSV) return;
+    try {
+        const remote = await fetchRemoteEnvios();
+        if (remote !== null) updateSendButtonState(Boolean(remote));
+    } catch (e) { /* ignore */ }
+}
+
+initEnviosControl();
+sendBtn.addEventListener('click', handleSendButton);
+if (REMOTE_SHEET_CSV) setInterval(pollRemote, 60000);
+
+// =============================================
+// Sistema de Toast
+// =============================================
+let toastTimeout = null;
+function showToast(message) {
+    const toast = document.getElementById('toastMessage');
+    toast.textContent = message;
+    toast.classList.add('show');
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+</script>
+</body>
+</html>
