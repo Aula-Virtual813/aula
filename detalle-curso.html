@@ -328,10 +328,10 @@ const cursosDetalle = {
         duracion: "4 semanas",
         nivel: "Intermedio",
         unidades: [
-            { num: 1, titulo: "Reino de los animales", desc: "Semana 1", icono: "⚛️", link: "unidad5-1.html" },
-            { num: 2, titulo: "Tabla Periódica", desc: "Semana 2", icono: "📊", link: "unidad5-2.html" },
-            { num: 3, titulo: "Reacciones Químicas", desc: "Semana 3", icono: "🧪", link: "unidad5-3.html" },
-            { num: 4, titulo: "Química en la Vida", desc: "Semana 4", icono: "🧴", link: "unidad5-4.html" }
+            { num: 1, titulo: "Modelos Atómicos", desc: "Semana 1", icono: "⚛️", link: "unidad5-1.html" },
+            { num: 2, titulo: "Números Cuánticos y Configuración Electrónica", desc: "Semana 2", icono: "📊", link: "unidad5-2.html" },
+            { num: 3, titulo: "Enlaces Químicos y Estructuras de Lewis”", desc: "Semana 3", icono: "🧪", link: "unidad5-3.html" },
+            { num: 4, titulo: "Resumen General y Consolidación EXAMEN ", desc: "Semana 4", icono: "🧴", link: "unidad5-4.html" }
         ]
     },
     2: { // Matemáticas
@@ -408,10 +408,10 @@ const cursosDetalle = {
 // =============================================
 const VISIBLE_MONTH_POR_CURSO = {
     1: 3,  // Español y Filosofía
-    2: 6,  // Matemáticas         
+    2: 5,  // Matemáticas         
     3: 9,  // Sociales            
     4: 6,  // Física              
-    5: 0,  // Química             
+    5: 5,  // Química             
     6: 8,   // Inglés              
     7: 7,  // Biología           
 };
@@ -512,7 +512,7 @@ async function fetchRemoteEnvios() {
 }
 
 function getLocalState() {
-    return true;
+    return localStorage.getItem(STORAGE_KEY) === 'true';
 }
 
 function isSendDay() {
