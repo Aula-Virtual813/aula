@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+    <title>Física - Unidad 4: REPASO COMPLETO | Aula Virtual</title>
     <style>
         * {
             margin: 0;
@@ -231,9 +231,9 @@
     <div class="unidad-card">
         <!-- Encabezado -->
         <div class="unidad-header">
-            <span class="unidad-materia" id="materiaNombre">【Nombre de la Materia】</span>
-            <h1 class="unidad-titulo-principal" id="unidadTitulo">Unidad 【Número】: 【Título de la Unidad】</h1>
-            <p class="unidad-subtitulo" id="unidadDescripcion">【Breve descripción de lo que aprenderás en esta unidad】</p>
+            <span class="unidad-materia" id="materiaNombre">Física</span>
+            <h1 class="unidad-titulo-principal" id="unidadTitulo">Unidad 4: REPASO COMPLETO</h1>
+            <p class="unidad-subtitulo" id="unidadDescripcion">Repaso detallado de Cinemática, Dinámica y Energía para practicar antes del examen.</p>
         </div>
 
         <!-- Navegación entre unidades -->
@@ -241,51 +241,33 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL (solo repaso de las otras unidades) -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
+            <h2>Repaso: conceptos clave de las unidades anteriores</h2>
+
+            <h3>Unidad 1 MOVIMIENTO Y ACELERACION</h3>
+            <p>Conceptos principales: posición, desplazamiento, velocidad promedio e instantánea, aceleración. Fórmulas básicas y cómo interpretar gráficas posición-tiempo y velocidad-tiempo.</p>
+                        <img src="imagenes/82.jpg" alt="Diagrama de aceleración" />
+                        <img src="imagenes/83.jpg" alt="Diagrama de aceleración" />
 
 
-            <p>【escribe aqui】</p>
+            <h3>Unidad 2 MOVIMIENTO UNIFORME ACELERADO</h3>
+            <p>Conceptos principales: fuerzas, masa, peso, fricción. Leyes de Newton y su aplicación en problemas de equilibrio y en planos inclinados. Uso de diagramas de cuerpo libre.</p>
+            <img src="imagenes/130.jpg" alt="Diagrama de fuerzas">
+            <img src="imagenes/131.jpg" alt="Diagrama de fuerzas en plano inclinado">
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <h3>Unidad 3 ARQUIMIDES Y PASCAL</h3>
+            <p>Conceptos principales: trabajo, energía cinética y potencial, conservación de la energía, potencia. Fórmulas esenciales como <strong>W = F · d · cos(θ)</strong> y la energía cinética <strong>KE = 1/2 m v²</strong>.</p>
+            <img src="https://miguiaceneval.net/wp-content/uploads/2024/05/image-1.png" alt="Conceptos de energía y trabajo">
+                 <img src="https://d20ohkaloyme4g.cloudfront.net/img/document_thumbnails/6762808312ac49d469a5934530098e1a/thumb_1200_1553.png" alt="Ilustración trabajo y energía" />
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
-
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
-
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
-
-            <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
-            </ul>
-        </div>
-
-        <!-- Enlaces útiles -->
-        <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
-
-        <!-- Actividad -->
+                 <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
+                <li>EXAMEN <a href="archivo.pdf">aquí </a>.</li>
                 
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
-            </ul>
+                
         </div>
 
         <!-- Botón para volver al curso -->
@@ -331,50 +313,8 @@
     };
     
     // Títulos de unidades por materia
-    const unidadesTitulos = {
-        1: { // Español y Filosofía
-            1: "Comprensión Lectora",
-            2: "Gramática Española",
-            3: "Introducción a la Filosofía",
-            4: "Ética y Valores"
-        },
-        2: { // Matemáticas
-            1: "Números y Operaciones",
-            2: "Álgebra Básica",
-            3: "Geometría",
-            4: "Estadística"
-        },
-        3: { // Sociales
-            1: "Historia Universal",
-            2: "Geografía Mundial",
-            3: "Historia de Colombia",
-            4: "Democracia y Participación"
-        },
-        4: { // Física
-            1: "Cinemática",
-            2: "Dinámica",
-            3: "Energía y Trabajo",
-            4: "Electricidad Básica"
-        },
-        5: { // Química
-            1: "Estructura Atómica",
-            2: "Tabla Periódica",
-            3: "Reacciones Químicas",
-            4: "Química en la Vida"
-        },
-        6: { // Inglés
-            1: "Greetings & Basics",
-            2: "Present Simple",
-            3: "Everyday Activities",
-            4: "Travel & Culture"
-        },
-        7: { // Biología
-            1: "La Célula",
-            2: "Reinos de la Naturaleza",
-            3: "Cuerpo Humano",
-            4: "Ecología"
-        }
-    };
+    // Se muestran títulos genéricos: 'Unidad X' para mantener la estructura estándar
+    const unidadesTitulos = {};
     
     // Descripciones cortas de unidades
     const unidadesDescripciones = {
