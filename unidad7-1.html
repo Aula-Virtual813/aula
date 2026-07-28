@@ -213,8 +213,68 @@
             line-height: 1.6;
         }
 
+        .contenido table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: #ffffff;
+        }
+
+        .contenido th,
+        .contenido td {
+            border: 1px solid #cbdde9;
+            padding: 0.85rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .contenido th {
+            background: rgba(18, 148, 219, 0.12);
+            color: #1f3e54;
+        }
+
         .contenido li {
             margin: 0.5rem 0;
+        }
+
+        .cell-types {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .cell-type-card {
+            background: #f8fbfd;
+            border: 1px solid #d9e9f1;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .cell-type-card h4 {
+            margin-bottom: 0.75rem;
+            color: #1f3e54;
+            font-size: 1.05rem;
+        }
+
+        .cell-type-card p {
+            margin-bottom: 1rem;
+        }
+
+        .cell-type-image {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #e9f4fb 0%, #ffffff 100%);
+            border: 1px dashed #a5cbd9;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #517a94;
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0.75rem;
         }
 
         /* Responsive */
@@ -223,6 +283,7 @@
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .cell-types { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -248,23 +309,112 @@
 
             <p>【escribe aqui】</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
-
+           
             <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
             <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <h3>📌 La célula</h3>
+            <p>La célula es la unidad estructural, funcional y de origen más pequeña que compone a todos los seres vivos. Pensar en ella como una "microfábrica" ayuda a entender cómo funciona: tiene paredes, áreas de procesamiento de energía, una oficina central de control y sistemas de transporte.</p>
+            <img src="imagenes/132.jpg">
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
-
+            <h3>Partes clave de una célula</h3>
+            <p>Casi todas las células comparten tres componentes fundamentales:</p>
             <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
+                <li><strong>Membrana plasmática (o celular):</strong> La cubierta exterior que protege a la célula y controla qué sustancias entran y salen (nutrientes, agua, desechos).</li>
+                <li><strong>Citoplasma:</strong> El líquido gelatinoso que llena el interior de la célula y sostiene a los <strong>organelos</strong> (las pequeñas "herramientas" que realizan tareas específicas).</li>
+                <li><strong>Núcleo:</strong> El compartimento que protege la información genética en las células eucariotas y funciona como una "oficina central" donde se controla qué hace la célula.</li>
             </ul>
+            <img src="imagenes/133.jpg">
+
+            <h3>Tipos principales de células</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Características principales</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procariota</td>
+                        <td>Más simples y pequeñas. <strong>No tienen núcleo definido</strong>; su ADN flota libre en el citoplasma.</td>
+                        <td>Bacterias y arqueas</td>
+                    </tr>
+                    <tr>
+                                <td>Eucariota</td>
+                        <td>Más complejas y grandes. <strong>Tienen un núcleo delimitado</strong> por una membrana que protege la información genética y dirige las funciones celulares.</td>
+                        <td>Células animales, vegetales, hongos y protistas</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="imagenes/134.jpg">
+
+            <h3>Unicelular y pluricelular</h3>
+            <p>Las formas de vida se pueden agrupar según cuántas células tienen:</p>
+            <ul>
+                <li><strong>Organismos unicelulares:</strong> Están formados por una sola célula que realiza todas las funciones necesarias para vivir. Ejemplos: muchas bacterias (procariotas) y algunos protistas (eucariotas).</li>
+                <li><strong>Organismos pluricelulares:</strong> Están formados por muchas células que se especializan en tareas distintas y trabajan en conjunto. Ejemplos: plantas, animales, hongos y algas multicelulares (eucariotas).</li>
+            </ul>
+            <p>En procariotas, como las bacterias, la célula única es el organismo completo: no tienen núcleo y todas las funciones se llevan a cabo dentro de la misma célula. En eucariotas, tanto los organismos unicelulares como los pluricelulares pueden existir, pero siempre con un núcleo bien definido que organiza la información genética.</p>
+            <img src="imagenes/135.jpg">
+
+            <h3>Funciones vitales</h3>
+            <p>Todas las células realizan funciones vitales que les permiten crecer, obtener energía, reproducirse y responder al entorno. Estas funciones son esenciales tanto para procariotas como para eucariotas.</p>
+            <ul>
+                <li><strong>Nutrición:</strong> Captar y transformar sustancias para obtener energía. Ejemplo: una bacteria procariota toma glucosa del medio y realiza reacciones en el citoplasma para obtener energía.</li>
+                <li><strong>Relación:</strong> Detectar y responder a cambios en el entorno. Ejemplo: una ameba (eucariota unicelular) se mueve hacia una fuente de alimento usando sus seudópodos.</li>
+                <li><strong>Reproducción:</strong> Generar nuevas células o individuos. Ejemplo: una célula eucariota puede dividirse por mitosis para formar dos células hijas con igual material genético.</li>
+                <li><strong>Respiración celular:</strong> Obtener energía a partir de nutrientes. Ejemplo: las células animales eucariotas usan oxígeno para extraer energía de la glucosa en las mitocondrias.</li>
+            </ul>
+            <img src="imagenes/136.jpg">
+            <p>Por ejemplo, en una célula procariota como la <em>Escherichia coli</em>, la nutrición y la respiración ocurren en el citoplasma y la membrana celular, mientras que en una célula eucariota animal, la respiración se realiza en las mitocondrias y el núcleo coordina la reproducción.</p>
+
+            <h3>Principales orgánulos y estructuras internas de la célula eucariota</h3>
+            <p>Las células eucariotas tienen varias partes internas especializadas que trabajan en conjunto para mantener la vida. Aquí aparecen los 13 orgánulos y estructuras más relevantes:</p>
+            <ul>
+                <li><strong>Núcleo:</strong> Contiene el material genético y controla las actividades celulares. Ejemplo: el núcleo de una célula animal dirige cuándo la célula debe dividirse.</li>
+                <li><strong>Membrana plasmática:</strong> Regula el paso de sustancias hacia dentro y fuera de la célula. Ejemplo: permite la entrada de nutrientes y la salida de desechos.</li>
+                <li><strong>Citoplasma:</strong> Medio líquido donde flotan los orgánulos y se realizan muchas reacciones químicas. Ejemplo: en el citoplasma se produce la glucólisis para obtener energía.</li>
+                <li><strong>Ribosomas:</strong> Fabrican proteínas a partir de las instrucciones del ARN. Ejemplo: una célula eucariota produce proteínas necesarias para su estructura y función.</li>
+                <li><strong>Retículo endoplasmático rugoso:</strong> Ensambla proteínas que serán exportadas o usadas dentro de la célula. Ejemplo: produce las enzimas que se exportan a otras partes del cuerpo.</li>
+                <li><strong>Retículo endoplasmático liso:</strong> Sintetiza lípidos y desintoxica sustancias. Ejemplo: en células del hígado, elimina toxinas y fabrica colesterol.</li>
+                <li><strong>Aparato de Golgi:</strong> Procesa, empaca y distribuye proteínas y lípidos. Ejemplo: modifica una proteína antes de enviarla fuera de la célula.</li>
+                <li><strong>Mitocondrias:</strong> Producen energía en forma de ATP mediante la respiración celular. Ejemplo: las células musculares tienen muchas mitocondrias para obtener energía al moverse.</li>
+                <li><strong>Cloroplastos:</strong> Realizan la fotosíntesis en células vegetales y producen glucosa usando luz solar. Ejemplo: en una célula de hoja de planta, convierten la luz en alimento.</li>
+                <li><strong>Lisosomas:</strong> Contienen enzimas que degradan sustancias y reciclan componentes dañados. Ejemplo: eliminan restos de bacterias dentro de una célula blanca.</li>
+                <li><strong>Vacuolas:</strong> Almacenan agua, nutrientes y desechos. Ejemplo: en células vegetales, la vacuola central mantiene la presión interna y almacena agua.</li>
+                <li><strong>Citoesqueleto:</strong> Red de fibras que mantiene la forma celular y permite el movimiento interno. Ejemplo: ayuda al transporte de vesículas dentro de la célula.</li>
+                <li><strong>Centríolos:</strong> Organizan el huso mitótico durante la división celular en células animales. Ejemplo: se duplican antes de la división para separar los cromosomas.</li>
+            </ul>
+            <img src="imagenes/137.jpg">
+
+            <h3>Cuatro tipos de células</h3>
+            <p>Las células se pueden clasificar en cuatro tipos según su forma, función y estructura. A continuación se explica cada tipo y se deja un espacio para una imagen representativa.</p>
+            <div class="cell-types">
+                <div class="cell-type-card">
+                    <h4>Célula animal</h4>
+                    <div class="cell-type-image">Imagen sugerida: célula animal</div>
+                    <p>Las células animales son eucariotas, no tienen pared celular y pueden presentar formas variadas. Tienen núcleos definidos y organelos como mitocondrias y lisosomas.</p>
+                </div>
+            
+                <div class="imagenes/138.jpg">
+                    <h4>Célula vegetal</h4>
+                    <div class="cell-type-image">Imagen sugerida: célula vegetal</div>
+                    <p>Las células vegetales son eucariotas y cuentan con pared celular rígida, cloroplastos para fotosíntesis y una vacuola grande que ayuda a mantener la forma.</p>
+                </div>
+                <img src="imagenes/139.jpg">
+                <div class="cell-type-card">
+                    <h4>Célula procariota</h4>
+                    <div class="cell-type-image">Imagen sugerida: célula procariota</div>
+                    <p>Las células procariotas, como las bacterias, son más simples y no tienen núcleo verdadero. Su ADN está libre en el citoplasma y no poseen orgánulos rodeados por membranas.</p>
+                </div>
+                <div class="cell-type-card">
+                    <h4>Célula de protista</h4>
+                    <div class="cell-type-image">Imagen sugerida: célula de protista</div>
+                    <p>Los protistas son eucariotas generalmente unicelulares con núcleo definido. Pueden tener estructuras especializadas como seudópodos, cilios o flagelos para moverse y alimentarse.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Enlaces útiles -->
