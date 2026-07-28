@@ -125,6 +125,12 @@
             margin: 1rem 0 0.5rem;
             font-size: 1.2rem;
         }
+        
+        .contenido h4 {
+            color: #2c6280;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
 
         .contenido p {
             color: #2c3e50;
@@ -217,6 +223,91 @@
             margin: 0.5rem 0;
         }
 
+        /* Tablas estilo */
+        .tabla-ingles {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-ingles th {
+            background: #1e3e5c;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-ingles td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e8f0f6;
+            color: #2c3e50;
+        }
+
+        .tabla-ingles tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabla-ingles tr:hover td {
+            background: #f0f7fc;
+        }
+
+        /* Cajas de ejemplos destacadas */
+        .example-box {
+            background: #f0f7fc;
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 3px solid #1294db;
+            margin: 1rem 0;
+        }
+
+        .example-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Caja de regla gramatical */
+        .grammar-box {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 1.2rem;
+            border-radius: 1rem;
+            border-left: 4px solid #ff9800;
+            margin: 1.5rem 0;
+        }
+
+        .grammar-box h4 {
+            color: #e65100;
+        }
+
+        /* Caja de colores para afirmativo/negativo/pregunta */
+        .form-box {
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        .form-box.affirmative {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+
+        .form-box.negative {
+            background: #fce4ec;
+            border-left: 4px solid #e53935;
+        }
+
+        .form-box.question {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+        }
+
+        .form-box h4 {
+            margin-bottom: 0.7rem;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
@@ -241,56 +332,631 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
             <h2>📌 Introducción</h2>
 
+            <p>Hello! Do you know the most important verb in English? Do you want to say "I am happy", "She is a teacher", or "We are from Colombia"? To do this, you need to learn the verb <strong>TO BE</strong>. This verb means both "ser" and "estar" in Spanish, and it is used in almost every conversation. Without it, it is very difficult to speak English correctly.</p>
 
-            <p>【escribe aqui】</p>
+            <p>En esta unidad, vamos a estudiar a fondo el verbo más importante del inglés: el verbo <strong>TO BE</strong> (ser o estar). Aprenderemos su conjugación en presente, cómo usarlo en oraciones afirmativas, negativas y preguntas, y practicaremos con muchos ejemplos. ¡Al final de esta unidad podrás presentarte, describir personas y lugares, hablar de tus sentimientos y mucho más!</p>
+
+            <div class="grammar-box">
+                <h4>💡 ¿Sabías que...?</h4>
+                <p>El verbo TO BE es el único verbo en inglés que cambia su forma dependiendo del sujeto (I <strong>am</strong>, you <strong>are</strong>, he/she/it <strong>is</strong>). ¡Esto lo hace especial y muy importante de aprender!</p>
+            </div>
+
+            <h2>🎯 Objetivo general</h2>
+            <p>Comprender y utilizar correctamente el verbo <strong>TO BE</strong> (ser/estar) en presente simple en sus formas afirmativa, negativa e interrogativa, para comunicarse en situaciones básicas de la vida cotidiana.</p>
+
+            <h2>📋 Objetivos específicos</h2>
+            <ul>
+                <li>Conjugar correctamente el verbo TO BE en presente simple con todos los pronombres personales (I, you, he, she, it, we, they).</li>
+                <li>Formar oraciones afirmativas usando el verbo TO BE para describir personas, lugares, emociones, nacionalidades y profesiones.</li>
+                <li>Construir oraciones negativas usando la estructura <strong>subject + TO BE + not</strong>.</li>
+                <li>Formular preguntas con el verbo TO BE invirtiendo el orden del sujeto y el verbo, y responderlas correctamente con Yes/No.</li>
+                <li>Utilizar las contracciones (I'm, you're, he's, she's, isn't, aren't, etc.) en conversaciones informales.</li>
+            </ul>
 
             <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <h3>1. What is the verb TO BE? (¿Qué es el verbo TO BE?)</h3>
+            <p>El verbo <strong>TO BE</strong> es el verbo más importante del inglés. Tiene dos significados principales en español:</p>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <table class="tabla-ingles">
+                <tr>
+                    <th>TO BE</th>
+                    <th>Significado</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>TO BE</strong></td>
+                    <td><strong>SER</strong> (permanente / identidad)</td>
+                    <td>I <strong>am</strong> a student. (Yo <strong>soy</strong> estudiante)</td>
+                </tr>
+                <tr>
+                    <td><strong>ESTAR</strong> (temporal / ubicación / emoción)</td>
+                    <td>She <strong>is</strong> at home. (Ella <strong>está</strong> en casa)</td>
+                </tr>
+            </table><br>
+             <img src="imagenes/160.jpg">
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
 
-            <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
-            </ul>
+            <br>
+
+            <h3>2. Conjugation in Present Simple (Conjugación en Presente Simple)</h3>
+            <p>El verbo TO BE se conjuga de forma diferente a los demás verbos en inglés. Esta es su conjugación completa:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Subject (Sujeto)</th>
+                    <th>Verb TO BE</th>
+                    <th>Contraction (Contracción)</th>
+                    <th>Example (Ejemplo)</th>
+                </tr>
+                <tr>
+                    <td><strong>I</strong> (Yo)</td>
+                    <td><strong>am</strong></td>
+                    <td><strong>I'm</strong></td>
+                    <td>I <strong>am</strong> happy. / I'm happy. (Estoy feliz)</td>
+                </tr>
+                <tr>
+                    <td><strong>You</strong> (Tú / Usted)</td>
+                    <td><strong>are</strong></td>
+                    <td><strong>You're</strong></td>
+                    <td>You <strong>are</strong> my friend. / You're my friend. (Eres mi amigo)</td>
+                </tr>
+                <tr>
+                    <td><strong>He</strong> (Él)</td>
+                    <td><strong>is</strong></td>
+                    <td><strong>He's</strong></td>
+                    <td>He <strong>is</strong> tall. / He's tall. (Él es alto)</td>
+                </tr>
+                <tr>
+                    <td><strong>She</strong> (Ella)</td>
+                    <td><strong>is</strong></td>
+                    <td><strong>She's</strong></td>
+                    <td>She <strong>is</strong> a teacher. / She's a teacher. (Ella es profesora)</td>
+                </tr>
+                <tr>
+                    <td><strong>It</strong> (Eso / Él/Ella - para cosas y animales)</td>
+                    <td><strong>is</strong></td>
+                    <td><strong>It's</strong></td>
+                    <td>It <strong>is</strong> a book. / It's a book. (Es un libro)</td>
+                </tr>
+                <tr>
+                    <td><strong>We</strong> (Nosotros)</td>
+                    <td><strong>are</strong></td>
+                    <td><strong>We're</strong></td>
+                    <td>We <strong>are</strong> students. / We're students. (Somos estudiantes)</td>
+                </tr>
+                <tr>
+                    <td><strong>They</strong> (Ellos / Ellas)</td>
+                    <td><strong>are</strong></td>
+                    <td><strong>They're</strong></td>
+                    <td>They <strong>are</strong> from Mexico. / They're from Mexico. (Ellos son de México)</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <div class="grammar-box">
+                <h4>📝 Recuerda (Remember)</h4>
+                <p><strong>AM</strong> solo se usa con <strong>I</strong> (I am).<br>
+                <strong>IS</strong> se usa con <strong>He / She / It</strong> (tercera persona singular).<br>
+                <strong>ARE</strong> se usa con <strong>You / We / They</strong>.</p>
+            </div>
+
+            <h3>3. Affirmative Sentences (Oraciones Afirmativas)</h3>
+            <p>La estructura de una oración afirmativa con el verbo TO BE es muy sencilla:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Structure</th>
+                    <th>Example</th>
+                    <th>Traducción</th>
+                </tr>
+                <tr>
+                    <td><strong>Subject + TO BE + complement</strong></td>
+                    <td>I am a student.</td>
+                    <td>Yo soy estudiante.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>She is intelligent.</td>
+                    <td>Ella es inteligente.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>We are in the classroom.</td>
+                    <td>Nosotros estamos en el salón.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>They are happy.</td>
+                    <td>Ellos están felices.</td>
+                </tr>
+            </table>
+
+            <h4>💡 Uses of TO BE — Affirmative (Usos del verbo TO BE en afirmativo)</h4>
+            <p>Usamos el verbo TO BE para:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Use (Uso)</th>
+                    <th>Example</th>
+                    <th>Traducción</th>
+                </tr>
+                <tr>
+                    <td><strong>Name</strong> (Nombre)</td>
+                    <td>My name <strong>is</strong> Ana.</td>
+                    <td>Mi nombre es Ana.</td>
+                </tr>
+                <tr>
+                    <td><strong>Nationality</strong> (Nacionalidad)</td>
+                    <td>I <strong>am</strong> Colombian.</td>
+                    <td>Yo soy colombiano.</td>
+                </tr>
+                <tr>
+                    <td><strong>Profession</strong> (Profesión)</td>
+                    <td>He <strong>is</strong> a doctor.</td>
+                    <td>Él es doctor.</td>
+                </tr>
+                <tr>
+                    <td><strong>Age</strong> (Edad)</td>
+                    <td>She <strong>is</strong> 12 years old.</td>
+                    <td>Ella tiene 12 años.</td>
+                </tr>
+                <tr>
+                    <td><strong>Feeling / Emotion</strong> (Sentimiento / Emoción)</td>
+                    <td>We <strong>are</strong> tired.</td>
+                    <td>Nosotros estamos cansados.</td>
+                </tr>
+                <tr>
+                    <td><strong>Location</strong> (Ubicación)</td>
+                    <td>The book <strong>is</strong> on the table.</td>
+                    <td>El libro está en la mesa.</td>
+                </tr>
+                <tr>
+                    <td><strong>Description</strong> (Descripción)</td>
+                    <td>It <strong>is</strong> big and beautiful.</td>
+                    <td>Es grande y hermoso.</td>
+                </tr>
+            </table>
+
+            <div class="example-box">
+                <p><strong>📝 More examples / Más ejemplos:</strong></p>
+                <p>✅ I <strong>am</strong> from Colombia. (Soy de Colombia)</p>
+                <p>✅ You <strong>are</strong> my best friend. (Eres mi mejor amigo)</p>
+                <p>✅ He <strong>is</strong> very tall. (Él es muy alto)</p>
+                <p>✅ She <strong>is</strong> a nurse. (Ella es enfermera)</p>
+                <p>✅ It <strong>is</strong> a sunny day. (Es un día soleado)</p>
+                <p>✅ We <strong>are</strong> in English class. (Estamos en clase de inglés)</p>
+                <p>✅ They <strong>are</strong> at the park. (Ellos están en el parque)</p>
+            </div>
+
+            <br>
+
+            <h3>4. Negative Sentences (Oraciones Negativas)</h3>
+            <p>Para hacer una oración negativa, simplemente agregamos la palabra <strong>NOT</strong> después del verbo TO BE:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Structure</th>
+                    <th>Full Form</th>
+                    <th>Contraction</th>
+                    <th>Traducción</th>
+                </tr>
+                <tr>
+                    <td><strong>Subject + TO BE + NOT + complement</strong></td>
+                    <td>I am not a teacher.</td>
+                    <td>I'm not a teacher.</td>
+                    <td>Yo no soy profesor.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>You are not late.</td>
+                    <td>You aren't late.</td>
+                    <td>Tú no llegas tarde.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>He is not from Brazil.</td>
+                    <td>He isn't from Brazil.</td>
+                    <td>Él no es de Brasil.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>She is not sad.</td>
+                    <td>She isn't sad.</td>
+                    <td>Ella no está triste.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>It is not cold.</td>
+                    <td>It isn't cold.</td>
+                    <td>No hace frío.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>We are not tired.</td>
+                    <td>We aren't tired.</td>
+                    <td>Nosotros no estamos cansados.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>They are not at home.</td>
+                    <td>They aren't at home.</td>
+                    <td>Ellos no están en casa.</td>
+                </tr>
+            </table>
+
+            <div class="grammar-box">
+                <h4>⚠️ Important: Negative Contractions (Contracciones negativas)</h4>
+                <p><strong>is + not = isn't</strong> (He isn't, She isn't, It isn't)<br>
+                <strong>are + not = aren't</strong> (You aren't, We aren't, They aren't)<br>
+                <strong>am + not = am not</strong> (No existe contracción; se dice "I'm not")</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>📝 More negative examples:</strong></p>
+                <p>❌ I <strong>am not</strong> (I'm not) a doctor. → No soy doctor.</p>
+                <p>❌ You <strong>are not</strong> (aren't) late. → No llegas tarde.</p>
+                <p>❌ He <strong>is not</strong> (isn't) angry. → Él no está enojado.</p>
+                <p>❌ She <strong>is not</strong> (isn't) my sister. → Ella no es mi hermana.</p>
+                <p>❌ It <strong>is not</strong> (isn't) expensive. → No es caro.</p>
+                <p>❌ We <strong>are not</strong> (aren't) ready. → No estamos listos.</p>
+                <p>❌ They <strong>are not</strong> (aren't) here. → Ellos no están aquí.</p>
+            </div>
+
+            <br>
+
+            <h3>5. Interrogative Sentences (Oraciones Interrogativas / Preguntas)</h3>
+            <p>Para hacer preguntas con el verbo TO BE, simplemente invertimos el orden: el verbo TO BE va <strong>antes</strong> del sujeto:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Structure</th>
+                    <th>Question</th>
+                    <th>Short answer (Yes)</th>
+                    <th>Short answer (No)</th>
+                </tr>
+                <tr>
+                    <td><strong>TO BE + Subject + complement?</strong></td>
+                    <td>Am I late?</td>
+                    <td>Yes, you are.</td>
+                    <td>No, you aren't.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Are you a student?</td>
+                    <td>Yes, I am.</td>
+                    <td>No, I'm not.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Is he your brother?</td>
+                    <td>Yes, he is.</td>
+                    <td>No, he isn't.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Is she happy?</td>
+                    <td>Yes, she is.</td>
+                    <td>No, she isn't.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Is it your book?</td>
+                    <td>Yes, it is.</td>
+                    <td>No, it isn't.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Are we in the right room?</td>
+                    <td>Yes, we are.</td>
+                    <td>No, we aren't.</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Are they from Spain?</td>
+                    <td>Yes, they are.</td>
+                    <td>No, they aren't.</td>
+                </tr>
+            </table>
+
+            <div class="grammar-box">
+                <h4>💡 Recuerda: Respuestas cortas (Short answers)</h4>
+                <p>En inglés, no respondemos solo "Yes" o "No" — siempre repetimos el pronombre y el verbo TO BE:</p>
+                <p><strong>Are you Colombian?</strong> → ✅ Yes, I <strong>am</strong>. / ❌ No, I'm <strong>not</strong>.</p>
+                <p><strong>Is she your friend?</strong> → ✅ Yes, she <strong>is</strong>. / ❌ No, she <strong>isn't</strong>.</p>
+            </div>
+
+            <h4>❓ Wh- Questions (Preguntas con palabras interrogativas)</h4>
+            <p>Además de las preguntas de Yes/No, podemos usar palabras como <strong>What, Where, Who, How, When, Why</strong>:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Wh- word</th>
+                    <th>Question</th>
+                    <th>Answer</th>
+                    <th>Traducción</th>
+                </tr>
+                <tr>
+                    <td><strong>What</strong> (Qué)</td>
+                    <td>What <strong>is</strong> your name?</td>
+                    <td>My name is Carlos.</td>
+                    <td>¿Cuál es tu nombre?</td>
+                </tr>
+                <tr>
+                    <td><strong>Where</strong> (Dónde)</td>
+                    <td>Where <strong>is</strong> the school?</td>
+                    <td>It is on Main Street.</td>
+                    <td>¿Dónde está la escuela?</td>
+                </tr>
+                <tr>
+                    <td><strong>Who</strong> (Quién)</td>
+                    <td>Who <strong>is</strong> she?</td>
+                    <td>She is my mother.</td>
+                    <td>¿Quién es ella?</td>
+                </tr>
+                <tr>
+                    <td><strong>How</strong> (Cómo)</td>
+                    <td>How <strong>are</strong> you?</td>
+                    <td>I am fine, thanks.</td>
+                    <td>¿Cómo estás?</td>
+                </tr>
+                <tr>
+                    <td><strong>How old</strong> (Cuántos años)</td>
+                    <td>How old <strong>is</strong> your brother?</td>
+                    <td>He is 10 years old.</td>
+                    <td>¿Cuántos años tiene tu hermano?</td>
+                </tr>
+                <tr>
+                    <td><strong>When</strong> (Cuándo)</td>
+                    <td>When <strong>is</strong> the party?</td>
+                    <td>It is on Saturday.</td>
+                    <td>¿Cuándo es la fiesta?</td>
+                </tr>
+                <tr>
+                    <td><strong>Why</strong> (Por qué)</td>
+                    <td>Why <strong>are</strong> you sad?</td>
+                    <td>Because I am tired.</td>
+                    <td>¿Por qué estás triste?</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <div class="example-box">
+                <p><strong>📝 Complete dialogue / Diálogo completo:</strong></p>
+                <p style="background: #f0f7fc; padding: 1rem; border-radius: 1rem; border-left: 3px solid #1294db;">
+                    <strong>Maria:</strong> Hello! My name <strong>is</strong> Maria. <strong>Are</strong> you a new student?<br>
+                    <strong>Tom:</strong> Yes, I <strong>am</strong>! I <strong>am</strong> Tom. Nice to meet you!<br>
+                    <strong>Maria:</strong> Nice to meet you too. Where <strong>are</strong> you from?<br>
+                    <strong>Tom:</strong> I <strong>am</strong> from the United States. And you?<br>
+                    <strong>Maria:</strong> I <strong>am</strong> from Colombia. <strong>Is</strong> this your first day?<br>
+                    <strong>Tom:</strong> Yes, it <strong>is</strong>. I <strong>am</strong> a little nervous.<br>
+                    <strong>Maria:</strong> Don't worry! You <strong>are</strong> in the right class. We <strong>are</strong> all friendly here.<br>
+                    <strong>Tom:</strong> Thank you! You <strong>are</strong> very kind.<br>
+                    <strong>Maria:</strong> You <strong>are</strong> welcome! See you later!
+                </p>
+            </div>
+
+            <h3>6. Summary Table — All Forms (Resumen — Todas las formas)</h3>
+            <p>Aquí tienes un resumen completo del verbo TO BE en todas sus formas:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Subject</th>
+                    <th>Affirmative</th>
+                    <th>Negative (full)</th>
+                    <th>Negative (contracted)</th>
+                    <th>Question</th>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>I <strong>am</strong></td>
+                    <td>I am not</td>
+                    <td>I'm not</td>
+                    <td>Am I?</td>
+                </tr>
+                <tr>
+                    <td>You</td>
+                    <td>You <strong>are</strong></td>
+                    <td>You are not</td>
+                    <td>You aren't</td>
+                    <td>Are you?</td>
+                </tr>
+                <tr>
+                    <td>He</td>
+                    <td>He <strong>is</strong></td>
+                    <td>He is not</td>
+                    <td>He isn't</td>
+                    <td>Is he?</td>
+                </tr>
+                <tr>
+                    <td>She</td>
+                    <td>She <strong>is</strong></td>
+                    <td>She is not</td>
+                    <td>She isn't</td>
+                    <td>Is she?</td>
+                </tr>
+                <tr>
+                    <td>It</td>
+                    <td>It <strong>is</strong></td>
+                    <td>It is not</td>
+                    <td>It isn't</td>
+                    <td>Is it?</td>
+                </tr>
+                <tr>
+                    <td>We</td>
+                    <td>We <strong>are</strong></td>
+                    <td>We are not</td>
+                    <td>We aren't</td>
+                    <td>Are we?</td>
+                </tr>
+                <tr>
+                    <td>They</td>
+                    <td>They <strong>are</strong></td>
+                    <td>They are not</td>
+                    <td>They aren't</td>
+                    <td>Are they?</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <h3>📌 Vocabulary Summary (Resumen de vocabulario útil)</h3>
+            <p>Estas palabras te ayudarán a crear muchas oraciones con el verbo TO BE:</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>English</th>
+                    <th>Español</th>
+                </tr>
+                <tr>
+                    <td>Happy</td>
+                    <td>Feliz</td>
+                </tr>
+                <tr>
+                    <td>Sad</td>
+                    <td>Triste</td>
+                </tr>
+                <tr>
+                    <td>Tired</td>
+                    <td>Cansado/a</td>
+                </tr>
+                <tr>
+                    <td>Hungry</td>
+                    <td>Hambriento/a</td>
+                </tr>
+                <tr>
+                    <td>Thirsty</td>
+                    <td>Sediento/a</td>
+                </tr>
+                <tr>
+                    <td>Tall / Short</td>
+                    <td>Alto / Bajo</td>
+                </tr>
+                <tr>
+                    <td>Big / Small</td>
+                    <td>Grande / Pequeño</td>
+                </tr>
+                <tr>
+                    <td>Hot / Cold</td>
+                    <td>Caliente / Frío</td>
+                </tr>
+                <tr>
+                    <td>Young / Old</td>
+                    <td>Joven / Viejo</td>
+                </tr>
+                <tr>
+                    <td>Beautiful / Ugly</td>
+                    <td>Hermoso / Feo</td>
+                </tr>
+                <tr>
+                    <td>Good / Bad</td>
+                    <td>Bueno / Malo</td>
+                </tr>
+                <tr>
+                    <td>Here / There</td>
+                    <td>Aquí / Allí</td>
+                </tr>
+                <tr>
+                    <td>At home</td>
+                    <td>En casa</td>
+                </tr>
+                <tr>
+                    <td>At school</td>
+                    <td>En la escuela</td>
+                </tr>
+                <tr>
+                    <td>A student</td>
+                    <td>Un estudiante</td>
+                </tr>
+                <tr>
+                    <td>A teacher</td>
+                    <td>Un profesor</td>
+                </tr>
+                <tr>
+                    <td>A doctor</td>
+                    <td>Un doctor</td>
+                </tr>
+                <tr>
+                    <td>A friend</td>
+                    <td>Un amigo</td>
+                </tr>
+            </table>
+
+            <h3>📝 Practice Exercises (Ejercicios de práctica)</h3>
+
+            <div class="actividad-box">
+                <h4>✏️ Exercise 1: Complete with AM, IS or ARE</h4>
+                <p>Completa cada oración con la forma correcta del verbo TO BE:</p>
+                <ol>
+                    <li>I ______ a student.</li>
+                    <li>She ______ my best friend.</li>
+                    <li>We ______ from Colombia.</li>
+                    <li>They ______ very happy today.</li>
+                    <li>He ______ a doctor.</li>
+                    <li>It ______ a beautiful day.</li>
+                    <li>You ______ very kind.</li>
+                    <li>The books ______ on the table.</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Exercise 2: Make negative sentences</h4>
+                <p>Convierte las siguientes oraciones a negativas:</p>
+                <ol>
+                    <li>I am tired. → I ______ ______ tired.</li>
+                    <li>She is from Mexico. → She ______ ______ from Mexico.</li>
+                    <li>They are at home. → They ______ ______ at home.</li>
+                    <li>He is a teacher. → He ______ ______ a teacher.</li>
+                    <li>We are hungry. → We ______ ______ hungry.</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Exercise 3: Make questions</h4>
+                <p>Convierte las siguientes oraciones en preguntas:</p>
+                <ol>
+                    <li>You are a student. → ______ ______ a student?</li>
+                    <li>She is happy. → ______ ______ happy?</li>
+                    <li>They are from Brazil. → ______ ______ from Brazil?</li>
+                    <li>It is your book. → ______ ______ your book?</li>
+                    <li>We are late. → ______ ______ late?</li>
+                </ol>
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
+            <h4>🔗 Enlaces de interés / Interesting links</h4>
+            <a href="https://www.youtube.com/watch?v=nxk6IXlBqmU" class="enlace" target="_blank">🎥 Verb TO BE - English for kids (Explicación completa del verbo TO BE)</a>
+            <a href="https://www.youtube.com/watch?v=CjaefxxDF9c" class="enlace" target="_blank">🎥 50 Oraciones con el vervo tobe</a>
         </div>
 
         <!-- Actividad -->
         <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <h4>✍️ Actividad de la unidad / Unit Activity</h4>
+            <p><strong>📄 Download the worksheet:</strong></p>
+            <a href="https://drive.google.com/file/d/1ewDzIwC1EiB7CKKQ6IWE3s6IMd46aEcc/view?usp=sharing" class="enlace" target="_blank">📘 TALLER UNIDAD 1 - VERB TO BE (PDF)</a>
+            <br><br>
+            <p><strong>Instrucciones (Instructions):</strong></p>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>Complete the conjugation table for the verb TO BE with all pronouns.</li>
+                <li>Write 5 affirmative sentences, 5 negative sentences, and 5 questions using the verb TO BE.</li>
+                <li>Write a short paragraph (3-5 sentences) introducing yourself using TO BE. Example: "Hello! I am Maria. I am 12 years old. I am from Colombia. I am a student."</li>
+                <li>Practice the dialogue from this unit with a classmate and record a short video.</li>
+                <li>Create 3 "Wh-" questions (What, Where, Who, How) with TO BE and answer them.</li>
             </ul>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=6" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -363,7 +1029,7 @@
             4: "Química en la Vida"
         },
         6: { // Inglés
-            1: "Greetings & Basics",
+            1: "Verb TO BE",
             2: "Present Simple",
             3: "Everyday Activities",
             4: "Travel & Culture"
@@ -383,7 +1049,7 @@
         3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
         5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
-        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
+        6: ["El verbo TO BE (ser/estar): conjugación y usos", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
         7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
     };
     
