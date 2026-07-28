@@ -217,6 +217,108 @@
             margin: 0.5rem 0;
         }
 
+        /* Tablas */
+        .tabla-ingles {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-ingles th {
+            background: #1e3e5c;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-ingles td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e8f0f6;
+            color: #2c3e50;
+        }
+
+        .tabla-ingles tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabla-ingles tr:hover td {
+            background: #f0f7fc;
+        }
+
+        /* Caja de regla gramatical */
+        .grammar-box {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 1.2rem;
+            border-radius: 1rem;
+            border-left: 4px solid #ff9800;
+            margin: 1.5rem 0;
+        }
+
+        .grammar-box h4 {
+            color: #e65100;
+        }
+
+        /* Caja de ejemplo bilingüe */
+        .bilingual-box {
+            background: #e8f5e9;
+            border-radius: 1rem;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .bilingual-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        .bilingual-box .en {
+            font-weight: 600;
+            color: #1e3e5c;
+        }
+
+        .bilingual-box .es {
+            color: #5e7f97;
+            font-style: italic;
+        }
+
+        /* Muestra de color inline */
+        .color-swatch {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            vertical-align: middle;
+            margin-right: 6px;
+            border: 1px solid rgba(0,0,0,0.15);
+        }
+
+        .color-demo {
+            display: inline-block;
+            width: 50px;
+            height: 22px;
+            border-radius: 4px;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+        }
+
+        /* Caja de ejemplo destacada */
+        .example-box {
+            background: #f0f7fc;
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 3px solid #1294db;
+            margin: 1rem 0;
+        }
+
+        .example-box p {
+            margin-bottom: 0.3rem;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
@@ -241,57 +343,641 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
+            <h2>📌 Introduction / Introducción</h2>
 
+            <p>How would you describe your best friend? Is he <strong>tall</strong> or <strong>short</strong>? Is she <strong>friendly</strong> or <strong>shy</strong>? What color is your favorite shirt? Is it <strong>blue</strong>, <strong>red</strong>, or <strong>green</strong>? To answer these questions, you need to learn <strong>adjectives</strong> and <strong>colors</strong> in English!</p>
 
-            <p>【escribe aqui】</p>
+            <p>¿Cómo describirías a tu mejor amigo? ¿Es <strong>alto</strong> o <strong>bajo</strong>? ¿Es <strong>amigable</strong> o <strong>tímido</strong>? ¿De qué color es tu camiseta favorita? ¿Es <strong>azul</strong>, <strong>roja</strong> o <strong>verde</strong>? Para responder estas preguntas, necesitas aprender los <strong>adjetivos</strong> y los <strong>colores</strong> en inglés. ¡En esta unidad aprenderás a describir personas, objetos y animales con muchas palabras nuevas!</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <div class="grammar-box">
+                <h4>💡 Did you know? / ¿Sabías que...?</h4>
+                <p>In English, adjectives <strong>never</strong> change their form. They are the same for masculine, feminine, singular, and plural. For example: <em>a tall boy</em>, <em>a tall girl</em>, <em>tall boys</em>, <em>tall girls</em>. In Spanish, the adjective changes (alto, alta, altos, altas), but in English it stays the same!<br><br>
+                En inglés, los adjetivos <strong>nunca</strong> cambian su forma. Son iguales para masculino, femenino, singular y plural. ¡Mucho más fácil que el español!</p>
+            </div>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <h2>🎯 General Objective / Objetivo general</h2>
+            <p>Identify and use a wide variety of <strong>adjectives</strong> and <strong>colors</strong> in English to describe people, objects, animals, and places in simple sentences. / Identificar y usar una gran variedad de <strong>adjetivos</strong> y <strong>colores</strong> en inglés para describir personas, objetos, animales y lugares en oraciones sencillas.</p>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <h2>📖 Content / Contenido</h2>
 
-            <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
-            </ul>
+            <!-- 1. What is an Adjective -->
+            <h2>1. What is an Adjective? / ¿Qué es un Adjetivo?</h2>
+            <p>An <strong>adjective</strong> is a word that describes a noun (a person, animal, place, or thing). Adjectives tell us more about the noun: how it looks, how it feels, what it is like. / Un <strong>adjetivo</strong> es una palabra que describe a un sustantivo (una persona, animal, lugar o cosa). Los adjetivos nos dan más información sobre el sustantivo: cómo se ve, cómo se siente, cómo es.</p>
+
+            <img src="imagenes/162.jpg" alt="">
+
+            <div class="bilingual-box">
+                <p><span class="en">A <strong>big</strong> house</span><br><span class="es">Una casa <strong>grande</strong></span></p>
+                <p><span class="en">A <strong>happy</strong> dog</span><br><span class="es">Un perro <strong>feliz</strong></span></p>
+                <p><span class="en">A <strong>beautiful</strong> flower</span><br><span class="es">Una flor <strong>hermosa</strong></span></p>
+                <p><span class="en">A <strong>red</strong> apple</span><br><span class="es">Una manzana <strong>roja</strong></span></p>
+            </div>
+
+            <!-- 2. Position of Adjectives -->
+            <h2>2. The Position of Adjectives / La Posición de los Adjetivos</h2>
+            <p>In English, adjectives <strong>ALWAYS</strong> go <strong>BEFORE</strong> the noun. In Spanish, they usually go after. This is a very important difference! / En inglés, los adjetivos <strong>SIEMPRE</strong> van <strong>ANTES</strong> del sustantivo. ¡Esta es una diferencia muy importante!</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Spanish / Español</th>
+                    <th>English / Inglés</th>
+                    <th>Rule</th>
+                </tr>
+                <tr>
+                    <td>Un carro <strong>rojo</strong></td>
+                    <td>A <strong>red</strong> car</td>
+                    <td>Adjective BEFORE noun</td>
+                </tr>
+                <tr>
+                    <td>Una chica <strong>inteligente</strong></td>
+                    <td>An <strong>intelligent</strong> girl</td>
+                    <td>Adjective BEFORE noun</td>
+                </tr>
+                <tr>
+                    <td>Un libro <strong>interesante</strong></td>
+                    <td>An <strong>interesting</strong> book</td>
+                    <td>Adjective BEFORE noun</td>
+                </tr>
+                <tr>
+                    <td>Un gato <strong>negro</strong></td>
+                    <td>A <strong>black</strong> cat</td>
+                    <td>Adjective BEFORE noun</td>
+                </tr>
+            </table>
+
+            <div class="grammar-box">
+                <h4>📝 Important Rule / Regla Importante</h4>
+                <p>In English: <strong>ADJECTIVE + NOUN</strong><br>
+                ✅ <em>a <strong>blue</strong> sky</em><br>
+                ❌ <em>a sky blue</em> (Incorrect)<br><br>
+                In Spanish: <strong>NOUN + ADJECTIVE</strong> (usually)<br>
+                <em>un cielo <strong>azul</strong></em></p>
+            </div>
+
+            <br>
+
+            <!-- 3. Common Adjectives by Category -->
+            <h2>3. Common Adjectives / Adjetivos Comunes</h2>
+            <p>Here are the most useful adjectives in English, organized by category. / Aquí están los adjetivos más útiles en inglés, organizados por categoría.</p>
+
+            <h4>a) Appearance / Apariencia (How someone or something looks)</h4>
+            <table class="tabla-ingles">
+                <tr>
+                    <th>English</th>
+                    <th>Spanish</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><strong>Tall</strong></td>
+                    <td>Alto</td>
+                    <td>He is a <strong>tall</strong> boy.</td>
+                </tr>
+                <tr>
+                    <td><strong>Short</strong></td>
+                    <td>Bajo</td>
+                    <td>She is <strong>short</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Young</strong></td>
+                    <td>Joven</td>
+                    <td>My dog is <strong>young</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Old</strong></td>
+                    <td>Viejo / Mayor</td>
+                    <td>My grandfather is <strong>old</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Beautiful</strong></td>
+                    <td>Hermoso / Hermosa</td>
+                    <td>She is a <strong>beautiful</strong> woman.</td>
+                </tr>
+                <tr>
+                    <td><strong>Handsome</strong></td>
+                    <td>Guapo</td>
+                    <td>He is a <strong>handsome</strong> man.</td>
+                </tr>
+                <tr>
+                    <td><strong>Pretty</strong></td>
+                    <td>Bonito / Linda</td>
+                    <td>She has a <strong>pretty</strong> face.</td>
+                </tr>
+                <tr>
+                    <td><strong>Ugly</strong></td>
+                    <td>Feo</td>
+                    <td>That monster is <strong>ugly</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fat</strong></td>
+                    <td>Gordo</td>
+                    <td>The cat is <strong>fat</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Thin</strong></td>
+                    <td>Delgado</td>
+                    <td>She is very <strong>thin</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Strong</strong></td>
+                    <td>Fuerte</td>
+                    <td>My father is <strong>strong</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Weak</strong></td>
+                    <td>Débil</td>
+                    <td>The sick bird is <strong>weak</strong>.</td>
+                </tr>
+            </table>
+
+            <h4>b) Personality / Personalidad (How someone behaves)</h4>
+            <table class="tabla-ingles">
+                <tr>
+                    <th>English</th>
+                    <th>Spanish</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><strong>Happy</strong></td>
+                    <td>Feliz / Alegre</td>
+                    <td>She is a <strong>happy</strong> girl.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sad</strong></td>
+                    <td>Triste</td>
+                    <td>He is <strong>sad</strong> today.</td>
+                </tr>
+                <tr>
+                    <td><strong>Friendly</strong></td>
+                    <td>Amigable / Simpático</td>
+                    <td>My neighbors are <strong>friendly</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Shy</strong></td>
+                    <td>Tímido</td>
+                    <td>She is a <strong>shy</strong> student.</td>
+                </tr>
+                <tr>
+                    <td><strong>Intelligent</strong></td>
+                    <td>Inteligente</td>
+                    <td>He is an <strong>intelligent</strong> boy.</td>
+                </tr>
+                <tr>
+                    <td><strong>Funny</strong></td>
+                    <td>Gracioso / Cómico</td>
+                    <td>My brother is very <strong>funny</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Kind</strong></td>
+                    <td>Amable / Bondadoso</td>
+                    <td>She is a <strong>kind</strong> person.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mean</strong></td>
+                    <td>Grosero / Malo</td>
+                    <td>That boy is <strong>mean</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Brave</strong></td>
+                    <td>Valiente</td>
+                    <td>The firefighter is <strong>brave</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Lazy</strong></td>
+                    <td>Perezoso</td>
+                    <td>My cat is <strong>lazy</strong>.</td>
+                </tr>
+            </table>
+
+            <h4>c) Size / Tamaño (How big or small something is)</h4>
+            <table class="tabla-ingles">
+                <tr>
+                    <th>English</th>
+                    <th>Spanish</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><strong>Big</strong></td>
+                    <td>Grande</td>
+                    <td>I have a <strong>big</strong> house.</td>
+                </tr>
+                <tr>
+                    <td><strong>Small</strong></td>
+                    <td>Pequeño</td>
+                    <td>She has a <strong>small</strong> dog.</td>
+                </tr>
+                <tr>
+                    <td><strong>Large</strong></td>
+                    <td>Grande / Amplio</td>
+                    <td>We need a <strong>large</strong> table.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tiny</strong></td>
+                    <td>Diminuto / Muy pequeño</td>
+                    <td>Look at that <strong>tiny</strong> ant!</td>
+                </tr>
+                <tr>
+                    <td><strong>Long</strong></td>
+                    <td>Largo</td>
+                    <td>She has <strong>long</strong> hair.</td>
+                </tr>
+                <tr>
+                    <td><strong>Short</strong></td>
+                    <td>Corto</td>
+                    <td>He has <strong>short</strong> hair.</td>
+                </tr>
+            </table>
+
+            <h4>d) Emotions / Emociones (How someone feels)</h4>
+            <table class="tabla-ingles">
+                <tr>
+                    <th>English</th>
+                    <th>Spanish</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><strong>Happy</strong></td>
+                    <td>Feliz</td>
+                    <td>I am <strong>happy</strong> today.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sad</strong></td>
+                    <td>Triste</td>
+                    <td>She is <strong>sad</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Angry</strong></td>
+                    <td>Enojado</td>
+                    <td>He is <strong>angry</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tired</strong></td>
+                    <td>Cansado</td>
+                    <td>We are <strong>tired</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Hungry</strong></td>
+                    <td>Hambriento</td>
+                    <td>The cat is <strong>hungry</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Thirsty</strong></td>
+                    <td>Sediento</td>
+                    <td>I am <strong>thirsty</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Scared</strong></td>
+                    <td>Asustado</td>
+                    <td>She is <strong>scared</strong> of spiders.</td>
+                </tr>
+                <tr>
+                    <td><strong>Excited</strong></td>
+                    <td>Emocionado</td>
+                    <td>We are <strong>excited</strong> about the trip!</td>
+                </tr>
+            </table>
+
+            <br>
+
+            <!-- 4. Colors -->
+            <h2>4. Colors / Los Colores</h2>
+            <p>Colors are adjectives too! They describe the color of a person, animal, or thing. / ¡Los colores también son adjetivos! Describen el color de una persona, animal o cosa.</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Color</th>
+                    <th>English</th>
+                    <th>Spanish</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#ff0000;"></span></td>
+                    <td><strong>Red</strong></td>
+                    <td>Rojo</td>
+                    <td>A <strong>red</strong> apple</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#0000ff;"></span></td>
+                    <td><strong>Blue</strong></td>
+                    <td>Azul</td>
+                    <td>A <strong>blue</strong> sky</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#00aa00;"></span></td>
+                    <td><strong>Green</strong></td>
+                    <td>Verde</td>
+                    <td><strong>Green</strong> grass</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#ffff00;"></span></td>
+                    <td><strong>Yellow</strong></td>
+                    <td>Amarillo</td>
+                    <td>A <strong>yellow</strong> sun</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#ff8800;"></span></td>
+                    <td><strong>Orange</strong></td>
+                    <td>Naranja</td>
+                    <td>An <strong>orange</strong> orange</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#800080;"></span></td>
+                    <td><strong>Purple</strong></td>
+                    <td>Púrpura / Morado</td>
+                    <td>A <strong>purple</strong> flower</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#ff69b4;"></span></td>
+                    <td><strong>Pink</strong></td>
+                    <td>Rosado</td>
+                    <td>A <strong>pink</strong> dress</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#8b4513;"></span></td>
+                    <td><strong>Brown</strong></td>
+                    <td>Café / Marrón</td>
+                    <td>A <strong>brown</strong> dog</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#000000;"></span></td>
+                    <td><strong>Black</strong></td>
+                    <td>Negro</td>
+                    <td>A <strong>black</strong> cat</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#ffffff; border:1px solid #ccc;"></span></td>
+                    <td><strong>White</strong></td>
+                    <td>Blanco</td>
+                    <td><strong>White</strong> snow</td>
+                </tr>
+                <tr>
+                    <td><span class="color-demo" style="background:#808080;"></span></td>
+                    <td><strong>Gray</strong> / <strong>Grey</strong></td>
+                    <td>Gris</td>
+                    <td>A <strong>gray</strong> elephant</td>
+                </tr>
+            </table>
+
+            <div class="grammar-box">
+                <h4>🎨 Remember the Colors! / ¡Recuerda los Colores!</h4>
+                <p><strong>ROYGBIV</strong> — The colors of the rainbow in order: / Los colores del arcoíris en orden:<br>
+                <strong>R</strong>ed - <strong>O</strong>range - <strong>Y</strong>ellow - <strong>G</strong>reen - <strong>B</strong>lue - <strong>I</strong>ndigo - <strong>V</strong>iolet<br><br>
+                <span style="display:inline-block; width:30px; height:20px; background:red; border-radius:3px;"></span>
+                <span style="display:inline-block; width:30px; height:20px; background:orange; border-radius:3px;"></span>
+                <span style="display:inline-block; width:30px; height:20px; background:yellow; border-radius:3px;"></span>
+                <span style="display:inline-block; width:30px; height:20px; background:green; border-radius:3px;"></span>
+                <span style="display:inline-block; width:30px; height:20px; background:blue; border-radius:3px;"></span>
+                <span style="display:inline-block; width:30px; height:20px; background:indigo; border-radius:3px;"></span>
+                <span style="display:inline-block; width:30px; height:20px; background:violet; border-radius:3px;"></span></p>
+            </div>
+
+            <!-- 5. TO BE + Adjective -->
+            <h2>5. Using TO BE + Adjective / Usando TO BE + Adjetivo</h2>
+            <p>You can use the verb <strong>TO BE</strong> (am, is, are) together with adjectives to describe people and things. The structure is: <strong>Subject + TO BE + Adjective</strong>. / Puedes usar el verbo <strong>TO BE</strong> (am, is, are) junto con adjetivos para describir personas y cosas. La estructura es: <strong>Sujeto + TO BE + Adjetivo</strong>.</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Subject</th>
+                    <th>TO BE</th>
+                    <th>Adjective</th>
+                    <th>Complete Sentence</th>
+                </tr>
+                <tr>
+                    <td>I</td>
+                    <td>am</td>
+                    <td>happy</td>
+                    <td>I <strong>am happy</strong>. (Estoy feliz)</td>
+                </tr>
+                <tr>
+                    <td>You</td>
+                    <td>are</td>
+                    <td>tall</td>
+                    <td>You <strong>are tall</strong>. (Eres alto)</td>
+                </tr>
+                <tr>
+                    <td>He</td>
+                    <td>is</td>
+                    <td>strong</td>
+                    <td>He <strong>is strong</strong>. (Él es fuerte)</td>
+                </tr>
+                <tr>
+                    <td>She</td>
+                    <td>is</td>
+                    <td>kind</td>
+                    <td>She <strong>is kind</strong>. (Ella es amable)</td>
+                </tr>
+                <tr>
+                    <td>It</td>
+                    <td>is</td>
+                    <td>small</td>
+                    <td>It <strong>is small</strong>. (Es pequeño)</td>
+                </tr>
+                <tr>
+                    <td>We</td>
+                    <td>are</td>
+                    <td>tired</td>
+                    <td>We <strong>are tired</strong>. (Estamos cansados)</td>
+                </tr>
+                <tr>
+                    <td>They</td>
+                    <td>are</td>
+                    <td>friendly</td>
+                    <td>They <strong>are friendly</strong>. (Ellos son amigables)</td>
+                </tr>
+            </table>
+
+            <div class="bilingual-box">
+                <p><span class="en">With colors:</span></p>
+                <p><span class="en">The car <strong>is red</strong>.</span><br><span class="es">El carro <strong>es rojo</strong>.</span></p>
+                <p><span class="en">My eyes <strong>are green</strong>.</span><br><span class="es">Mis ojos <strong>son verdes</strong>.</span></p>
+                <p><span class="en">The sky <strong>is blue</strong>.</span><br><span class="es">El cielo <strong>es azul</strong>.</span></p>
+                <p><span class="en">Her shoes <strong>are black</strong>.</span><br><span class="es">Sus zapatos <strong>son negros</strong>.</span></p>
+            </div>
+
+            <!-- 6. Adjective + Noun Phrases -->
+            <h2>6. Adjective + Noun Phrases / Frases de Adjetivo + Sustantivo</h2>
+            <p>To describe a noun with an adjective, put the adjective <strong>before</strong> the noun. The structure is: <strong>Article + Adjective + Noun</strong>. / Para describir un sustantivo con un adjetivo, pon el adjetivo <strong>antes</strong> del sustantivo. La estructura es: <strong>Artículo + Adjetivo + Sustantivo</strong>.</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Article</th>
+                    <th>Adjective</th>
+                    <th>Noun</th>
+                    <th>Complete Phrase</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>big</td>
+                    <td>house</td>
+                    <td>A <strong>big house</strong> (Una casa grande)</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>red</td>
+                    <td>car</td>
+                    <td>A <strong>red car</strong> (Un carro rojo)</td>
+                </tr>
+                <tr>
+                    <td>An</td>
+                    <td>old</td>
+                    <td>book</td>
+                    <td>An <strong>old book</strong> (Un libro viejo)</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>friendly</td>
+                    <td>cat</td>
+                    <td>A <strong>friendly cat</strong> (Un gato amigable)</td>
+                </tr>
+                <tr>
+                    <td>An</td>
+                    <td>ugly</td>
+                    <td>monster</td>
+                    <td>An <strong>ugly monster</strong> (Un monstruo feo)</td>
+                </tr>
+            </table>
+
+            <div class="grammar-box">
+                <h4>📝 Use "an" before vowels / Usa "an" antes de vocales</h4>
+                <p>Use <strong>"an"</strong> instead of <strong>"a"</strong> when the adjective starts with a vowel sound (a, e, i, o, u):<br>
+                ✅ <strong>An</strong> <em>old</em> man<br>
+                ✅ <strong>An</strong> <em>intelligent</em> girl<br>
+                ✅ <strong>An</strong> <em>orange</em> balloon<br>
+                ❌ <em>A</em> old man (Incorrect)<br>
+                ❌ <em>A</em> intelligent girl (Incorrect)</p>
+            </div>
+
+            <br>
+
+            <!-- 7. Multiple Adjectives -->
+            <h2>7. Using Multiple Adjectives / Usando Múltiples Adjetivos</h2>
+            <p>You can use two or more adjectives together! The typical order is: <strong>Opinion + Size + Color + Noun</strong>. / ¡Puedes usar dos o más adjetivos juntos! El orden típico es: <strong>Opinión + Tamaño + Color + Sustantivo</strong>.</p>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Opinion</th>
+                    <th>Size</th>
+                    <th>Color</th>
+                    <th>Noun</th>
+                    <th>Complete Phrase</th>
+                </tr>
+                <tr>
+                    <td>Beautiful</td>
+                    <td>big</td>
+                    <td>white</td>
+                    <td>house</td>
+                    <td>A <strong>beautiful big white</strong> house</td>
+                </tr>
+                <tr>
+                    <td>Ugly</td>
+                    <td>small</td>
+                    <td>green</td>
+                    <td>monster</td>
+                    <td>An <strong>ugly small green</strong> monster</td>
+                </tr>
+                <tr>
+                    <td>Nice</td>
+                    <td>long</td>
+                    <td>black</td>
+                    <td>dress</td>
+                    <td>A <strong>nice long black</strong> dress</td>
+                </tr>
+                <tr>
+                    <td>Funny</td>
+                    <td>short</td>
+                    <td>blue</td>
+                    <td>shirt</td>
+                    <td>A <strong>funny short blue</strong> shirt</td>
+                </tr>
+            </table>
+
+            <div class="example-box">
+                <p><strong>More examples / Más ejemplos:</strong></p>
+                <p>✅ She has a <strong>beautiful big red</strong> balloon. (Ella tiene un globo rojo grande hermoso)</p>
+                <p>✅ He is a <strong>tall handsome young</strong> man. (Él es un hombre joven alto y guapo)</p>
+                <p>✅ I have a <strong>small old brown</strong> dog. (Tengo un perro café pequeño y viejo)</p>
+            </div>
+
+            <!-- 8. Practice Sentences -->
+            <h2>8. Practice Sentences / Oraciones de Práctica</h2>
+            <p>Read these sentences and try to understand them. Then, practice creating your own! / Lee estas oraciones y trata de entenderlas. ¡Luego, practica creando las tuyas propias!</p>
+
+            <div class="bilingual-box">
+                <p><span class="en">1. Maria is a <strong>tall</strong> and <strong>beautiful</strong> girl.</span><br><span class="es">María es una chica <strong>alta</strong> y <strong>hermosa</strong>.</span></p>
+                <p><span class="en">2. My dog is <strong>small</strong>, <strong>brown</strong>, and very <strong>friendly</strong>.</span><br><span class="es">Mi perro es <strong>pequeño</strong>, <strong>café</strong> y muy <strong>amigable</strong>.</span></p>
+                <p><span class="en">3. The sky is <strong>blue</strong> and the sun is <strong>yellow</strong>.</span><br><span class="es">El cielo es <strong>azul</strong> y el sol es <strong>amarillo</strong>.</span></p>
+                <p><span class="en">4. I have a <strong>new black</strong> phone. It is <strong>great</strong>!</span><br><span class="es">Tengo un teléfono <strong>negro nuevo</strong>. ¡Es <strong>genial</strong>!</span></p>
+                <p><span class="en">5. They are <strong>happy</strong> and <strong>excited</strong> about the party.</span><br><span class="es">Ellos están <strong>felices</strong> y <strong>emocionados</strong> por la fiesta.</span></p>
+                <p><span class="en">6. She has <strong>long curly blond</strong> hair. / Ella tiene cabello <strong>largo, rizado y rubio</strong>.</span></p>
+                <p><span class="en">7. He is a <strong>kind intelligent</strong> boy. / Él es un chico <strong>amable e inteligente</strong>.</span></p>
+                <p><span class="en">8. The <strong>old white</strong> house is <strong>beautiful</strong>. / La casa <strong>blanca vieja</strong> es <strong>hermosa</strong>.</span></p>
+            </div>
+
+            <!-- Summary -->
+            <h2>📝 Summary / Resumen</h2>
+
+            <table class="tabla-ingles">
+                <tr>
+                    <th>Rule / Regla</th>
+                    <th>Explanation / Explicación</th>
+                    <th>Example / Ejemplo</th>
+                </tr>
+                <tr>
+                    <td><strong>Adjective + Noun</strong></td>
+                    <td>Adjectives go BEFORE the noun in English</td>
+                    <td>A <strong>red</strong> apple ✅ (NOT "an apple red")</td>
+                </tr>
+                <tr>
+                    <td><strong>TO BE + Adjective</strong></td>
+                    <td>Use am/is/are + adjective to describe</td>
+                    <td>She <strong>is</strong> <strong>tall</strong>.</td>
+                </tr>
+                <tr>
+                    <td><strong>Colors are adjectives</strong></td>
+                    <td>Colors describe nouns like other adjectives</td>
+                    <td>A <strong>blue</strong> car</td>
+                </tr>
+                <tr>
+                    <td><strong>Multiple adjectives</strong></td>
+                    <td>Opinion + Size + Color + Noun</td>
+                    <td>A <strong>beautiful big red</strong> flower</td>
+                </tr>
+                <tr>
+                    <td><strong>Adjectives never change</strong></td>
+                    <td>No masculine/feminine/plural forms</td>
+                    <td>tall boy, tall girl, tall children</td>
+                </tr>
+            </table>
+
+            <div class="grammar-box">
+                <h4>⭐ Key Vocabulary / Vocabulario Clave</h4>
+                <p><strong>Adjectives:</strong> tall, short, big, small, happy, sad, friendly, shy, intelligent, funny, kind, beautiful, handsome, young, old, strong, tired, hungry, thirsty<br>
+                <strong>Colors:</strong> red, blue, green, yellow, orange, purple, pink, brown, black, white, gray</p>
+            </div>
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
+            <h4>🔗 Useful Links / Enlaces de interés</h4>
+            <a href="https://www.youtube.com/watch?v=nCuY3LoSCZ0" class="enlace" target="_blank">🎥  adjetivos en inglés</a>
+            <a href="https://www.youtube.com/watch?v=1G6ZtEhmmvI" class="enlace" target="_blank">🎨  colores en inglés</a>
+            <a href="https://www.youtube.com/watch?v=BpMicC0AWNE" class="enlace" target="_blank">📘 Describing People - Aprende a describir personas en inglés</a>
         </div>
 
         <!-- Actividad -->
         <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
-            <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
-            </ul>
-        </div>
+            <h4>✍️ Actividad de la unidad / Unit Activity</h4>
+            <p><strong>📄 Download the worksheet:</strong></p>
+            <a href="https://drive.google.com/file/d/1OXy36N6HFv8RXwG8ux3Qjxf0JP4hzUN0/view?usp=sharing" class="enlace" target="_blank">📘 TALLER UNIDAD 3 ADJETIVOS Y COLORES (PDF)</a>
+            <br><br>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
-                ⬅️ Volver al curso
+            <a href="detalle-curso.html?id=6" class="btn-volver">
+                ⬅️ Back to course / Volver al curso
             </a>
         </div>
     </div>
@@ -365,7 +1051,7 @@
         6: { // Inglés
             1: "Greetings & Basics",
             2: "Present Simple",
-            3: "Everyday Activities",
+            3: "Adjectives & Colors",
             4: "Travel & Culture"
         },
         7: { // Biología
@@ -383,7 +1069,7 @@
         3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
         5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
-        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
+        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Adjetivos y colores para describir", "Viajes, cultura y conversación"],
         7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
     };
     
