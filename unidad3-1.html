@@ -139,6 +139,98 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Caja de época histórica */
+        .epoca-box {
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .epoca-box.prehistoria {
+            background: linear-gradient(135deg, #f5f5dc, #d2b48c);
+            border-left: 6px solid #8B4513;
+        }
+
+        .epoca-box.edad-antigua {
+            background: linear-gradient(135deg, #fff8dc, #ffd700);
+            border-left: 6px solid #B8860B;
+        }
+
+        .epoca-box.edad-media {
+            background: linear-gradient(135deg, #dcdcdc, #a9a9a9);
+            border-left: 6px solid #4a4a4a;
+        }
+
+        .epoca-box.edad-moderna {
+            background: linear-gradient(135deg, #e6e6fa, #9370db);
+            border-left: 6px solid #4B0082;
+        }
+
+        .epoca-box.edad-contemporanea {
+            background: linear-gradient(135deg, #e0f7fa, #80deea);
+            border-left: 6px solid #00838f;
+        }
+
+        .epoca-box h3 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .epoca-box h4 {
+            color: #2c6280;
+            margin: 0.8rem 0 0.5rem;
+        }
+
+        .epoca-box ul {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .epoca-box li {
+            margin: 0.3rem 0;
+        }
+
+        /* Línea de tiempo visual */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: linear-gradient(to right, #8B4513, #B8860B, #4a4a4a, #4B0082, #00838f);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .timeline-item {
+            background: white;
+            border: 2px solid #1294db;
+            border-radius: 1rem;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1f3e54;
+            z-index: 1;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 100px;
+        }
+
         /* Caja para enlaces */
         .enlaces-box {
             background: rgba(18, 148, 219, 0.08);
@@ -217,12 +309,28 @@
             margin: 0.5rem 0;
         }
 
+        /* Caja de dato curioso */
+        .dato-curioso {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 4px solid #ff9800;
+            margin: 1.5rem 0;
+        }
+
+        .dato-curioso h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .timeline { flex-direction: column; }
+            .timeline::before { display: none; }
         }
     </style>
 </head>
@@ -241,59 +349,315 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
 
+            <h2 style="font-size:2rem;">📌 Introducción</h2>
 
-            <p>【en esta unidad vamos a explorar dos operaciones ecenciales radicacion y potenciacion】</p>
-            <p>【POTENCIACIÓN: la operación que nos permite expresar de forma corta multiplicaciones repetidas. Aprenderemos qué son la base, el exponente, y cómo crecen los números de forma sorprendente.
+            <p>La historia de la humanidad es un viaje fascinante que comenzó hace millones de años. Para poder estudiarla y entenderla mejor, los historiadores han dividido el pasado en <strong>grandes etapas o periodos</strong>, cada uno con características, inventos y formas de vida muy diferentes.</p>
 
-RADICACIÓN: la operación inversa a la potenciación. Nos permitirá responder preguntas como '¿qué número elevado al cuadrado da 16?' (raíz cuadrada) o '¿qué número elevado al cubo da 27?' (raíz cúbica).】</p>
+            <p>En esta unidad aprenderemos cuáles son las <strong>etapas de la historia</strong>, desde la aparición de los primeros seres humanos hasta la actualidad. Descubriremos cómo vivían, qué inventaron, cómo se organizaban y cómo esos cambios nos han llevado hasta el mundo que conocemos hoy. ¡Prepárate para viajar en el tiempo!</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <div class="dato-curioso">
+                <h4>💡 ¿Sabías que...?</h4>
+                <p>La <strong>Prehistoria</strong> es la etapa MÁS LARGA de la historia humana. Duró aproximadamente 2.5 millones de años, mientras que la <strong>Edad Contemporánea</strong> comenzó hace solo unos 200 años. ¡Casi todo el tiempo del ser humano en la Tierra fue prehistoria!</p>
+            </div>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <h2 style="font-size:2rem;">📖 Contenido Principal</h2>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <h3 style="font-size:1.6rem;">Objetivo general</h3>
+            <p>Comprender las principales etapas de la historia de la humanidad, identificando sus características fundamentales, los cambios más importantes y la línea de tiempo que las conecta desde la Prehistoria hasta la Edad Contemporánea.</p>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <h3 style="font-size:1.6rem;">Objetivos específicos</h3>
+            <ol>
+                <li>Identificar y ordenar cronológicamente las cinco etapas de la historia: Prehistoria, Edad Antigua, Edad Media, Edad Moderna y Edad Contemporánea.</li>
+                <li>Describir las características principales de cada etapa (vivienda, alimentación, organización social, inventos).</li>
+                <li>Reconocer los acontecimientos que marcaron el paso de una etapa a otra (invención de la escritura, caída del Imperio Romano, descubrimiento de América, Revolución Francesa).</li>
+                <li>Valorar la importancia del estudio de la historia para comprender el presente.</li>
+            </ol>
 
-            <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
-            </ul>
+            <!-- Línea de tiempo visual -->
+            <h3 style="font-size:1.6rem;">📌 Línea de Tiempo: Las 5 Etapas de la Historia</h3>
+            <p>Observa esta línea de tiempo para visualizar el orden de las etapas:</p>
+
+            <div class="timeline">
+                <div class="timeline-item" style="border-color: #8B4513;">🪨 Prehistoria</div>
+                <div class="timeline-item" style="border-color: #B8860B;">🏛️ Edad Antigua</div>
+                <div class="timeline-item" style="border-color: #4a4a4a;">🏰 Edad Media</div>
+                <div class="timeline-item" style="border-color: #4B0082;">⚓ Edad Moderna</div>
+                <div class="timeline-item" style="border-color: #00838f;">💻 Edad Contemporánea</div>
+            </div>
+
+            <!-- Etapa 1: Prehistoria -->
+            <div class="epoca-box prehistoria">
+                <h3>🪨 1. Prehistoria (2.5 millones de años a.C. - 3,500 a.C. aprox.)</h3>
+                <p>La Prehistoria es la etapa más larga de la humanidad. Comienza con la aparición de los primeros seres humanos (homínidos) que fabricaban herramientas de piedra, y termina con la invención de la <strong>escritura</strong>.</p>
+                
+                <h4>🏠 Forma de vida:</h4>
+                <ul>
+                    <li><strong>Nómadas:</strong> No vivían en un lugar fijo. Se desplazaban siguiendo a los animales y buscando alimentos.</li>
+                    <li><strong>Cazadores-recolectores:</strong> Vivían de la caza de animales y la recolección de frutos, raíces y semillas.</li>
+                    <li><strong>Vivían en cuevas o chozas</strong> hechas con ramas y pieles de animales.</li>
+                </ul>
+
+                <h4>💡 Grandes inventos y descubrimientos:</h4>
+                <ul>
+                    <li>🔹 <strong>El fuego:</strong> Aprender a controlar el fuego fue el invento más importante. Permitía calentarse, cocinar alimentos y ahuyentar animales peligrosos.</li>
+                    <li>🔹 <strong>Herramientas de piedra:</strong> Cuchillos, hachas, puntas de flecha hechas con piedras talladas.</li>
+                    <li>🔹 <strong>El arte rupestre:</strong> Pinturas en las paredes de las cuevas que representaban animales y escenas de caza. ¡Algunas tienen más de 30,000 años!</li>
+                </ul>
+
+                <h4>🌾 El gran cambio: el Neolítico (Revolución Agrícola)</h4>
+                <p>Hace unos 10,000 años, los seres humanos descubrieron la <strong>agricultura y la ganadería</strong>. Esto cambió todo: se volvieron <strong>sedentarios</strong> (vivían en un mismo lugar), construyeron las primeras aldeas y poblados, y comenzaron a domesticar animales como ovejas, cabras y perros.</p>
+                <img src="imagenes/166.jpg">
+            </div>
+
+            <!-- Etapa 2: Edad Antigua -->
+            <div class="epoca-box edad-antigua">
+                <h3>🏛️ 2. Edad Antigua (3,500 a.C. - 476 d.C.)</h3>
+                <p>La Edad Antigua comienza con la <strong>invención de la escritura</strong> (alrededor del 3,500 a.C. en Mesopotamia) y termina con la <strong>caída del Imperio Romano de Occidente</strong> en el año 476 d.C.</p>
+
+                <h4>🌍 Grandes civilizaciones:</h4>
+                <ul>
+                    <li><strong>Mesopotamia:</strong> La primera civilización. Inventaron la escritura cuneiforme, la rueda y los primeros códigos de leyes (Código de Hammurabi).</li>
+                    <li><strong>Egipto:</strong> Construyeron las pirámides, desarrollaron la escritura jeroglífica y avanzaron en medicina y astronomía.</li>
+                    <li><strong>Grecia:</strong> Cuna de la democracia, la filosofía (Sócrates, Platón, Aristóteles), el teatro y los Juegos Olímpicos.</li>
+                    <li><strong>Roma:</strong> Crearon un enorme imperio, desarrollaron el derecho romano (base de muchas leyes actuales), construyeron acueductos, carreteras y el Coliseo.</li>
+                </ul>
+
+                <h4>💡 Aportes importantes:</h4>
+                <ul>
+                    <li>🔹 <strong>La escritura:</strong> Permitió registrar la historia, las leyes y el comercio.</li>
+                    <li>🔹 <strong>La rueda:</strong> Revolucionó el transporte y la agricultura.</li>
+                    <li>🔹 <strong>Las matemáticas y la astronomía:</strong> Los griegos y babilonios hicieron grandes avances.</li>
+                    <li>🔹 <strong>El derecho y la organización política:</strong> La democracia ateniense y el derecho romano.</li>
+                </ul>
+                <img src="imagenes/167.jpg">
+
+            </div>
+
+            <!-- Etapa 3: Edad Media -->
+            <div class="epoca-box edad-media">
+                <h3>🏰 3. Edad Media (476 d.C. - 1492)</h3>
+                <p>La Edad Media comienza con la <strong>caída del Imperio Romano de Occidente</strong> (476 d.C.) y termina con el <strong>descubrimiento de América</strong> (1492). También se le llama <strong>Medievo</strong>.</p>
+
+                <h4>🏠 Forma de vida:</h4>
+                <ul>
+                    <li><strong>Sociedad feudal:</strong> El rey daba tierras (feudos) a los nobles, y los campesinos (siervos) trabajaban esas tierras a cambio de protección.</li>
+                    <li><strong>La Iglesia Católica</strong> tenía mucho poder e influencia en todos los aspectos de la vida.</li>
+                    <li>La mayoría de la gente vivía en el <strong>campo</strong>, no en las ciudades. La vida era difícil y corta.</li>
+                </ul>
+
+                <h4>⚔️ Hechos importantes:</h4>
+                <ul>
+                    <li>🔹 <strong>El Imperio Bizantino:</strong> Continuó el legado romano en el este, con capital en Constantinopla.</li>
+                    <li>🔹 <strong>El Islam:</strong> Surgió en el siglo VII y se expandió rápidamente por Medio Oriente, norte de África y España.</li>
+                    <li>🔹 <strong>Las Cruzadas:</strong> Guerras religiosas entre cristianos y musulmanes por el control de Tierra Santa.</li>
+                    <li>🔹 <strong>Los castillos y caballeros:</strong> Símbolos de la época medieval.</li>
+                </ul>
+
+                <h4>💡 Avances:</h4>
+                <ul>
+                    <li>🔹 <strong>Las universidades:</strong> Surgieron las primeras universidades (Bolonia, París, Oxford).</li>
+                    <li>🔹 <strong>Avances agrícolas:</strong> Nuevos sistemas de cultivo que mejoraron la alimentación.</li>
+                    <li>🔹 <strong>El arte gótico:</strong> Grandes catedrales con vitrales y arcos apuntados.</li>
+                </ul>
+                <img src="imagenes/168.jpg">
+            </div>
+
+            <!-- Etapa 4: Edad Moderna -->
+            <div class="epoca-box edad-moderna">
+                <h3>⚓ 4. Edad Moderna (1492 - 1789)</h3>
+                <p>La Edad Moderna comienza con el <strong>descubrimiento de América</strong> (1492) y termina con la <strong>Revolución Francesa</strong> (1789). Es una época de grandes cambios y descubrimientos.</p>
+
+                <h4>🌍 Grandes acontecimientos:</h4>
+                <ul>
+                    <li><strong>Descubrimiento de América (1492):</strong> Cristóbal Colón llegó a América, lo que cambió la visión del mundo y permitió el intercambio de productos, culturas y personas entre Europa y América.</li>
+                    <li><strong>El Renacimiento:</strong> Un movimiento cultural y artístico que redescubrió los valores de la antigua Grecia y Roma. Grandes artistas: Leonardo da Vinci, Miguel Ángel, Rafael.</li>
+                    <li><strong>La Reforma Protestante (1517):</strong> Martín Lutero protestó contra la Iglesia Católica, lo que dividió a Europa entre católicos y protestantes.</li>
+                    <li><strong>La Ilustración (siglo XVIII):</strong> Movimiento intelectual que defendía la razón, la libertad y la igualdad. Filósofos como Voltaire, Rousseau y Montesquieu.</li>
+                </ul>
+
+                <h4>💡 Avances científicos:</h4>
+                <ul>
+                    <li>🔹 <strong>Copérnico y Galileo:</strong> Demostraron que la Tierra gira alrededor del Sol (teoría heliocéntrica).</li>
+                    <li>🔹 <strong>La imprenta (Gutenberg):</strong> Revolucionó la difusión del conocimiento. Los libros pudieron producirse en masa.</li>
+                    <li>🔹 <strong>Grandes navegaciones:</strong> Exploradores como Magallanes y Elcano dieron la primera vuelta al mundo.</li>
+                </ul>
+                <img src="imagenes/169.jpg">
+
+            </div>
+
+            <!-- Etapa 5: Edad Contemporánea -->
+            <div class="epoca-box edad-contemporanea">
+                <h3>💻 5. Edad Contemporánea (1789 - Actualidad)</h3>
+                <p>La Edad Contemporánea comienza con la <strong>Revolución Francesa</strong> (1789) y llega hasta nuestros días. Es la etapa en la que vivimos actualmente.</p>
+
+                <h4>🌍 Grandes acontecimientos:</h4>
+                <ul>
+                    <li><strong>Revolución Francesa (1789):</strong> El pueblo francés se levantó contra la monarquía absoluta. Proclamó los ideales de libertad, igualdad y fraternidad.</li>
+                    <li><strong>Revolución Industrial (siglo XIX):</strong> La invención de la máquina de vapor transformó la producción. Aparecieron las fábricas, los ferrocarriles y los barcos a vapor.</li>
+                    <li><strong>Guerras Mundiales (siglo XX):</strong> La Primera Guerra Mundial (1914-1918) y la Segunda Guerra Mundial (1939-1945) cambiaron el mundo.</li>
+                    <li><strong>Globalización:</strong> El mundo está cada vez más conectado gracias a la tecnología, internet y los medios de transporte.</li>
+                </ul>
+
+                <h4>💡 Avances tecnológicos y científicos:</h4>
+                <ul>
+                    <li>🔹 <strong>Internet y computadoras:</strong> Han revolucionado la comunicación y el acceso a la información.</li>
+                    <li>🔹 <strong>Medicina moderna:</strong> Vacunas, antibióticos, cirugías avanzadas que han aumentado la esperanza de vida.</li>
+                    <li>🔹 <strong>Exploración espacial:</strong> El hombre llegó a la Luna en 1969. Hoy exploramos Marte y más allá.</li>
+                    <li>🔹 <strong>Energía eléctrica y renovable:</strong> Iluminación, electrodomésticos, energías limpias como la solar y eólica.</li>
+                </ul>
+
+                <h4>✅ Derechos humanos:</h4>
+                <ul>
+                    <li>Declaración Universal de los Derechos Humanos (1948).</li>
+                    <li>Avances en igualdad de género, abolición de la esclavitud y derechos civiles.</li>
+                </ul>
+                <img src="imagenes/170.jpg">
+
+            </div>
+
+            <!-- Sección especial: Descubrimiento de América -->
+            <div class="dato-curioso" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2); border-left: 6px solid #e65100;">
+                <h4 style="font-size:1.8rem; color:#bf360c;">⛵ EL DESCUBRIMIENTO DE AMÉRICA (1492)</h4>
+                <p style="font-size:1.1rem;">El <strong>Descubrimiento de América</strong> es uno de los acontecimientos más importantes de la historia universal. Marcó el inicio de la <strong>Edad Moderna</strong> y cambió para siempre la forma en que los seres humanos entendían el mundo.</p>
+            <img src="imagenes/171.jpg">
+
+            </div>
+
+            <div class="epoca-box" style="background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 6px solid #e65100;">
+                <h3>⛵ ¿Qué fue el Descubrimiento de América?</h3>
+                <p>Fue la llegada del explorador <strong>Cristóbal Colón</strong> al continente americano el <strong>12 de octubre de 1492</strong>. Colón había partido desde España con tres barcos —<strong>La Niña, La Pinta y La Santa María</strong>— buscando una nueva ruta hacia las Indias (Asia) navegando hacia el oeste, pero en su lugar encontró un continente que los europeos no sabían que existía.</p>
+
+                <h4>🌍 Contexto histórico</h4>
+                <p>A finales del siglo XV, los reinos europeos buscaban nuevas rutas comerciales para llegar a Asia y conseguir especias, seda y otros productos valiosos. Los turcos otomanos controlaban las rutas tradicionales por tierra, así que los europeos necesitaban encontrar una ruta por mar.</p>
+
+                <h4>👤 ¿Quién fue Cristóbal Colón?</h4>
+                <img src="imagenes/172.jpg">
+                <ul>
+                    <li><strong>Nacionalidad:</strong> Genovés (de Génova, Italia), aunque navegó para los Reyes Católicos de España.</li>
+                    <li><strong>Idea:</strong> Creía que se podía llegar a Asia navegando hacia el oeste (dando la vuelta al mundo).</li>
+                    <li><strong>Apoyo:</strong> Los <strong>Reyes Católicos</strong> (Fernando de Aragón e Isabel de Castilla) financiaron su viaje después de que otros reinos lo rechazaran.</li>
+                </ul>
+
+                <h4>🚢 Los tres barcos</h4>
+                <table style="width:100%; border-collapse:collapse; margin:0.5rem 0; background:white; border-radius:0.5rem; overflow:hidden;">
+                    <tr><th style="background:#bf360c; color:white; padding:0.5rem;">Barco</th><th style="background:#bf360c; color:white; padding:0.5rem;">Capitan</th><th style="background:#bf360c; color:white; padding:0.5rem;">Descripción</th></tr>
+                    <tr><td style="padding:0.5rem; border-bottom:1px solid #ddd;"><strong>La Santa María</strong></td><td style="padding:0.5rem; border-bottom:1px solid #ddd;">Cristóbal Colón</td><td style="padding:0.5rem; border-bottom:1px solid #ddd;">La más grande. Era una nao (barco de carga).</td></tr>
+                    <tr><td style="padding:0.5rem; border-bottom:1px solid #ddd;"><strong>La Pinta</strong></td><td style="padding:0.5rem; border-bottom:1px solid #ddd;">Martín Alonso Pinzón</td><td style="padding:0.5rem; border-bottom:1px solid #ddd;">Carabela rápida. Fue la primera en avistar tierra.</td></tr>
+                    <tr><td style="padding:0.5rem;"><strong>La Niña</strong></td><td style="padding:0.5rem;">Vicente Yáñez Pinzón</td><td style="padding:0.5rem;">Carabela pequeña pero veloz.</td></tr>
+                </table>
+
+                <h4>📅 El viaje paso a paso</h4>
+                <ol>
+                    <li><strong>3 de agosto de 1492:</strong> Colón y sus tripulantes salieron del puerto de <strong>Palos de la Frontera</strong>, en España.</li>
+                    <li><strong>Septiembre de 1492:</strong> Navegaron durante semanas sin ver tierra. La tripulación comenzó a preocuparse y quería regresar.</li>
+                    <li><strong>12 de octubre de 1492:</strong> ¡Tierra a la vista! Llegaron a una isla del Caribe que Colón llamó <strong>San Salvador</strong> (actualmente pertenece a las Bahamas).</li>
+                    <li><strong>Octubre - Diciembre de 1492:</strong> Exploraron otras islas como Cuba (a la que llamó Juana) y La Española (actual Haití y República Dominicana).</li>
+                    <li><strong>15 de marzo de 1493:</strong> Colón regresó a España, donde fue recibido como un héroe.</li>
+                </ol>
+
+                <h4>🌎 ¿Por qué se llamó "Descubrimiento de América"?</h4>
+                <p>Colón murió creyendo que había llegado a Asia (las Indias). Fue el explorador <strong>Américo Vespucio</strong> quien se dio cuenta de que se trataba de un continente nuevo, desconocido para los europeos. Por eso, el nuevo continente recibió el nombre de <strong>"América"</strong> en su honor.</p>
+
+                <h4>⚡ Consecuencias del Descubrimiento</h4>
+                <ul>
+                    <li><strong>🌍 Intercambio cultural:</strong> Europa y América comenzaron a intercambiar productos, animales, plantas, tecnologías y personas. Este intercambio se llama <strong>"Intercambio Colombino"</strong>.</li>
+                    <li><strong>🍅 Nuevos productos para Europa:</strong> Tomate, papa, maíz, cacao (chocolate), frijol, tabaco, piña, aguacate.</li>
+                    <li><strong>🐄 Nuevos productos para América:</strong> Caballos, vacas, cerdos, ovejas, trigo, arroz, café, azúcar.</li>
+                    <li><strong>🏛️ Imperios coloniales:</strong> España y Portugal crearon grandes imperios en América. Más tarde también lo harían Inglaterra, Francia y Holanda.</li>
+                    <li><strong>😔 Consecuencias negativas:</strong> Muchos pueblos indígenas murieron por enfermedades traídas de Europa (viruela, sarampión) y por la violencia de la conquista.</li>
+                    <li><strong>🗣️ Lengua y cultura:</strong> El español, el portugués, el inglés y el francés se convirtieron en los idiomas principales de América.</li>
+                </ul>
+
+                <h4>💡 Dato curioso</h4>
+                <p>¿Sabías que antes de la llegada de Colón, ya existían en América grandes civilizaciones como los <strong>Mayas, Aztecas e Incas</strong>? Estas culturas tenían sus propias ciudades, matemáticas, astronomía, agricultura y formas de gobierno. El "descubrimiento" fue un encuentro entre dos mundos que no se conocían entre sí.</p>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Hechos clave que separan las etapas</h3>
+            <table class="tabla-ingles" style="width:100%; border-collapse:collapse; margin:1rem 0; background:white; border-radius:1rem; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                <tr><th style="background:#1e3e5c; color:white; padding:0.8rem 1rem; text-align:left;">Etapa</th><th style="background:#1e3e5c; color:white; padding:0.8rem 1rem; text-align:left;">Inicio</th><th style="background:#1e3e5c; color:white; padding:0.8rem 1rem; text-align:left;">Fin</th><th style="background:#1e3e5c; color:white; padding:0.8rem 1rem; text-align:left;">Hecho que la inició</th></tr>
+                <tr><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">🪨 Prehistoria</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">2.5 millones a.C.</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">3,500 a.C.</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">Aparición de los primeros humanos</td></tr>
+                <tr><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">🏛️ Edad Antigua</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">3,500 a.C.</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">476 d.C.</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">Invención de la escritura</td></tr>
+                <tr><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">🏰 Edad Media</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">476 d.C.</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">1492</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">Caída del Imperio Romano</td></tr>
+                <tr><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">⚓ Edad Moderna</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">1492</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">1789</td><td style="padding:0.7rem 1rem; border-bottom:1px solid #e8f0f6;">Descubrimiento de América</td></tr>
+                <tr><td style="padding:0.7rem 1rem;">💻 Edad Contemporánea</td><td style="padding:0.7rem 1rem;">1789</td><td style="padding:0.7rem 1rem;">Actualidad</td><td style="padding:0.7rem 1rem;">Revolución Francesa</td></tr>
+            </table>
+
+            <h2 style="font-size:1.6rem;">📝 Actividades de aprendizaje</h2>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 1: Ordena las etapas</h4>
+                <p>Escribe las 5 etapas de la historia en orden cronológico, desde la más antigua hasta la actual:</p>
+                <ol>
+                    <li>______________________</li>
+                    <li>______________________</li>
+                    <li>______________________</li>
+                    <li>______________________</li>
+                    <li>______________________</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 2: Relaciona cada etapa con su hecho clave</h4>
+                <p>Une con una línea cada etapa con el hecho que la inició:</p>
+                <ul>
+                    <li>🪨 Prehistoria → ( ) Revolución Francesa</li>
+                    <li>🏛️ Edad Antigua → ( ) Caída del Imperio Romano</li>
+                    <li>🏰 Edad Media → ( ) Invención de la escritura</li>
+                    <li>⚓ Edad Moderna → ( ) Aparición de los primeros humanos</li>
+                    <li>💻 Edad Contemporánea → ( ) Descubrimiento de América</li>
+                </ul>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 3: Preguntas de reflexión</h4>
+                <p>Responde las siguientes preguntas en tu cuaderno:</p>
+                <ol>
+                    <li>¿Por qué la invención de la escritura fue tan importante para la historia?</li>
+                    <li>¿Qué invento de la Prehistoria crees que fue el más importante? ¿Por qué?</li>
+                    <li>¿En qué etapa de la historia vivimos actualmente?</li>
+                    <li>¿Cuál de las cinco etapas te parece más interesante? Explica por qué.</li>
+                    <li>¿Cómo crees que será la próxima etapa de la historia?</li>
+                </ol>
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
             <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
+            <a href="https://www.youtube.com/watch?v=9EiyoXmsT-I" class="enlace" target="_blank">🎥 Las 5 Etapas de la Historia </a>
+            <div class="enlaces-videos">
 
+    <a href="https://www.youtube.com/watch?v=7IIzQbxRlhE" class="enlace" target="_blank">
+        🎥 La Edad Antigua | Grandes Civilizaciones
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=lLz-hRXJ7hw" class="enlace" target="_blank">
+        🎥 La Edad Media: Caballeros, Castillos y la Peste Negra
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=tWQkKp0Kivk" class="enlace" target="_blank">
+        🎥 La Edad Moderna | Descubrimientos y Cambios
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=tDbUd4dOjvQ" class="enlace" target="_blank">
+        🎥 La Edad Contemporánea | Revoluciones y Tecnología
+    </a>
+</div>
         <!-- Actividad -->
         <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <h4>✍️ TALLER DE LA UNIDAD</h4>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>📄 <a href="https://drive.google.com/file/d/1B-Cf5Kmh4R8dKdazdk_RGAwIWfzDoByJ/view?usp=sharing" class="enlace" target="_blank">TALLER ETAPAS DE LA HISTORIA (PDF)</a></li>
             </ul>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=3" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -348,7 +712,7 @@ RADICACIÓN: la operación inversa a la potenciación. Nos permitirá responder 
             4: "Estadística"
         },
         3: { // Sociales
-            1: "Historia Universal",
+            1: "Etapas de la Historia",
             2: "Geografía Mundial",
             3: "Historia de Colombia",
             4: "Democracia y Participación"
@@ -369,7 +733,7 @@ RADICACIÓN: la operación inversa a la potenciación. Nos permitirá responder 
             1: "Greetings & Basics",
             2: "Present Simple",
             3: "Everyday Activities",
-            4: "Travel & Culture"
+            4: "Question Words & Course Review"
         },
         7: { // Biología
             1: "La Célula",
@@ -383,10 +747,10 @@ RADICACIÓN: la operación inversa a la potenciación. Nos permitirá responder 
     const unidadesDescripciones = {
         1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
-        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
+        3: ["Las 5 etapas de la historia universal", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
         5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
-        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
+        6: ["Saludos y vocabulario inicial", "Números y preposiciones de lugar", "Rutinas y actividades diarias", "Question words y repaso completo del curso"],
         7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
     };
     
