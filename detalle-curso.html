@@ -60,7 +60,6 @@
             font-size: 1.1rem;
         }
 
-        /* SECCIÓN DE UNIDADES - 4 BOTONES GRANDES */
         .unidades-section {
             margin: 2rem 0;
         }
@@ -135,7 +134,6 @@
             display: block;
         }
 
-        /* Info adicional del curso */
         .course-info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -288,12 +286,10 @@
             <p id="courseDesc">Descripción del curso</p>
         </div>
 
-        <!-- Información del curso -->
         <div class="course-info-grid" id="courseInfo">
             <!-- Se llena con JS -->
         </div>
 
-        <!-- SECCIÓN DE 4 UNIDADES -->
         <h2 class="section-title">📚 Unidades del Curso</h2>
         <div class="unidades-grid" id="unidadesGrid">
             <!-- Los 4 botones de unidades se generan con JS -->
@@ -330,8 +326,8 @@ const cursosDetalle = {
         unidades: [
             { num: 1, titulo: "Modelos Atómicos", desc: "Semana 1", icono: "⚛️", link: "unidad5-1.html" },
             { num: 2, titulo: "Números Cuánticos y Configuración Electrónica", desc: "Semana 2", icono: "📊", link: "unidad5-2.html" },
-            { num: 3, titulo: "Enlaces Químicos y Estructuras de Lewis”", desc: "Semana 3", icono: "🧪", link: "unidad5-3.html" },
-            { num: 4, titulo: "Resumen General y Consolidación EXAMEN ", desc: "Semana 4", icono: "🧴", link: "unidad5-4.html" }
+            { num: 3, titulo: "Enlaces Químicos y Estructuras de Lewis", desc: "Semana 3", icono: "🧪", link: "unidad5-3.html" },
+            { num: 4, titulo: "Resumen General y Consolidación EXAMEN", desc: "Semana 4", icono: "🧴", link: "unidad5-4.html" }
         ]
     },
     2: { // Matemáticas
@@ -347,7 +343,7 @@ const cursosDetalle = {
             { num: 4, titulo: "Repaso de la materia", desc: "Semana 4", icono: "📊", link: "unidad2-4.html" }
         ]
     },
-   4: { // Física
+    4: { // Física
         title: "Física",
         emoji: "⚡",
         desc: "Movimiento, energía y leyes del universo",
@@ -393,13 +389,34 @@ const cursosDetalle = {
         duracion: "4 semanas",
         nivel: "Básico",
         unidades: [
-            { num: 1, titulo: "Etapas de la Historia", desc: "semana 1", icono: "🏛️", link: "unidad3-1.html" },
-            { num: 2, titulo: "Cómo surge la Economía", desc: "semana 2", icono: "🗺️", link: "unidad3-2.html" },
-            { num: 3, titulo: "Constitución Política de Colombia", desc: "semana 3", icono: "🇨🇴", link: "unidad3-3.html" },
-            { num: 4, titulo: "Capitalismo y Socialismo", desc: "semana 4", icono: "🗳️", link: "unidad3-4.html" }
+            { num: 1, titulo: "Etapas de la Historia", desc: "Semana 1", icono: "🏛️", link: "unidad3-1.html" },
+            { num: 2, titulo: "Cómo surge la Economía", desc: "Semana 2", icono: "🗺️", link: "unidad3-2.html" },
+            { num: 3, titulo: "Constitución Política de Colombia", desc: "Semana 3", icono: "🇨🇴", link: "unidad3-3.html" },
+            { num: 4, titulo: "Capitalismo y Socialismo", desc: "Semana 4", icono: "🗳️", link: "unidad3-4.html" }
         ]
     }
 };
+
+// =============================================
+// CONFIGURACIÓN DEL ACCESO PROFESOR (debe coincidir con cursos.html)
+// =============================================
+const TEACHER_STORAGE_KEY = 'aula_teacher_unlocked';
+const TEACHER_EXPIRY_KEY = 'aula_teacher_expiry';
+
+function isTeacherUnlocked() {
+    const unlocked = localStorage.getItem(TEACHER_STORAGE_KEY) === 'true';
+    if (!unlocked) return false;
+    const expiry = localStorage.getItem(TEACHER_EXPIRY_KEY);
+    if (expiry) {
+        const now = Date.now();
+        if (now > parseInt(expiry)) {
+            localStorage.removeItem(TEACHER_STORAGE_KEY);
+            localStorage.removeItem(TEACHER_EXPIRY_KEY);
+            return false;
+        }
+    }
+    return true;
+}
 
 // =============================================
 // CONFIGURACIÓN: MES VISIBLE POR CADA CURSO
@@ -408,12 +425,12 @@ const cursosDetalle = {
 // =============================================
 const VISIBLE_MONTH_POR_CURSO = {
     1: 4,  // Español y Filosofía
-    2: 6,  // Matemáticas         
-    3: 10,  // Sociales            
-    4: 7,  // Física              
-    5: 5,  // Química             
-    6: 9,   // Inglés              
-    7: 8,  // Biología           
+    2: 6,  // Matemáticas
+    3: 10, // Sociales
+    4: 7,  // Física
+    5: 5,  // Química
+    6: 9,  // Inglés
+    7: 8,  // Biología
 };
 
 function getMonthName(monthNumber) {
@@ -423,7 +440,10 @@ function getMonthName(monthNumber) {
 }
 
 // Recibe el id del curso y comprueba si el mes actual coincide con el configurado
+// Si el profesor está desbloqueado, siempre retorna true (sin restricciones)
 function isVisibleThisMonth(cursoId) {
+    if (isTeacherUnlocked()) return true;
+
     const mes = VISIBLE_MONTH_POR_CURSO[cursoId];
     if (!mes || mes === 0) return true; // 0 o no definido → siempre visible
     const hoy = new Date();
@@ -437,7 +457,6 @@ const params = new URLSearchParams(window.location.search);
 const courseId = parseInt(params.get('id')) || 1;
 const curso = cursosDetalle[courseId];
 
-// Rellenar la página con los datos del curso
 if (curso) {
     document.getElementById('courseEmoji').textContent = curso.emoji;
     document.getElementById('courseTitle').textContent = curso.title;
@@ -448,7 +467,6 @@ if (curso) {
     const unidadesGrid = document.getElementById('unidadesGrid');
 
     if (!isVisibleThisMonth(courseId)) {
-        // Si no es el mes configurado para este curso, mostrar mensaje y ocultar unidades
         const mesNombre = getMonthName(VISIBLE_MONTH_POR_CURSO[courseId]);
         infoContainer.innerHTML = `<p style="text-align:center; grid-column:1/-1;">Este curso está disponible sólo en ${mesNombre}.</p>`;
         unidadesGrid.innerHTML = `<p style="text-align:center; grid-column:1/-1;">No hay unidades visibles este mes.</p>`;
@@ -456,7 +474,6 @@ if (curso) {
         if (sendButton) sendButton.disabled = true;
         showToast(`Curso disponible sólo en ${mesNombre}`);
     } else {
-        // Información adicional
         infoContainer.innerHTML = `
             <div class="info-item"><div class="info-label">📅 Duración</div><div class="info-value">${curso.duracion}</div></div>
             <div class="info-item"><div class="info-label">📊 Nivel</div><div class="info-value">${curso.nivel}</div></div>
@@ -464,7 +481,6 @@ if (curso) {
             <div class="info-item"><div class="info-label">💻 Modalidad</div><div class="info-value">Virtual</div></div>
         `;
 
-        // Generar los 4 botones de unidades ordenados por número
         if (curso.unidades && curso.unidades.length > 0) {
             const unidadesOrdenadas = [...curso.unidades].sort((a, b) => a.num - b.num);
             unidadesGrid.innerHTML = unidadesOrdenadas.map(unidad => `
@@ -483,6 +499,7 @@ if (curso) {
 
 // =============================================
 // Control de envíos: prioridad a hoja remota (Google Sheets CSV), fallback a localStorage
+// =============================================
 const sendBtn = document.getElementById('sendWorkBtn');
 const STORAGE_KEY = 'enviosActivos';
 
@@ -511,8 +528,9 @@ async function fetchRemoteEnvios() {
     }
 }
 
+// CORREGIDO: antes devolvía "true" fijo, ahora lee el valor real guardado
 function getLocalState() {
-    return true
+    return localStorage.getItem(STORAGE_KEY) === 'true';
 }
 
 function isSendDay() {
