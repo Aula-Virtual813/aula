@@ -283,7 +283,7 @@
 
         <div class="actividad-box">
             <h2>EXAMEN</h2><br>
-             <a href="https://forms.gle/pYAhj4dnLyWGV6gK6" class="enlace" target="_blank">🎥 Clasificación de los Elementos y Tabla Periódica</a>
+             <a href="https://forms.gle/pYAhj4dnLyWGV6gK6" id="examenLink" class="enlace" target="_blank">🎥 Clasificación de los Elementos y Tabla Periódica</a>
 
             
 
@@ -367,7 +367,69 @@
         }, 2000);
     }
 
+    // =============================================
+    // CONTROL: Examen final solo disponible la última semana del mes
+    // =============================================
+    const TEACHER_STORAGE_KEY = 'aula_teacher_unlocked';
+    const TEACHER_EXPIRY_KEY = 'aula_teacher_expiry';
+
+    function isTeacherUnlocked() {
+        const unlocked = localStorage.getItem(TEACHER_STORAGE_KEY) === 'true';
+        if (!unlocked) return false;
+        const expiry = localStorage.getItem(TEACHER_EXPIRY_KEY);
+        if (expiry) {
+            const now = Date.now();
+            if (now > parseInt(expiry)) {
+                localStorage.removeItem(TEACHER_STORAGE_KEY);
+                localStorage.removeItem(TEACHER_EXPIRY_KEY);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function inicioDeSemana(fecha) {
+        const d = new Date(fecha);
+        const diaSemana = d.getDay(); // 0=domingo ... 6=sábado
+        const diffHastaLunes = (diaSemana === 0 ? 6 : diaSemana - 1);
+        d.setDate(d.getDate() - diffHastaLunes);
+        d.setHours(0, 0, 0, 0);
+        return d.getTime();
+    }
+
+    function esUltimaSemanaDelMes() {
+        const hoy = new Date();
+        const anio = hoy.getFullYear();
+        const mes = hoy.getMonth();
+        const ultimoDiaMes = new Date(anio, mes + 1, 0).getDate();
+        const fechaUltimoDia = new Date(anio, mes, ultimoDiaMes);
+
+        // Compara la semana calendario (lunes-domingo) de hoy con la semana
+        // calendario a la que pertenece el último día del mes.
+        return inicioDeSemana(hoy) === inicioDeSemana(fechaUltimoDia);
+    }
+
+    function controlExamenSemana4() {
+        const link = document.getElementById('examenLink');
+        if (!link) return;
+
+        if (isTeacherUnlocked() || esUltimaSemanaDelMes()) {
+            return;
+        }
+
+        link.dataset.hrefOriginal = link.getAttribute('href');
+        link.removeAttribute('href');
+        link.removeAttribute('target');
+        link.style.opacity = '0.5';
+        link.style.cursor = 'not-allowed';
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            showToast('📅 El examen se habilita en la última semana del mes');
+        });
+    }
+
     generarNavegacion();
+    controlExamenSemana4();
 </script>
 </body>
 </html>
