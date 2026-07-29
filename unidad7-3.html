@@ -261,6 +261,20 @@
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
         }
+
+        .system-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;           /* Permite que la altura se adapte a la imagen */
+    max-height: 420px;      /* Mantiene el límite de altura que tenías */
+    margin: 20px auto;
+    object-fit: contain;    /* Muestra la imagen completa sin recortar */
+    object-position: center;
+    border-radius: 12px;
+    border: 3px solid #cfe8ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+}
     </style>
 </head>
 <body>
@@ -283,94 +297,107 @@
             <h2>📌 Introducción</h2>
             <p>En esta unidad revisaremos los sistemas que componen el cuerpo humano, sus partes principales, cómo funcionan y ejemplos de cada uno. Esta explicación está diseñada para que entiendas mejor cómo los órganos trabajan juntos para mantenernos con vida y en equilibrio.</p>
 
-            <h2>📖 Sistemas del cuerpo humano</h2>
-            <p>El cuerpo humano está formado por varios sistemas que realizan funciones específicas. Cada sistema agrupa órganos que trabajan en equipo para procesar alimentos, mover el cuerpo, protegernos de enfermedades y mantener el equilibrio interno.</p>
+           <h2>📖 Sistemas del cuerpo humano</h2>
+<p>El cuerpo humano está formado por diferentes sistemas que trabajan de manera coordinada para mantener la vida. Cada sistema está compuesto por órganos especializados que cumplen funciones específicas como transportar sustancias, obtener oxígeno, digerir alimentos, controlar el movimiento y proteger el organismo. Todos los sistemas dependen unos de otros para mantener el equilibrio interno del cuerpo.</p>
 
-            <div class="system-card">
-                <h3>1. Sistema circulatorio</h3>
-                <p><strong>Partes principales:</strong> corazón, arterias, venas y capilares.</p>
-                <p><strong>Función:</strong> transportar sangre, oxígeno, nutrientes y desechos por todo el cuerpo.</p>
-                <p><strong>Ejemplo:</strong> el corazón bombea sangre rica en oxígeno hacia los músculos durante el ejercicio, y las venas devuelven sangre cargada de dióxido de carbono a los pulmones.</p>
-                <div class="system-image">Espacio para imagen: sistema circulatorio</div>
-            </div>
+<div class="system-card">
+    <h3>1. Sistema circulatorio</h3>
+    <p><strong>Partes principales:</strong> corazón, arterias, venas y capilares.</p>
+    <p><strong>Función:</strong> transportar sangre, oxígeno, nutrientes, hormonas y desechos a todas las células del organismo. Además ayuda a regular la temperatura corporal y participa en la defensa del cuerpo.</p>
+    <p><strong>Importancia:</strong> sin este sistema los órganos no recibirían el oxígeno ni los nutrientes necesarios para funcionar correctamente.</p>
+    <p><strong>Ejemplo:</strong> cuando realizas ejercicio, el corazón aumenta la velocidad de los latidos para enviar mayor cantidad de sangre a los músculos.</p>
 
-            <div class="system-card">
-                <h3>2. Sistema respiratorio</h3>
-                <p><strong>Partes principales:</strong> nariz, faringe, laringe, tráquea, bronquios y pulmones.</p>
-                <p><strong>Función:</strong> intercambiar gases entre el cuerpo y el ambiente: toma oxígeno y elimina dióxido de carbono.</p>
-                <p><strong>Ejemplo:</strong> cuando inhalas, el aire pasa por la tráquea hasta los pulmones; allí el oxígeno entra en la sangre y el dióxido de carbono es expulsado al exhalar.</p>
-                <div class="system-image">Espacio para imagen: sistema respiratorio</div>
-            </div>
+    <img src="https://www.lifeder.com/wp-content/uploads/2018/07/Sistema-circulatorio-esquema-lifeder-min-1024x970.jpg" alt="Sistema circulatorio" class="system-image">
+</div>
 
-            <div class="system-card">
-                <h3>3. Sistema digestivo</h3>
-                <p><strong>Partes principales:</strong> boca, esófago, estómago, intestino delgado, intestino grueso, hígado, páncreas y vesícula biliar.</p>
-                <p><strong>Función:</strong> transformar los alimentos en nutrientes utilizables y eliminar los residuos no digeribles.</p>
-                <p><strong>Ejemplo:</strong> en el estómago los alimentos se mezclan con jugos gástricos; en el intestino delgado se absorben proteínas, carbohidratos y grasas para alimentar las células.</p>
-                <div class="system-image">Espacio para imagen: sistema digestivo</div>
-            </div>
+<div class="system-card">
+    <h3>2. Sistema respiratorio</h3>
+    <p><strong>Partes principales:</strong> nariz, faringe, laringe, tráquea, bronquios y pulmones.</p>
+    <p><strong>Función:</strong> captar oxígeno del aire y eliminar dióxido de carbono producido por las células.</p>
+    <p><strong>Importancia:</strong> proporciona el oxígeno indispensable para producir energía en todas las células del cuerpo.</p>
+    <p><strong>Ejemplo:</strong> al inhalar, el aire llega a los pulmones donde ocurre el intercambio de gases con la sangre.</p>
 
-            <div class="system-card">
-                <h3>4. Sistema nervioso</h3>
-                <p><strong>Partes principales:</strong> cerebro, cerebelo, médula espinal y nervios.</p>
-                <p><strong>Función:</strong> coordinar y controlar las actividades del cuerpo, transmitir mensajes eléctricos y procesar información.</p>
-                <p><strong>Ejemplo:</strong> cuando tocas algo caliente, los nervios envían señales al cerebro que ordena retirar la mano inmediatamente.</p>
-                <div class="system-image">Espacio para imagen: sistema nervioso</div>
-            </div>
+    <img src="https://th.bing.com/th/id/R.03feed660bf6b8306c7883417d93eba9?rik=Iuoze5W%2f00K3pA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-CVqJHRAhrDM%2fUgU3W_NzTuI%2fAAAAAAAAAAY%2fDYJQniCedGo%2fs1600%2fEl-sistema-respiratorio.jpg&ehk=YzHrjmnlxqfKjI%2fHU09ixa2utd2CfghM00UqDQhfRE0%3d&risl=&pid=ImgRaw&r=0" alt="Sistema respiratorio" class="system-image">
+</div>
 
-            <div class="system-card">
-                <h3>5. Sistema óseo</h3>
-                <p><strong>Partes principales:</strong> huesos, articulaciones y cartílagos.</p>
-                <p><strong>Función:</strong> sostener el cuerpo, proteger órganos internos y permitir el movimiento junto con los músculos.</p>
-                <p><strong>Ejemplo:</strong> las costillas protegen el corazón y los pulmones, mientras que los huesos de las piernas permiten caminar y correr.</p>
-                <div class="system-image">Espacio para imagen: sistema óseo</div>
-            </div>
+<div class="system-card">
+    <h3>3. Sistema digestivo</h3>
+    <p><strong>Partes principales:</strong> boca, esófago, estómago, intestino delgado, intestino grueso, hígado, páncreas y vesícula biliar.</p>
+    <p><strong>Función:</strong> transformar los alimentos en nutrientes que el cuerpo utiliza para crecer, producir energía y reparar tejidos.</p>
+    <p><strong>Importancia:</strong> también absorbe agua y elimina los residuos mediante las heces.</p>
+    <p><strong>Ejemplo:</strong> el estómago descompone los alimentos con jugos gástricos y el intestino delgado absorbe los nutrientes.</p>
 
-            <div class="system-card">
-                <h3>6. Sistema muscular</h3>
-                <p><strong>Partes principales:</strong> músculos esqueléticos, lisos y cardíaco.</p>
-                <p><strong>Función:</strong> mover el cuerpo, mantener la postura y generar calor.</p>
-                <p><strong>Ejemplo:</strong> los músculos de los brazos permiten levantar objetos, y el músculo cardíaco hace que el corazón bombee sangre constantemente.</p>
-                <div class="system-image">Espacio para imagen: sistema muscular</div>
-            </div>
+    <img src="https://www.abcfichas.com/wp-content/uploads/2021/05/Partes-del-Sistema-Digestivo.jpg" alt="Sistema digestivo" class="system-image">
+</div>
 
-            <div class="system-card">
-                <h3>7. Sistema endocrino</h3>
-                <p><strong>Partes principales:</strong> glándulas como la tiroides, páncreas, glándulas suprarrenales y glándulas sexuales.</p>
-                <p><strong>Función:</strong> liberar hormonas que regulan el crecimiento, el metabolismo, el sueño y otras funciones del cuerpo.</p>
-                <p><strong>Ejemplo:</strong> la insulina del páncreas ayuda a controlar los niveles de azúcar en la sangre después de comer.</p>
-                <div class="system-image">Espacio para imagen: sistema endocrino</div>
-            </div>
+<div class="system-card">
+    <h3>4. Sistema nervioso</h3>
+    <p><strong>Partes principales:</strong> cerebro, cerebelo, médula espinal y nervios.</p>
+    <p><strong>Función:</strong> controlar todas las actividades del organismo mediante impulsos nerviosos.</p>
+    <p><strong>Importancia:</strong> permite pensar, aprender, recordar, sentir emociones y responder rápidamente a los estímulos.</p>
+    <p><strong>Ejemplo:</strong> cuando tocas un objeto caliente, los nervios envían la información al cerebro y este ordena retirar la mano.</p>
 
-            <div class="system-card">
-                <h3>8. Sistema excretor y urinario</h3>
-                <p><strong>Partes principales:</strong> riñones, uréteres, vejiga y uretra.</p>
-                <p><strong>Función:</strong> filtrar la sangre y eliminar líquidos, sales y desechos producidos por el metabolismo.</p>
-                <p><strong>Ejemplo:</strong> los riñones limpian la sangre y producen orina, que se almacena en la vejiga hasta ser expulsada.</p>
-                <div class="system-image">Espacio para imagen: sistema excretor</div>
-            </div>
+    <img src="https://www.abcfichas.com/wp-content/uploads/2021/05/Partes-del-Sistema-Nervioso-Humano.jpg" alt="Sistema nervioso" class="system-image">
+</div>
 
-            <p>En conjunto, estos sistemas permiten que el cuerpo humano funcione como una unidad integrada. Cada sistema tiene un papel específico, pero todos dependen unos de otros para mantener la salud y la vida.</p>
-        </div>
+<div class="system-card">
+    <h3>5. Sistema óseo</h3>
+    <p><strong>Partes principales:</strong> huesos, articulaciones, cartílagos y ligamentos.</p>
+    <p><strong>Función:</strong> sostener el cuerpo, proteger órganos internos y permitir el movimiento junto con los músculos.</p>
+    <p><strong>Importancia:</strong> también produce células sanguíneas y almacena minerales como calcio y fósforo.</p>
+    <p><strong>Ejemplo:</strong> el cráneo protege el cerebro y las costillas protegen el corazón y los pulmones.</p>
+
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgn4S02wkgVkuuddKZbyI4FgmzlPOBmyffYHpqFUCAtmme8pKZlaux7kbxTJzwimNg7opAGhJXGMRl-dM8zPW5Ww7J7u7ZN_V06OTPJeqBtQFf5QTDvr1T6UgjgegUZvvykiu3Nmc9AjWQ/s694/Diapositiva4.JPG" alt="Sistema óseo" class="system-image">
+</div>
+
+<div class="system-card">
+    <h3>6. Sistema muscular</h3>
+    <p><strong>Partes principales:</strong> músculos esqueléticos, lisos y cardíaco.</p>
+    <p><strong>Función:</strong> producir movimiento, mantener la postura corporal y generar calor.</p>
+    <p><strong>Importancia:</strong> trabaja junto al sistema óseo para permitir caminar, correr, levantar objetos y realizar cualquier actividad física.</p>
+    <p><strong>Ejemplo:</strong> los músculos de las piernas permiten correr y el músculo cardíaco mantiene latiendo el corazón.</p>
+
+    <img src="https://th.bing.com/th/id/R.78d955bda3de5caea19e398a32e5b2eb?rik=2NroLY6f6jprBg&pid=ImgRaw&r=0" alt="Sistema muscular" class="system-image">
+</div>
+
+<div class="system-card">
+    <h3>7. Sistema endocrino</h3>
+    <p><strong>Partes principales:</strong> hipófisis, tiroides, páncreas, suprarrenales y glándulas sexuales.</p>
+    <p><strong>Función:</strong> producir hormonas que regulan el crecimiento, el metabolismo, la reproducción y muchas otras funciones del organismo.</p>
+    <p><strong>Importancia:</strong> mantiene el equilibrio interno y coordina el funcionamiento de distintos órganos.</p>
+    <p><strong>Ejemplo:</strong> la insulina producida por el páncreas regula la cantidad de glucosa en la sangre.</p>
+
+    <img src="https://blogs.ugto.mx/enfermeriaenlinea/wp-content/uploads/sites/43/2018/02/AYFII-UNI6-SEn-02.jpg" alt="Sistema endocrino" class="system-image">
+</div>
+
+<div class="system-card">
+    <h3>8. Sistema excretor y urinario</h3>
+    <p><strong>Partes principales:</strong> riñones, uréteres, vejiga y uretra.</p>
+    <p><strong>Función:</strong> eliminar sustancias de desecho y mantener el equilibrio de agua y sales minerales en el organismo.</p>
+    <p><strong>Importancia:</strong> ayuda a mantener limpia la sangre y regula la presión arterial.</p>
+    <p><strong>Ejemplo:</strong> los riñones filtran la sangre para producir orina, la cual se almacena en la vejiga hasta ser expulsada.</p>
+
+    <img src="https://www.lifeder.com/wp-content/uploads/2020/12/Sistema-urinario-esquema-lifeder-min-1004x1024.jpg" alt="Sistema excretor" class="system-image">
+</div>
+
+<p>Todos estos sistemas funcionan de manera integrada. Si uno de ellos presenta algún problema, el resto también puede verse afectado. Por esta razón es importante mantener hábitos saludables como una alimentación balanceada, realizar actividad física, dormir lo suficiente, beber agua y asistir periódicamente a controles médicos.</p>
 
         <!-- Enlaces útiles -->
-        <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
+      <!-- Enlaces útiles -->
+<div class="enlaces-box">
+    <h4>🔗 Enlaces de interés</h4>
+    <a href="https://www.youtube.com/watch?v=6Unfqpy_oJY" class="enlace" target="_blank">🫀 【Video: Resumen General de los Sistemas del Cuerpo】</a>
+    <a href="https://www.youtube.com/watch?v=TNwsxUS7f_Y" class="enlace" target="_blank">🫁 【Video: Digestión, Circulación y Respiración】</a>
+    <a href="https://www.youtube.com/watch?v=S3jJj68dBxw" class="enlace" target="_blank">🧠 【Video: Integración y Funciones del Cuerpo Humano】</a>
+    <a href="https://www.youtube.com/watch?v=81f3xFT0ca8" class="enlace" target="_blank">🧪 【Video: Sistema Endocrino, Glándulas y Hormonas】</a>
+    <a href="https://www.youtube.com/watch?v=0KxRStoU0AE" class="enlace" target="_blank">🦴 【Video: Procesos de Nutrición y Digestión Humana】</a>
+</div>
 
         <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>TALLER 3 <a href="https://drive.google.com/file/d/1qN0OyZ_El3E_nK5Oql6_swqIoZXWHbb1/view?usp=sharing">aquí </a>.</li>
             </ul>
         </div>
 
