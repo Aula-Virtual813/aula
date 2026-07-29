@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Aula Virtual | Inicio</title>
+
+    <!-- Configuración PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#1294db">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AulaVirtual">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
     <style>
         * {
             margin: 0;
@@ -89,6 +99,29 @@
             transform: translateY(2px);
         }
 
+        /* Botón de Instalación PWA */
+        .btn-pwa-install {
+            background: linear-gradient(105deg, #1294db, #044756);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 14px rgba(18, 148, 219, 0.3);
+            display: none; /* Se activa mediante JS si la app es instalable */
+            align-items: center;
+            gap: 8px;
+            margin: 15px auto 0 auto;
+        }
+
+        .btn-pwa-install:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(18, 148, 219, 0.4);
+        }
+
         .icon-arrow {
             font-size: 1.8rem;
             transition: transform 0.2s;
@@ -132,10 +165,17 @@
         <h2>Tu espacio de aprendizaje inteligente</h2>
         <h3> </h3>
         
-        <a href="cursos.html" class="btn-cursos">
-            Cursos disponibles
-            <span class="icon-arrow">📚</span>
-        </a>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <a href="cursos.html" class="btn-cursos">
+                Cursos disponibles
+                <span class="icon-arrow">📚</span>
+            </a>
+
+            <!-- Botón dinámico para instalar la PWA -->
+            <button id="btnInstallPwa" class="btn-pwa-install">
+                📲 Instalar Aplicación
+            </button>
+        </div>
 
         <div class="edu-illustration">
             ✨🎓✨
@@ -146,5 +186,46 @@
     </div>
 </div>
 
+<!-- Scripts de Service Worker y PWA -->
+<script>
+    // 1. Registro del Service Worker
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(reg => console.log('Service Worker registrado correctamente', reg))
+                .catch(err => console.error('Error registrando Service Worker:', err));
+        });
+    }
+
+    // 2. Evento para capturar el prompt de instalación
+    let deferredPrompt;
+    const btnInstallPwa = document.getElementById('btnInstallPwa');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Previene la barra por defecto del navegador
+        e.preventDefault();
+        deferredPrompt = e;
+        // Muestra nuestro botón de instalación personalizado
+        btnInstallPwa.style.display = 'inline-flex';
+    });
+
+    btnInstallPwa.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        
+        // Despliega el diálogo de instalación nativo
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        
+        console.log(`Respuesta de instalación del usuario: ${outcome}`);
+        deferredPrompt = null;
+        btnInstallPwa.style.display = 'none';
+    });
+
+    // Ocultar el botón si la aplicación ya fue instalada
+    window.addEventListener('appinstalled', () => {
+        btnInstallPwa.style.display = 'none';
+        console.log('PWA instalada con éxito');
+    });
+</script>
 </body>
 </html>
