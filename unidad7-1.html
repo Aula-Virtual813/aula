@@ -12,7 +12,624 @@
             font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
         }
 
+        body {<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
+        }
+
         body {
+            background: linear-gradient(145deg, #000000 0%, #044756 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Tarjeta principal */
+        .unidad-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Encabezado */
+        .unidad-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px dashed #1294db;
+        }
+
+        .unidad-materia {
+            display: inline-block;
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+            padding: 0.3rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .unidad-titulo-principal {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .unidad-subtitulo {
+            color: #5e7f97;
+            font-size: 1rem;
+        }
+
+        /* Navegación entre unidades */
+        .nav-unidades {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: #ecf3f9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #1f3e54;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1px solid #cbdde9;
+        }
+
+        .nav-btn:hover {
+            background: #dfe9f2;
+            transform: translateX(-3px);
+        }
+
+        .nav-btn-right:hover {
+            transform: translateX(3px);
+        }
+
+        .nav-indicador {
+            font-size: 0.85rem;
+            color: #5e7f97;
+            background: rgba(18, 148, 219, 0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+        }
+
+        /* Contenido principal */
+        .contenido {
+            margin: 2rem 0;
+        }
+
+        .contenido h2 {
+            color: #1f3e54;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+            border-left: 4px solid #1294db;
+            padding-left: 1rem;
+        }
+
+        .contenido h3 {
+            color: #2c6280;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .contenido p {
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .contenido img {
+            max-width: 100%;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Caja para enlaces */
+        .enlaces-box {
+            background: rgba(18, 148, 219, 0.08);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 3px solid #1294db;
+        }
+
+        .enlaces-box h4 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .enlace {
+            display: block;
+            margin: 0.5rem 0;
+            color: #1294db;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .enlace:hover {
+            color: #044756;
+            text-decoration: underline;
+        }
+
+        /* Caja de actividad */
+        .actividad-box {
+            background: linear-gradient(135deg, #f0f7fc, #e8f0f6);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cbdde9;
+        }
+
+        .actividad-box h4 {
+            color: #1f3e54;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Botones importantes */
+        .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(105deg, #1e3e5c, #2c4863);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: all 0.2s;
+        }
+
+        .btn-volver:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+
+        /* Listas */
+        .contenido ul, .contenido ol {
+            margin: 1rem 0 1rem 2rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .contenido table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: #ffffff;
+        }
+
+        .contenido th,
+        .contenido td {
+            border: 1px solid #cbdde9;
+            padding: 0.85rem 1rem;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .contenido th {
+            background: rgba(18, 148, 219, 0.12);
+            color: #1f3e54;
+        }
+
+        .contenido li {
+            margin: 0.5rem 0;
+        }
+
+        .cell-types {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .cell-type-card {
+            background: #f8fbfd;
+            border: 1px solid #d9e9f1;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .cell-type-card h4 {
+            margin-bottom: 0.75rem;
+            color: #1f3e54;
+            font-size: 1.05rem;
+        }
+
+        .cell-type-card p {
+            margin-bottom: 1rem;
+        }
+
+        .cell-type-image {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #e9f4fb 0%, #ffffff 100%);
+            border: 1px dashed #a5cbd9;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #517a94;
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0.75rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            body { padding: 1rem; }
+            .unidad-card { padding: 1.5rem; }
+            .unidad-titulo-principal { font-size: 1.5rem; }
+            .nav-unidades { flex-direction: column; }
+            .cell-types { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="unidad-card">
+        <!-- Encabezado -->
+        <div class="unidad-header">
+            <span class="unidad-materia" id="materiaNombre">【Nombre de la Materia】</span>
+            <h1 class="unidad-titulo-principal" id="unidadTitulo">Unidad 【Número】: 【Título de la Unidad】</h1>
+            <p class="unidad-subtitulo" id="unidadDescripcion">【Breve descripción de lo que aprenderás en esta unidad】</p>
+        </div>
+
+        <!-- Navegación entre unidades -->
+        <div class="nav-unidades" id="navUnidades">
+            <!-- Se llena con JS -->
+        </div>
+
+        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <div class="contenido">
+            <h2>📌 Introducción</h2>
+
+
+            <p>【escribe aqui】</p>
+
+           
+            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
+            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+
+            <h3>📌 La célula</h3>
+            <p>La célula es la unidad estructural, funcional y de origen más pequeña que compone a todos los seres vivos. Pensar en ella como una "microfábrica" ayuda a entender cómo funciona: tiene paredes, áreas de procesamiento de energía, una oficina central de control y sistemas de transporte.</p>
+            <img src="imagenes/132.jpg">
+
+            <h3>Partes clave de una célula</h3>
+            <p>Casi todas las células comparten tres componentes fundamentales:</p>
+            <ul>
+                <li><strong>Membrana plasmática (o celular):</strong> La cubierta exterior que protege a la célula y controla qué sustancias entran y salen (nutrientes, agua, desechos).</li>
+                <li><strong>Citoplasma:</strong> El líquido gelatinoso que llena el interior de la célula y sostiene a los <strong>organelos</strong> (las pequeñas "herramientas" que realizan tareas específicas).</li>
+                <li><strong>Núcleo:</strong> El compartimento que protege la información genética en las células eucariotas y funciona como una "oficina central" donde se controla qué hace la célula.</li>
+            </ul>
+            <img src="imagenes/133.jpg">
+
+            <h3>Tipos principales de células</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Características principales</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procariota</td>
+                        <td>Más simples y pequeñas. <strong>No tienen núcleo definido</strong>; su ADN flota libre en el citoplasma.</td>
+                        <td>Bacterias y arqueas</td>
+                    </tr>
+                    <tr>
+                                <td>Eucariota</td>
+                        <td>Más complejas y grandes. <strong>Tienen un núcleo delimitado</strong> por una membrana que protege la información genética y dirige las funciones celulares.</td>
+                        <td>Células animales, vegetales, hongos y protistas</td>
+                    </tr>
+                </tbody>
+            </table>
+            <img src="imagenes/134.jpg">
+
+            <h3>Unicelular y pluricelular</h3>
+            <p>Las formas de vida se pueden agrupar según cuántas células tienen:</p>
+            <ul>
+                <li><strong>Organismos unicelulares:</strong> Están formados por una sola célula que realiza todas las funciones necesarias para vivir. Ejemplos: muchas bacterias (procariotas) y algunos protistas (eucariotas).</li>
+                <li><strong>Organismos pluricelulares:</strong> Están formados por muchas células que se especializan en tareas distintas y trabajan en conjunto. Ejemplos: plantas, animales, hongos y algas multicelulares (eucariotas).</li>
+            </ul>
+            <p>En procariotas, como las bacterias, la célula única es el organismo completo: no tienen núcleo y todas las funciones se llevan a cabo dentro de la misma célula. En eucariotas, tanto los organismos unicelulares como los pluricelulares pueden existir, pero siempre con un núcleo bien definido que organiza la información genética.</p>
+            <img src="imagenes/135.jpg">
+
+            <h3>Funciones vitales</h3>
+            <p>Todas las células realizan funciones vitales que les permiten crecer, obtener energía, reproducirse y responder al entorno. Estas funciones son esenciales tanto para procariotas como para eucariotas.</p>
+            <ul>
+                <li><strong>Nutrición:</strong> Captar y transformar sustancias para obtener energía. Ejemplo: una bacteria procariota toma glucosa del medio y realiza reacciones en el citoplasma para obtener energía.</li>
+                <li><strong>Relación:</strong> Detectar y responder a cambios en el entorno. Ejemplo: una ameba (eucariota unicelular) se mueve hacia una fuente de alimento usando sus seudópodos.</li>
+                <li><strong>Reproducción:</strong> Generar nuevas células o individuos. Ejemplo: una célula eucariota puede dividirse por mitosis para formar dos células hijas con igual material genético.</li>
+                <li><strong>Respiración celular:</strong> Obtener energía a partir de nutrientes. Ejemplo: las células animales eucariotas usan oxígeno para extraer energía de la glucosa en las mitocondrias.</li>
+            </ul>
+            <img src="imagenes/136.jpg">
+            <p>Por ejemplo, en una célula procariota como la <em>Escherichia coli</em>, la nutrición y la respiración ocurren en el citoplasma y la membrana celular, mientras que en una célula eucariota animal, la respiración se realiza en las mitocondrias y el núcleo coordina la reproducción.</p>
+
+            <h3>Principales orgánulos y estructuras internas de la célula eucariota</h3>
+            <p>Las células eucariotas tienen varias partes internas especializadas que trabajan en conjunto para mantener la vida. Aquí aparecen los 13 orgánulos y estructuras más relevantes:</p>
+            <ul>
+                <li><strong>Núcleo:</strong> Contiene el material genético y controla las actividades celulares. Ejemplo: el núcleo de una célula animal dirige cuándo la célula debe dividirse.</li>
+                <li><strong>Membrana plasmática:</strong> Regula el paso de sustancias hacia dentro y fuera de la célula. Ejemplo: permite la entrada de nutrientes y la salida de desechos.</li>
+                <li><strong>Citoplasma:</strong> Medio líquido donde flotan los orgánulos y se realizan muchas reacciones químicas. Ejemplo: en el citoplasma se produce la glucólisis para obtener energía.</li>
+                <li><strong>Ribosomas:</strong> Fabrican proteínas a partir de las instrucciones del ARN. Ejemplo: una célula eucariota produce proteínas necesarias para su estructura y función.</li>
+                <li><strong>Retículo endoplasmático rugoso:</strong> Ensambla proteínas que serán exportadas o usadas dentro de la célula. Ejemplo: produce las enzimas que se exportan a otras partes del cuerpo.</li>
+                <li><strong>Retículo endoplasmático liso:</strong> Sintetiza lípidos y desintoxica sustancias. Ejemplo: en células del hígado, elimina toxinas y fabrica colesterol.</li>
+                <li><strong>Aparato de Golgi:</strong> Procesa, empaca y distribuye proteínas y lípidos. Ejemplo: modifica una proteína antes de enviarla fuera de la célula.</li>
+                <li><strong>Mitocondrias:</strong> Producen energía en forma de ATP mediante la respiración celular. Ejemplo: las células musculares tienen muchas mitocondrias para obtener energía al moverse.</li>
+                <li><strong>Cloroplastos:</strong> Realizan la fotosíntesis en células vegetales y producen glucosa usando luz solar. Ejemplo: en una célula de hoja de planta, convierten la luz en alimento.</li>
+                <li><strong>Lisosomas:</strong> Contienen enzimas que degradan sustancias y reciclan componentes dañados. Ejemplo: eliminan restos de bacterias dentro de una célula blanca.</li>
+                <li><strong>Vacuolas:</strong> Almacenan agua, nutrientes y desechos. Ejemplo: en células vegetales, la vacuola central mantiene la presión interna y almacena agua.</li>
+                <li><strong>Citoesqueleto:</strong> Red de fibras que mantiene la forma celular y permite el movimiento interno. Ejemplo: ayuda al transporte de vesículas dentro de la célula.</li>
+                <li><strong>Centríolos:</strong> Organizan el huso mitótico durante la división celular en células animales. Ejemplo: se duplican antes de la división para separar los cromosomas.</li>
+            </ul>
+            <img src="imagenes/137.jpg">
+
+            <div class="cell-container">
+    <h3>Cuatro tipos de células</h3>
+    <p>Las células se pueden clasificar en cuatro tipos según su forma, función y estructura. A continuación se explica cada tipo con una imagen representativa.</p>
+    
+    <div class="cell-types">
+        
+        <!-- 1. Célula Animal -->
+        <div class="cell-type-card">
+            <h4>Célula animal</h4>
+            <div class="cell-type-image">
+                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=500&auto=format&fit=crop" alt="Célula animal" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <p>Las células animales son eucariotas, no tienen pared celular y pueden presentar formas variadas. Tienen núcleos definidos y organelos como mitocondrias y lisosomas.</p>
+        </div>
+    
+        <!-- 2. Célula Vegetal -->
+        <div class="cell-type-card">
+            <h4>Célula vegetal</h4>
+            <div class="cell-type-image">
+                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=500&auto=format&fit=crop" alt="Célula vegetal" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <p>Las células vegetales son eucariotas y cuentan con pared celular rígida, cloroplastos para fotosíntesis y una vacuola grande que ayuda a mantener la forma.</p>
+        </div>
+        
+        <!-- 3. Célula Procariota -->
+        <div class="cell-type-card">
+            <h4>Célula procariota</h4>
+            <div class="cell-type-image">
+                <img src="https://th.bing.com/th/id/R.2a51d62837314ea1a65eb0653b2567b6?rik=WXn65i%2fK%2bFL70g&pid=ImgRaw&r=0" alt="Célula procariota" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <p>Las células procariotas, como las bacterias, son más simples y no tienen núcleo verdadero. Su ADN está libre en el citoplasma y no poseen orgánulos rodeados por membranas.</p>
+        </div>
+        
+        <!-- 4. Célula de Protista -->
+        <div class="cell-type-card">
+            <h4>Célula de protista</h4>
+            <div class="cell-type-image">
+                <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=500&auto=format&fit=crop" alt="Célula de protista" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <p>Los protistas son eucariotas generalmente unicelulares con núcleo definido. Pueden tener estructuras especializadas como seudópodos, cilios o flagelos para moverse y alimentarse.</p>
+        </div>
+
+    </div>
+</div>
+
+        <!-- Enlaces útiles -->
+     <div class="enlaces-box">
+    <h4>🔗 Enlaces de interés</h4>
+    <a href="https://www.youtube.com/watch?v=_ejQaAsna3k" class="enlace" target="_blank">🎥 【La Célula: Estructura, Partes y Funciones - Mario Carreón】</a>
+    <a href="https://www.youtube.com/watch?v=zWb9uStf6tI" class="enlace" target="_blank">🔬 【Células Procariotas y Eucariotas: Diferencias y Características】</a>
+    <a href="https://www.youtube.com/watch?v=Oo57tMOx0pk" class="enlace" target="_blank">🧬 【Organelos Celulares y sus Funciones - Explicación Rápida】</a>
+</div>
+
+        <!-- Actividad -->
+        <div class="actividad-box">
+            <h4>✍️ Actividad de la unidad</h4>
+            <ul>
+                <li>TALLER 1 <a href="https://drive.google.com/file/d/15BL_s85wv5x17I9z29PVdiRoovjiYqIi/view?usp=sharing">aquí </a>.</li>
+               
+            </ul>
+        </div>
+
+        <!-- Botón para volver al curso -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+                ⬅️ Volver al curso
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Toast de notificación -->
+<div id="toastMessage" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1f3e54e6; backdrop-filter:blur(8px); color:white; padding:0.8rem 1.8rem; border-radius:60px; z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; white-space:nowrap;">✨</div>
+
+<script>
+    // =============================================
+    // IDENTIFICAR LA MATERIA Y UNIDAD ACTUAL
+    // =============================================
+    
+    // Extraer de la URL qué curso y unidad es
+    // Formato esperado: unidadX-Y.html donde X = materia (1-7), Y = unidad (1-4)
+    const pathName = window.location.pathname;
+    const fileName = pathName.split('/').pop();
+    const match = fileName.match(/unidad(\d+)-(\d+)\.html/);
+    
+    let materiaId = 1;
+    let unidadNum = 1;
+    
+    if (match) {
+        materiaId = parseInt(match[1]);
+        unidadNum = parseInt(match[2]);
+    }
+    
+    // Datos de las materias para la navegación
+    const materias = {
+        1: { nombre: "📖 Español y Filosofía", id: 1, volverLink: "detalle-curso.html?id=1" },
+        2: { nombre: "🧮 Matemáticas", id: 2, volverLink: "detalle-curso.html?id=2" },
+        3: { nombre: "🌍 Sociales", id: 3, volverLink: "detalle-curso.html?id=3" },
+        4: { nombre: "⚡ Física", id: 4, volverLink: "detalle-curso.html?id=4" },
+        5: { nombre: "🧪 Química", id: 5, volverLink: "detalle-curso.html?id=5" },
+        6: { nombre: "🇬🇧 Inglés", id: 6, volverLink: "detalle-curso.html?id=6" },
+        7: { nombre: "🧬 Biología", id: 7, volverLink: "detalle-curso.html?id=7" }
+    };
+    
+    // Títulos de unidades por materia
+    const unidadesTitulos = {
+        1: { // Español y Filosofía
+            1: "Comprensión Lectora",
+            2: "Gramática Española",
+            3: "Introducción a la Filosofía",
+            4: "Ética y Valores"
+        },
+        2: { // Matemáticas
+            1: "Números y Operaciones",
+            2: "Álgebra Básica",
+            3: "Geometría",
+            4: "Estadística"
+        },
+        3: { // Sociales
+            1: "Historia Universal",
+            2: "Geografía Mundial",
+            3: "Historia de Colombia",
+            4: "Democracia y Participación"
+        },
+        4: { // Física
+            1: "Cinemática",
+            2: "Dinámica",
+            3: "Energía y Trabajo",
+            4: "Electricidad Básica"
+        },
+        5: { // Química
+            1: "Estructura Atómica",
+            2: "Tabla Periódica",
+            3: "Reacciones Químicas",
+            4: "Química en la Vida"
+        },
+        6: { // Inglés
+            1: "Greetings & Basics",
+            2: "Present Simple",
+            3: "Everyday Activities",
+            4: "Travel & Culture"
+        },
+        7: { // Biología
+            1: "La Célula",
+            2: "Reinos de la Naturaleza",
+            3: "Cuerpo Humano",
+            4: "Ecología"
+        }
+    };
+    
+    // Descripciones cortas de unidades
+    const unidadesDescripciones = {
+        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
+        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
+        4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
+        5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
+        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
+        7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
+    };
+    
+    // Actualizar el encabezado de la página
+    const materia = materias[materiaId];
+    const unidadTitulo = unidadesTitulos[materiaId]?.[unidadNum] || `Unidad ${unidadNum}`;
+    const unidadDescripcion = unidadesDescripciones[materiaId]?.[unidadNum - 1] || "Aprende los fundamentos de esta unidad";
+    
+    if (materia) {
+        document.getElementById('materiaNombre').textContent = materia.nombre;
+        document.getElementById('unidadTitulo').innerHTML = `Unidad ${unidadNum}: ${unidadTitulo}`;
+        document.getElementById('unidadDescripcion').textContent = unidadDescripcion;
+        document.title = `${materia.nombre} - Unidad ${unidadNum}: ${unidadTitulo} | Aula Virtual`;
+    }
+    
+    // Generar navegación entre unidades de la misma materia
+    function generarNavegacion() {
+        const navContainer = document.getElementById('navUnidades');
+        if (!navContainer) return;
+        
+        let html = '';
+        
+        // Unidad anterior
+        if (unidadNum > 1) {
+            html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`;
+        } else {
+            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`;
+        }
+        
+        // Indicador
+        html += `<span class="nav-indicador">📚 Unidad ${unidadNum} de 4</span>`;
+        
+        // Unidad siguiente
+        if (unidadNum < 4) {
+            html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`;
+        } else {
+            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">Unidad siguiente ➡️</span>`;
+        }
+        
+        navContainer.innerHTML = html;
+    }
+    
+    // Actualizar el botón de volver
+    function actualizarBotonVolver() {
+        const btnVolver = document.querySelector('.btn-volver');
+        if (btnVolver && materia) {
+            btnVolver.href = `detalle-curso.html?id=${materiaId}`;
+        }
+    }
+    
+    // Toast
+    let toastTimeout = null;
+    function showToast(message) {
+        const toast = document.getElementById('toastMessage');
+        toast.textContent = message;
+        toast.style.opacity = '1';
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.style.opacity = '0';
+        }, 2000);
+    }
+    
+    // Inicializar
+    generarNavegacion();
+    actualizarBotonVolver();
+</script>
+</body>
+</html>
+
             background: linear-gradient(145deg, #000000 0%, #044756 100%);
             min-height: 100vh;
             padding: 2rem;
