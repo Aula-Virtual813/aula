@@ -273,6 +273,19 @@
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
         }
+        .cell-type-image {
+    display: block;
+    width: 100%;
+    max-width: 500px;      /* Ancho máximo */
+    height: 250px;         /* Alto fijo */
+    margin: 15px auto;
+    border-radius: 8px;
+    object-fit: cover;     /* Evita que se deformen */
+    object-position: center;
+    border: 2px dashed #9fd3ff;
+    padding: 4px;
+    background: #fff;
+}
     </style>
 </head>
 <body>
@@ -313,16 +326,16 @@
             <p><strong>Características:</strong> eucariotas, pared celular de quitina, nutrición heterótrofa por absorción, generalmente inmóviles.</p>
             <p><strong>Ejemplo:</strong> <em>Agaricus bisporus</em>, el champiñón común de cocina. También las mohos como <em>Rhizopus</em> que aparecen en el pan y las levaduras de la cerveza, <em>Saccharomyces cerevisiae</em>.</p>
 
-            <h3>4. Reino Plantae</h3>
+            <h3>4. Reino Plantas</h3>
             <p>El reino Plantae está formado por plantas eucariotas multicelulares. Las células vegetales tienen pared celular de celulosa, cloroplastos para la fotosíntesis y grandes vacuolas que almacenan agua.</p>
             <p><strong>Características:</strong> eucariotas multicelulares, nutrición autótrofa por fotosíntesis, pared celular rígida, usualmente no se mueven.</p>
             <p><strong>Ejemplo:</strong> los árboles como el pino (<em>Pinus</em>), las flores como el girasol (<em>Helianthus annuus</em>) y los helechos. También las algas verdes grandes se incluyen en esta categoría en algunos sistemas de clasificación.</p>
 
-            <h3>5. Reino Animalia</h3>
-            <p>El reino Animalia reúne a los animales, organismos eucariotas multicelulares que obtienen su alimento mediante ingestión. Sus células no tienen pared celular y se agrupan en tejidos, órganos y sistemas.</p>
+            <h3>5. Reino Animal</h3>
+            <p>El reino Animal reúne a los animales, organismos eucariotas multicelulares que obtienen su alimento mediante ingestión. Sus células no tienen pared celular y se agrupan en tejidos, órganos y sistemas.</p>
             <p><strong>Características:</strong> eucariotas multicelulares, nutrición heterótrofa por ingestión, movilidad en alguna etapa de su vida, células sin pared celular.</p>
             <p><strong>Ejemplo:</strong> el ser humano (<em>Homo sapiens</em>), los gatos (<em>Felis catus</em>), y los insectos como la mariposa (<em>Pieris rapae</em>).</p>
-
+            <img src="imagenes/178.jpg">
             <h3>Cómo distinguir los reinos</h3>
             <ul>
                 <li><strong>Presencia de núcleo:</strong> Monera no tiene núcleo verdadero; Protista, Fungi, Plantae y Animalia sí.</li>
@@ -368,64 +381,60 @@
                     </tr>
                 </tbody>
             </table>
-
-            <h2>🌿 Cadena alimenticia</h2>
+<h2>🌿 Cadena alimenticia</h2>
             <p>La cadena alimenticia muestra cómo fluye la energía entre los seres vivos en un ecosistema. Está formada por cinco niveles, desde los productores hasta los descomponedores.</p>
 
             <div class="food-chain-level">
                 <h3>1. Productores</h3>
                 <p>Son organismos autótrofos que producen su propio alimento mediante la fotosíntesis o la quimiosíntesis. Transforman la energía solar o química en materia orgánica.</p>
                 <p><strong>Ejemplo:</strong> plantas como el pasto, algas y algunas bacterias fotosintéticas.</p>
-                <div class="cell-type-image">Espacio para imagen: productores</div>
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcT6lBfEJ4UrOamrwWoQrXkXJfTFO3IUWDPVI2YmpAWbJF4qCA66YXozHdn8mFscJ4uBxuiWkxA1FXdLdIU" alt="Productores - Plantas y Pasto" class="cell-type-image">
             </div>
 
             <div class="food-chain-level">
                 <h3>2. Consumidores primarios</h3>
                 <p>Son herbívoros que se alimentan directamente de los productores. Obtienen energía al comer plantas o algas.</p>
                 <p><strong>Ejemplo:</strong> un conejo que come pasto, una vaca que consume hojas o un saltamontes que come plantas.</p>
-                <div class="cell-type-image">Espacio para imagen: consumidor primario</div>
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRy_6eWMrGEdBFVSkrQtr3eJk82k3k2foMRRgZGDdha40rntXyDaFjMyEDQK08msPMn3KB6l-WXAGI5n4o" alt="Consumidor primario - Conejo comiendo pasto" class="cell-type-image">
             </div>
 
             <div class="food-chain-level">
                 <h3>3. Consumidores secundarios</h3>
                 <p>Son carnívoros u omnívoros que comen a los consumidores primarios. Se ubican un nivel más arriba en la cadena alimenticia.</p>
                 <p><strong>Ejemplo:</strong> un zorro que caza conejos, una rana que come insectos, o aves que comen gusanos.</p>
-                <div class="cell-type-image">Espacio para imagen: consumidor secundario</div>
+                <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQ5HuuqZjSVHNxR0zxt2h7mnuoVy_szYUKqDtHz2gr2RRxws1e82m0a88LLQKCKRCYRrD5kx4JhKR4KjV8" alt="Consumidor secundario - Zorro" class="cell-type-image">
             </div>
 
             <div class="food-chain-level">
                 <h3>4. Consumidores terciarios</h3>
                 <p>Son depredadores tope que se alimentan de consumidores secundarios. Su papel es controlar las poblaciones de niveles inferiores y mantener el equilibrio.</p>
                 <p><strong>Ejemplo:</strong> un águila que come serpientes, un león que caza antílopes, o un tiburón que se alimenta de peces más pequeños.</p>
-                <div class="cell-type-image">Espacio para imagen: consumidor terciario</div>
+                <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcSPbmWa3YQzhnENdmRGFDJ1W8DrPM0TzvIEL9x3A4YLJEpZP5C-5yyT5jXdNAWOqj_RPvGnTfsiy7jGZ_A" alt="Consumidor terciario - Águila" class="cell-type-image">
             </div>
 
             <div class="food-chain-level">
                 <h3>5. Descomponedores</h3>
                 <p>Descomponen los restos de organismos muertos y los desechos, devolviendo nutrientes al suelo y al agua. Cierran el ciclo de materia en el ecosistema.</p>
                 <p><strong>Ejemplo:</strong> hongos, bacterias y algunos insectos como las lombrices de tierra.</p>
-                <div class="cell-type-image">Espacio para imagen: descomponedores</div>
+                <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSAK5vEfbmTSN-r3s9E2igYfHuaIEo3ETvXh_ozXaYPUKWNah2oflKn5cPmuikzL3rlFbsaXiO7EJE9x9k" alt="Descomponedores - Hongos en el suelo" class="cell-type-image">
             </div>
-        </div>
-
         <!-- Enlaces útiles -->
-        <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
+       <!-- Enlaces útiles -->
+<div class="enlaces-box">
+    <h4>🔗 Enlaces de interés</h4>
+    <a href="https://www.youtube.com/watch?v=IbgWzwTcDrI" class="enlace" target="_blank">📘 【Video: Los 5 Reinos - Biología desde cero】</a>
+    <a href="https://www.youtube.com/watch?v=6tttZ_7Q9a8" class="enlace" target="_blank">🎥 【Video: Clasificación y 5 Reinos】</a>
+    <a href="https://www.youtube.com/watch?v=IKVXwH0-gTc" class="enlace" target="_blank">📄 【Video: Taxonomía y Seres Vivos】</a>
+    <a href="https://www.youtube.com/watch?v=FBQNRqQNvAc" class="enlace" target="_blank">🌿 【Video: Cadena Alimenticia Explicada】</a>
+    <a href="https://www.youtube.com/watch?v=UMrU2peVKcU" class="enlace" target="_blank">☀️ 【Video: Flujo de Energía y Niveles Tróficos】</a>
+</div>
 
         <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
+                <li>TALLER 2 <a href="https://drive.google.com/file/d/1Z6jh5kDU_R8Rnv8VK3Ft1eMRehBm1IVF/view?usp=sharing">aquí </a>.</li>
                 
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
             </ul>
         </div>
 
