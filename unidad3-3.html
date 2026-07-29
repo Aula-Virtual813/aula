@@ -139,6 +139,112 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Caja de la Constitución */
+        .constitucion-box {
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .constitucion-box.principios {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 6px solid #1565c0;
+        }
+
+        .constitucion-box.derechos {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 6px solid #2e7d32;
+        }
+
+        .constitucion-box.organizacion {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-left: 6px solid #f57f17;
+        }
+
+        .constitucion-box.ramas {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-left: 6px solid #6a1b9a;
+        }
+
+        .constitucion-box h3 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .constitucion-box h4 {
+            color: #2c6280;
+            margin: 0.8rem 0 0.5rem;
+        }
+
+        .constitucion-box ul {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .constitucion-box li {
+            margin: 0.3rem 0;
+        }
+
+        .constitucion-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .constitucion-box table th {
+            background: #1e3e5c;
+            color: white;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .constitucion-box table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #e8f0f6;
+        }
+
+        /* Mapa de conceptos */
+        .mapa-conceptos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mapa-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 2px solid #1294db;
+            transition: transform 0.2s;
+        }
+
+        .mapa-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .mapa-item .icono {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mapa-item h4 {
+            color: #1f3e54;
+            margin-bottom: 0.3rem;
+        }
+
+        .mapa-item p {
+            color: #5e7f97;
+            font-size: 0.85rem;
+        }
+
         /* Caja para enlaces */
         .enlaces-box {
             background: rgba(18, 148, 219, 0.08);
@@ -217,12 +323,109 @@
             margin: 0.5rem 0;
         }
 
+        /* Caja de dato curioso */
+        .dato-curioso {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 4px solid #ff9800;
+            margin: 1.5rem 0;
+        }
+
+        .dato-curioso h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+        }
+
+        .dato-curioso.verde {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left-color: #388e3c;
+        }
+
+        .dato-curioso.verde h4 {
+            color: #1b5e20;
+        }
+
+        /* Tablas */
+        .tabla-constitucion {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-constitucion th {
+            background: #1e3e5c;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        .tabla-constitucion td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e8f0f6;
+            color: #2c3e50;
+        }
+
+        .tabla-constitucion tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabla-constitucion tr:hover td {
+            background: #f0f7fc;
+        }
+
+        /* Línea de tiempo */
+        .timeline-constitucion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-constitucion::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: linear-gradient(to right, #1565c0, #2e7d32, #f57f17, #6a1b9a);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .timeline-constitucion .tl-item {
+            background: white;
+            border: 2px solid #1294db;
+            border-radius: 1rem;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1f3e54;
+            z-index: 1;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 120px;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .mapa-conceptos { grid-template-columns: 1fr 1fr; }
+            .timeline-constitucion { flex-direction: column; }
+            .timeline-constitucion::before { display: none; }
         }
     </style>
 </head>
@@ -241,56 +444,537 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
 
+            <h2 style="font-size:2rem;">📌 Introducción</h2>
 
-            <p>【escribe aqui】</p>
+            <p>¿Sabías que Colombia tiene una <strong>"carta de navegación"</strong> que define cómo debe funcionar el país? Así como un barco necesita un rumbo claro para no perderse, Colombia tiene un documento especial que establece las reglas fundamentales para la convivencia, la organización del Estado y la protección de los derechos de todos los ciudadanos. Ese documento se llama <strong>Constitución Política</strong>.</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <p>La Constitución es la <strong>ley más importante</strong> de Colombia. Todas las demás leyes, decretos y normas deben respetar lo que dice la Constitución. En esta unidad aprenderás qué es la Constitución Política, cómo se creó, cuáles son sus principios fundamentales, qué derechos y deberes establece para los ciudadanos, y cómo se organiza el Estado colombiano. ¡Conocer la Constitución es el primer paso para ser un ciudadano responsable y participativo!</p>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <div class="dato-curioso">
+                <h4>💡 ¿Sabías que...?</h4>
+                <p>La Constitución Política de Colombia de 1991 también es conocida como la <strong>"Constitución de los Derechos"</strong> porque fue la primera en incluir una amplia lista de derechos fundamentales, sociales, económicos y culturales. Reemplazó a la anterior Constitución de 1886, que había estado vigente por más de 100 años.</p>
+            </div>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <h2 style="font-size:2rem;">📖 Contenido Principal</h2>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <h3 style="font-size:1.6rem;">🎯 Objetivo general</h3>
+            <p>Comprender qué es la Constitución Política de Colombia, su origen, sus principios fundamentales, los derechos y deberes de los ciudadanos, y la organización del Estado colombiano.</p>
 
-            <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
-            </ul>
+            <h3 style="font-size:1.6rem;">🎯 Objetivos específicos</h3>
+            <ol>
+                <li>Definir qué es una Constitución Política y por qué es la norma suprema del país.</li>
+                <li>Conocer la historia y el proceso que llevó a la Constitución de 1991.</li>
+                <li>Identificar los principios fundamentales de la Constitución: Estado Social de Derecho, democracia, soberanía popular.</li>
+                <li>Reconocer los derechos fundamentales, sociales, económicos y culturales establecidos en la Constitución.</li>
+                <li>Comprender los deberes y obligaciones de los ciudadanos colombianos.</li>
+                <li>Explicar la organización del Estado: Ramas del poder público y organismos de control.</li>
+            </ol>
+
+            <!-- Mapa conceptual -->
+            <h3 style="font-size:1.6rem;">📌 ¿Qué es la Constitución Política?</h3>
+            <p>La <strong>Constitución Política</strong> es el conjunto de normas fundamentales que organiza la vida de un país. Es la ley de leyes, la norma suprema del ordenamiento jurídico. Ninguna ley, decreto o disposición puede estar por encima de lo que establece la Constitución.</p>
+
+            <div class="mapa-conceptos">
+                <div class="mapa-item">
+                    <div class="icono">📜</div>
+                    <h4>Norma Suprema</h4>
+                    <p>Es la ley más importante del país. Todas las demás leyes deben respetarla.</p>
+                </div>
+                <div class="mapa-item">
+                    <div class="icono">⚖️</div>
+                    <h4>Marco Jurídico</h4>
+                    <p>Establece las reglas para la creación de leyes y el funcionamiento del Estado.</p>
+                </div>
+                <div class="mapa-item">
+                    <div class="icono">🛡️</div>
+                    <h4>Protectora de Derechos</h4>
+                    <p>Garantiza los derechos fundamentales de todas las personas en el territorio.</p>
+                </div>
+                <div class="mapa-item">
+                    <div class="icono">🏛️</div>
+                    <h4>Organización del Estado</h4>
+                    <p>Define cómo se organiza y cómo funcionan las instituciones del gobierno.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Línea de Tiempo: Historia Constitucional de Colombia</h3>
+            <p>Colombia ha tenido varias constituciones a lo largo de su historia. La más importante y actual es la de 1991:</p>
+
+            <div class="timeline-constitucion">
+                <div class="tl-item" style="border-color: #1565c0;">📜 1886</div>
+                <div class="tl-item" style="border-color: #2e7d32;">🗳️ 1991</div>
+                <div class="tl-item" style="border-color: #f57f17;">✍️ Reformas</div>
+                <div class="tl-item" style="border-color: #6a1b9a;">📅 Actualidad</div>
+            </div>
+
+            <!-- Historia de la Constitución -->
+            <div class="constitucion-box principios">
+                <h3>📜 La Historia de la Constitución de 1991</h3>
+                <p>Antes de 1991, Colombia se regía por la <strong>Constitución de 1886</strong>, una constitución centralista y conservadora que estuvo vigente por más de un siglo. Sin embargo, el país cambiaba y necesitaba una nueva carta política que reflejara la realidad social y política de finales del siglo XX.</p>
+
+                <h4>¿Cómo surgió la Constitución de 1991?</h4>
+                <p>En la década de 1980, Colombia vivía una crisis marcada por la violencia del narcotráfico, el conflicto armado y la exclusión política. Surgió entonces un movimiento estudiantil llamado <strong>"La Séptima Papeleta"</strong> que impulsó la convocatoria de una <strong>Asamblea Nacional Constituyente</strong> para redactar una nueva Constitución.</p>
+
+                <h4>🔑 Fechas clave:</h4>
+                <table>
+                    <tr><th>Año</th><th>Acontecimiento</th></tr>
+                    <tr><td>1886</td><td>Se promulga la Constitución de 1886, vigente por 105 años.</td></tr>
+                    <tr><td>1990</td><td>Movimiento "La Séptima Papeleta": los estudiantes promueven el voto por una Asamblea Constituyente.</td></tr>
+                    <tr><td>1991</td><td>Se elige la Asamblea Nacional Constituyente, conformada por 70 delegados de diferentes partidos y movimientos.</td></tr>
+                    <tr><td>4 de julio de 1991</td><td>Se promulga la <strong>nueva Constitución Política de Colombia</strong>, reemplazando la de 1886.</td></tr>
+                </table>
+
+                <div class="dato-curioso">
+                    <h4>💡 La Séptima Papeleta</h4>
+                    <p>En las elecciones de 1990, los estudiantes universitarios promovieron que los ciudadanos votaran por una papeleta adicional (la séptima) para apoyar la convocatoria de una Asamblea Constituyente. ¡Más de 2 millones de personas votaron esa papeleta informal! Ese movimiento fue clave para que el gobierno aceptara la creación de una nueva Constitución.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Principios Fundamentales de la Constitución</h3>
+            <p>La Constitución de 1991 se basa en varios principios fundamentales que definen la identidad de Colombia como nación:</p>
+
+            <div class="constitucion-box principios">
+                <h3>🏛️ 1. Colombia es un Estado Social de Derecho</h3>
+                <p>El <strong>Artículo 1</strong> de la Constitución establece: <em>"Colombia es un Estado Social de Derecho, organizado en forma de República unitaria, descentralizada, con autonomía de sus entidades territoriales, democrática, participativa y pluralista."</em></p>
+                <p>Esto significa que Colombia no solo garantiza los derechos individuales, sino que el Estado debe trabajar activamente para lograr la <strong>justicia social</strong>, la igualdad y el bienestar de todos los ciudadanos. El Estado debe proteger a las personas más vulnerables y garantizar condiciones de vida dignas.</p>
+
+                <h4>📌 Características del Estado Social de Derecho:</h4>
+                <ul>
+                    <li>🔹 <strong>Dignidad humana:</strong> Todas las personas merecen respeto y condiciones de vida dignas.</li>
+                    <li>🔹 <strong>Solidaridad:</strong> El Estado debe ayudar a quienes más lo necesitan.</li>
+                    <li>🔹 <strong>Igualdad:</strong> Todas las personas son iguales ante la ley.</li>
+                    <li>🔹 <strong>Participación:</strong> Los ciudadanos pueden participar en las decisiones del país.</li>
+                    <li>🔹 <strong>Pluralismo:</strong> Se respetan las diferencias políticas, religiosas, culturales y étnicas.</li>
+                </ul>
+            </div>
+
+            <div class="constitucion-box principios">
+                <h3>🗳️ 2. Soberanía Popular</h3>
+                <p>El <strong>Artículo 3</strong> dice: <em>"La soberanía reside exclusivamente en el pueblo, del cual emana el poder público."</em></p>
+                <p>Esto significa que el poder no viene de Dios ni de un rey, sino del <strong>pueblo</strong>. Los ciudadanos eligen a sus gobernantes mediante el voto y pueden participar en las decisiones importantes del país. Por eso Colombia es una <strong>democracia participativa</strong>.</p>
+            </div>
+
+            <div class="constitucion-box principios">
+                <h3>🇨🇴 3. Fines esenciales del Estado</h3>
+                <p>Según el <strong>Artículo 2</strong>, los fines esenciales del Estado colombiano son:</p>
+                <ul>
+                    <li>🔹 Servir a la comunidad, promover la prosperidad general y garantizar la efectividad de los derechos.</li>
+                    <li>🔹 Facilitar la participación de todos en las decisiones que los afectan.</li>
+                    <li>🔹 Defender la independencia nacional, mantener la integridad territorial y asegurar la convivencia pacífica.</li>
+                    <li>🔹 Proteger a todas las personas en sus derechos y libertades.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Los Derechos Fundamentales</h3>
+            <p>Una de las mayores innovaciones de la Constitución de 1991 fue incluir una amplia lista de <strong>derechos fundamentales</strong> en el Título II. Estos derechos son inherentes a todas las personas y el Estado debe garantizarlos.</p>
+
+            <div class="constitucion-box derechos">
+                <h3>🛡️ Derechos Fundamentales (Artículos 11 al 41)</h3>
+                <p>Son los derechos más importantes, protegidos por la <strong>Acción de Tutela</strong> (un mecanismo rápido para defenderlos).</p>
+                
+                <h4>Principales derechos fundamentales:</h4>
+                <table>
+                    <tr><th>Derecho</th><th>¿Qué significa?</th><th>Artículo</th></tr>
+                    <tr><td>💚 Derecho a la vida</td><td>Nadie puede ser privado de la vida arbitrariamente.</td><td>Art. 11</td></tr>
+                    <tr><td>🚫 Prohibición de tortura</td><td>Nadie será sometido a torturas ni a tratos crueles.</td><td>Art. 12</td></tr>
+                    <tr><td>⚖️ Igualdad ante la ley</td><td>Todas las personas reciben el mismo trato.</td><td>Art. 13</td></tr>
+                    <tr><td>🆔 Derecho a la personalidad</td><td>Toda persona tiene derecho a su identidad, nombre y nacionalidad.</td><td>Art. 14</td></tr>
+                    <tr><td>🧠 Libertad de conciencia</td><td>Nadie será molestado por sus convicciones o creencias.</td><td>Art. 18</td></tr>
+                    <tr><td>🗣️ Libertad de expresión</td><td>Toda persona puede expresar sus ideas libremente.</td><td>Art. 20</td></tr>
+                    <tr><td>📚 Derecho a la educación</td><td>La educación es un derecho fundamental de los niños y adolescentes.</td><td>Art. 67</td></tr>
+                    <tr><td>🏥 Derecho a la salud</td><td>Toda persona tiene derecho a la atención en salud.</td><td>Art. 49</td></tr>
+                    <tr><td>🏠 Derecho a la vivienda</td><td>Los colombianos tienen derecho a una vivienda digna.</td><td>Art. 51</td></tr>
+                    <tr><td>⚽ Derecho a la recreación</td><td>Los niños tienen derecho a la recreación y al deporte.</td><td>Art. 52</td></tr>
+                </table>
+
+                <h4>📋 Clasificación de los derechos:</h4>
+                <ul>
+                    <li><strong>🔵 Derechos Fundamentales (1ª generación):</strong> Vida, igualdad, libertad de expresión, debido proceso, etc. (Arts. 11-41).</li>
+                    <li><strong>🟢 Derechos Sociales, Económicos y Culturales (2ª generación):</strong> Salud, educación, trabajo, vivienda, seguridad social (Arts. 42-77).</li>
+                    <li><strong>🟡 Derechos Colectivos y del Ambiente (3ª generación):</strong> Ambiente sano, patrimonio cultural, espacio público (Arts. 78-82).</li>
+                </ul>
+
+                <div class="dato-curioso">
+                    <h4>💡 La Acción de Tutela</h4>
+                    <p>La <strong>Acción de Tutela</strong> (Art. 86) es un mecanismo creado por la Constitución de 1991 para que cualquier persona pueda proteger sus derechos fundamentales de manera rápida y sencilla. No necesitas abogado para presentar una tutela. ¡Cualquier persona puede acudir a un juez para que proteja sus derechos en máximo 10 días!</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Los Deberes y Obligaciones de los Ciudadanos</h3>
+            <p>Así como la Constitución otorga derechos, también establece <strong>deberes y obligaciones</strong> que todos los ciudadanos debemos cumplir (Artículo 95):</p>
+
+            <div class="constitucion-box organizacion">
+                <h3>🤝 Deberes de la Persona y del Ciudadano</h3>
+                <ul>
+                    <li>🔹 <strong>Respetar los derechos ajenos</strong> y no abusar de los propios.</li>
+                    <li>🔹 <strong>Obedecer la Constitución y las leyes.</strong></li>
+                    <li>🔹 <strong>Participar en la vida política</strong> del país: votar, ser elegido, participar en decisiones.</li>
+                    <li>🔹 <strong>Defender y difundir los derechos humanos</strong> como fundamento de la convivencia.</li>
+                    <li>🔹 <strong>Propender al logro y mantenimiento de la paz.</strong></li>
+                    <li>🔹 <strong>Colaborar con la administración de justicia.</strong></li>
+                    <li>🔹 <strong>Proteger los recursos culturales y naturales</strong> del país y cuidar el medio ambiente.</li>
+                    <li>🔹 <strong>Contribuir al financiamiento del Estado</strong> mediante el pago de impuestos.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 La Organización del Estado Colombiano</h3>
+            <p>La Constitución organiza el poder público en tres <strong>ramas del poder</strong>, más los <strong>organismos de control</strong> y la <strong>organización electoral</strong>. Esta separación evita la concentración del poder.</p>
+
+            <div class="mapa-conceptos">
+                <div class="mapa-item" style="border-color: #1565c0;">
+                    <div class="icono">📝</div>
+                    <h4>Rama Legislativa</h4>
+                    <p>Congreso: Senado y Cámara. Hacen las leyes.</p>
+                </div>
+                <div class="mapa-item" style="border-color: #2e7d32;">
+                    <div class="icono">🏛️</div>
+                    <h4>Rama Ejecutiva</h4>
+                    <p>Presidente, ministros, gobernadores y alcaldes. Gobiernan y ejecutan.</p>
+                </div>
+                <div class="mapa-item" style="border-color: #f57f17;">
+                    <div class="icono">⚖️</div>
+                    <h4>Rama Judicial</h4>
+                    <p>Jueces, tribunales, Corte Suprema, Corte Constitucional. Administran justicia.</p>
+                </div>
+            </div>
+
+            <div class="constitucion-box ramas">
+                <h3>🏛️ Las 3 Ramas del Poder Público</h3>
+                <p>Para evitar que el poder se concentre en una sola persona o institución, la Constitución de 1991 divide el poder público en <strong>tres ramas independientes</strong> que trabajan en equilibrio. Esto se conoce como la <strong>separación de poderes</strong>, una idea del filósofo francés Montesquieu. Cada rama tiene funciones específicas y se controlan mutuamente para garantizar la democracia.</p>
+
+                <!-- ============================================ -->
+                <!-- RAMA LEGISLATIVA -->
+                <!-- ============================================ -->
+                <h4 style="font-size:1.3rem; margin-top:1.5rem; color:#1565c0;">📝 1. RAMA LEGISLATIVA: El Congreso de la República</h4>
+                <p><strong>Función principal:</strong> Crear, modificar y derogar las leyes. También ejerce control político sobre el gobierno y debate los temas más importantes para el país.</p>
+
+                <p>El Congreso de la República es un cuerpo colegiado compuesto por <strong>dos cámaras</strong> que trabajan de forma conjunta para producir las leyes:</p>
+
+                <table>
+                    <tr><th>Cámara</th><th>¿Quiénes la integran?</th><th>Funciones principales</th></tr>
+                    <tr>
+                        <td><strong>🏛️ Senado de la República</strong></td>
+                        <td><strong>108 senadores</strong> elegidos por voto popular para un período de 4 años. Representan a todo el país (circunscripción nacional).</td>
+                        <td>
+                            • Aprobar o rechazar reformas constitucionales.<br>
+                            • Elegir al Procurador General de la Nación.<br>
+                            • Aprobar ascensos militares de alto rango.<br>
+                            • Autorizar al Presidente para declarar la guerra.<br>
+                            • Juzgar a altos funcionarios (juicio político).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>📋 Cámara de Representantes</strong></td>
+                        <td><strong>188 representantes</strong> elegidos por voto popular. Representan a los departamentos, el Distrito Capital y las comunidades afrocolombianas e indígenas.</td>
+                        <td>
+                            • Presentar proyectos de ley.<br>
+                            • Fiscalizar el presupuesto nacional.<br>
+                            • Acusar ante el Senado a altos funcionarios.<br>
+                            • Elegir al Defensor del Pueblo.<br>
+                            • Examinar la cuenta general del presupuesto.
+                        </td>
+                    </tr>
+                </table>
+
+                <h4>📌 ¿Cómo se crea una ley? (El proceso legislativo)</h4>
+                <p>Para que una idea se convierta en ley, debe seguir un proceso cuidadoso de varios pasos:</p>
+                <ol>
+                    <li><strong>📄 Iniciativa:</strong> Un congresista, el gobierno nacional o los ciudadanos (mediante iniciativa popular) presentan un proyecto de ley ante el Congreso.</li>
+                    <li><strong>🗣️ Debate en comisiones:</strong> El proyecto se envía a una comisión especializada (de educación, salud, economía, etc.) donde se estudia a fondo y se hacen ajustes.</li>
+                    <li><strong>🏛️ Debate en plenarias:</strong> El proyecto se discute en la plenaria de la Cámara de Representantes y luego en la plenaria del Senado. Se pueden proponer cambios (llamados "modificaciones").</li>
+                    <li><strong>✅ Aprobación:</strong> Ambas cámaras deben aprobar el <strong>mismo texto</strong> del proyecto. Si hay diferencias, se crea una comisión de conciliación.</li>
+                    <li><strong>✍️ Sanción presidencial:</strong> El Presidente de la República revisa la ley aprobada. Si está de acuerdo, la sanciona (la firma) y la convierte en ley. Si no está de acuerdo, puede objetarla (veto), pero el Congreso puede insistir con mayoría absoluta.</li>
+                    <li><strong>📰 Publicación:</strong> La ley se publica en el <strong>Diario Oficial</strong> para que todos los ciudadanos la conozcan. Desde ese momento, es obligatoria.</li>
+                </ol>
+
+                <div class="dato-curioso">
+                    <h4>💡 Datos curiosos del Congreso</h4>
+                    <p>• El Congreso se reúne en el <strong>Capitolio Nacional</strong>, ubicado en la Plaza de Bolívar en Bogotá.</p>
+                    <p>• Las sesiones ordinarias van del <strong>20 de julio</strong> (Día de la Independencia) al 16 de diciembre, y del 16 de marzo al 20 de junio.</p>
+                    <p>• El Congreso también puede reunirse en <strong>sesiones extraordinarias</strong> convocadas por el Presidente.</p>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- RAMA EJECUTIVA -->
+                <!-- ============================================ -->
+                <h4 style="font-size:1.3rem; margin-top:1.5rem; color:#2e7d32;">🏛️ 2. RAMA EJECUTIVA: El Gobierno Nacional</h4>
+                <p><strong>Función principal:</strong> Gobernar el país, ejecutar las leyes aprobadas por el Congreso, administrar los recursos públicos y representar a Colombia en el exterior.</p>
+
+                <p>La Rama Ejecutiva está organizada en <strong>tres niveles territoriales</strong> que trabajan de forma coordinada:</p>
+
+                <table>
+                    <tr><th>Nivel</th><th>Cargo</th><th>¿Cómo se elige?</th><th>Funciones principales</th></tr>
+                    <tr>
+                        <td><strong>🥇 NACIONAL</strong></td>
+                        <td><strong>Presidente de la República</strong><br>+ Vicepresidente<br>+ 18 Ministros</td>
+                        <td>Elegido por voto popular cada 4 años. Puede ser reelegido por un período más (máximo 8 años).</td>
+                        <td>
+                            • Jefe de Estado: representa a Colombia ante otros países.<br>
+                            • Jefe de Gobierno: dirige la administración pública.<br>
+                            • Nombra y remueve libremente a los ministros.<br>
+                            • Dirige la fuerza pública (Policía Nacional y Fuerzas Militares).<br>
+                            • Sanciona y promulga las leyes.<br>
+                            • Declara estados de excepción (conmoción interior, emergencia económica).<br>
+                            • Dirige las relaciones internacionales (firma tratados).<br>
+                            • Presenta el Plan Nacional de Desarrollo al Congreso.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>🥈 DEPARTAMENTAL</strong></td>
+                        <td><strong>Gobernador</strong><br>+ Secretarios departamentales</td>
+                        <td>Elegido por voto popular cada 4 años. Hay 1 gobernador por cada uno de los <strong>32 departamentos</strong> de Colombia.</td>
+                        <td>
+                            • Administrar los recursos del departamento.<br>
+                            • Ejecutar proyectos de infraestructura vial, educación y salud.<br>
+                            • Coordinar con el gobierno nacional las políticas públicas.<br>
+                            • Promover el desarrollo económico y turístico de la región.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>🥉 MUNICIPAL</strong></td>
+                        <td><strong>Alcalde</strong><br>+ Secretarios municipales</td>
+                        <td>Elegido por voto popular cada 4 años. Hay 1 alcalde en cada uno de los <strong>1,103 municipios</strong> de Colombia.</td>
+                        <td>
+                            • Administrar el municipio y sus recursos.<br>
+                            • Garantizar los servicios públicos (agua potable, energía, aseo).<br>
+                            • Promover la cultura, el deporte y la recreación.<br>
+                            • Mantener el orden público en su localidad.<br>
+                            • Ejecutar obras públicas (parques, vías, colegios).
+                        </td>
+                    </tr>
+                </table>
+
+                <h4>📌 El Gabinete Ministerial</h4>
+                <p>El Presidente cuenta con la ayuda de <strong>18 ministerios</strong> (también llamados "carteras") que se encargan de temas específicos. Cada ministerio está dirigido por un <strong>ministro</strong> nombrado directamente por el Presidente. Los ministerios más importantes son:</p>
+                <ul>
+                    <li>🏫 <strong>Ministerio de Educación Nacional:</strong> Define las políticas educativas del país (colegios, universidades, becas).</li>
+                    <li>🏥 <strong>Ministerio de Salud y Protección Social:</strong> Administra el sistema de salud (EPS, hospitales, campañas de vacunación).</li>
+                    <li>💰 <strong>Ministerio de Hacienda y Crédito Público:</strong> Maneja el presupuesto nacional, los impuestos y la economía del país.</li>
+                    <li>🛡️ <strong>Ministerio de Defensa Nacional:</strong> Dirige las Fuerzas Militares (Ejército, Armada, Fuerza Aérea) y la Policía Nacional.</li>
+                    <li>⚖️ <strong>Ministerio de Justicia y del Derecho:</strong> Se encarga del sistema judicial y las cárceles.</li>
+                    <li>🌳 <strong>Ministerio de Ambiente y Desarrollo Sostenible:</strong> Protege los recursos naturales y el medio ambiente.</li>
+                    <li>🚗 <strong>Ministerio de Transporte:</strong> Administra las carreteras, aeropuertos, puertos y el transporte público.</li>
+                    <li>📡 <strong>Ministerio de Tecnologías de la Información y Comunicaciones (TIC):</strong> Promueve el internet, la conectividad y la transformación digital.</li>
+                </ul>
+
+                <div class="dato-curioso">
+                    <h4>💡 ¿Sabías que...?</h4>
+                    <p>El <strong>Presidente de la República</strong> es el jefe de Estado, jefe de Gobierno y <strong>jefe supremo de las Fuerzas Armadas</strong>. La casa donde vive y trabaja se llama <strong>Casa de Nariño</strong>, ubicada en Bogotá. El Presidente actual es elegido para un período de <strong>4 años</strong> y puede ser reelegido una sola vez.</p>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- RAMA JUDICIAL -->
+                <!-- ============================================ -->
+                <h4 style="font-size:1.3rem; margin-top:1.5rem; color:#f57f17;">⚖️ 3. RAMA JUDICIAL: La Administración de Justicia</h4>
+                <p><strong>Función principal:</strong> Administrar justicia, resolver los conflictos entre las personas, proteger los derechos y juzgar a quienes infringen la ley.</p>
+
+                <p>La Rama Judicial está compuesta por varias <strong>altas cortes</strong> y un conjunto de tribunales y juzgados en todo el país:</p>
+
+                <table>
+                    <tr><th>Alta Corte</th><th>¿Qué hace?</th><th>¿Quiénes la integran?</th></tr>
+                    <tr>
+                        <td><strong>⚖️ Corte Suprema de Justicia</strong></td>
+                        <td>Es el máximo tribunal de la <strong>justicia ordinaria</strong>. Conoce casos penales, civiles, laborales y de familia. Juzga a los altos funcionarios del Estado (presidente, congresistas, ministros).</td>
+                        <td>23 magistrados elegidos por la misma corporación para períodos de 8 años.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📜 Corte Constitucional</strong></td>
+                        <td>Es la máxima autoridad en temas <strong>constitucionales</strong>. Revisa si las leyes y decretos están de acuerdo con la Constitución. Decide sobre las <strong>acciones de tutela</strong> y protege los derechos fundamentales.</td>
+                        <td>9 magistrados elegidos por el Senado para períodos de 8 años (no pueden ser reelegidos).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏛️ Consejo de Estado</strong></td>
+                        <td>Es el máximo tribunal de la <strong>justicia contencioso-administrativa</strong>. Resuelve demandas contra el Estado y actúa como cuerpo consultivo del gobierno.</td>
+                        <td>31 magistrados elegidos por la misma corporación para períodos de 8 años.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📊 Consejo Superior de la Judicatura</strong></td>
+                        <td>Se encarga de la <strong>administración y disciplina</strong> de la Rama Judicial. Vigila a los jueces y abogados, y organiza las carreras judiciales.</td>
+                        <td>13 magistrados elegidos por diferentes entidades (Corte Suprema, Corte Constitucional, Consejo de Estado, Presidente).</td>
+                    </tr>
+                </table>
+
+                <h4>📌 ¿Cómo se organiza la justicia en Colombia?</h4>
+                <p>Además de las altas cortes, existen otros tribunales y juzgados en todo el territorio nacional:</p>
+                <ul>
+                    <li><strong>🏛️ Tribunales Superiores de Distrito Judicial:</strong> Hay 23 en todo el país. Conocen casos en segunda instancia (apelaciones).</li>
+                    <li><strong>⚖️ Juzgados del Circuito:</strong> Conocen casos de mayor importancia en materia civil, penal, laboral y de familia.</li>
+                    <li><strong>📋 Juzgados Municipales:</strong> Conocen casos de menor cuantía (pequeños conflictos, contravenciones).</li>
+                    <li><strong>👶 Juzgados de Familia:</strong> Se encargan de casos de divorcio, custodia de hijos, alimentos, adopciones.</li>
+                    <li><strong>🔍 Juzgados Penales:</strong> Investigan y juzgan delitos (robo, homicidio, estafa, etc.).</li>
+                    <li><strong>👮 Juzgados de Ejecución de Penas:</strong> Vigilan que las condenas se cumplan correctamente.</li>
+                </ul>
+
+                <div class="dato-curioso">
+                    <h4>💡 La Corte Constitucional y la Tutela</h4>
+                    <p>La <strong>Corte Constitucional</strong> es una de las cortes más importantes porque protege los derechos fundamentales de los ciudadanos. Cada año recibe miles de <strong>acciones de tutela</strong> y selecciona las más importantes para revisarlas. Sus decisiones son definitivas e inapelables. ¡La Corte Constitucional es la guardiana de la Constitución!</p>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- ÓRGANOS DE CONTROL -->
+                <!-- ============================================ -->
+                <h4 style="font-size:1.3rem; margin-top:1.5rem; color:#6a1b9a;">🔍 ÓRGANOS DE CONTROL Y ORGANIZACIÓN ELECTORAL</h4>
+                <p>Además de las tres ramas del poder, existen organismos autónomos e independientes que cumplen funciones de control, vigilancia y organización electoral. Estos organismos no dependen de ninguna de las tres ramas:</p>
+
+                <table>
+                    <tr><th>Organismo</th><th>Función principal</th><th>¿Quién lo dirige?</th></tr>
+                    <tr>
+                        <td><strong>🛡️ Procuraduría General de la Nación</strong></td>
+                        <td>Vigila la conducta de los <strong>funcionarios públicos</strong>. Investiga y sanciona disciplinariamente a quienes incumplen sus deberes. Hace parte del Ministerio Público.</td>
+                        <td><strong>Procurador General</strong> (elegido por el Senado para 4 años).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🤝 Defensoría del Pueblo</strong></td>
+                        <td>Protege y promueve los <strong>derechos humanos</strong>. Ayuda a las personas que sienten que sus derechos han sido violados. Hace parte del Ministerio Público.</td>
+                        <td><strong>Defensor del Pueblo</strong> (elegido por la Cámara de Representantes para 4 años).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📊 Contraloría General de la República</strong></td>
+                        <td>Vigila el <strong>manejo de los recursos públicos</strong> (dinero del Estado). Combate la corrupción y verifica que el presupuesto se gaste correctamente.</td>
+                        <td><strong>Contralor General</strong> (elegido por el Congreso para 4 años).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🗳️ Consejo Nacional Electoral (CNE)</strong></td>
+                        <td>Organiza y vigila las <strong>elecciones</strong> en Colombia. Controla la financiación de las campañas políticas y garantiza la transparencia electoral.</td>
+                        <td>9 magistrados elegidos por el Congreso para 4 años.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📇 Registraduría Nacional del Estado Civil</strong></td>
+                        <td>Organiza las <strong>elecciones</strong> (logística, votos, escrutinios). También expide las <strong>cédulas de ciudadanía</strong>, pasaportes y registra los nacimientos, matrimonios y defunciones.</td>
+                        <td><strong>Registrador Nacional</strong> (elegido por las altas cortes para 4 años).</td>
+                    </tr>
+                </table>
+
+                <div class="dato-curioso" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #388e3c;">
+                    <h4>⚖️ El equilibrio de poderes: ¿Cómo se controlan entre sí?</h4>
+                    <p>La Constitución creó un sistema de <strong>pesos y contrapesos</strong> (checks and balances) para que ninguna rama del poder tenga más fuerza que las otras:</p>
+                    <ul>
+                        <li>🔹 El <strong>Congreso</strong> hace las leyes, pero el <strong>Presidente</strong> puede objetarlas (veto).</li>
+                        <li>🔹 El <strong>Presidente</strong> gobierna, pero el <strong>Congreso</strong> lo controla políticamente (mociones de censura).</li>
+                        <li>🔹 La <strong>Corte Constitucional</strong> revisa si las leyes del Congreso y los decretos del Presidente respetan la Constitución.</li>
+                        <li>🔹 La <strong>Procuraduría</strong> vigila a todos los funcionarios públicos, incluyendo a los de las tres ramas.</li>
+                        <li>🔹 La <strong>Contraloría</strong> vigila que el dinero público se gaste bien en todas las ramas.</li>
+                    </ul>
+                    <p>¡Este sistema garantiza que el poder no se concentre y que los derechos de los ciudadanos estén protegidos!</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Mecanismos de Participación Ciudadana</h3>
+            <p>La Constitución de 1991 creó varios mecanismos para que los ciudadanos participen activamente en las decisiones del país:</p>
+
+            <div class="constitucion-box organizacion">
+                <h3>�️ Mecanismos de Participación</h3>
+                <table>
+                    <tr><th>Mecanismo</th><th>¿En qué consiste?</th><th>Base legal</th></tr>
+                    <tr><td><strong>🗳️ Voto</strong></td><td>Elegir gobernantes (presidente, congresistas, alcaldes, gobernadores).</td><td>Art. 258</td></tr>
+                    <tr><td><strong>📝 Referendo</strong></td><td>El pueblo aprueba o rechaza una ley o decisión importante.</td><td>Art. 377</td></tr>
+                    <tr><td><strong>📢 Consulta Popular</strong></td><td>El gobierno pregunta al pueblo sobre una decisión importante.</td><td>Art. 376</td></tr>
+                    <tr><td><strong>🔄 Revocatoria del Mandato</strong></td><td>Los ciudadanos pueden quitarle el cargo a un alcalde o gobernador.</td><td>Art. 259</td></tr>
+                    <tr><td><strong>💡 Iniciativa Legislativa</strong></td><td>Los ciudadanos pueden proponer leyes al Congreso.</td><td>Art. 155</td></tr>
+                    <tr><td><strong>✍️ Cabildo Abierto</strong></td><td>Reuniones públicas en concejos municipales para discutir temas locales.</td><td>Art. 318</td></tr>
+                </table>
+
+                <div class="dato-curioso" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #388e3c;">
+                    <h4>🇨🇴 Colombia, una democracia participativa</h4>
+                    <p>La Constitución de 1991 cambió la forma de entender la democracia en Colombia. Antes, los ciudadanos solo votaban cada cierto tiempo (democracia representativa). Hoy, gracias a la Constitución, los ciudadanos pueden participar directamente en las decisiones que los afectan. ¡Eso es democracia participativa!</p>
+                </div>
+            </div>
+
+            <h2 style="font-size:1.6rem;">📝 Actividades de aprendizaje</h2>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 1: Comprendiendo la Constitución</h4>
+                <p>Responde las siguientes preguntas basadas en lo que aprendiste:</p>
+                <ol>
+                    <li>¿Qué es la Constitución Política y por qué es la norma más importante del país?</li>
+                    <li>¿En qué año se promulgó la actual Constitución de Colombia? ¿Cuál fue la anterior?</li>
+                    <li>¿Qué significa que Colombia sea un "Estado Social de Derecho"? Menciona 3 características.</li>
+                    <li>¿Qué es la soberanía popular? ¿Quién tiene el poder según la Constitución?</li>
+                    <li>Nombra 5 derechos fundamentales que protege la Constitución.</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 2: Clasifica los derechos</h4>
+                <p>Escribe a qué generación de derechos pertenece cada uno (1ª: Fundamentales, 2ª: Sociales, 3ª: Colectivos):</p>
+                <ol>
+                    <li>Derecho a la educación → ______________</li>
+                    <li>Derecho a la vida → ______________</li>
+                    <li>Derecho a un ambiente sano → ______________</li>
+                    <li>Derecho a la salud → ______________</li>
+                    <li>Derecho a la libertad de expresión → ______________</li>
+                    <li>Derecho a la vivienda digna → ______________</li>
+                    <li>Derecho al debido proceso → ______________</li>
+                    <li>Derecho al patrimonio cultural → ______________</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 3: Las Ramas del Poder</h4>
+                <p>Completa la siguiente tabla escribiendo la función de cada rama:</p>
+                <table class="tabla-constitucion">
+                    <tr><th>Rama del Poder</th><th>Función principal</th><th>Ejemplo de institución</th></tr>
+                    <tr><td><strong>Rama Legislativa</strong></td><td>______________</td><td>______________</td></tr>
+                    <tr><td><strong>Rama Ejecutiva</strong></td><td>______________</td><td>______________</td></tr>
+                    <tr><td><strong>Rama Judicial</strong></td><td>______________</td><td>______________</td></tr>
+                </table>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 4: Deberes ciudadanos</h4>
+                <p>Según el Artículo 95 de la Constitución, los ciudadanos tenemos deberes. Responde:</p>
+                <ol>
+                    <li>Menciona 5 deberes de los ciudadanos colombianos.</li>
+                    <li>¿Por qué es importante pagar impuestos? ¿Qué pasaría si nadie pagara impuestos?</li>
+                    <li>¿Cómo puedes contribuir tú, desde tu vida diaria, a cumplir con el deber de "propender al mantenimiento de la paz"?</li>
+                    <li>¿Qué significa "respetar los derechos ajenos"? Da un ejemplo concreto.</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 5: La Séptima Papeleta - Investiga</h4>
+                <p>Investiga en internet o pregunta a un adulto sobre el movimiento de <strong>"La Séptima Papeleta"</strong> y responde:</p>
+                <ul>
+                    <li>¿Quiénes lideraron este movimiento?</li>
+                    <li>¿Por qué se llamó "Séptima Papeleta"?</li>
+                    <li>¿Cómo influyó este movimiento en la creación de la Constitución de 1991?</li>
+                    <li>¿Crees que los jóvenes pueden cambiar la historia de un país? ¿Por qué?</li>
+                </ul>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 6: Mecanismos de participación</h4>
+                <p>Imagina que en tu municipio quieren construir una fábrica que contaminará el río. ¿Qué mecanismo de participación ciudadana usarías para evitar que se construya? Explica por qué.</p>
+                <p>Ahora piensa en otro ejemplo en el que usarías un mecanismo diferente (referendo, consulta popular, cabildo abierto) y explica cómo funcionaría.</p>
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
-        <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
+       <div class="enlaces-box">
+    <h4>🔗 Enlaces de interés</h4>
+    <a href="https://www.youtube.com/watch?v=GnBENCxOKtQ" class="enlace" target="_blank">📘 La Constitución Política de Colombia</a>
+    <a href="https://www.youtube.com/watch?v=e_zQVvUho9w" class="enlace" target="_blank">🎥 La historia de la Constitución de 1991</a>
+    <a href="https://www.youtube.com/watch?v=3X4qwBv53iQ" class="enlace" target="_blank">🎥 Derechos y deberes explicados para niños</a>
+    <a href="https://www.youtube.com/watch?v=epDBRxITROg" class="enlace" target="_blank">🎥 Las tres ramas del poder público en Colombia</a>
+    <a href="https://www.youtube.com/watch?v=qOzs-E71Wsk" class="enlace" target="_blank">🎥 La Séptima Papeleta - Movimiento estudiantil</a>
+    <a href="https://www.youtube.com/watch?v=NvnU8rznTiE" class="enlace" target="_blank">🎥 Mecanismos de participación ciudadana en Colombia</a>
+</div>
 
-        <!-- Actividad -->
+        <!-- Actividad / Taller -->
         <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <h4>✍️ TALLER DE LA UNIDAD</h4>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>📄 <a href="https://drive.google.com/file/d/1whhJiCu7cZC75KDXMzbxxXpCG9XpC2Av/view?usp=sharing" class="enlace" target="_blank">TALLER: CONSTITUCIÓN POLÍTICA DE COLOMBIA  Y RAMAS DEL PODER</a></li>
             </ul>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=3" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -345,9 +1029,9 @@
             4: "Estadística"
         },
         3: { // Sociales
-            1: "Historia Universal",
-            2: "Geografía Mundial",
-            3: "Historia de Colombia",
+            1: "Etapas de la Historia",
+            2: "Cómo surge la Economía",
+            3: "Constitución Política de Colombia",
             4: "Democracia y Participación"
         },
         4: { // Física
@@ -380,7 +1064,7 @@
     const unidadesDescripciones = {
         1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
-        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
+        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "La Constitución Política de Colombia y sus principios", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
         5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
         6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
