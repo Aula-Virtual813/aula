@@ -139,6 +139,75 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Estilo para imágenes con pie de foto */
+        .img-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .img-caption {
+            font-size: 0.85rem;
+            color: #5e7f97;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Contenedor de video responsive */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin: 1.5rem 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-box {
+            background: linear-gradient(135deg, #f0f7fc, #e8f0f6);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #cbdde9;
+        }
+
+        .video-box h4 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .video-box p {
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .video-box .video-source {
+            font-size: 0.8rem;
+            color: #5e7f97;
+            display: block;
+            margin-top: 0.3rem;
+        }
+
         /* Caja para enlaces */
         .enlaces-box {
             background: rgba(18, 148, 219, 0.08);
@@ -186,6 +255,50 @@
             gap: 0.5rem;
         }
 
+        /* Caja del examen final */
+        .examen-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe8cc);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 2px solid #ff9800;
+        }
+
+        .examen-box h4 {
+            color: #e65100;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .examen-box p {
+            color: #3e2723;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .btn-examen {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+        }
+
+        .btn-examen:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4);
+        }
+
         /* Botones importantes */
         .btn-volver {
             display: inline-flex;
@@ -217,6 +330,56 @@
             margin: 0.5rem 0;
         }
 
+        /* Tabla informativa */
+        .tabla-info {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 0.8rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-info th {
+            background: linear-gradient(135deg, #1e3e5c, #2c6280);
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-info td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e0eef7;
+            color: #2c3e50;
+        }
+
+        .tabla-info tr:nth-child(even) td {
+            background: #f5faff;
+        }
+
+        .tabla-info tr:hover td {
+            background: #e8f4fd;
+        }
+
+        /* Grid de imágenes */
+        .img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .img-grid .img-container {
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .img-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
@@ -243,62 +406,202 @@
 
         <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>🌿 Introducción</h2>
+            <h2>🌿 Introducción a la Ecología y la Contaminación Ambiental</h2>
             <p>La contaminación ambiental es el deterioro del medio ambiente provocado por sustancias o agentes que alteran la calidad del aire, el agua, el suelo y la vida de los seres vivos. Es un problema global que afecta la salud humana, la biodiversidad y el equilibrio de los ecosistemas.</p>
 
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/221012/pexels-photo-221012.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Vista panorámica de la contaminación ambiental urbana" loading="lazy">
+                <div class="img-caption">🌆 La contaminación del aire en las grandes ciudades es uno de los problemas ambientales más graves del mundo moderno.</div>
+            </div>
+
             <h2>🌍 Tipos de contaminación</h2>
+
             <h3>1. Contaminación del aire</h3>
-            <p>Se produce cuando gases, humo y partículas tóxicas se liberan a la atmósfera por causa de fábricas, vehículos y quemas. Esta contaminación provoca enfermedades respiratorias y contribuye al calentamiento global.</p>
+            <p>Se produce cuando gases, humo y partículas tóxicas se liberan a la atmósfera por causa de fábricas, vehículos y quemas. Esta contaminación provoca enfermedades respiratorias y contribuye al calentamiento global y al efecto invernadero.</p>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/459728/pexels-photo-459728.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Humo de fábricas contaminando el aire" loading="lazy">
+                <div class="img-caption">🏭 Las emisiones industriales liberan dióxido de carbono, óxidos de nitrógeno y partículas finas que dañan la salud.</div>
+            </div>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/1707820/pexels-photo-1707820.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Emisiones vehiculares y tráfico denso" loading="lazy">
+                <div class="img-caption">🚗 Las emisiones vehiculares son una de las principales fuentes cotidianas de gases contaminantes en las grandes urbes.</div>
+            </div>
 
             <h3>2. Contaminación del agua</h3>
-            <p>Ocurre cuando se vierten desechos industriales, aguas residuales o basura en ríos, lagos y mares. El agua contaminada afecta a los animales, a las plantas y a las personas que la consumen.</p>
+            <p>Ocurre cuando se vierten desechos industriales, aguas residuales o basura en ríos, lagos y mares. El agua contaminada afecta a los animales, a las plantas y a las personas que la consumen. Se estima que más de 2.000 millones de personas carecen de acceso a agua potable segura.</p>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Contaminación del agua con basura y desechos de plástico" loading="lazy">
+                <div class="img-caption">🌊 Los residuos plásticos y químicos contaminan ríos, lagos y océanos, afectando gravemente la vida acuática.</div>
+            </div>
 
             <h3>3. Contaminación del suelo</h3>
-            <p>El suelo se contamina por el uso excesivo de fertilizantes, productos químicos y residuos sólidos. Esto disminuye su fertilidad y puede afectar la producción de alimentos.</p>
+            <p>El suelo se contamina por el uso excesivo de fertilizantes, productos químicos y residuos sólidos. Esto disminuye su fertilidad y puede afectar la producción de alimentos. Los plásticos de un solo uso tardan cientos de años en degradarse.</p>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/2768961/pexels-photo-2768961.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Suelo contaminado con residuos y plásticos" loading="lazy">
+                <div class="img-caption">🗑️ La acumulación de residuos sólidos en vertederos y espacios naturales contamina el suelo y los mantos acuíferos.</div>
+            </div>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/60013/river-dry-drought-water-60013.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Efecto invernadero y sequía por calentamiento global" loading="lazy">
+                <div class="img-caption">🌡️ La acumulación constante de gases contaminantes contribuye directamente al calentamiento global y la sequía.</div>
+            </div>
 
             <h3>4. Contaminación sonora y lumínica</h3>
-            <p>El exceso de ruido y de luz también deteriora el ambiente. Puede provocar estrés, problemas de sueño y alteraciones en la fauna.</p>
+            <p>El exceso de ruido y de luz también deteriora el ambiente. Puede provocar estrés, problemas de sueño y alterations en la fauna. Las ciudades modernas emiten niveles de ruido que superan los recomendados por la OMS.</p>
+
+            <div class="img-grid">
+                <div class="img-container">
+                    <img src="https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Ciudad con contaminación lumínica nocturna" loading="lazy">
+                    <div class="img-caption">🌃 La contaminación lumínica altera los ritmos circadianos de humanos y animales.</div>
+                </div>
+                <div class="img-container">
+                    <img src="https://images.pexels.com/photos/225841/pexels-photo-225841.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Tráfico y ruido en la ciudad" loading="lazy">
+                    <div class="img-caption">🔊 El ruido del tráfico y la construcción genera estrés y problemas auditivos.</div>
+                </div>
+            </div>
 
             <h2>⚠️ Consecuencias de la contaminación</h2>
+            <p>La contaminación ambiental tiene efectos devastadores a corto, mediano y largo plazo. Algunas de las consecuencias más graves son:</p>
             <ul>
-                <li>Enfermedades respiratorias, cutáneas y gastrointestinales.</li>
-                <li>Pérdida de especies animales y vegetales.</li>
-                <li>Desequilibrio de los ecosistemas.</li>
-                <li>Contaminación de alimentos y agua potable.</li>
+                <li>Enfermedades respiratorias (asma, bronquitis, cáncer de pulmón), cutáneas y gastrointestinales.</li>
+                <li>Pérdida de especies animales y vegetales (extinción de biodiversidad).</li>
+                <li>Desequilibrio de los ecosistemas y destrucción de hábitats naturales.</li>
+                <li>Contaminación de alimentos y agua potable, afectando la seguridad alimentaria.</li>
                 <li>Aumento del cambio climático y del calentamiento global.</li>
+                <li>Lluvia ácida que daña cultivos, bosques y edificaciones.</li>
+                <li>Eutrofización de cuerpos de agua por exceso de nutrientes.</li>
             </ul>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/1172018/pexels-photo-1172018.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Consecuencias de la contaminación en la naturaleza" loading="lazy">
+                <div class="img-caption">🌱 La contaminación descontrolada lleva a la degradación de ecosistemas enteros y pérdida irreversible de biodiversidad.</div>
+            </div>
 
             <h2>🧪 Agentes contaminantes</h2>
             <p>Los agentes contaminantes son las sustancias o elementos que producen contaminación. Entre los más comunes se encuentran:</p>
             <ul>
-                <li><strong>Agentes químicos:</strong> plaguicidas, metales pesados, detergentes y fertilizantes.</li>
-                <li><strong>Agentes biológicos:</strong> bacterias, virus y desechos orgánicos.</li>
-                <li><strong>Agentes físicos:</strong> ruido, calor, radiación y luz excesiva.</li>
-                <li><strong>Agentes sólidos:</strong> plásticos, botellas, bolsas y basura en general.</li>
+                <li><strong>Agentes químicos:</strong> plaguicidas, metales pesados (mercurio, plomo), detergentes y fertilizantes.</li>
+                <li><strong>Agentes biológicos:</strong> bacterias, virus, parásitos y desechos orgánicos en descomposición.</li>
+                <li><strong>Agentes físicos:</strong> ruido, calor, radiación (UV, nuclear) y luz excesiva.</li>
+                <li><strong>Agentes sólidos:</strong> plásticos, botellas, bolsas, microplásticos y basura en general.</li>
             </ul>
+
+            <h2>📊 Clasificación de los contaminantes</h2>
+            <table class="tabla-info">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Ejemplos</th>
+                        <th>Impacto principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Biodegradables</td>
+                        <td>Desechos orgánicos, papel</td>
+                        <td>Se descomponen naturalmente pero en exceso generan malos olores y gases</td>
+                    </tr>
+                    <tr>
+                        <td>No biodegradables</td>
+                        <td>Plásticos, vidrio, metales</td>
+                        <td>Persisten décadas o siglos en el ambiente</td>
+                    </tr>
+                    <tr>
+                        <td>Tóxicos</td>
+                        <td>Plaguicidas, mercurio, asbesto</td>
+                        <td>Causan enfermedades graves y daño genético</td>
+                    </tr>
+                    <tr>
+                        <td>Radiactivos</td>
+                        <td>Uranio, plutonio, residuos nucleares</td>
+                        <td>Radiación peligrosa que perdura por miles de años</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>♻️ Medidas para reducir la contaminación</h2>
+            <p>Todos podemos contribuir a disminuir la contaminación con acciones cotidianas. Aquí algunas recomendaciones importantes:</p>
+            <ul>
+                <li><strong>Reducir, reutilizar y reciclar</strong> (las 3R) los residuos que generamos.</li>
+                <li><strong>Ahorrar energía:</strong> apagar luces innecesarias, usar bombillas LED y electrodomésticos eficientes.</li>
+                <li><strong>Usar transporte sostenible:</strong> caminar, andar en bicicleta o usar transporte público.</li>
+                <li><strong>Evitar plásticos de un solo uso:</strong> llevar bolsas reutilizables, botellas y envases recargables.</li>
+                <li><strong>Cuidar el agua:</strong> cerrar grifos, reparar fugas y no arrojar químicos al desagüe.</li>
+                <li><strong>Plantar árboles:</strong> ayudan a purificar el aire y regulan el clima.</li>
+                <li><strong>Consumir responsablemente:</strong> preferir productos locales, ecológicos y con poco empaque.</li>
+            </ul>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/159751/book-address-book-learning-learn-159751.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Personas reciclando y separando basura" loading="lazy">
+                <div class="img-caption">♻️ Pequeñas acciones como reciclar, reducir y reutilizar ayudan a disminuir la contaminación.</div>
+            </div>
+
+            <h2>🌱 El futuro del planeta: Desarrollo sostenible</h2>
+            <p>El desarrollo sostenible busca satisfacer las necesidades del presente sin comprometer los recursos de las generaciones futuras. Implica un equilibrio entre el crecimiento económico, la protección ambiental y el bienestar social. Los Objetivos de Desarrollo Sostenible (ODS) de la ONU establecen metas claras para combatir la contaminación y proteger el planeta para 2030.</p>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Energía eólica y naturaleza limpia" loading="lazy">
+                <div class="img-caption">🌎 Un futuro sostenible depende de las decisiones que tomemos hoy para cuidar nuestro planeta.</div>
+            </div>
+
+            <div class="img-container">
+                <img src="https://images.pexels.com/photos/87651/earth-blue-planet-globe-planet-87651.jpeg?auto=compress&cs=tinysrgb&w=800" referrerpolicy="no-referrer" alt="Planeta Tierra desde el espacio con atmósfera brillante" loading="lazy">
+                <div class="img-caption">🌎 El futuro del planeta depende de las acciones que tomemos hoy para combatir la contaminación.</div>
+            </div>
 
             <h2>💡 Conclusión</h2>
-            <p>La contaminación ambiental es un problema grave que afecta a todo el planeta. Cuidar el entorno natural es una responsabilidad compartida para garantizar un futuro más saludable.</p>
+            <p>La contaminación ambiental es un problema grave que afecta a todo el planeta. Cuidar el entorno natural es una responsabilidad compartida que requiere el compromiso de gobiernos, empresas y cada uno de nosotros. Pequeñas acciones diarias pueden marcar una gran diferencia para garantizar un futuro más saludable y sostenible para las próximas generaciones.</p>
         </div>
 
-        <!-- Enlaces útiles -->
-        <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=R7M8mUnu-l0" class="enlace" target="_blank">🎥 Video sobre la contaminación ambiental</a>
-            <a href="https://www.unep.org/es" class="enlace" target="_blank">🌐 Programa de las Naciones Unidas para el Medio Ambiente</a>
-            <a href="https://www.minambiente.gov.co/" class="enlace" target="_blank">📄 Ministerio de Ambiente de Colombia</a>
-        </div>
+      <!-- Enlaces útiles -->
+<div class="enlaces-box">
+    <h4>🔗 Enlaces de interés</h4>
 
-        <!-- Actividad -->
-        <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>Realiza una pequeña investigación sobre un tipo de contaminación que afecte tu comunidad y escribe:</p>
-            <ul>
-                <li>Qué tipo de contaminación es.</li>
-                <li>Qué agentes contaminantes la generan.</li>
-                <li>Qué consecuencias tiene para la salud y el ambiente.</li>
-                <li>Qué medidas pueden ayudar a reducirla.</li>
-            </ul>
+    <a href="https://www.youtube.com/watch?v=QQYgCxu988s" class="enlace" target="_blank">
+        🎥 Video: ¿Qué es la contaminación ambiental?
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=TV-YEQOIFuQ" class="enlace" target="_blank">
+        🎥 Video: Contaminación del aire, agua y suelo
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=8yo99_T4QZI" class="enlace" target="_blank">
+        🎥 Video: Cómo cuidar el medio ambiente
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=AWfJ9KfM3mA" class="enlace" target="_blank">
+        🎥 Documental: Contaminación ambiental
+    </a>
+
+    <a href="https://www.unep.org/es" class="enlace" target="_blank">
+        🌐 Programa de las Naciones Unidas para el Medio Ambiente (PNUMA)
+    </a>
+
+    <a href="https://www.minambiente.gov.co/" class="enlace" target="_blank">
+        📄 Ministerio de Ambiente y Desarrollo Sostenible de Colombia
+    </a>
+
+    <a href="https://www.ideam.gov.co/" class="enlace" target="_blank">
+        📊 IDEAM - IDEAM Colombia
+    </a>
+</div>
+
+      
+
+        <!-- Examen Final -->
+        <div class="examen-box">
+            <h4>📝 Examen Final de la Unidad</h4>
+            <p>¡Pon a prueba lo que has aprendido! Responde las preguntas del examen final sobre lo estudiado en esta materia Debes obtener al menos 7/10 para aprobar.</p>
+            <p><strong>Exitos</strong> 
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="https://forms.gle/8KqXeFGu8NvXe7NQ6" class="btn-examen" target="_blank">
+                    📋 Ir al Examen Final
+                </a>
+            </div>
         </div>
 
         <!-- Botón para volver al curso -->
@@ -318,8 +621,6 @@
     // IDENTIFICAR LA MATERIA Y UNIDAD ACTUAL
     // =============================================
     
-    // Extraer de la URL qué curso y unidad es
-    // Formato esperado: unidadX-Y.html donde X = materia (1-7), Y = unidad (1-4)
     const pathName = window.location.pathname;
     const fileName = pathName.split('/').pop();
     const match = fileName.match(/unidad(\d+)-(\d+)\.html/);
@@ -345,48 +646,13 @@
     
     // Títulos de unidades por materia
     const unidadesTitulos = {
-        1: { // Español y Filosofía
-            1: "Comprensión Lectora",
-            2: "Gramática Española",
-            3: "Introducción a la Filosofía",
-            4: "Ética y Valores"
-        },
-        2: { // Matemáticas
-            1: "Números y Operaciones",
-            2: "Álgebra Básica",
-            3: "Geometría",
-            4: "Estadística"
-        },
-        3: { // Sociales
-            1: "Historia Universal",
-            2: "Geografía Mundial",
-            3: "Historia de Colombia",
-            4: "Democracia y Participación"
-        },
-        4: { // Física
-            1: "Cinemática",
-            2: "Dinámica",
-            3: "Energía y Trabajo",
-            4: "Electricidad Básica"
-        },
-        5: { // Química
-            1: "Estructura Atómica",
-            2: "Tabla Periódica",
-            3: "Reacciones Químicas",
-            4: "Química en la Vida"
-        },
-        6: { // Inglés
-            1: "Greetings & Basics",
-            2: "Present Simple",
-            3: "Everyday Activities",
-            4: "Travel & Culture"
-        },
-        7: { // Biología
-            1: "La Célula",
-            2: "Reinos de la Naturaleza",
-            3: "Cuerpo Humano",
-            4: "Ecología"
-        }
+        1: { 1: "Comprensión Lectora", 2: "Gramática Española", 3: "Introducción a la Filosofía", 4: "Ética y Valores" },
+        2: { 1: "Números y Operaciones", 2: "Álgebra Básica", 3: "Geometría", 4: "Estadística" },
+        3: { 1: "Historia Universal", 2: "Geografía Mundial", 3: "Historia de Colombia", 4: "Democracia y Participación" },
+        4: { 1: "Cinemática", 2: "Dinámica", 3: "Energía y Trabajo", 4: "Electricidad Básica" },
+        5: { 1: "Estructura Atómica", 2: "Tabla Periódica", 3: "Reacciones Químicas", 4: "Química en la Vida" },
+        6: { 1: "Greetings & Basics", 2: "Present Simple", 3: "Everyday Activities", 4: "Travel & Culture" },
+        7: { 1: "La Célula", 2: "Reinos de la Naturaleza", 3: "Cuerpo Humano", 4: "Ecología" }
     };
     
     // Descripciones cortas de unidades
@@ -412,24 +678,21 @@
         document.title = `${materia.nombre} - Unidad ${unidadNum}: ${unidadTitulo} | Aula Virtual`;
     }
     
-    // Generar navegación entre unidades de la misma materia
+    // Generar navegación entre unidades
     function generarNavegacion() {
         const navContainer = document.getElementById('navUnidades');
         if (!navContainer) return;
         
         let html = '';
         
-        // Unidad anterior
         if (unidadNum > 1) {
             html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`;
         } else {
             html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`;
         }
         
-        // Indicador
         html += `<span class="nav-indicador">📚 Unidad ${unidadNum} de 4</span>`;
         
-        // Unidad siguiente
         if (unidadNum < 4) {
             html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`;
         } else {
