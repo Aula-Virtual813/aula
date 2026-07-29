@@ -139,6 +139,151 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        /* Caja de tema económico */
+        .economia-box {
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .economia-box.bartero {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            border-left: 6px solid #f57f17;
+        }
+
+        .economia-box.dinero {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-left: 6px solid #2e7d32;
+        }
+
+        .economia-box.sectores {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-left: 6px solid #1565c0;
+        }
+
+        .economia-box.global {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border-left: 6px solid #6a1b9a;
+        }
+
+        .economia-box h3 {
+            color: #1f3e54;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .economia-box h4 {
+            color: #2c6280;
+            margin: 0.8rem 0 0.5rem;
+        }
+
+        .economia-box ul {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        .economia-box li {
+            margin: 0.3rem 0;
+        }
+
+        .economia-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .economia-box table th {
+            background: #1e3e5c;
+            color: white;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        .economia-box table td {
+            padding: 0.5rem;
+            border-bottom: 1px solid #e8f0f6;
+        }
+
+        /* Línea de tiempo visual */
+        .timeline-economia {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-economia::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: linear-gradient(to right, #f57f17, #2e7d32, #1565c0, #6a1b9a);
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        .timeline-economia .tl-item {
+            background: white;
+            border: 2px solid #1294db;
+            border-radius: 1rem;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #1f3e54;
+            z-index: 1;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 120px;
+        }
+
+        /* Mapa conceptual visual */
+        .mapa-conceptos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mapa-item {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 2px solid #1294db;
+            transition: transform 0.2s;
+        }
+
+        .mapa-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .mapa-item .icono {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mapa-item h4 {
+            color: #1f3e54;
+            margin-bottom: 0.3rem;
+        }
+
+        .mapa-item p {
+            color: #5e7f97;
+            font-size: 0.85rem;
+        }
+
         /* Caja para enlaces */
         .enlaces-box {
             background: rgba(18, 148, 219, 0.08);
@@ -217,12 +362,61 @@
             margin: 0.5rem 0;
         }
 
+        /* Caja de dato curioso */
+        .dato-curioso {
+            background: linear-gradient(135deg, #fff8e1, #fff3cd);
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 4px solid #ff9800;
+            margin: 1.5rem 0;
+        }
+
+        .dato-curioso h4 {
+            color: #e65100;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tablas */
+        .tabla-econ {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-econ th {
+            background: #1e3e5c;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        .tabla-econ td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e8f0f6;
+            color: #2c3e50;
+        }
+
+        .tabla-econ tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabla-econ tr:hover td {
+            background: #f0f7fc;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .mapa-conceptos { grid-template-columns: 1fr 1fr; }
+            .timeline-economia { flex-direction: column; }
+            .timeline-economia::before { display: none; }
         }
     </style>
 </head>
@@ -241,56 +435,313 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
 
+            <h2 style="font-size:2rem;">📌 Introducción</h2>
 
-            <p>【escribe aqui】</p>
+            <p>¿Alguna vez te has preguntado de dónde viene el dinero? ¿Cómo hacían las personas para conseguir lo que necesitaban antes de que existieran las monedas y los billetes? ¿Por qué unos países son más ricos que otros? Todas estas preguntas las responde una ciencia muy importante: la <strong>Economía</strong>.</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <p>La economía estudia cómo las personas, las familias, las empresas y los países administran sus recursos para satisfacer sus necesidades. En esta unidad aprenderemos <strong>cómo surgió la economía</strong> desde sus orígenes más antiguos: desde el trueque en las primeras aldeas hasta la economía globalizada de hoy. Conocerás la historia del dinero, los sectores económicos y conceptos clave como la oferta y la demanda. ¡Prepárate para entender cómo funciona el mundo que te rodea!</p>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <div class="dato-curioso">
+                <h4>💡 ¿Sabías que...?</h4>
+                <p>La palabra <strong>"economía"</strong> viene del griego <em>oikonomía</em>, que significa "administración de la casa" (<em>oikos</em> = casa, <em>nomos</em> = administración). ¡Originalmente se refería a cómo administrar los recursos del hogar!</p>
+            </div>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <h2 style="font-size:2rem;">📖 Contenido Principal</h2>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <h3 style="font-size:1.6rem;">Objetivo general</h3>
+            <p>Comprender el origen y la evolución de la economía a lo largo de la historia, identificando sus etapas fundamentales (trueque, dinero, sectores económicos, globalización) y reconociendo su importancia en la vida cotidiana.</p>
 
+            <h3 style="font-size:1.6rem;">Objetivos específicos</h3>
+            <ol>
+                <li>Definir qué es la economía y por qué es una ciencia social fundamental.</li>
+                <li>Explicar cómo funcionaba el trueque en las primeras civilizaciones y por qué surgió la necesidad del dinero.</li>
+                <li>Identificar las etapas históricas del dinero: mercancía, metales, monedas, papel moneda, dinero digital.</li>
+                <li>Diferenciar los tres sectores económicos: primario, secundario y terciario.</li>
+                <li>Comprender los conceptos básicos de oferta, demanda, producción y consumo.</li>
+                <li>Analizar cómo la globalización ha transformado la economía mundial.</li>
+            </ol>
+
+            <!-- Mapa conceptual visual -->
+            <h3 style="font-size:1.6rem;">📌 ¿Qué es la Economía?</h3>
+            <p>La economía es la ciencia que estudia la <strong>producción, distribución y consumo</strong> de bienes y servicios. Se divide en dos grandes ramas:</p>
+
+            <div class="mapa-conceptos">
+                <div class="mapa-item">
+                    <div class="icono">🏠</div>
+                    <h4>Microeconomía</h4>
+                    <p>Estudia el comportamiento económico de individuos, familias y empresas.</p>
+                </div>
+                <div class="mapa-item">
+                    <div class="icono">🌍</div>
+                    <h4>Macroeconomía</h4>
+                    <p>Estudia la economía en su conjunto: países, producción nacional, inflación.</p>
+                </div>
+                <div class="mapa-item">
+                    <div class="icono">🔄</div>
+                    <h4>Producción</h4>
+                    <p>Creación de bienes y servicios usando recursos naturales, trabajo y capital.</p>
+                </div>
+                <div class="mapa-item">
+                    <div class="icono">⚖️</div>
+                    <h4>Distribución</h4>
+                    <p>Cómo los bienes y servicios llegan desde los productores hasta los consumidores.</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Línea de Tiempo: Evolución de la Economía</h3>
+            <p>Observa cómo ha evolucionado la economía a través de la historia:</p>
+
+            <div class="timeline-economia">
+                <div class="tl-item" style="border-color: #f57f17;">🔄 Trueque</div>
+                <div class="tl-item" style="border-color: #2e7d32;">💰 Dinero-mercancía</div>
+                <div class="tl-item" style="border-color: #1565c0;">🏦 Monedas y billetes</div>
+                <div class="tl-item" style="border-color: #6a1b9a;">💳 Dinero digital</div>
+            </div>
+
+            <!-- Etapa 1: Trueque -->
+            <div class="economia-box bartero">
+                <h3>🔄 1. El Trueque: La primera forma de comercio</h3>
+                <p>El <strong>trueque</strong> fue la primera forma de intercambio económico en la historia de la humanidad. Surgió en la <strong>Prehistoria</strong>, cuando los grupos humanos comenzaron a especializarse en diferentes actividades.</p>
+
+                <h4>📍 ¿Cómo funcionaba?</h4>
+                <p>Las personas intercambiaban directamente bienes y servicios sin usar dinero. Por ejemplo, un agricultor que tenía excedentes de maíz podía cambiarlos por carne de un cazador, o por herramientas de un artesano.</p>
+
+                <h4>✅ Ventajas del trueque:</h4>
+                <ul>
+                    <li>🔹 No necesitaba dinero ni monedas.</li>
+                    <li>🔹 Permitía obtener lo que cada uno necesitaba.</li>
+                    <li>🔹 Fortalecía los lazos entre comunidades.</li>
+                </ul>
+
+                <h4>❌ Desventajas del trueque:</h4>
+                <ul>
+                    <li>🔹 <strong>Problema de la doble coincidencia:</strong> Para que el trueque funcione, cada persona debe tener justo lo que la otra necesita y viceversa. Si un pescador quería pan, pero el panadero no quería pescado, ¡no podían intercambiar!</li>
+                    <li>🔹 Los bienes no siempre se podían dividir (ejemplo: una vaca no se podía partir en pedazos).</li>
+                    <li>🔹 Era difícil almacenar valor: algunos bienes se echaban a perder.</li>
+                </ul>
+
+                <div class="dato-curioso">
+                    <h4>💡 Ejemplo de trueque</h4>
+                    <p>Imagina que vives en una aldea hace 5,000 años. Tienes 5 kilos de maíz pero necesitas una manta para el invierno. Buscas a alguien que haga mantas y que quiera maíz. Si lo encuentras, ¡puedes hacer trueque! Pero si no, tendrás que buscar a otra persona o hacer varias transacciones para conseguir lo que necesitas.</p>
+                </div>
+                <img src="imagenes/173.jpg">
+            </div>
+
+            <!-- Etapa 2: Dinero -->
+            <div class="economia-box dinero">
+                <h3>💰 2. El surgimiento del dinero</h3>
+                <p>Para solucionar los problemas del trueque, las civilizaciones comenzaron a usar <strong>dinero-mercancía</strong>: objetos que tenían valor por sí mismos y que todo el mundo aceptaba como pago.</p>
+
+                <h4>📜 El dinero en la historia:</h4>
+                <table>
+                    <tr><th>Época</th><th>Tipo de dinero</th><th>Ejemplos</th></tr>
+                    <tr><td>Prehistoria</td><td>Dinero-mercancía</td><td>Sal, conchas marinas, semillas de cacao, ganado</td></tr>
+                    <tr><td>Edad Antigua</td><td>Metales preciosos</td><td>Oro, plata, cobre (se pesaban)</td></tr>
+                    <tr><td>700 a.C.</td><td>Primeras monedas</td><td>Lidia (hoy Turquía) acuñó las primeras monedas de oro y plata</td></tr>
+                    <tr><td>Edad Media</td><td>Papel moneda</td><td>China inventó los primeros billetes (dinero de papel)</td></tr>
+                    <tr><td>Siglo XX</td><td>Dinero fiduciario</td><td>Billetes y monedas que valen por confianza, no por el material</td></tr>
+                    <tr><td>Actualidad</td><td>Dinero digital</td><td>Tarjetas, transferencias, criptomonedas (Bitcoin)</td></tr>
+                </table>
+
+                <h4>🧂 El trueque con sal: el origen del "salario"</h4>
+                <p>¿Sabías que la <strong>sal</strong> fue una de las primeras formas de dinero? Era muy valiosa porque servía para conservar alimentos. Los soldados romanos recibían una porción de sal como pago, y de ahí viene la palabra <strong>"salario"</strong> (del latín <em>salarium</em>, "pago en sal").</p>
+
+                <h4>🏦 Características del dinero moderno:</h4>
+                <ul>
+                    <li>🔹 <strong>Aceptado universalmente:</strong> Todo el mundo lo acepta como forma de pago.</li>
+                    <li>🔹 <strong>Divisible:</strong> Se puede dividir en unidades pequeñas (centavos, pesos).</li>
+                    <li>🔹 <strong>Durable:</strong> No se deteriora fácilmente.</li>
+                    <li>🔹 <strong>Portátil:</strong> Fácil de transportar.</li>
+                    <li>🔹 <strong>Escaso:</strong> No se puede producir en cantidades ilimitadas (para que mantenga su valor).</li>
+                </ul>
+                <img src="imagenes/174.jpg">
+            </div>
+
+            <!-- Etapa 3: Sectores económicos -->
+            <div class="economia-box sectores">
+                <h3>🏭 3. Los Sectores Económicos</h3>
+                <img src="imagenes/175.jpg">
+                <p>La economía se divide en <strong>tres sectores</strong> principales, según el tipo de actividad que se realice:</p>
+
+                <h4>🌱 Sector Primario (Agricultura, ganadería, pesca, minería)</h4>
+                <p>Es el sector que <strong>extrae recursos naturales</strong> directamente de la naturaleza. Incluye:</p>
+                <ul>
+                    <li>🌽 <strong>Agricultura:</strong> Cultivo de maíz, arroz, trigo, café, frutas, verduras.</li>
+                    <li>🐄 <strong>Ganadería:</strong> Cría de vacas, cerdos, ovejas, pollos para obtener carne, leche, huevos.</li>
+                    <li>🐟 <strong>Pesca:</strong> Captura de peces y otros animales marinos.</li>
+                    <li>⛏️ <strong>Minería:</strong> Extracción de minerales como oro, carbón, petróleo, esmeraldas.</li>
+                </ul>
+                <p>En Colombia, el sector primario es muy importante: somos productores de café, banano, flores, petróleo y carbón.</p>
+
+                <h4>🏭 Sector Secundario (Industria y manufactura)</h4>
+                <p>Es el sector que <strong>transforma las materias primas</strong> en productos elaborados. Incluye:</p>
+                <ul>
+                    <li>🏗️ <strong>Construcción:</strong> Edificios, carreteras, puentes.</li>
+                    <li>👕 <strong>Textil:</strong> Fabricación de ropa, zapatos, telas.</li>
+                    <li>🍞 <strong>Alimentos:</strong> Procesamiento de alimentos (pan, aceite, bebidas, conservas).</li>
+                    <li>🚗 <strong>Automotriz:</strong> Fabricación de carros, camiones, motos.</li>
+                </ul>
+
+                <h4>🏪 Sector Terciario (Servicios)</h4>
+                <p>Es el sector que <strong>ofrece servicios</strong> en lugar de productos físicos. Incluye:</p>
+                <ul>
+                    <li>🏫 <strong>Educación:</strong> Colegios, universidades, cursos.</li>
+                    <li>🏥 <strong>Salud:</strong> Hospitales, centros médicos, farmacias.</li>
+                    <li>🏦 <strong>Finanzas:</strong> Bancos, seguros, inversiones.</li>
+                    <li>🛒 <strong>Comercio:</strong> Tiendas, supermercados, centros comerciales.</li>
+                    <li>🚕 <strong>Transporte:</strong> Buses, taxis, aviones, envíos.</li>
+                    <li>📱 <strong>Tecnología:</strong> Internet, aplicaciones, soporte técnico.</li>
+                </ul>
+
+                <div class="dato-curioso" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 4px solid #388e3c;">
+                    <h4>🌎 El sector terciario hoy</h4>
+                    <p>Hoy en día, la mayoría de los empleos en países desarrollados están en el <strong>sector terciario</strong> (servicios). Por ejemplo, en Estados Unidos y Europa, más del 75% de los trabajadores trabajan en servicios. ¡La economía ha pasado de producir cosas a ofrecer servicios!</p>
+                </div>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 Conceptos Económicos Fundamentales</h3>
+
+            <table class="tabla-econ">
+                <tr><th>Concepto</th><th>Definición</th><th>Ejemplo</th></tr>
+                <tr><td><strong>Oferta</strong></td><td>Cantidad de un producto que los vendedores están dispuestos a vender</td><td>Un agricultor ofrece 1,000 kg de café al mes</td></tr>
+                <tr><td><strong>Demanda</strong></td><td>Cantidad de un producto que los compradores quieren comprar</td><td>Los clientes quieren comprar 800 kg de café al mes</td></tr>
+                <tr><td><strong>Precio</strong></td><td>Valor de un producto o servicio en dinero</td><td>1 kg de café cuesta $10,000 COP</td></tr>
+                <tr><td><strong>Producción</strong></td><td>Proceso de crear bienes o servicios</td><td>Una fábrica produce 500 pares de zapatos al día</td></tr>
+                <tr><td><strong>Consumo</strong></td><td>Uso de bienes o servicios para satisfacer necesidades</td><td>Las personas compran y usan los zapatos</td></tr>
+                <tr><td><strong>Mercado</strong></td><td>Lugar (físico o virtual) donde se encuentran oferta y demanda</td><td>Supermercado, tienda online, plaza de mercado</td></tr>
+                <tr><td><strong>Capital</strong></td><td>Recursos (dinero, máquinas, edificios) usados para producir</td><td>Una máquina cosechadora, el dinero para comprar insumos</td></tr>
+            </table>
+
+            <div class="dato-curioso">
+                <h4>⚖️ La Ley de la Oferta y la Demanda</h4>
+                <p>Cuando hay <strong>mucha demanda</strong> (muchas personas quieren comprar) y <strong>poca oferta</strong> (hay pocos productos), los <strong>precios suben</strong>.</p>
+                <p>Cuando hay <strong>poca demanda</strong> (pocos quieren comprar) y <strong>mucha oferta</strong> (hay muchos productos), los <strong>precios bajan</strong>.</p>
+                <p><strong>Ejemplo:</strong> Si hay una sola consola de videojuegos en la tienda y 20 personas quieren comprarla, el precio será muy alto. Pero si hay 100 consolas y solo 5 personas quieren comprar, el precio bajará.</p>
+            </div>
+
+            <!-- Etapa 4: Globalización -->
+            <div class="economia-box global">
+                <h3>🌐 4. La Globalización Económica</h3>
+                <p>La <strong>globalización</strong> es el proceso de interconexión económica, cultural y política entre los países del mundo. Hoy en día, los productos que usamos a diario provienen de diferentes partes del planeta.</p>
+
+                <h4>🌍 ¿Qué implica la globalización económica?</h4>
+                <ul>
+                    <li>🔹 <strong>Comercio internacional:</strong> Los países compran y venden productos entre sí (exportaciones e importaciones).</li>
+                    <li>🔹 <strong>Empresas multinacionales:</strong> Grandes empresas que operan en varios países (Nike, Apple, Coca-Cola, McDonald's).</li>
+                    <li>🔹 <strong>Interdependencia:</strong> Lo que ocurre en un país afecta a otros (ejemplo: una crisis en Estados Unidos afecta la economía mundial).</li>
+                    <li>🔹 <strong>Tecnología e internet:</strong> El comercio electrónico (Amazon, Mercado Libre) permite comprar productos de cualquier parte del mundo.</li>
+                    <li>🔹 <strong>Divisas:</strong> Cada país tiene su propia moneda (peso colombiano, dólar, euro, yen) y las personas cambian monedas para comerciar.</li>
+                </ul>
+
+                <h4>📦 Productos globalizados en tu casa</h4>
+                <p>Mira a tu alrededor: tu celular probablemente fue diseñado en Estados Unidos, fabricado en China, con componentes de Corea del Sur, y lo compraste con una aplicación hecha en India. ¡Eso es la globalización!</p>
+
+                <table>
+                    <tr><th>Producto</th><th>Diseñado en</th><th>Fabricado en</th><th>Materias primas de</th></tr>
+                    <tr><td>📱 Smartphone</td><td>EE.UU. / Corea</td><td>China / Vietnam</td><td>Congo (cobalto), Chile (cobre)</td></tr>
+                    <tr><td>👟 Zapatillas deportivas</td><td>Alemania / EE.UU.</td><td>Vietnam / Indonesia</td><td>Medio Oriente (petróleo), Brasil (caucho)</td></tr>
+                    <tr><td>☕ Café (tu taza de la mañana)</td><td>Colombia</td><td>Colombia</td><td>Colombia (¡y se exporta a todo el mundo!)</td></tr>
+                </table>
+            </div>
+
+            <h3 style="font-size:1.6rem;">📌 La Economía en Colombia</h3>
+            <p>Colombia tiene una economía diversa y en crecimiento. Es un país con gran riqueza natural y una población emprendedora.</p>
+
+            <h4>📊 Principales productos de Colombia:</h4>
             <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
+                <li><strong>Exportaciones:</strong> Petróleo, carbón, café, flores, banano, oro, esmeraldas.</li>
+                <li><strong>Agricultura:</strong> Café (Colombia es el tercer productor mundial), flores (segundo exportador mundial), banano, caña de azúcar, arroz, maíz.</li>
+                <li><strong>Industria:</strong> Textiles, alimentos procesados, bebidas, productos químicos, cemento.</li>
+                <li><strong>Servicios:</strong> Turismo, finanzas, tecnología, comercio, transporte.</li>
+                <li><strong>Minería y energía:</strong> Petróleo, carbón, oro, esmeraldas (Colombia es el mayor productor mundial de esmeraldas).</li>
             </ul>
+
+            <div class="dato-curioso" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 6px solid #2e7d32;">
+                <h4 style="font-size:1.5rem; color:#1b5e20;">☕ COLOMBIA Y EL CAFÉ</h4>
+                <p style="font-size:1.1rem;">El <strong>café colombiano</strong> es reconocido mundialmente por su alta calidad y sabor suave. La zona cafetera (Eje Cafetero: Caldas, Risaralda, Quindío) produce uno de los mejores cafés del mundo. El café ha sido parte fundamental de la economía colombiana por más de 200 años y emplea a miles de familias campesinas.</p>
+            </div>
+
+            <h2 style="font-size:1.6rem;">📝 Actividades de aprendizaje</h2>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 1: El trueque en la práctica</h4>
+                <p>Imagina que eres un agricultor y tienes excedentes de estos productos. ¿Con quién harías trueque para conseguir lo que necesitas?</p>
+                <ol>
+                    <li>Tienes: 10 kg de papas. Necesitas: una camisa. ¿Con quién harías trueque?</li>
+                    <li>Tienes: 5 kg de café. Necesitas: zapatos. ¿Con quién harías trueque?</li>
+                    <li>Tienes: 1 gallina. Necesitas: una herramienta para sembrar. ¿Con quién harías trueque?</li>
+                    <li>¿Qué problema encuentras en cada situación? ¿Por qué el dinero resuelve ese problema?</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 2: Clasifica en sectores económicos</h4>
+                <p>Escribe a qué sector económico pertenece cada actividad (Primario, Secundario o Terciario):</p>
+                <ol>
+                    <li>Un agricultor cultivando café → ______________</li>
+                    <li>Un panadero horneando pan → ______________</li>
+                    <li>Un profesor dando clases → ______________</li>
+                    <li>Un minero extrayendo carbón → ______________</li>
+                    <li>Un ingeniero construyendo un edificio → ______________</li>
+                    <li>Un médico atendiendo pacientes → ______________</li>
+                    <li>Un pescador capturando atún → ______________</li>
+                    <li>Un programador creando una aplicación → ______________</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 3: Preguntas de reflexión</h4>
+                <p>Responde las siguientes preguntas en tu cuaderno:</p>
+                <ol>
+                    <li>¿Por qué crees que el trueque dejó de funcionar cuando las sociedades crecieron?</li>
+                    <li>¿Cuál fue el invento más importante en la historia de la economía: la moneda o el billete? Explica por qué.</li>
+                    <li>¿En qué sector económico te gustaría trabajar cuando seas grande? ¿Por qué?</li>
+                    <li>¿Cómo crees que la globalización afecta tu vida diaria? Menciona 3 productos que uses hoy que vengan de otros países.</li>
+                    <li>¿Por qué Colombia es conocida por su café y sus esmeraldas? ¿Qué otros productos colombianos conoces?</li>
+                    <li>¿Qué pasaría si de repente no existiera el dinero? ¿Cómo conseguirías lo que necesitas?</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 4: Investiga un producto</h4>
+                <p>Elige un producto que tengas en casa (por ejemplo, tu celular, tus zapatos, un chocolate, tu cuaderno) e investiga:</p>
+                <ul>
+                    <li>🌍 ¿De qué país proviene?</li>
+                    <li>🏭 ¿En qué sector económico se produce?</li>
+                    <li>🚚 ¿Cómo llegó hasta ti?</li>
+                    <li>💰 ¿Cuánto cuesta y por qué crees que tiene ese precio?</li>
+                    <li>♻️ ¿Qué recursos naturales se usaron para fabricarlo?</li>
+                </ul>
+                <p>Escribe un párrafo explicando el viaje de ese producto desde su origen hasta tus manos.</p>
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
+    <h4>🔗 Enlaces de interés</h4>
+    <a href="https://www.youtube.com/watch?v=0QrWvnc6Qpo" class="enlace" target="_blank">📘 ¿Qué es la economía? - Explicado FÁCIL</a>
+    <a href="https://www.youtube.com/watch?v=eIJ8G6Lw9Jo" class="enlace" target="_blank">🎥 Historia del dinero: De la sal a las criptomonedas</a>
+    <a href="https://www.youtube.com/watch?v=NsJfgkBl9Xo" class="enlace" target="_blank">🎥 Los sectores económicos (Primario, Secundario y Terciario)</a>
+    <a href="https://www.youtube.com/watch?v=PvViocJwYRI" class="enlace" target="_blank">🎥 Oferta y demanda explicada para principiantes</a>
+    <a href="https://www.youtube.com/watch?v=NIyuoZfNr6k" class="enlace" target="_blank">🎥 La globalización: ¿Qué es, ventajas y desventajas?</a>
+    <a href="https://www.youtube.com/watch?v=mKwwsit_AC4" class="enlace" target="_blank">🎥 Economía de Colombia: Comercio, exportaciones e industria</a>
+</div>
 
         <!-- Actividad -->
         <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <h4>✍️ TALLER DE LA UNIDAD</h4>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>📄 <a href="https://drive.google.com/file/d/14noIX4_pA4wd7A1FVmmzg3TK3mU1Q-Ab/view?usp=sharing" class="enlace" target="_blank">TALLER: CÓMO SURGE LA ECONOMÍA (PDF)</a></li>
             </ul>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=3" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -339,14 +790,14 @@
             4: "Ética y Valores"
         },
         2: { // Matemáticas
-            1: "Números y Operaciones",
-            2: "Álgebra Básica",
-            3: "Geometría",
-            4: "Estadística"
+            1: "Potenciación y Radicación",
+            2: "Recta Numérica y Fracciones",
+            3: "Geometría y Decimales",
+            4: "Repaso de la materia"
         },
         3: { // Sociales
-            1: "Historia Universal",
-            2: "Geografía Mundial",
+            1: "Etapas de la Historia",
+            2: "Cómo surge la Economía",
             3: "Historia de Colombia",
             4: "Democracia y Participación"
         },
@@ -380,7 +831,7 @@
     const unidadesDescripciones = {
         1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
-        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
+        3: ["Las 5 etapas de la historia universal", "Del trueque a la economía global", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
         5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
         6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
