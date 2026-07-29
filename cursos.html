@@ -39,7 +39,6 @@
 
         .courses-header h1 {
             font-size: 2.8rem;
-            color: #05101b;
             font-weight: 700;
             background: linear-gradient(120deg, #030b10, #1294db);
             background-clip: text;
@@ -136,6 +135,185 @@
             transform: translateX(-50%) scale(1);
         }
 
+        /* === ESTILOS DEL BOTÓN DE CANDADO DEL PROFESOR === */
+        .teacher-lock-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .teacher-lock-btn {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            border: none;
+            padding: 0;
+            width: 60px;
+            height: 60px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .teacher-lock-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.3);
+        }
+
+        .teacher-lock-btn:active {
+            transform: translateY(1px);
+        }
+
+        .teacher-lock-btn.unlocked {
+            background: linear-gradient(135deg, #1b7a2b, #28a745);
+            box-shadow: 0 8px 18px rgba(40, 167, 69, 0.3);
+        }
+
+        .teacher-lock-btn.unlocked:hover {
+            box-shadow: 0 15px 25px -8px rgba(40, 167, 69, 0.4);
+        }
+
+        .lock-icon {
+            font-size: 1.4rem;
+        }
+
+        /* Modal de contraseña */
+        .password-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .password-modal-overlay.active {
+            display: flex;
+        }
+
+        .password-modal {
+            background: white;
+            border-radius: 2rem;
+            padding: 2.5rem 2rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .password-modal h2 {
+            font-size: 1.8rem;
+            color: #1f3e54;
+            margin-bottom: 0.5rem;
+        }
+
+        .password-modal p {
+            color: #5e7f97;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .password-modal .lock-big {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .password-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .password-input-group input {
+            padding: 1rem 1.2rem;
+            border: 2px solid #cbdde9;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            text-align: center;
+            outline: none;
+            transition: border-color 0.3s;
+            letter-spacing: 2px;
+        }
+
+        .password-input-group input:focus {
+            border-color: #1294db;
+        }
+
+        .password-input-group input::placeholder {
+            letter-spacing: 0;
+            color: #a0b8cc;
+        }
+
+        .password-modal-btns {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+        }
+
+        .password-modal-btns button {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-confirm-password {
+            background: linear-gradient(135deg, #1294db, #0d6fa5);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-confirm-password:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(18, 148, 219, 0.3);
+        }
+
+        .btn-cancel-password {
+            background: #e8edf2;
+            color: #4a627a;
+        }
+
+        .btn-cancel-password:hover {
+            background: #d5dce4;
+        }
+
+        .password-error {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: -0.5rem;
+            display: none;
+        }
+
+        .password-error.show {
+            display: block;
+        }
+
         @media (max-width: 700px) {
             body {
                 padding: 1rem;
@@ -153,6 +331,14 @@
                 width: 90%;
                 font-size: 0.9rem;
             }
+            .teacher-lock-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 0.95rem;
+            }
+            .password-modal {
+                padding: 1.8rem 1.2rem;
+            }
         }
     </style>
 </head>
@@ -163,6 +349,14 @@
             <h1>📖 Nuestros Cursos</h1>
             <p>Selecciona cualquiera para comenzar tu formación</p>
         </div>
+
+        <!-- === BOTÓN DE CANDADO DEL PROFESOR === -->
+        <div class="teacher-lock-container">
+            <button id="teacherLockBtn" class="teacher-lock-btn" type="button">
+                <span class="lock-icon" id="lockIcon"></span>
+            </button>
+        </div>
+
         <div class="courses-grid" id="coursesGrid">
             <!-- Los 7 cursos se generarán con JavaScript -->
         </div>
@@ -172,10 +366,123 @@
     </div>
 </div>
 
+<!-- Modal de contraseña -->
+<div id="passwordModal" class="password-modal-overlay">
+    <div class="password-modal">
+        <span class="lock-big">🔒</span>
+        <h2>Acceso Profesor</h2>
+        <div class="password-input-group">
+            <input type="password" id="passwordInput" placeholder="Contraseña" autocomplete="off">
+            <div class="password-error" id="passwordError">❌ Contraseña incorrecta</div>
+        </div>
+        <div class="password-modal-btns">
+            <button class="btn-cancel-password" id="cancelPasswordBtn">Cancelar</button>
+            <button class="btn-confirm-password" id="confirmPasswordBtn">Abrir</button>
+        </div>
+    </div>
+</div>
+
 <div id="toastMessage" class="toast-msg">✨ Mensaje</div>
 
 <script>
-// Definición de los 7 cursos (orden personalizado solicitado)
+// =============================================
+// CONFIGURACIÓN DEL ACCESO PROFESOR
+// =============================================
+const TEACHER_PASSWORD = "salondeclase2026alba"; // Cambia esta contraseña si lo deseas
+const TEACHER_STORAGE_KEY = 'aula_teacher_unlocked';
+const TEACHER_EXPIRY_KEY = 'aula_teacher_expiry';
+
+// =============================================
+// FUNCIONES DEL SISTEMA DE CANDADO
+// =============================================
+
+function isTeacherUnlocked() {
+    const unlocked = localStorage.getItem(TEACHER_STORAGE_KEY) === 'true';
+    if (!unlocked) return false;
+
+    const expiry = localStorage.getItem(TEACHER_EXPIRY_KEY);
+    if (expiry) {
+        const now = Date.now();
+        if (now > parseInt(expiry)) {
+            localStorage.removeItem(TEACHER_STORAGE_KEY);
+            localStorage.removeItem(TEACHER_EXPIRY_KEY);
+            return false;
+        }
+    }
+    return true;
+}
+
+function unlockTeacherAccess() {
+    const now = Date.now();
+    const expiry = now + (24 * 60 * 60 * 1000); // 24 horas
+    localStorage.setItem(TEACHER_STORAGE_KEY, 'true');
+    localStorage.setItem(TEACHER_EXPIRY_KEY, expiry.toString());
+    updateLockUI();
+    showToast('✅ Acceso profesor desbloqueado por 24 horas');
+}
+
+function lockTeacherAccess() {
+    localStorage.removeItem(TEACHER_STORAGE_KEY);
+    localStorage.removeItem(TEACHER_EXPIRY_KEY);
+    updateLockUI();
+    showToast('🔒 Acceso profesor bloqueado');
+}
+
+function updateLockUI() {
+    const btn = document.getElementById('teacherLockBtn');
+    const icon = document.getElementById('lockIcon');
+
+    if (isTeacherUnlocked()) {
+        btn.classList.add('unlocked');
+        icon.textContent = '🔓';
+    } else {
+        btn.classList.remove('unlocked');
+        icon.textContent = '🔒';
+    }
+}
+
+function showPasswordModal() {
+    const modal = document.getElementById('passwordModal');
+    const input = document.getElementById('passwordInput');
+    const error = document.getElementById('passwordError');
+    modal.classList.add('active');
+    input.value = '';
+    error.classList.remove('show');
+    setTimeout(() => input.focus(), 100);
+}
+
+function hidePasswordModal() {
+    document.getElementById('passwordModal').classList.remove('active');
+}
+
+function handleTeacherLockClick() {
+    if (isTeacherUnlocked()) {
+        if (confirm('¿Deseas bloquear el acceso de profesor? Los cursos volverán a tener restricciones.')) {
+            lockTeacherAccess();
+        }
+    } else {
+        showPasswordModal();
+    }
+}
+
+function verifyPassword() {
+    const input = document.getElementById('passwordInput');
+    const error = document.getElementById('passwordError');
+    const password = input.value.trim();
+
+    if (password === TEACHER_PASSWORD) {
+        unlockTeacherAccess();
+        hidePasswordModal();
+    } else {
+        error.classList.add('show');
+        input.value = '';
+        input.focus();
+    }
+}
+
+// =============================================
+// DEFINICIÓN DE LOS 7 CURSOS
+// =============================================
 const coursesData = [
     { id: 1, title: "Español y Filosofía", emoji: "📖", description: "Mes 1." },
     { id: 5, title: "Química", emoji: "🧪", description: "Mes 2." },
@@ -186,52 +493,78 @@ const coursesData = [
     { id: 3, title: "Sociales", emoji: "🌍", description: "Mes 7." }
 ];
 
-    let toastTimeout = null;
-    function showToast(message) {
-        const toast = document.getElementById('toastMessage');
-        if (!toast) return;
-        toast.textContent = message;
-        toast.classList.add('show');
-        if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-            toast.classList.remove('show');
-        }, 2000);
+let toastTimeout = null;
+function showToast(message) {
+    const toast = document.getElementById('toastMessage');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add('show');
+    if (toastTimeout) clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
+}
+
+function handleCourseClick(course) {
+    showToast(`✅ Abriendo: ${course.title} 🎓`);
+    setTimeout(() => {
+        window.location.href = `detalle-curso.html?id=${course.id}`;
+    }, 1000);
+}
+
+function renderCourses() {
+    const gridContainer = document.getElementById('coursesGrid');
+    if (!gridContainer) return;
+
+    let html = '';
+    coursesData.forEach(course => {
+        html += `
+            <button class="course-btn" data-id="${course.id}" data-title="${course.title.replace(/"/g, '&quot;')}">
+                <div class="course-emoji">${course.emoji}</div>
+                <div class="course-title">${course.title}</div>
+                <div class="course-badge">${course.description}</div>
+            </button>
+        `;
+    });
+    gridContainer.innerHTML = html;
+
+    const buttons = document.querySelectorAll('.course-btn');
+    buttons.forEach(btn => {
+        const courseId = parseInt(btn.getAttribute('data-id'));
+        const course = coursesData.find(c => c.id === courseId);
+        if (course) {
+            btn.addEventListener('click', () => handleCourseClick(course));
+        }
+    });
+}
+
+// =============================================
+// INICIALIZACIÓN
+// =============================================
+renderCourses();
+updateLockUI();
+
+document.getElementById('teacherLockBtn').addEventListener('click', handleTeacherLockClick);
+document.getElementById('confirmPasswordBtn').addEventListener('click', verifyPassword);
+document.getElementById('cancelPasswordBtn').addEventListener('click', hidePasswordModal);
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        hidePasswordModal();
     }
+});
 
-    function handleCourseClick(course) {
-        showToast(`✅ Abriendo: ${course.title} 🎓`);
-        setTimeout(() => {
-            window.location.href = `detalle-curso.html?id=${course.id}`;
-        }, 1000);
+document.getElementById('passwordInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        verifyPassword();
     }
+});
 
-    function renderCourses() {
-        const gridContainer = document.getElementById('coursesGrid');
-        if (!gridContainer) return;
-
-        let html = '';
-        coursesData.forEach(course => {
-            html += `
-                <button class="course-btn" data-id="${course.id}" data-title="${course.title.replace(/"/g, '&quot;')}">
-                    <div class="course-emoji">${course.emoji}</div>
-                    <div class="course-title">${course.title}</div>
-                    <div class="course-badge">${course.description}</div>
-                </button>
-            `;
-        });
-        gridContainer.innerHTML = html;
-
-        const buttons = document.querySelectorAll('.course-btn');
-        buttons.forEach(btn => {
-            const courseId = parseInt(btn.getAttribute('data-id'));
-            const course = coursesData.find(c => c.id === courseId);
-            if (course) {
-                btn.addEventListener('click', () => handleCourseClick(course));
-            }
-        });
+document.getElementById('passwordModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        hidePasswordModal();
     }
-
-    renderCourses();
+});
 </script>
 </body>
 </html>
