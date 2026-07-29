@@ -18,7 +18,7 @@ const PRECACHE_URLS = [
   './unidad2-3.html',
   './unidad2-4.html',
   './unidad3-1.html',
-  ./unidad3-2.html',
+  './unidad3-2.html',
   './unidad3-3.html',
   './unidad3-4.html',
   './unidad4-1.html',
