@@ -5,448 +5,479 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, 'Segoe UI', 'Inter', -apple-system, sans-serif; }
 
-        body {
-            background: linear-gradient(145deg, #000000 0%, #044756 100%);
-            min-height: 100vh;
-            padding: 2rem;
-        }
+        body { background: linear-gradient(145deg, #000000 0%, #044756 100%); min-height: 100vh; padding: 2rem; }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1100px; margin: 0 auto; }
 
-        /* Tarjeta principal */
-        .unidad-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 2rem;
-            padding: 2.5rem;
-            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
-        }
+        .unidad-card { background: rgba(255, 255, 255, 0.95); border-radius: 2rem; padding: 2.5rem; box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3); backdrop-filter: blur(2px); }
 
-        /* Encabezado */
-        .unidad-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 2px dashed #1294db;
-        }
+        .unidad-header { text-align: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px dashed #1294db; }
 
-        .unidad-materia {
-            display: inline-block;
-            background: linear-gradient(135deg, #1e3e5c, #2c4863);
-            color: white;
-            padding: 0.3rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
+        .unidad-materia { display: inline-block; background: linear-gradient(135deg, #1e3e5c, #2c4863); color: white; padding: 0.3rem 1.2rem; border-radius: 30px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; }
 
-        .unidad-titulo-principal {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(120deg, #030b10, #1294db);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.5rem;
-        }
+        .unidad-titulo-principal { font-size: 2.2rem; font-weight: 800; background: linear-gradient(120deg, #030b10, #1294db); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 0.5rem; }
 
-        .unidad-subtitulo {
-            color: #5e7f97;
-            font-size: 1rem;
-        }
+        .unidad-subtitulo { color: #5e7f97; font-size: 1rem; }
 
-        /* Navegación entre unidades */
-        .nav-unidades {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
+        .nav-unidades { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
 
-        .nav-btn {
-            background: #ecf3f9;
-            padding: 0.6rem 1.2rem;
-            border-radius: 40px;
-            text-decoration: none;
-            color: #1f3e54;
-            font-weight: 500;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: 1px solid #cbdde9;
-        }
+        .nav-btn { background: #ecf3f9; padding: 0.6rem 1.2rem; border-radius: 40px; text-decoration: none; color: #1f3e54; font-weight: 500; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid #cbdde9; }
+        .nav-btn:hover { background: #dfe9f2; transform: translateX(-3px); }
+        .nav-btn-right:hover { transform: translateX(3px); }
+        .nav-indicador { font-size: 0.85rem; color: #5e7f97; background: rgba(18, 148, 219, 0.1); padding: 0.4rem 1rem; border-radius: 30px; }
 
-        .nav-btn:hover {
-            background: #dfe9f2;
-            transform: translateX(-3px);
-        }
+        .contenido { margin: 2rem 0; }
+        .contenido h2 { color: #1f3e54; margin: 1.5rem 0 1rem; font-size: 1.5rem; border-left: 4px solid #1294db; padding-left: 1rem; }
+        .contenido h3 { color: #2c6280; margin: 1rem 0 0.5rem; font-size: 1.2rem; }
+        .contenido p { color: #2c3e50; line-height: 1.6; margin-bottom: 1rem; }
+        .contenido img { max-width: 100%; border-radius: 1rem; margin: 1rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-        .nav-btn-right:hover {
-            transform: translateX(3px);
-        }
+        .sistema-box { border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; }
+        .sistema-box.capitalismo { background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-left: 6px solid #1565c0; }
+        .sistema-box.socialismo { background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-left: 6px solid #c62828; }
+        .sistema-box.comparacion { background: linear-gradient(135deg, #fff8e1, #ffecb3); border-left: 6px solid #f57f17; }
+        .sistema-box.repaso { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left: 6px solid #2e7d32; }
+        .sistema-box h3 { color: #1f3e54; margin-bottom: 0.8rem; font-size: 1.4rem; }
+        .sistema-box h4 { color: #2c6280; margin: 0.8rem 0 0.5rem; }
+        .sistema-box ul { margin: 0.5rem 0 0.5rem 1.5rem; color: #2c3e50; line-height: 1.6; }
+        .sistema-box li { margin: 0.3rem 0; }
+        .sistema-box table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; background: white; border-radius: 0.5rem; overflow: hidden; }
+        .sistema-box table th { background: #1e3e5c; color: white; padding: 0.5rem; text-align: left; }
+        .sistema-box table td { padding: 0.5rem; border-bottom: 1px solid #e8f0f6; }
 
-        .nav-indicador {
-            font-size: 0.85rem;
-            color: #5e7f97;
-            background: rgba(18, 148, 219, 0.1);
-            padding: 0.4rem 1rem;
-            border-radius: 30px;
-        }
+        .mapa-conceptos { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .mapa-item { background: white; border-radius: 1rem; padding: 1.2rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border: 2px solid #1294db; transition: transform 0.2s; }
+        .mapa-item:hover { transform: translateY(-3px); }
+        .mapa-item .icono { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .mapa-item h4 { color: #1f3e54; margin-bottom: 0.3rem; }
+        .mapa-item p { color: #5e7f97; font-size: 0.85rem; }
 
-        /* Contenido principal */
-        .contenido {
-            margin: 2rem 0;
-        }
+        .enlaces-box { background: rgba(18, 148, 219, 0.08); border-radius: 1rem; padding: 1.2rem; margin: 1.5rem 0; border-left: 3px solid #1294db; }
+        .enlaces-box h4 { color: #1f3e54; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem; }
+        .enlace { display: block; margin: 0.5rem 0; color: #1294db; text-decoration: none; transition: color 0.2s; }
+        .enlace:hover { color: #044756; text-decoration: underline; }
 
-        .contenido h2 {
-            color: #1f3e54;
-            margin: 1.5rem 0 1rem;
-            font-size: 1.5rem;
-            border-left: 4px solid #1294db;
-            padding-left: 1rem;
-        }
+        .actividad-box { background: linear-gradient(135deg, #f0f7fc, #e8f0f6); border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; border: 1px solid #cbdde9; }
+        .actividad-box h4 { color: #1f3e54; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
 
-        .contenido h3 {
-            color: #2c6280;
-            margin: 1rem 0 0.5rem;
-            font-size: 1.2rem;
-        }
+        .btn-volver { display: inline-flex; align-items: center; gap: 0.5rem; background: linear-gradient(105deg, #1e3e5c, #2c4863); color: white; padding: 0.8rem 1.8rem; border-radius: 40px; text-decoration: none; font-weight: 500; margin-top: 1rem; transition: all 0.2s; }
+        .btn-volver:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.15); }
 
-        .contenido p {
-            color: #2c3e50;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
+        .contenido ul, .contenido ol { margin: 1rem 0 1rem 2rem; color: #2c3e50; line-height: 1.6; }
+        .contenido li { margin: 0.5rem 0; }
 
-        .contenido img {
-            max-width: 100%;
-            border-radius: 1rem;
-            margin: 1rem 0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
+        .dato-curioso { background: linear-gradient(135deg, #fff8e1, #fff3cd); padding: 1rem; border-radius: 1rem; border-left: 4px solid #ff9800; margin: 1.5rem 0; }
+        .dato-curioso h4 { color: #e65100; margin-bottom: 0.5rem; }
+        .dato-curioso.verde { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-left-color: #388e3c; }
+        .dato-curioso.verde h4 { color: #1b5e20; }
 
-        /* Caja para enlaces */
-        .enlaces-box {
-            background: rgba(18, 148, 219, 0.08);
-            border-radius: 1rem;
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            border-left: 3px solid #1294db;
-        }
+        .tabla-sistemas { width: 100%; border-collapse: collapse; margin: 1rem 0; background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .tabla-sistemas th { background: #1e3e5c; color: white; padding: 0.8rem 1rem; text-align: left; }
+        .tabla-sistemas td { padding: 0.7rem 1rem; border-bottom: 1px solid #e8f0f6; color: #2c3e50; }
+        .tabla-sistemas tr:last-child td { border-bottom: none; }
+        .tabla-sistemas tr:hover td { background: #f0f7fc; }
 
-        .enlaces-box h4 {
-            color: #1f3e54;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .enlace {
-            display: block;
-            margin: 0.5rem 0;
-            color: #1294db;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .enlace:hover {
-            color: #044756;
-            text-decoration: underline;
-        }
-
-        /* Caja de actividad */
-        .actividad-box {
-            background: linear-gradient(135deg, #f0f7fc, #e8f0f6);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border: 1px solid #cbdde9;
-        }
-
-        .actividad-box h4 {
-            color: #1f3e54;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Botones importantes */
-        .btn-volver {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(105deg, #1e3e5c, #2c4863);
-            color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 500;
-            margin-top: 1rem;
-            transition: all 0.2s;
-        }
-
-        .btn-volver:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-        }
-
-        /* Listas */
-        .contenido ul, .contenido ol {
-            margin: 1rem 0 1rem 2rem;
-            color: #2c3e50;
-            line-height: 1.6;
-        }
-
-        .contenido li {
-            margin: 0.5rem 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 700px) {
-            body { padding: 1rem; }
-            .unidad-card { padding: 1.5rem; }
-            .unidad-titulo-principal { font-size: 1.5rem; }
-            .nav-unidades { flex-direction: column; }
-        }
+        @media (max-width: 700px) { body { padding: 1rem; } .unidad-card { padding: 1.5rem; } .unidad-titulo-principal { font-size: 1.5rem; } .nav-unidades { flex-direction: column; } }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="unidad-card">
-        <!-- Encabezado -->
         <div class="unidad-header">
             <span class="unidad-materia" id="materiaNombre">【Nombre de la Materia】</span>
             <h1 class="unidad-titulo-principal" id="unidadTitulo">Unidad 【Número】: 【Título de la Unidad】</h1>
             <p class="unidad-subtitulo" id="unidadDescripcion">【Breve descripción de lo que aprenderás en esta unidad】</p>
         </div>
 
-        <!-- Navegación entre unidades -->
-        <div class="nav-unidades" id="navUnidades">
-            <!-- Se llena con JS -->
-        </div>
+        <div class="nav-unidades" id="navUnidades"></div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
 
+            <h2 style="font-size:2rem;">📌 Introducción</h2>
+            <p>¿Alguna vez te has preguntado por qué unos países son ricos y otros pobres? ¿Por qué en algunos lugares el gobierno controla la economía mientras que en otros las personas pueden crear sus propias empresas libremente? La respuesta está en los <strong>sistemas económicos y políticos</strong> que cada país adopta.</p>
+            <p>En esta unidad final del curso de Sociales exploraremos los dos grandes sistemas que han marcado la historia del mundo moderno: el <strong>Capitalismo</strong> y el <strong>Socialismo</strong>. También haremos un <strong>repaso general</strong> de todo lo aprendido en las unidades anteriores: las etapas de la historia, el surgimiento de la economía y la Constitución Política de Colombia. ¡Prepárate para cerrar con broche de oro!</p>
 
-            <p>【escribe aqui】</p>
+            <div class="dato-curioso">
+                <h4>💡 ¿Sabías que...?</h4>
+                <p>Durante la Guerra Fría (1947-1991), el mundo se dividió en dos bloques: el bloque capitalista liderado por Estados Unidos y el bloque socialista liderado por la Unión Soviética (URSS). Esta división marcó la política, la economía y la cultura de todo el siglo XX.</p>
+            </div>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <h2 style="font-size:2rem;">📖 Contenido Principal</h2>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <h3 style="font-size:1.6rem;">🎯 Objetivo general</h3>
+            <p>Comprender las diferencias fundamentales entre el capitalismo y el socialismo como sistemas económicos y políticos, y repasar los temas vistos en las unidades anteriores del curso de Sociales.</p>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <h3 style="font-size:1.6rem;">🎯 Objetivos específicos</h3>
+            <ol>
+                <li>Definir qué es el capitalismo y cuáles son sus características principales.</li>
+                <li>Definir qué es el socialismo y cuáles son sus características principales.</li>
+                <li>Comparar ambos sistemas mediante ejemplos concretos y una tabla comparativa.</li>
+                <li>Identificar qué sistema predomina en Colombia y en otros países del mundo.</li>
+                <li>Repasar los temas clave de las unidades 1, 2 y 3 del curso de Sociales.</li>
+            </ol>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <!-- ============= CAPITALISMO ============= -->
+            <h3 style="font-size:1.6rem;">📌 1. ¿Qué es el Capitalismo?</h3>
+            <p>El <strong>capitalismo</strong> es un sistema económico y social en el que los medios de producción (fábricas, tierras, máquinas, empresas) son de <strong>propiedad privada</strong>. Las personas y las empresas son libres de producir, vender y comprar bienes y servicios en el mercado, buscando su propio beneficio económico.</p>
 
-            <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
-            </ul>
+            <div class="sistema-box capitalismo">
+                <h3>💰 El Capitalismo</h3>
+                <p>El capitalismo surgió en Europa durante los siglos XV-XVIII, reemplazando al feudalismo. Grandes pensadores como <strong>Adam Smith</strong> (considerado el "padre del capitalismo") defendieron la idea de que la búsqueda del interés individual beneficia a toda la sociedad.</p>
+
+                <h4>🔑 Características principales del Capitalismo:</h4>
+                <ul>
+                    <li><strong>🏭 Propiedad privada:</strong> Las personas y empresas pueden ser dueñas de fábricas, tierras, maquinaria, etc.</li>
+                    <li><strong>📈 Libre mercado:</strong> Los precios se definen por la oferta y la demanda, sin intervención del gobierno.</li>
+                    <li><strong>💼 Libre competencia:</strong> Las empresas compiten entre sí para ofrecer mejores productos a mejores precios.</li>
+                    <li><strong>💰 Búsqueda de ganancia:</strong> El objetivo principal es obtener beneficios económicos (ganancias).</li>
+                    <li><strong>👷 Trabajo asalariado:</strong> Las personas trabajan a cambio de un salario.</li>
+                    <li><strong>🏦 Acumulación de capital:</strong> Las ganancias se reinvierten para crecer y generar más riqueza.</li>
+                </ul>
+
+                <h4>✅ Ventajas del Capitalismo:</h4>
+                <ul>
+                    <li>🔹 Fomenta la <strong>innovación</strong> y el desarrollo tecnológico (las empresas compiten por crear mejores productos).</li>
+                    <li>🔹 Genera <strong>crecimiento económico</strong> y creación de empleos.</li>
+                    <li>🔹 Respeto por la <strong>libertad individual</strong> y la propiedad privada.</li>
+                    <li>🔹 Mayor <strong>eficiencia</strong> en la producción (las empresas buscan reducir costos).</li>
+                </ul>
+
+                <h4>❌ Desventajas del Capitalismo:</h4>
+                <ul>
+                    <li>🔹 <strong>Desigualdad económica:</strong> La riqueza se concentra en pocas personas (ricos más ricos, pobres más pobres).</li>
+                    <li>🔹 <strong>Explotación laboral:</strong> En algunos casos, los trabajadores reciben salarios bajos.</li>
+                    <li>🔹 <strong>Crisis económicas:</strong> El sistema puede generar burbujas, recesiones y desempleo.</li>
+                    <li>🔹 <strong>Daño ambiental:</strong> La búsqueda de ganancias puede llevar a la explotación excesiva de recursos naturales.</li>
+                </ul>
+
+                <div class="dato-curioso" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-left: 4px solid #1565c0;">
+                    <h4>💡 El padre del Capitalismo: Adam Smith</h4>
+                    <p><strong>Adam Smith</strong> (1723-1790) fue un filósofo y economista escocés que escribió el libro <em>"La riqueza de las naciones"</em>. Él explicó que cuando cada persona busca su propio beneficio, como si una "mano invisible" la guiara, termina beneficiando a toda la sociedad. Por ejemplo, un panadero no hornea pan por bondad, sino para ganar dinero, pero al hacerlo alimenta a la comunidad.</p>
+                </div>
+
+                <h4>🌎 Países con economía capitalista:</h4>
+                <ul>
+                    <li>🇺🇸 <strong>Estados Unidos</strong> (la economía capitalista más grande del mundo).</li>
+                    <li>🇨🇦 <strong>Canadá</strong></li>
+                    <li>🇩🇪 <strong>Alemania</strong></li>
+                    <li>🇯🇵 <strong>Japón</strong></li>
+                    <li>🇦🇺 <strong>Australia</strong></li>
+                    <li>🇨🇴 <strong>Colombia</strong> (tiene una economía capitalista con algunas regulaciones del Estado).</li>
+                </ul>
+                <img src="imagenes/176.jpg">
+            </div>
+
+            <!-- ============= SOCIALISMO ============= -->
+            <h3 style="font-size:1.6rem;">📌 2. ¿Qué es el Socialismo?</h3>
+            <p>El <strong>socialismo</strong> es un sistema económico y social en el que los medios de producción son de <strong>propiedad colectiva o del Estado</strong>. El objetivo principal es reducir la desigualdad y garantizar que todos los ciudadanos tengan acceso a necesidades básicas como salud, educación, vivienda y trabajo.</p>
+
+            <div class="sistema-box socialismo">
+                <h3>🤝 El Socialismo</h3>
+                <p>El socialismo surgió como una crítica al capitalismo durante la Revolución Industrial (siglo XIX). Pensadores como <strong>Karl Marx</strong> y <strong>Friedrich Engels</strong> denunciaron la explotación de los trabajadores y propusieron un sistema más justo donde los medios de producción pertenecieran a todos.</p>
+
+                <h4>🔑 Características principales del Socialismo:</h4>
+                <ul>
+                    <li><strong>🏛️ Propiedad colectiva o estatal:</strong> El Estado o la comunidad son dueños de las fábricas, tierras y recursos.</li>
+                    <li><strong>📊 Planificación centralizada:</strong> El gobierno decide qué producir, cómo y para quién (no el mercado).</li>
+                    <li><strong>⚖️ Igualdad económica:</strong> Se busca reducir las diferencias entre ricos y pobres.</li>
+                    <li><strong>🏥 Servicios públicos universales:</strong> Salud, educación, vivienda y transporte son gratuitos o subsidiados.</li>
+                    <li><strong>👷 Protección al trabajador:</strong> Se garantizan salarios justos, sindicatos fuertes y derechos laborales.</li>
+                </ul>
+
+                <h4>✅ Ventajas del Socialismo:</h4>
+                <ul>
+                    <li>🔹 <strong>Menor desigualdad:</strong> La riqueza se distribuye de forma más equitativa.</li>
+                    <li>🔹 <strong>Servicios básicos garantizados:</strong> Salud y educación gratuitas para todos.</li>
+                    <li>🔹 <strong>Protección del trabajador:</strong> Los empleados tienen derechos laborales protegidos.</li>
+                    <li>🔹 <strong>Planificación económica:</strong> Se evitan crisis por sobreproducción.</li>
+                </ul>
+
+                <h4>❌ Desventajas del Socialismo:</h4>
+                <ul>
+                    <li>🔹 <strong>Falta de libertad económica:</strong> Las personas no pueden crear empresas libremente.</li>
+                    <li>🔹 <strong>Ineficiencia:</strong> Al no haber competencia, los productos pueden ser de menor calidad.</li>
+                    <li>🔹 <strong>Burocracia:</strong> El control estatal puede generar lentitud y corrupción.</li>
+                    <li>🔹 <strong>Falta de innovación:</strong> Sin incentivos económicos, hay menos motivación para crear nuevas tecnologías.</li>
+                </ul>
+
+                <h4>🌎 Países con influencia socialista:</h4>
+                <ul>
+                    <li>🇨🇳 <strong>China</strong> (socialismo de mercado: combina control estatal con economía de mercado).</li>
+                    <li>🇨🇺 <strong>Cuba</strong> (socialismo clásico, economía planificada).</li>
+                    <li>🇻🇪 <strong>Venezuela</strong> (socialismo del siglo XXI).</li>
+                    <li>🇰🇵 <strong>Corea del Norte</strong> (socialismo extremo).</li>
+                    <li>🇸🇪 <strong>Suecia</strong> y países nórdicos (aunque son capitalistas, tienen un fuerte Estado de bienestar con servicios gratuitos).</li>
+                </ul>
+
+                <div class="dato-curioso" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0); border-left: 4px solid #c62828;">
+                    <h4>📖 Karl Marx y el Manifiesto Comunista</h4>
+                    <p><strong>Karl Marx</strong> (1818-1883) fue un filósofo alemán que escribió el <em>"Manifiesto Comunista"</em> junto con Engels. Marx decía que la historia de la humanidad es una historia de lucha entre clases sociales: los ricos (burguesía) contra los pobres (proletariado). Él soñaba con una sociedad sin clases donde todos fueran iguales. Sus ideas inspiraron revoluciones en Rusia (1917), China (1949), Cuba (1959) y otros países.</p>
+                </div>
+                <img src="imagenes/177.jpg">
+
+            </div>
+
+            <!-- ============= COMPARACIÓN ============= -->
+            <h3 style="font-size:1.6rem;">📌 3. Comparación: Capitalismo vs Socialismo</h3>
+
+            <div class="sistema-box comparacion">
+                <h3>⚖️ Tabla Comparativa</h3>
+                <table class="tabla-sistemas">
+                    <tr><th>Aspecto</th><th>💰 Capitalismo</th><th>🤝 Socialismo</th></tr>
+                    <tr><td><strong>Propiedad</strong></td><td>Privada (personas y empresas)</td><td>Colectiva o estatal</td></tr>
+                    <tr><td><strong>Mercado</strong></td><td>Libre (oferta y demanda)</td><td>Planificado por el Estado</td></tr>
+                    <tr><td><strong>Objetivo</strong></td><td>Obtener ganancias</td><td>Igualdad y bienestar social</td></tr>
+                    <tr><td><strong>Competencia</strong></td><td>Sí, las empresas compiten</td><td>No hay competencia (control estatal)</td></tr>
+                    <tr><td><strong>Precios</strong></td><td>Los define el mercado</td><td>Los define el gobierno</td></tr>
+                    <tr><td><strong>Desigualdad</strong></td><td>Alta (brecha entre ricos y pobres)</td><td>Baja (distribución equitativa)</td></tr>
+                    <tr><td><strong>Libertad económica</strong></td><td>Alta (cualquier persona puede crear empresa)</td><td>Baja (el Estado controla la economía)</td></tr>
+                    <tr><td><strong>Salud y educación</strong></td><td>Pueden ser privadas o públicas</td><td>Generalmente gratuitas y universales</td></tr>
+                    <tr><td><strong>Innovación</strong></td><td>Alta (incentivos económicos)</td><td>Baja (menos incentivos)</td></tr>
+                    <tr><td><strong>Ejemplos</strong></td><td>EE.UU., Japón, Alemania, Colombia</td><td>Cuba, China, Corea del Norte, Venezuela</td></tr>
+                </table>
+
+                <h4>🌍 ¿Y Colombia? ¿Qué sistema tiene?</h4>
+                <p>Colombia tiene una economía <strong>capitalista</strong> con algunas características sociales. La Constitución de 1991 define a Colombia como un <strong>"Estado Social de Derecho"</strong>, lo que significa que aunque la economía es de mercado (capitalista), el Estado debe intervenir para garantizar la justicia social, la igualdad y la protección de los más vulnerables. Por ejemplo, en Colombia existe salud pública (EPS), educación pública gratuita, y el Estado regula algunos precios y salarios. Esto se llama <strong>economía mixta</strong> o <strong>capitalismo con rostro humano</strong>.</p>
+            </div>
+
+            <!-- ============= REPASO GENERAL ============= -->
+            <h2 style="font-size:2rem;">📚 Repaso General: Todo lo que aprendimos</h2>
+            <p>¡Ha sido un viaje increíble! A lo largo de estas 4 unidades hemos recorrido la historia de la humanidad, entendido cómo funciona la economía, conocido nuestra Constitución y explorado los grandes sistemas económicos. Ahora haremos un repaso de cada unidad.</p>
+
+            <!-- Repaso Unidad 1 -->
+            <div class="sistema-box repaso">
+                <h3>🏛️ Unidad 1: Etapas de la Historia</h3>
+                <p>En la primera unidad viajamos a través del tiempo para conocer las <strong>5 grandes etapas de la historia</strong>:</p>
+                <table class="tabla-sistemas">
+                    <tr><th>Etapa</th><th>Período</th><th>¿Qué pasó?</th></tr>
+                    <tr>
+                        <td><strong>🦴 Prehistoria</strong></td>
+                        <td>2.5 millones a.C. - 3,500 a.C.</td>
+                        <td>Surgimiento del ser humano, descubrimiento del fuego, primeras herramientas de piedra, arte rupestre.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏛️ Edad Antigua</strong></td>
+                        <td>3,500 a.C. - 476 d.C.</td>
+                        <td>Invención de la escritura, primeras civilizaciones (Egipto, Grecia, Roma), democracia en Atenas, Imperio Romano.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏰 Edad Media</strong></td>
+                        <td>476 d.C. - 1492</td>
+                        <td>Caída del Imperio Romano, feudalismo, castillos, caballeros, Cruzadas, la Iglesia católica como poder central.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🌎 Edad Moderna</strong></td>
+                        <td>1492 - 1789</td>
+                        <td>Descubrimiento de América, Renacimiento, Reforma protestante, monarquías absolutas, mercantilismo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⚡ Edad Contemporánea</strong></td>
+                        <td>1789 - Actualidad</td>
+                        <td>Revolución Francesa, Revolución Industrial, guerras mundiales, globalización, tecnología digital.</td>
+                    </tr>
+                </table>
+                <p><strong>📌 Concepto clave:</strong> La historia nos ayuda a entender cómo hemos llegado a ser lo que somos hoy. Cada etapa construyó las bases de la siguiente.</p>
+            </div>
+
+            <!-- Repaso Unidad 2 -->
+            <div class="sistema-box repaso">
+                <h3>💰 Unidad 2: Cómo surge la Economía</h3>
+                <p>En la segunda unidad aprendimos que la <strong>economía</strong> es la ciencia que estudia cómo administramos los recursos para satisfacer nuestras necesidades.</p>
+                <h4>🔑 Conceptos clave:</h4>
+                <ul>
+                    <li><strong>🔄 Trueque:</strong> Primer sistema de intercambio (intercambiar bienes por bienes). Problema: la doble coincidencia.</li>
+                    <li><strong>💰 Dinero:</strong> Surgió para solucionar los problemas del trueque. Evolucionó: dinero-mercancía → monedas → billetes → dinero digital.</li>
+                    <li><strong>🌱 Sectores económicos:</strong> Primario (agricultura, minería), Secundario (industria), Terciario (servicios).</li>
+                    <li><strong>⚖️ Oferta y demanda:</strong> Cuando hay mucha demanda y poca oferta, los precios suben. Cuando hay mucha oferta y poca demanda, los precios bajan.</li>
+                    <li><strong>🌐 Globalización:</strong> Interconexión económica entre países. Tu celular tiene componentes de todo el mundo.</li>
+                    <li><strong>☕ Economía colombiana:</strong> Café, petróleo, carbón, flores, esmeraldas. Colombia es reconocida mundialmente por su café.</li>
+                </ul>
+                <p><strong>📌 Concepto clave:</strong> La economía está presente en cada decisión que tomamos, desde comprar un dulce hasta elegir una carrera profesional.</p>
+            </div>
+
+            <!-- Repaso Unidad 3 -->
+            <div class="sistema-box repaso">
+                <h3>⚖️ Unidad 3: Constitución Política de Colombia</h3>
+                <p>En la tercera unidad descubrimos que la <strong>Constitución de 1991</strong> es la ley más importante de Colombia y nos rige a todos.</p>
+                <h4>🔑 Conceptos clave:</h4>
+                <ul>
+                    <li><strong>📜 Norma suprema:</strong> Todas las leyes deben respetar la Constitución.</li>
+                    <li><strong>🏛️ Estado Social de Derecho:</strong> Colombia no solo garantiza derechos individuales, sino que busca activamente la justicia social.</li>
+                    <li><strong>🗳️ Soberanía popular:</strong> El poder reside en el pueblo, que elige a sus gobernantes mediante el voto.</li>
+                    <li><strong>🛡️ Derechos fundamentales:</strong> Vida, igualdad, libertad de expresión, educación, salud, vivienda, etc.</li>
+                    <li><strong>🤝 Deberes:</strong> Respetar derechos ajenos, obedecer la ley, pagar impuestos, proteger el ambiente.</li>
+                    <li><strong>📝 Ramas del poder:</strong> Legislativa (Congreso), Ejecutiva (Presidente, gobernadores, alcaldes), Judicial (Cortes y jueces).</li>
+                    <li><strong>🔍 Órganos de control:</strong> Procuraduría, Contraloría, Defensoría del Pueblo, Registraduría.</li>
+                    <li><strong>✍️ Participación ciudadana:</strong> Voto, referendo, consulta popular, revocatoria del mandato, cabildo abierto.</li>
+                </ul>
+                <p><strong>📌 Concepto clave:</strong> La Constitución no es solo un documento, es la herramienta que tenemos los ciudadanos para exigir nuestros derechos y construir un país mejor.</p>
+            </div>
+
+            <!-- Repaso Unidad 4 (resumen de esta misma página) -->
+            <div class="sistema-box repaso">
+                <h3>🏭 Unidad 4: Capitalismo y Socialismo (esta unidad)</h3>
+                <p>En esta unidad final aprendimos que existen dos grandes sistemas económicos que organizan la vida de los países:</p>
+                <ul>
+                    <li><strong>💰 Capitalismo:</strong> Propiedad privada, libre mercado, competencia, búsqueda de ganancia. Ej: EE.UU., Japón, Colombia.</li>
+                    <li><strong>🤝 Socialismo:</strong> Propiedad estatal, planificación centralizada, igualdad, servicios universales. Ej: Cuba, China, Venezuela.</li>
+                    <li><strong>⚖️ Colombia:</strong> Economía mixta (capitalista con Estado Social de Derecho).</li>
+                </ul>
+            </div>
+
+            <div class="dato-curioso verde">
+                <h4>🎉 ¡Felicitaciones por completar el curso de Sociales!</h4>
+                <p>Has recorrido un camino increíble: desde las cavernas de la Prehistoria hasta los sistemas económicos del mundo moderno, pasando por la economía, la Constitución y los derechos ciudadanos. Ahora tienes las herramientas para entender el mundo que te rodea y ser un ciudadano crítico, participativo y responsable. ¡Sigue aprendiendo y nunca dejes de preguntarte el porqué de las cosas!</p>
+            </div>
+
+            <!-- ============= ACTIVIDADES ============= -->
+            <h2 style="font-size:1.6rem;">📝 Actividades de aprendizaje</h2>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 1: Capitalismo vs Socialismo</h4>
+                <p>Completa la siguiente tabla con las diferencias entre capitalismo y socialismo:</p>
+                <table class="tabla-sistemas">
+                    <tr><th>Aspecto</th><th>Capitalismo</th><th>Socialismo</th></tr>
+                    <tr><td>¿Quién es dueño de las fábricas?</td><td>______________</td><td>______________</td></tr>
+                    <tr><td>¿Quién decide los precios?</td><td>______________</td><td>______________</td></tr>
+                    <tr><td>¿Hay competencia entre empresas?</td><td>______________</td><td>______________</td></tr>
+                    <tr><td>Objetivo principal</td><td>______________</td><td>______________</td></tr>
+                    <tr><td>Un país ejemplo</td><td>______________</td><td>______________</td></tr>
+                </table>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 2: Preguntas de reflexión</h4>
+                <p>Responde en tu cuaderno:</p>
+                <ol>
+                    <li>¿Crees que en Colombia hay más capitalismo o más socialismo? ¿Por qué?</li>
+                    <li>¿Qué ventajas y desventajas ves en el sistema económico de Colombia?</li>
+                    <li>Si fueras presidente de Colombia, ¿qué cosas del capitalismo mantendrías y qué cosas del socialismo adoptarías?</li>
+                    <li>¿Crees que es posible un sistema económico perfecto? ¿Por qué?</li>
+                    <li>¿Qué sistema crees que protege mejor los derechos de los trabajadores? Explica.</li>
+                </ol>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 3: Repaso general - Mapa mental</h4>
+                <p>Crea un <strong>mapa mental</strong> en tu cuaderno que conecte las 4 unidades del curso:</p>
+                <ul>
+                    <li>🔴 <strong>Unidad 1:</strong> Etapas de la Historia (Prehistoria → Edad Antigua → Edad Media → Edad Moderna → Edad Contemporánea).</li>
+                    <li>🟠 <strong>Unidad 2:</strong> Cómo surge la Economía (Trueque → Dinero → Sectores económicos → Oferta y demanda → Globalización).</li>
+                    <li>🟢 <strong>Unidad 3:</strong> Constitución Política (Estado Social de Derecho → Derechos → Deberes → Ramas del poder → Participación ciudadana).</li>
+                    <li>🔵 <strong>Unidad 4:</strong> Capitalismo y Socialismo (Propiedad, mercado, igualdad, ejemplos en el mundo).</li>
+                </ul>
+                <p>Dibuja flechas que conecten las unidades. Por ejemplo: ¿Cómo se relaciona la Revolución Industrial (Unidad 1) con el surgimiento del capitalismo y el socialismo (Unidad 4)? ¿Cómo se relaciona la Constitución (Unidad 3) con la economía (Unidad 2)?</p>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 4: Debate en clase</h4>
+                <p>Organícense en dos grupos para un debate:</p>
+                <ul>
+                    <li><strong>Grupo A:</strong> Defiende el capitalismo. Argumentos: libertad económica, innovación, crecimiento.</li>
+                    <li><strong>Grupo B:</strong> Defiende el socialismo. Argumentos: igualdad, justicia social, servicios gratuitos.</li>
+                </ul>
+                <p>Al final, cada persona debe escribir una reflexión personal respondiendo: <strong>¿Qué sistema crees que es mejor para Colombia y por qué?</strong></p>
+            </div>
+
+            <div class="actividad-box">
+                <h4>✏️ Actividad 5: Cuestionario de repaso final</h4>
+                <p>Responde las siguientes preguntas de todas las unidades:</p>
+                <ol>
+                    <li>¿Cuáles son las 5 etapas de la historia?</li>
+                    <li>¿Qué es el trueque y cuál fue su principal problema?</li>
+                    <li>¿Cuáles son los tres sectores económicos? Da un ejemplo de cada uno.</li>
+                    <li>¿En qué año se promulgó la Constitución de Colombia?</li>
+                    <li>¿Qué es la Acción de Tutela y para qué sirve?</li>
+                    <li>Nombra las tres ramas del poder público y una función de cada una.</li>
+                    <li>¿Qué significa "Estado Social de Derecho"?</li>
+                    <li>¿Cuál es la diferencia principal entre capitalismo y socialismo?</li>
+                    <li>¿Qué tipo de economía tiene Colombia?</li>
+                    <li>¿Qué personaje histórico te llamó más la atención y por qué?</li>
+                </ol>
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
-            <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
-        </div>
+    <h4>🔗 Enlaces de interés</h4>
+    <a href="https://www.youtube.com/watch?v=ZUbdz9FlnLk" class="enlace" target="_blank">📘 ¿Qué es el Capitalismo? Explicado FÁCIL</a>
+    <a href="https://www.youtube.com/watch?v=w9EMMVyi77Q" class="enlace" target="_blank">🎥 ¿Qué es el Socialismo? Explicado FÁCIL</a>
+    <a href="https://www.youtube.com/watch?v=vSsJQ1UsIpE" class="enlace" target="_blank">🎥 Capitalismo vs Socialismo - Diferencias explicadas</a>
+    <a href="https://www.youtube.com/watch?v=NKdHlkolGBM" class="enlace" target="_blank">🎥 Las etapas de la historia (repaso)</a>
+    <a href="https://www.youtube.com/watch?v=0QrWvnc6Qpo" class="enlace" target="_blank">🎥 ¿Qué es la economía? (repaso)</a>
+    <a href="https://www.youtube.com/watch?v=GnBENCxOKtQ" class="enlace" target="_blank">🎥 Constitución Política de Colombia (repaso)</a>
+</div>
 
-        <!-- Actividad -->
+        <!-- Actividad / Taller -->
         <div class="actividad-box">
-            <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <h4>✍️ TALLER Y EXAMEN FINAL DEL CURSO</h4>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li> <a href="https://drive.google.com/file/d/1iBB9RWA-WZ5pYHlB5IxfEfNMjQyX4kUK/view?usp=drive_link" class="enlace" target="_blank">TALLER: CAPITALISMO, SOCIALISMO Y REPASO GENERAL</a></li>
             </ul>
         </div>
 
-        <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
-                ⬅️ Volver al curso
-            </a>
+            <a href="detalle-curso.html?id=3" class="btn-volver">⬅️ Volver al curso</a>
         </div>
     </div>
 </div>
 
-<!-- Toast de notificación -->
 <div id="toastMessage" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1f3e54e6; backdrop-filter:blur(8px); color:white; padding:0.8rem 1.8rem; border-radius:60px; z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; white-space:nowrap;">✨</div>
 
 <script>
-    // =============================================
-    // IDENTIFICAR LA MATERIA Y UNIDAD ACTUAL
-    // =============================================
-    
-    // Extraer de la URL qué curso y unidad es
-    // Formato esperado: unidadX-Y.html donde X = materia (1-7), Y = unidad (1-4)
     const pathName = window.location.pathname;
     const fileName = pathName.split('/').pop();
     const match = fileName.match(/unidad(\d+)-(\d+)\.html/);
-    
     let materiaId = 1;
     let unidadNum = 1;
-    
-    if (match) {
-        materiaId = parseInt(match[1]);
-        unidadNum = parseInt(match[2]);
-    }
-    
-    // Datos de las materias para la navegación
-    const materias = {
-        1: { nombre: "📖 Español y Filosofía", id: 1, volverLink: "detalle-curso.html?id=1" },
-        2: { nombre: "🧮 Matemáticas", id: 2, volverLink: "detalle-curso.html?id=2" },
-        3: { nombre: "🌍 Sociales", id: 3, volverLink: "detalle-curso.html?id=3" },
-        4: { nombre: "⚡ Física", id: 4, volverLink: "detalle-curso.html?id=4" },
-        5: { nombre: "🧪 Química", id: 5, volverLink: "detalle-curso.html?id=5" },
-        6: { nombre: "🇬🇧 Inglés", id: 6, volverLink: "detalle-curso.html?id=6" },
-        7: { nombre: "🧬 Biología", id: 7, volverLink: "detalle-curso.html?id=7" }
-    };
-    
-    // Títulos de unidades por materia
-    const unidadesTitulos = {
-        1: { // Español y Filosofía
-            1: "Comprensión Lectora",
-            2: "Gramática Española",
-            3: "Introducción a la Filosofía",
-            4: "Ética y Valores"
-        },
-        2: { // Matemáticas
-            1: "Números y Operaciones",
-            2: "Álgebra Básica",
-            3: "Geometría",
-            4: "Estadística"
-        },
-        3: { // Sociales
-            1: "Historia Universal",
-            2: "Geografía Mundial",
-            3: "Historia de Colombia",
-            4: "Democracia y Participación"
-        },
-        4: { // Física
-            1: "Cinemática",
-            2: "Dinámica",
-            3: "Energía y Trabajo",
-            4: "Electricidad Básica"
-        },
-        5: { // Química
-            1: "Estructura Atómica",
-            2: "Tabla Periódica",
-            3: "Reacciones Químicas",
-            4: "Química en la Vida"
-        },
-        6: { // Inglés
-            1: "Greetings & Basics",
-            2: "Present Simple",
-            3: "Everyday Activities",
-            4: "Travel & Culture"
-        },
-        7: { // Biología
-            1: "La Célula",
-            2: "Reinos de la Naturaleza",
-            3: "Cuerpo Humano",
-            4: "Ecología"
-        }
-    };
-    
-    // Descripciones cortas de unidades
-    const unidadesDescripciones = {
-        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
-        2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
-        3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
-        4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
-        5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"],
-        6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"],
-        7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
-    };
-    
-    // Actualizar el encabezado de la página
+    if (match) { materiaId = parseInt(match[1]); unidadNum = parseInt(match[2]); }
+
+    const materias = { 1: { nombre: "📖 Español y Filosofía", id: 1, volverLink: "detalle-curso.html?id=1" }, 2: { nombre: "🧮 Matemáticas", id: 2, volverLink: "detalle-curso.html?id=2" }, 3: { nombre: "🌍 Sociales", id: 3, volverLink: "detalle-curso.html?id=3" }, 4: { nombre: "⚡ Física", id: 4, volverLink: "detalle-curso.html?id=4" }, 5: { nombre: "🧪 Química", id: 5, volverLink: "detalle-curso.html?id=5" }, 6: { nombre: "🇬🇧 Inglés", id: 6, volverLink: "detalle-curso.html?id=6" }, 7: { nombre: "🧬 Biología", id: 7, volverLink: "detalle-curso.html?id=7" } };
+
+    const unidadesTitulos = { 1: { 1: "Comprensión Lectora", 2: "Gramática Española", 3: "Introducción a la Filosofía", 4: "Ética y Valores" }, 2: { 1: "Números y Operaciones", 2: "Álgebra Básica", 3: "Geometría", 4: "Estadística" }, 3: { 1: "Etapas de la Historia", 2: "Cómo surge la Economía", 3: "Constitución Política de Colombia", 4: "Capitalismo y Socialismo" }, 4: { 1: "Cinemática", 2: "Dinámica", 3: "Energía y Trabajo", 4: "Electricidad Básica" }, 5: { 1: "Estructura Atómica", 2: "Tabla Periódica", 3: "Reacciones Químicas", 4: "Química en la Vida" }, 6: { 1: "Greetings & Basics", 2: "Present Simple", 3: "Everyday Activities", 4: "Travel & Culture" }, 7: { 1: "La Célula", 2: "Reinos de la Naturaleza", 3: "Cuerpo Humano", 4: "Ecología" } };
+
+    const unidadesDescripciones = { 1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"], 2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"], 3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "La Constitución Política de Colombia y sus principios", "Capitalismo, Socialismo y repaso general"], 4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"], 5: ["Átomos y moléculas", "Elementos y propiedades periódicas", "Tipos y ecuaciones químicas", "Aplicaciones cotidianas de la química"], 6: ["Saludos y vocabulario inicial", "Verbos y oraciones simples", "Rutinas y actividades diarias", "Viajes, cultura y conversación"], 7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"] };
+
     const materia = materias[materiaId];
     const unidadTitulo = unidadesTitulos[materiaId]?.[unidadNum] || `Unidad ${unidadNum}`;
     const unidadDescripcion = unidadesDescripciones[materiaId]?.[unidadNum - 1] || "Aprende los fundamentos de esta unidad";
-    
+
     if (materia) {
         document.getElementById('materiaNombre').textContent = materia.nombre;
         document.getElementById('unidadTitulo').innerHTML = `Unidad ${unidadNum}: ${unidadTitulo}`;
         document.getElementById('unidadDescripcion').textContent = unidadDescripcion;
         document.title = `${materia.nombre} - Unidad ${unidadNum}: ${unidadTitulo} | Aula Virtual`;
     }
-    
-    // Generar navegación entre unidades de la misma materia
+
     function generarNavegacion() {
         const navContainer = document.getElementById('navUnidades');
         if (!navContainer) return;
-        
         let html = '';
-        
-        // Unidad anterior
-        if (unidadNum > 1) {
-            html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`;
-        } else {
-            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`;
-        }
-        
-        // Indicador
+        if (unidadNum > 1) { html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`; }
+        else { html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`; }
         html += `<span class="nav-indicador">📚 Unidad ${unidadNum} de 4</span>`;
-        
-        // Unidad siguiente
-        if (unidadNum < 4) {
-            html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`;
-        } else {
-            html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">Unidad siguiente ➡️</span>`;
-        }
-        
+        if (unidadNum < 4) { html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`; }
+        else { html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">Unidad siguiente ➡️</span>`; }
         navContainer.innerHTML = html;
     }
-    
-    // Actualizar el botón de volver
+
     function actualizarBotonVolver() {
         const btnVolver = document.querySelector('.btn-volver');
-        if (btnVolver && materia) {
-            btnVolver.href = `detalle-curso.html?id=${materiaId}`;
-        }
+        if (btnVolver && materia) { btnVolver.href = `detalle-curso.html?id=${materiaId}`; }
     }
-    
-    // Toast
+
     let toastTimeout = null;
     function showToast(message) {
         const toast = document.getElementById('toastMessage');
         toast.textContent = message;
         toast.style.opacity = '1';
         if (toastTimeout) clearTimeout(toastTimeout);
-        toastTimeout = setTimeout(() => {
-            toast.style.opacity = '0';
-        }, 2000);
+        toastTimeout = setTimeout(() => { toast.style.opacity = '0'; }, 2000);
     }
-    
-    // Inicializar
+
     generarNavegacion();
     actualizarBotonVolver();
 </script>
