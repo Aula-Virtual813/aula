@@ -1,0 +1,235 @@
+// =============================================
+// Google Apps Script - Configuración Aula Virtual
+// =============================================
+// IMPORTANTE: Este archivo debe copiarse en un proyecto de
+// Google Apps Script vinculado a una hoja de cálculo de Google,
+// y desplegarse como "Aplicación web" con:
+//   - Ejecutar como: "Yo"
+//   - Acceso: "Cualquiera, incluso anónimo"
+// =============================================
+
+const NOMBRE_HOJA = 'aulavirtualCONFIGURACION';
+
+// =============================================
+// CONFIGURACIÓN CORS
+// =============================================
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+  'Access-Control-Max-Age': '3600'
+};
+
+/**
+ * Aplica cabeceras CORS a una respuesta de ContentService.
+ * @param {GoogleAppsScript.HTML.TextOutput} response
+ * @return {GoogleAppsScript.HTML.TextOutput}
+ */
+function applyCors(response) {
+  Object.keys(CORS_HEADERS).forEach(function (key) {
+    response.setHeader(key, CORS_HEADERS[key]);
+  });
+  return response;
+}
+
+// =============================================
+// FUNCIÓN PARA MANEJAR PETICIONES OPTIONS (CORS PREFLIGHT)
+// =============================================
+function doOptions(e) {
+  return applyCors(ContentService.createTextOutput(''))
+    .setMimeType(ContentService.MimeType.TEXT);
+}
+
+// =============================================
+// FUNCIÓN PARA LISTAR TODAS LAS HOJAS
+// =============================================
+function listSheets() {
+  const sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
+  Logger.log('📄 Hojas disponibles en ESTE archivo:');
+  sheets.forEach(sheet => {
+    Logger.log('  - "' + sheet.getName() + '"');
+  });
+
+  // Verificar si la hoja existe
+  const exists = sheets.some(sheet => sheet.getName() === NOMBRE_HOJA);
+  Logger.log('🔍 ¿Existe "' + NOMBRE_HOJA + '"? ' + (exists ? '✅ SÍ' : '❌ NO'));
+}
+
+// =============================================
+// FUNCIÓN PARA CREAR LA HOJA
+// =============================================
+function crearHoja() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(NOMBRE_HOJA);
+
+  if (!sheet) {
+    sheet = ss.insertSheet(NOMBRE_HOJA);
+    sheet.appendRow(['Curso', 'Mes', 'Envios']);
+    sheet.appendRow([1, 4, 'TRUE']);
+    sheet.appendRow([2, 6, 'TRUE']);
+    sheet.appendRow([3, 10, 'TRUE']);
+    sheet.appendRow([4, 7, 'TRUE']);
+    sheet.appendRow([5, 5, 'TRUE']);
+    sheet.appendRow([6, 9, 'TRUE']);
+    sheet.appendRow([7, 8, 'TRUE']);
+    Logger.log('✅ Hoja "' + NOMBRE_HOJA + '" creada con datos por defecto');
+  } else {
+    Logger.log('⚠️ La hoja "' + NOMBRE_HOJA + '" YA EXISTE');
+  }
+}
+
+// =============================================
+// FUNCIÓN PARA LEER (GET)
+// =============================================
+function doGet() {
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    // Verificar TODAS las hojas disponibles
+    const sheets = ss.getSheets();
+    Logger.log('📄 Hojas disponibles:');
+    sheets.forEach(s => Logger.log('  - "' + s.getName() + '"'));
+
+    let sheet = ss.getSheetByName(NOMBRE_HOJA);
+    if (!sheet) {
+      // Si no existe, intentar crearla
+      Logger.log('⚠️ Hoja "' + NOMBRE_HOJA + '" no encontrada. Creando...');
+      sheet = ss.insertSheet(NOMBRE_HOJA);
+      sheet.appendRow(['Curso', 'Mes', 'Envios']);
+      sheet.appendRow([1, 4, 'TRUE']);
+      sheet.appendRow([2, 6, 'TRUE']);
+      sheet.appendRow([3, 10, 'TRUE']);
+      sheet.appendRow([4, 7, 'TRUE']);
+      sheet.appendRow([5, 5, 'TRUE']);
+      sheet.appendRow([6, 9, 'TRUE']);
+      sheet.appendRow([7, 8, 'TRUE']);
+    }
+
+    const data = sheet.getDataRange().getValues();
+    let csv = '';
+    data.forEach(row => {
+      csv += row.join(',') + '\n';
+    });
+
+    return applyCors(ContentService.createTextOutput(csv))
+      .setMimeType(ContentService.MimeType.CSV);
+
+  } catch (error) {
+    Logger.log('❌ Error en doGet: ' + error.toString());
+    return applyCors(ContentService.createTextOutput('Error: ' + error.toString()))
+      .setMimeType(ContentService.MimeType.TEXT);
+  }
+}
+
+// =============================================
+// FUNCIÓN PARA GUARDAR (POST)
+// =============================================
+function doPost(e) {
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = ss.getSheetByName(NOMBRE_HOJA);
+    if (!sheet) {
+      Logger.log('⚠️ Hoja "' + NOMBRE_HOJA + '" no encontrada. Creando...');
+      sheet = ss.insertSheet(NOMBRE_HOJA);
+      sheet.appendRow(['Curso', 'Mes', 'Envios']);
+    }
+
+    const data = JSON.parse(e.postData.contents);
+    const config = data.config;
+
+    sheet.clear();
+    sheet.appendRow(['Curso', 'Mes', 'Envios']);
+
+    if (config.meses) {
+      Object.entries(config.meses).forEach(([id, mes]) => {
+        const envios = config.envios && config.envios[id] !== undefined
+          ? config.envios[id]
+          : true;
+        sheet.appendRow([id, mes, envios ? 'TRUE' : 'FALSE']);
+      });
+    }
+
+    if (config.global !== undefined && config.global !== null) {
+      sheet.appendRow([0, 0, config.global ? 'TRUE' : 'FALSE']);
+    }
+
+    Logger.log('✅ Configuración guardada correctamente');
+
+    return applyCors(ContentService.createTextOutput(JSON.stringify({
+      success: true,
+      message: '✅ Configuración guardada correctamente'
+    })))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    Logger.log('❌ Error en doPost: ' + error.toString());
+    return applyCors(ContentService.createTextOutput(JSON.stringify({
+      success: false,
+      error: error.toString()
+    })))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// =============================================
+// FUNCIONES DE PRUEBA
+// =============================================
+function testGet() {
+  const result = doGet();
+  Logger.log(result.getContent());
+}
+
+function testSave() {
+  const testData = {
+    config: {
+      meses: { 1: 4, 2: 6, 3: 10, 4: 7, 5: 5, 6: 9, 7: 8 },
+      envios: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true },
+      global: true
+    }
+  };
+
+  const result = doPost({
+    postData: {
+      contents: JSON.stringify(testData)
+    }
+  });
+
+  Logger.log(result.getContent());
+}
+
+function resetConfig() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(NOMBRE_HOJA);
+  if (!sheet) {
+    Logger.log('❌ Hoja "' + NOMBRE_HOJA + '" no encontrada. Ejecuta crearHoja() primero.');
+    return;
+  }
+
+  sheet.clear();
+  sheet.appendRow(['Curso', 'Mes', 'Envios']);
+
+  const defaultConfig = {
+    meses: { 1: 4, 2: 6, 3: 10, 4: 7, 5: 5, 6: 9, 7: 8 },
+    envios: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true },
+    global: null
+  };
+
+  Object.entries(defaultConfig.meses).forEach(([id, mes]) => {
+    sheet.appendRow([id, mes, defaultConfig.envios[id] ? 'TRUE' : 'FALSE']);
+  });
+
+  Logger.log('✅ Configuración restablecida a valores por defecto');
+}
+
+function viewData() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(NOMBRE_HOJA);
+  if (!sheet) {
+    Logger.log('❌ Hoja "' + NOMBRE_HOJA + '" no encontrada');
+    return;
+  }
+
+  const data = sheet.getDataRange().getValues();
+  Logger.log('📊 Datos actuales:');
+  data.forEach(row => {
+    Logger.log(row.join(' | '));
+  });
+}
