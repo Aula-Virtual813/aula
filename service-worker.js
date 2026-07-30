@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_VERSION = 'aula-virtual-v10';  // ← Cambia la versión cuando actualices
+const CACHE_VERSION = 'aula-virtual-v9';  // ← Cambia la versión cuando actualices
 const CACHE_NAME = CACHE_VERSION;
 
 // Usa rutas relativas (./) para evitar fallos por subdirectorios
@@ -77,6 +77,15 @@ self.addEventListener('install', (event) => {
       return self.skipWaiting();
     })
   );
+});
+
+// ACTUALIZACIÓN FORZADA: permite que la página le pida al Service Worker
+// nuevo que se active de inmediato, sin esperar a que se cierren todas
+// las pestañas.
+self.addEventListener('message', (event) => {
+  if (event.data === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 // ACTIVACIÓN: Limpieza de cachés
