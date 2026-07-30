@@ -192,8 +192,36 @@
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./service-worker.js')
-                .then(reg => console.log('Service Worker registrado correctamente', reg))
+                .then(reg => {
+                    console.log('Service Worker registrado correctamente', reg);
+
+                    // Revisa si hay una versión nueva apenas se carga la página
+                    reg.update();
+
+                    // Si ya hay una versión nueva esperando (instalada pero no activa)
+                    if (reg.waiting) {
+                        reg.waiting.postMessage('SKIP_WAITING');
+                    }
+
+                    // Si se detecta una versión nueva mientras la app está abierta
+                    reg.addEventListener('updatefound', () => {
+                        const nuevoWorker = reg.installing;
+                        nuevoWorker.addEventListener('statechange', () => {
+                            if (nuevoWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                nuevoWorker.postMessage('SKIP_WAITING');
+                            }
+                        });
+                    });
+                })
                 .catch(err => console.error('Error registrando Service Worker:', err));
+
+            // Cuando el nuevo Service Worker toma control, recarga la página una sola vez
+            let yaRecargo = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (yaRecargo) return;
+                yaRecargo = true;
+                window.location.reload();
+            });
         });
     }
 
