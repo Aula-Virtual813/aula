@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE_VERSION = 'aula-virtual-v10';  // ← Cambia la versión cuando actualices
+const CACHE_VERSION = 'aula-virtual-v11';  // ← Cambia la versión cuando actualices
 const CACHE_NAME = CACHE_VERSION;
 
 // Usa rutas relativas (./) para evitar fallos por subdirectorios
