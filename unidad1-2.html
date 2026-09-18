@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+                            <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
     <style>
         * {
             margin: 0;
@@ -217,12 +217,105 @@
             margin: 0.5rem 0;
         }
 
-        /* Responsive */
+        /* Tablas */
+        .tabla-clasificacion {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-clasificacion thead {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+        }
+
+        .tabla-clasificacion th {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-clasificacion td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e0e8ef;
+            color: #2c3e50;
+        }
+
+        .tabla-clasificacion tbody tr:hover {
+            background: rgba(18, 148, 219, 0.05);
+        }
+
+        .tabla-clasificacion tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        /* Caja de definición */
+        .def-box {
+            background: linear-gradient(135deg, #e8f4fd, #dcecf7);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #1294db;
+        }
+
+        .def-box strong {
+            color: #1f3e54;
+        }
+
+        /* Caja de ejemplo */
+        .ejemplo-box {
+            background: #f9fcfd;
+            border: 1px solid #cbdde9;
+            border-radius: 0.8rem;
+            padding: 1rem 1.3rem;
+            margin: 0.8rem 0 1.2rem 0;
+            font-style: italic;
+            color: #3a5a70;
+        }
+
+        .ejemplo-box::before {
+            content: "💡 Ejemplo: ";
+            font-style: normal;
+            font-weight: 600;
+            color: #1294db;
+        }
+
+        /* Caja de comparación */
+        .comparacion-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        .comparacion-item {
+            background: #f7fafc;
+            border: 1px solid #cbdde9;
+            border-radius: 0.8rem;
+            padding: 1rem;
+        }
+
+        .comparacion-item h4 {
+            color: #1f3e54;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .comparacion-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
         @media (max-width: 700px) {
             body { padding: 1rem; }
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .tabla-clasificacion { font-size: 0.85rem; }
+            .comparacion-box { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -241,56 +334,632 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
+            <h2>📌 Introducción a las Variaciones Léxicas</h2>
+
+            <p>El <strong>léxico</strong> de una lengua es el conjunto de palabras que la conforman. Sin embargo, las palabras no son entidades aisladas e inmutables: establecen relaciones entre sí, cambian de significado según el contexto y pueden adoptar formas distintas para expresar ideas similares. Al estudio de estas relaciones y fenómenos se le conoce como <strong>variaciones léxicas</strong>.</p>
+
+            <p>Comprender las variaciones léxicas es fundamental para enriquecer nuestro vocabulario, mejorar nuestra expresión oral y escrita, y evitar confusiones al momento de comunicarnos. En esta unidad exploraremos los principales tipos de relaciones que existen entre las palabras: sinónimos, antónimos, homónimos, parónimos, polisemia, campos semánticos y familias léxicas.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> Las <strong>variaciones léxicas</strong> son los diferentes fenómenos lingüísticos que afectan el significado, la forma o el uso de las palabras dentro de una lengua. Incluyen relaciones de semejanza, oposición, identidad formal y pertenencia a grupos temáticos.
+            </div>
 
 
-            <p>【escribe aqui】</p>
+            
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <h2>💬 Jerga</h2>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <p>La <strong>jerga</strong> es una variedad lingüística especializada que utilizan los miembros de un grupo social o profesional para comunicarse entre sí. Se caracteriza por el uso de palabras y expresiones propias que no son de uso común en la lengua general, y que sirven tanto para facilitar la comunicación interna como para reforzar la identidad del grupo.</p>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <div class="def-box">
+                <strong>📖 Definición:</strong> La <strong>jerga</strong> es el lenguaje especializado que emplea un grupo de personas que comparten una misma profesión, oficio, actividad o interés. Puede ser <strong>profesional</strong> (técnica de un oficio) o <strong>social</strong> (propia de un grupo generacional o cultural).
+            </div>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <h3>🔹 Tipos de Jerga</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Jerga Profesional</strong></td>
+                        <td>Vocabulario técnico propio de una profesión u oficio.</td>
+                        <td><em>Médicos:</em> "laparoscopia", "taquicardia", "estenosis"<br><em>Abogados:</em> "demanda", "jurisprudencia", "apelación"<br><em>Informáticos:</em> "servidor", "firewall", "backend"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jerga Juvenil</strong></td>
+                        <td>Lenguaje utilizado por los jóvenes, que cambia constantemente.</td>
+                        <td><em>"chido"</em> (México, genial), <em>"bacán"</em> (Colombia/Chile, excelente), <em>"pana"</em> (amigo), <em>"parce"</em> (Colombia, amigo)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jerga Delictiva (Germanía)</strong></td>
+                        <td>Lenguaje secreto utilizado por grupos marginales o delincuenciales para no ser entendidos por otros.</td>
+                        <td><em>"choro"</em> (ladrón), <em>"paco"</em> (policía), <em>"camello"</em> (trabajo / negocio ilegal)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>Jerga juvenil colombiana:</strong> "Ese <u>parce</u> es muy <u>bacán</u>, siempre <u>juega</u> vivo en los negocios". En esta frase, "parce" significa amigo, "bacán" significa excelente y "juega vivo" significa ser astuto o estar alerta.
+            </div>
+
+            <h2>✨ Neologismo</h2>
+
+            <p>Un <strong>neologismo</strong> es una palabra nueva que se incorpora a una lengua, ya sea porque se crea a partir de los recursos propios del idioma o porque se toma de otra lengua. Los neologismos surgen para nombrar nuevos conceptos, inventos, tecnologías o realidades sociales que antes no existían.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> Un <strong>neologismo</strong> es una palabra, expresión o acepción nueva que se introduce en una lengua. Puede formarse mediante derivación, composición, préstamo de otras lenguas o creación original.
+            </div>
+
+            <h3>🔹 Tipos de Neologismos</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>De forma</strong></td>
+                        <td>Se crean usando los mecanismos de formación de palabras del español (prefijos, sufijos, composición).</td>
+                        <td><em>ciberespacio, videollamada, redes sociales, autogestión, criptomoneda</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De sentido</strong></td>
+                        <td>Palabras ya existentes que adquieren un nuevo significado.</td>
+                        <td><em>"nube"</em> (almacenamiento en internet), <em>"virus"</em> (programa malicioso), <em>"ratón"</em> (dispositivo de computadora)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Préstamos</strong></td>
+                        <td>Palabras tomadas de otros idiomas (extranjerismos).</td>
+                        <td><em>marketing, software, smartphone, streaming, podcast</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>Neologismos recientes:</strong> "Hoy haré una <u>videollamada</u> por Zoom", "Guarda tus fotos en la <u>nube</u>", "El <u>streaming</u> ha cambiado la forma de ver televisión". Todas estas palabras no existían o tenían otro significado hace 30 años.
+            </div>
+
+            <h2>🌐 Anglicismo</h2>
+
+            <p>Los <strong>anglicismos</strong> son palabras, expresiones o giros procedentes del idioma inglés que se incorporan al español. Debido a la influencia global de la cultura anglosajona, especialmente en tecnología, negocios, entretenimiento y ciencia, los anglicismos son cada vez más frecuentes en nuestro idioma.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> Un <strong>anglicismo</strong> es un préstamo lingüístico del inglés que se utiliza en español. Puede adoptarse en su forma original o adaptarse a la ortografía y pronunciación del español.
+            </div>
+
+            <h3>🔹 Tipos de Anglicismos</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Crudos o puros</strong></td>
+                        <td>Se usan exactamente como en inglés, sin adaptación.</td>
+                        <td><em>email, wifi, mouse, software, hacker, online, feedback, show</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptados</strong></td>
+                        <td>Se adaptan a la ortografía o pronunciación del español.</td>
+                        <td><em>fútbol</em> (football), <em>chatear</em> (to chat), <em>escáner</em> (scanner), <em>estándar</em> (standard), <em>güisqui</em> (whisky)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calcos semánticos</strong></td>
+                        <td>Palabras españolas que adoptan un significado del inglés.</td>
+                        <td><em>"realizar"</em> (darse cuenta, del inglés "to realize"), <em>"aplicación"</em> (solicitud, del inglés "application")</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Híbridos</strong></td>
+                        <td>Combinan una raíz inglesa con un morfema español.</td>
+                        <td><em>tuitear</em> (de tweet + -ear), <em>googlear</em> (de Google + -ar), <em>postear</em> (de post + -ear)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>Anglicismos comunes:</strong> "Revisa tu <u>email</u>", "Conéctate al <u>wifi</u>", "Voy a <u>chatear</u> con mis amigos", "Necesito <u>feedback</u> sobre mi trabajo", "El <u>software</u> se actualizó automáticamente".
+            </div>
+
+            <div class="def-box">
+                <strong>📖 Recomendación:</strong> La RAE recomienda usar equivalentes en español cuando existan. Por ejemplo: <em>correo electrónico</em> en lugar de "email", <em>conexión inalámbrica</em> en lugar de "wifi", <em>retroalimentación</em> en lugar de "feedback". Sin embargo, muchos anglicismos ya están aceptados oficialmente.
+            </div>
+
+            <h2>⚠️ Barbarismo</h2>
+
+            <p>Un <strong>barbarismo</strong> es un uso incorrecto o inapropiado de la lengua. Puede consistir en pronunciar o escribir mal una palabra, usar una palabra con un significado que no le corresponde, o emplear extranjerismos innecesarios cuando existen equivalentes válidos en español.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> Un <strong>barbarismo</strong> es un error lingüístico que consiste en usar una palabra o expresión de manera incorrecta, ya sea por mala pronunciación, mala escritura, o por emplear vocablos extranjeros innecesarios.
+            </div>
+
+            <h3>🔹 Tipos de Barbarismos</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Incorrecto</th>
+                        <th>Correcto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ortográficos</strong></td>
+                        <td>Errores en la escritura de las palabras.</td>
+                        <td><em>"exámen"</em>, <em>"haiga"</em>, <em>"grabar"</em> (por grabar vs gravar)</td>
+                        <td><em>examen</em>, <em>haya</em>, <em>grabar/gravar</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fonéticos</strong></td>
+                        <td>Errores en la pronunciación de las palabras.</td>
+                        <td><em>"páusar"</em>, <em>"naiden"</em>, <em>"muncho"</em></td>
+                        <td><em>pausar</em>, <em>nadie</em>, <em>mucho</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Morfosintácticos</strong></td>
+                        <td>Errores en la construcción gramatical.</td>
+                        <td><em>"habían muchas personas"</em>, <em>"andé"</em>, <em>"dijistes"</em></td>
+                        <td><em>había muchas personas</em>, <em>anduve</em>, <em>dijiste</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extranjerismos innecesarios</strong></td>
+                        <td>Uso de palabras extranjeras cuando existe un equivalente español.</td>
+                        <td><em>"parking"</em>, <em>"shopping"</em>, <em>"lifting"</em></td>
+                        <td><em>estacionamiento</em>, <em>compras</em>, <em>estiramiento facial</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>Barbarismos comunes:</strong> ❌ "<u>Haiga</u> sido como <u>haiga</u> sido" → ✅ "<u>Haya</u> sido como <u>haya</u> sido".<br>
+                ❌ "<u>Habían</u> muchas personas en la fiesta" → ✅ "<u>Había</u> muchas personas en la fiesta".<br>
+                ❌ "Voy al <u>parking</u>" → ✅ "Voy al <u>estacionamiento</u>".
+            </div>
+
+            <h2>🔬 Tecnicismo</h2>
+
+            <p>Los <strong>tecnicismos</strong> son palabras o expresiones propias de una ciencia, arte, profesión u oficio. Se caracterizan por tener un significado preciso y específico dentro de su campo de conocimiento, y suelen ser de uso exclusivo o mayoritario entre los especialistas de esa área.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> Un <strong>tecnicismo</strong> es un término técnico o especializado que pertenece al vocabulario propio de una ciencia, disciplina, arte u oficio. Su función es nombrar con precisión conceptos, instrumentos, procesos o fenómenos específicos.
+            </div>
+
+            <h3>🔹 Ejemplos de Tecnicismos por Área</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Área</th>
+                        <th>Tecnicismos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Medicina</strong></td>
+                        <td>hipertensión, diagnóstico, anestesia, hematoma, necrosis, biopsia, electrocardiograma</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Derecho</strong></td>
+                        <td>jurisprudencia, litigio, querella, usufructo, prescripción, testamento, embargo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Informática</strong></td>
+                        <td>algoritmo, compilador, encriptación, interfaz, protocolo, servidor, base de datos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biología</strong></td>
+                        <td>fotosíntesis, mitosis, ecosistema, biodiversidad, metabolismo, célula, genotipo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Economía</strong></td>
+                        <td>inflación, plusvalía, amortización, liquidez, activo, pasivo, dividendo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lingüística</strong></td>
+                        <td>fonema, morfema, sintagma, semántica, pragmática, lexema, diptongo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>Tecnicismos en contexto:</strong> "El médico solicitó un <u>electrocardiograma</u> para evaluar la <u>frecuencia cardíaca</u> del paciente y descartar una <u>arritmia</u>". Estas palabras son tecnicismos propios del campo de la medicina.
+            </div>
+
+            <div class="def-box">
+                <strong>📖 Diferencia entre tecnicismo y jerga:</strong> El <strong>tecnicismo</strong> es un término preciso y necesario dentro de una disciplina (como "fotosíntesis" en biología), mientras que la <strong>jerga</strong> puede incluir palabras informales o alternativas usadas por un grupo (como "pana" para decir amigo). El tecnicismo busca precisión; la jerga busca identidad grupal.
+            </div>
+
+            <h2>🎯 El Contexto</h2>
+
+            <p>El <strong>contexto</strong> es el conjunto de circunstancias, situaciones, elementos y condiciones que rodean un acto de comunicación y que permiten interpretar correctamente el mensaje. Sin contexto, las palabras pueden tener múltiples interpretaciones y generar malentendidos. El contexto es, por tanto, un factor esencial para que la comunicación sea efectiva.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> El <strong>contexto</strong> es el entorno lingüístico, situacional, social, cultural o histórico en el que se produce un acto comunicativo. Proporciona la información necesaria para comprender el significado completo y real de un mensaje.
+            </div>
+
+            <h3>🔹 Tipos de Contexto</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Contexto Lingüístico</strong></td>
+                        <td>También llamado <em>cotexto</em>. Son las palabras y oraciones que acompañan a un término dentro del discurso y que ayudan a determinar su significado.</td>
+                        <td>En la frase "El <u>banco</u> está lleno de peces", el contexto lingüístico (peces) nos indica que "banco" se refiere a un banco de peces, no a una entidad financiera.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto Situacional</strong></td>
+                        <td>Son las circunstancias físicas y temporales en las que ocurre la comunicación: el lugar, el momento, los participantes y la relación entre ellos.</td>
+                        <td>Decir "Hace frío" en una habitación con la ventana abierta es una petición indirecta para cerrarla. El contexto situacional (estar en la habitación con frío) le da ese significado.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto Sociocultural</strong></td>
+                        <td>Son los conocimientos, valores, creencias, costumbres y normas sociales compartidas por una comunidad lingüística.</td>
+                        <td>En Colombia, decir "¿<u>Qué más</u>?" es un saludo informal entre amigos. Una persona de otro país podría interpretarlo literalmente como "¿Qué más cosas hay?" sin entender su función social.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto Histórico</strong></td>
+                        <td>Es la época o período histórico en el que se produce el mensaje, con sus eventos, ideas y circunstancias particulares.</td>
+                        <td>La palabra "<u>computadora</u>" tenía un significado muy distinto en 1950 (una persona que calculaba) que en la actualidad (un dispositivo electrónico). El contexto histórico determina la interpretación.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto Emocional</strong></td>
+                        <td>Es el estado de ánimo y las emociones de los participantes en el acto comunicativo, que influyen en cómo se emite y se interpreta el mensaje.</td>
+                        <td>Un mismo mensaje como "No me importa" puede significar indiferencia, enojo o resignación según el estado emocional del hablante y del oyente.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Importancia del Contexto en la Comunicación</h3>
 
             <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
+                <li><strong>Desambigua:</strong> Ayuda a determinar el significado correcto de palabras polisémicas o ambiguas.</li>
+                <li><strong>Da sentido:</strong> Una misma frase puede tener significados completamente diferentes según el contexto en que se diga.</li>
+                <li><strong>Facilita la interpretación:</strong> Permite al receptor comprender la intención real del emisor (si es una broma, una crítica, un consejo, etc.).</li>
+                <li><strong>Regula el lenguaje:</strong> Determina qué registro lingüístico es apropiado (formal, informal, técnico, coloquial).</li>
+                <li><strong>Evita malentendidos:</strong> Al considerar el contexto, reducimos la probabilidad de interpretaciones erróneas.</li>
             </ul>
+
+            <div class="ejemplo-box">
+                <strong>El poder del contexto:</strong> La frase "¡Qué bonito!" puede ser un cumplido sincero, una crítica irónica o una exclamación de sorpresa, dependiendo del tono de voz, la situación y la relación entre los hablantes. El contexto es la clave para interpretarla correctamente.
+            </div>
+
+            <h2>📡 Medios de Comunicación</h2>
+
+            <p>Los <strong>medios de comunicación</strong> son los instrumentos, canales o sistemas utilizados para transmitir información, ideas, mensajes y contenidos a un público amplio o específico. Son herramientas fundamentales en la sociedad moderna, ya que facilitan el flujo de información y permiten la interacción entre las personas, las comunidades y las instituciones.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> Los <strong>medios de comunicación</strong> son los canales a través de los cuales se transmite información de manera masiva o interpersonal. Su función principal es informar, educar, entretener y formar opinión pública.
+            </div>
+
+            <h3>🔹 Clasificación de los Medios de Comunicación</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Medios Masivos</strong></td>
+                        <td>Llegan a una gran cantidad de personas simultáneamente. Son unidireccionales (el emisor transmite y el receptor recibe).</td>
+                        <td>Televisión, radio, prensa escrita (periódicos, revistas), cine, internet (redes sociales, sitios web).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medios Interpersonales</strong></td>
+                        <td>Permiten la comunicación directa entre dos o más personas, con posibilidad de retroalimentación inmediata.</td>
+                        <td>Teléfono, correo electrónico, mensajería instantánea (WhatsApp, Telegram), videollamadas, cartas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medios Auxiliares</strong></td>
+                        <td>Complementan a los medios masivos y se utilizan para fines específicos como la publicidad o la promoción.</td>
+                        <td>Vallas publicitarias, folletos, volantes, carteles, pancartas, muestras gratis.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medios Digitales</strong></td>
+                        <td>Utilizan internet y las tecnologías digitales para transmitir información de forma interactiva y en tiempo real.</td>
+                        <td>Redes sociales (Facebook, Instagram, TikTok, Twitter/X), blogs, podcasts, YouTube, plataformas de streaming.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Funciones de los Medios de Comunicación</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Función</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Informar</strong></td>
+                        <td>Transmitir hechos, datos y acontecimientos de actualidad de manera objetiva y veraz.</td>
+                        <td>Un noticiero de televisión que reporta los eventos del día, un periódico digital con noticias de última hora.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Educar</strong></td>
+                        <td>Difundir conocimientos, valores culturales y contenidos formativos a la audiencia.</td>
+                        <td>Documentales educativos, programas de divulgación científica, tutoriales en YouTube, cursos en línea.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Entretener</strong></td>
+                        <td>Proporcionar recreación, diversión y esparcimiento al público.</td>
+                        <td>Series de televisión, películas, programas de humor, videojuegos, música en plataformas de streaming.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formar opinión</strong></td>
+                        <td>Influir en las actitudes, creencias y puntos de vista de la audiencia sobre temas de interés público.</td>
+                        <td>Editoriales de periódicos, debates políticos en radio y TV, columnas de opinión, influencers en redes sociales.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Publicitar</strong></td>
+                        <td>Promover productos, servicios, ideas o causas para persuadir a la audiencia.</td>
+                        <td>Anuncios comerciales en televisión, publicidad en redes sociales, patrocinios, campañas de bien público.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Socializar</strong></td>
+                        <td>Fomentar la interacción social, la conexión entre personas y la construcción de comunidades.</td>
+                        <td>Grupos de WhatsApp, foros de discusión, comunidades en redes sociales, plataformas de colaboración.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Importancia de los Medios de Comunicación</h3>
+
+            <ul>
+                <li><strong>Conectan al mundo:</strong> Permiten conocer lo que sucede en cualquier parte del planeta en tiempo real.</li>
+                <li><strong>Democratizan la información:</strong> Facilitan el acceso al conocimiento y a la información a grandes sectores de la población.</li>
+                <li><strong>Fortalecen la democracia:</strong> Permiten la vigilancia ciudadana, el debate público y la rendición de cuentas de los gobernantes.</li>
+                <li><strong>Promueven la cultura:</strong> Difunden expresiones artísticas, tradiciones y valores culturales entre diferentes comunidades.</li>
+                <li><strong>Generan cambio social:</strong> Pueden visibilizar problemáticas, movilizar a la opinión pública y promover transformaciones en la sociedad.</li>
+            </ul>
+
+            <div class="ejemplo-box">
+                <strong>Medios de comunicación en la actualidad:</strong> Durante la pandemia de COVID-19, los medios de comunicación fueron esenciales para informar sobre las medidas de prevención, las cifras de contagios y las campañas de vacunación. Las redes sociales, la televisión y la radio trabajaron juntos para mantener a la población informada y educada sobre cómo protegerse.
+            </div>
+
+            <h2>💬 La Argumentación</h2>
+
+            <p>La <strong>argumentación</strong> es la capacidad de expresar y defender una idea u opinión mediante razones, pruebas y evidencias, con el objetivo de convencer o persuadir a un interlocutor o audiencia. Argumentar no es simplemente dar una opinión, sino sustentarla con argumentos sólidos que demuestren su validez.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> <strong>Argumentar</strong> es el proceso de presentar razones lógicas y evidencias para apoyar o refutar una postura, idea o tesis, con la finalidad de convencer racionalmente o persuadir emocionalmente a un receptor.
+            </div>
+
+            <h3>🔹 ¿Para qué sirve argumentar?</h3>
+
+            <ul>
+                <li><strong>Convencer:</strong> Busca que el receptor acepte una idea o postura mediante razones lógicas y objetivas.</li>
+                <li><strong>Persuadir:</strong> Intenta influir en las emociones, actitudes o comportamientos del receptor para que adopte una determinada posición.</li>
+                <li><strong>Demostrar:</strong> Prueba la validez de una afirmación mediante hechos, datos y evidencias verificables.</li>
+                <li><strong>Refutar:</strong> Rebate o contradice argumentos contrarios, mostrando sus debilidades o falacias.</li>
+                <li><strong>Negociar:</strong> Facilita el diálogo y la búsqueda de acuerdos en situaciones de conflicto o diferencia de opiniones.</li>
+                <li><strong>Aprender:</strong> Al argumentar, se profundiza en el conocimiento de un tema, se analizan diferentes perspectivas y se fortalece el pensamiento crítico.</li>
+            </ul>
+
+            <h3>🔹 Estructura de un Argumento</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tesis</strong></td>
+                        <td>Es la idea principal o postura que se defiende. Debe ser clara, específica y debatible.</td>
+                        <td>"El reciclaje debería ser obligatorio en todas las ciudades del país."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Premisas</strong></td>
+                        <td>Son las razones, evidencias o datos que sustentan la tesis. Pueden ser hechos, estadísticas, ejemplos, citas de autoridad, etc.</td>
+                        <td>"Cada persona genera en promedio 1 kg de basura al día. Solo el 10% de los residuos se recicla actualmente. Países con reciclaje obligatorio han reducido sus desechos en un 40%."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conclusión</strong></td>
+                        <td>Es la consecuencia lógica que se deriva de las premisas y que reafirma la tesis.</td>
+                        <td>"Por lo tanto, implementar el reciclaje obligatorio reduciría significativamente la contaminación y mejoraría la calidad de vida en nuestras ciudades."</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Tipos de Argumentos</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Argumento lógico</strong></td>
+                        <td>Se basa en razonamientos racionales y relaciones de causa-efecto.</td>
+                        <td>"Si todos los seres humanos son mortales, y Sócrates es humano, entonces Sócrates es mortal."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Argumento de autoridad</strong></td>
+                        <td>Se apoya en la opinión de expertos, instituciones reconocidas o fuentes confiables.</td>
+                        <td>"Según la Organización Mundial de la Salud, la vacunación es la medida más efectiva para prevenir enfermedades."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Argumento de hecho</strong></td>
+                        <td>Se sustenta en datos verificables, estadísticas, evidencias concretas y observaciones.</td>
+                        <td>"El 80% de los accidentes de tránsito son causados por distracciones al volante, según la Agencia Nacional de Seguridad Vial."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Argumento emocional</strong></td>
+                        <td>Apela a los sentimientos, valores y emociones del receptor para generar empatía o adhesión.</td>
+                        <td>"Imagina a un niño que no tiene acceso a educación. ¿No merece acaso las mismas oportunidades que cualquier otro?"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Argumento de analogía</strong></td>
+                        <td>Establece una comparación entre situaciones similares para demostrar que lo que es válido en un caso también lo es en otro.</td>
+                        <td>"Así como un edificio necesita cimientos sólidos para mantenerse en pie, una sociedad necesita una educación de calidad para desarrollarse."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Argumento de ejemplificación</strong></td>
+                        <td>Utiliza casos concretos o ejemplos específicos para ilustrar y respaldar una idea general.</td>
+                        <td>"Muchos países han mejorado su economía invirtiendo en educación. Por ejemplo, Finlandia y Corea del Sur transformaron sus sociedades a través de la educación."</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Importancia de la Argumentación</h3>
+
+            <ul>
+                <li><strong>Desarrolla el pensamiento crítico:</strong> Argumentar obliga a analizar, evaluar y cuestionar la información antes de aceptarla o rechazarla.</li>
+                <li><strong>Mejora la comunicación:</strong> Permite expresar ideas de manera clara, organizada y convincente.</li>
+                <li><strong>Fortalece la democracia:</strong> El debate argumentado es la base de la toma de decisiones colectivas y la resolución pacífica de conflictos.</li>
+                <li><strong>Previene la manipulación:</strong> Al saber argumentar, se pueden identificar falacias, discursos engañosos y propaganda.</li>
+                <li><strong>Facilita el aprendizaje:</strong> Argumentar sobre un tema ayuda a comprenderlo en profundidad y a retener la información.</li>
+            </ul>
+
+            <div class="ejemplo-box">
+                <strong>Argumentación en la vida cotidiana:</strong> "Mamá, deberías permitirme llegar más tarde el sábado. <u>He cumplido con todas mis tareas esta semana</u> (hecho), <u>mis amigos también tienen permiso de sus padres</u> (analogía) y <u>prometo llegar antes de las 11 pm sin falta</u> (compromiso). Además, <u>el profesor de matemáticas dijo que soy responsable</u> (autoridad)." En este ejemplo, se utilizan múltiples tipos de argumentos para defender una postura.
+            </div>
+
+            <h2>📝 Resumen de las Variaciones Léxicas</h2>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Fenómeno</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sinonimia</strong></td>
+                        <td>Palabras con significado similar o igual</td>
+                        <td><em>alegre / contento / feliz</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Antonimia</strong></td>
+                        <td>Palabras con significado opuesto</td>
+                        <td><em>grande / pequeño</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Homonimia</strong></td>
+                        <td>Palabras con misma forma pero distinto significado</td>
+                        <td><em>banco</em> (asiento / financiero)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paronimia</strong></td>
+                        <td>Palabras con forma similar pero distinto significado</td>
+                        <td><em>actitud / aptitud</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Polisemia</strong></td>
+                        <td>Una palabra con varios significados relacionados</td>
+                        <td><em>cabeza</em> (parte del cuerpo / líder / extremo)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Campo semántico</strong></td>
+                        <td>Palabras agrupadas por un tema común</td>
+                        <td><em>rojo, azul, verde</em> (colores)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Familia léxica</strong></td>
+                        <td>Palabras que comparten una misma raíz</td>
+                        <td><em>pan, panadero, panadería</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Variación geográfica</strong></td>
+                        <td>Diferencias de vocabulario entre regiones</td>
+                        <td><em>coche / carro / auto</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jerga</strong></td>
+                        <td>Lenguaje especializado de un grupo social o profesional</td>
+                        <td><em>"parce"</em> (amigo, Colombia), <em>"backend"</em> (informática)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Neologismo</strong></td>
+                        <td>Palabra nueva incorporada a la lengua</td>
+                        <td><em>videollamada, criptomoneda, streaming</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Anglicismo</strong></td>
+                        <td>Préstamo lingüístico del inglés</td>
+                        <td><em>email, wifi, chatear, fútbol</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Barbarismo</strong></td>
+                        <td>Uso incorrecto de la lengua</td>
+                        <td><em>"haiga"</em> por <em>haya</em>, <em>"parking"</em> por <em>estacionamiento</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tecnicismo</strong></td>
+                        <td>Término especializado de una ciencia u oficio</td>
+                        <td><em>fotosíntesis, jurisprudencia, algoritmo</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>✅ Conclusión</h2>
+            <p>Las <strong>variaciones léxicas</strong> son un aspecto fundamental del estudio del lenguaje, ya que nos permiten comprender la riqueza y la complejidad del vocabulario de una lengua. Conocer las relaciones entre las palabras —sinónimos, antónimos, homónimos, parónimos, polisemia, campos semánticos y familias léxicas— nos ayuda a comunicarnos con mayor precisión, a evitar confusiones y a expresarnos de manera más rica y variada.</p>
+
+            <p>Además, entender las variaciones geográficas del español, la jerga, los neologismos, los anglicismos, los barbarismos y los tecnicismos nos hace más conscientes de la diversidad lingüística y nos prepara para interactuar con hablantes de diferentes regiones y contextos del mundo hispanohablante. El dominio de estas variaciones es una herramienta poderosa para cualquier persona que desee mejorar su competencia comunicativa.</p>
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
             <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
+            <a href="https://www.youtube.com/watch?v=5X5p5j5i5jI" class="enlace" target="_blank">📘 Sinónimos, antónimos y homónimos - Video educativo</a>
+            <a href="https://www.youtube.com/watch?v=6Y6q6j6k6lI" class="enlace" target="_blank">🎥 Campos semánticos y familias léxicas - Explicación fácil</a>
+            <a href="https://www.rae.es/" class="enlace" target="_blank">📄 Real Academia Española (RAE) - Diccionario y consultas</a>
+            <a href="https://www.wordreference.com/sinonimos/" class="enlace" target="_blank">📖 WordReference - Diccionario de sinónimos y antónimos</a>
         </div>
 
         <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <p>Pon en práctica lo aprendido con las siguientes actividades:</p>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>📝 Desarrolla el taller: <a href="https://drive.google.com/file/d/1bmJMU6eyuI2sSqUaVDIPAImNyrLe320h/view?usp=drive_link" target="_blank">Cuestionario aquí</a>.</li>
             </ul>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=1" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -333,8 +1002,8 @@
     // Títulos de unidades por materia
     const unidadesTitulos = {
         1: { // Español y Filosofía
-            1: "Comprensión Lectora",
-            2: "Gramática Española",
+            1: "La Oración y su Clasificación",
+            2: "Variaciones Léxicas",
             3: "Introducción a la Filosofía",
             4: "Ética y Valores"
         },
@@ -378,7 +1047,7 @@
     
     // Descripciones cortas de unidades
     const unidadesDescripciones = {
-        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        1: ["Comunicación, signo lingüístico/no lingüístico, categorías gramaticales y clasificación de la oración", "Sinónimos, antónimos, homónimos, parónimos, polisemia, campos semánticos, familias léxicas, jerga, neologismos, anglicismos, barbarismos y tecnicismos", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
         3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
@@ -450,5 +1119,5 @@
     generarNavegacion();
     actualizarBotonVolver();
 </script>
-</body>
+    </body>
 </html>
