@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+                            <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
     <style>
         * {
             margin: 0;
@@ -217,6 +217,68 @@
             margin: 0.5rem 0;
         }
 
+        /* Caja de definición */
+        .def-box {
+            background: linear-gradient(135deg, #e8f4fd, #dcecf7);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #1294db;
+        }
+
+        .def-box strong {
+            color: #1f3e54;
+        }
+
+        /* Caja de ejemplo */
+        .ejemplo-box {
+            background: #f9fcfd;
+            border: 1px solid #cbdde9;
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #f0a500;
+        }
+
+        .ejemplo-box strong {
+            color: #1f3e54;
+        }
+
+        /* Tabla de clasificación */
+        .tabla-clasificacion {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .tabla-clasificacion thead {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+        }
+
+        .tabla-clasificacion th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-clasificacion td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e2edf5;
+            color: #2c3e50;
+        }
+
+        .tabla-clasificacion tbody tr:hover {
+            background: rgba(18, 148, 219, 0.05);
+        }
+
+        .tabla-clasificacion tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
@@ -241,56 +303,906 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
 
+            <h2>📌 ¿Qué es la Narración?</h2>
 
-            <p>【escribe aqui】</p>
+            <p>La <strong>narración</strong> es un tipo de texto en el que se relatan <strong>hechos reales o ficticios</strong> que les suceden a unos personajes en un tiempo y espacio determinados. Es una de las formas más antiguas de comunicación humana y está presente en cuentos, novelas, crónicas, noticias, anécdotas, historietas, películas, entre otros.</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <div class="def-box">
+                <strong>📖 Definición:</strong> La narración es el relato de una serie de sucesos o acontecimientos, organizados de manera lógica y cronológica, que involucran a personajes en un contexto espacio-temporal específico, con el propósito de entretener, informar, enseñar o reflexionar.
+            </div>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <h3>🔹 Intención Comunicativa de la Narración</h3>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <p>La <strong>intención comunicativa</strong> se refiere al propósito o finalidad que tiene el narrador al contar una historia. Dependiendo del contexto y del tipo de texto, la narración puede tener las siguientes intenciones:</p>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Intención</th>
+                        <th>Propósito</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Entretener</strong></td>
+                        <td>Causar placer estético, generar emociones o simplemente divertir al receptor.</td>
+                        <td>Un cuento de hadas, una novela de aventuras, una película de comedia.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Informar</strong></td>
+                        <td>Dar a conocer hechos o acontecimientos de manera objetiva y veraz.</td>
+                        <td>Una noticia periodística, un reportaje, una crónica deportiva.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Enseñar / Dejar una enseñanza</strong></td>
+                        <td>Transmitir valores, moralejas o conocimientos a través de la historia.</td>
+                        <td>Una fábula, una parábola, un cuento con moraleja.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reflexionar</strong></td>
+                        <td>Invitar al lector a pensar sobre temas profundos de la vida, la sociedad o el ser humano.</td>
+                        <td>Una novela filosófica, un cuento existencialista.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preservar la memoria</strong></td>
+                        <td>Registrar y transmitir hechos históricos o culturales de generación en generación.</td>
+                        <td>Leyendas, mitos, crónicas históricas, relatos orales tradicionales.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>💡 Ejemplo:</strong> Una misma historia puede tener diferentes intenciones según cómo se cuente. Por ejemplo, el relato de "La liebre y la tortuga" tiene una intención <strong>didáctica</strong> (enseñar que la constancia vence a la velocidad), mientras que una noticia sobre una carrera tiene una intención <strong>informativa</strong>.
+            </div>
+
+            <h3>🔹 Enfoque Narrativo</h3>
+
+            <p>El <strong>enfoque narrativo</strong> se refiere a la perspectiva o punto de vista desde el cual se cuenta la historia. Determina quién narra los hechos y qué información tiene disponible el lector. Los principales enfoques narrativos son:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Enfoque / Tipo de Narrador</th>
+                        <th>Características</th>
+                        <th>Persona Gramatical</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Narrador en primera persona (protagonista)</strong></td>
+                        <td>El narrador es el personaje principal y cuenta su propia historia. El lector conoce solo lo que el protagonista sabe, siente y piensa.</td>
+                        <td>1ª persona: <em>"yo", "nosotros"</em></td>
+                        <td>"<em>Caminaba por la calle oscura cuando escuché un ruido detrás de mí.</em>"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Narrador en primera persona (testigo)</strong></td>
+                        <td>El narrador es un personaje secundario que presencia los hechos y los cuenta desde su perspectiva, sin ser el protagonista.</td>
+                        <td>1ª persona: <em>"yo", "nosotros"</em></td>
+                        <td>"<em>Vi cómo Juan entraba al edificio y minutos después escuché un grito.</em>"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Narrador en segunda persona</strong></td>
+                        <td>El narrador se dirige directamente al lector o a sí mismo, creando un efecto de cercanía o desdoblamiento. Es poco común.</td>
+                        <td>2ª persona: <em>"tú", "usted"</em></td>
+                        <td>"<em>Te levantas, miras por la ventana y decides que hoy será un día diferente.</em>"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Narrador en tercera persona (omnisciente)</strong></td>
+                        <td>El narrador lo sabe todo: conoce los pensamientos, sentimientos y motivaciones de todos los personajes, así como el pasado, presente y futuro.</td>
+                        <td>3ª persona: <em>"él", "ella", "ellos"</em></td>
+                        <td>"<em>María no lo sabía, pero Pedro la observaba desde lejos, deseando tener el valor para hablarle.</em>"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Narrador en tercera persona (observador)</strong></td>
+                        <td>El narrador solo describe lo que ve y oye, como una cámara de video. No tiene acceso a los pensamientos ni sentimientos de los personajes.</td>
+                        <td>3ª persona: <em>"él", "ella", "ellos"</em></td>
+                        <td>"<em>El hombre entró a la tienda, saludó al dependiente y señaló el estante de la derecha.</em>"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Importante:</strong> La elección del enfoque narrativo determina la cantidad de información que recibe el lector y genera diferentes efectos: el narrador en primera persona crea intimidad y subjetividad; el narrador omnisciente ofrece una visión completa; el narrador observador genera misterio y objetividad.
+            </div>
+
+            <h3>🔹 Estructura Discursiva de la Narración</h3>
+
+            <p>La <strong>estructura discursiva</strong> se refiere a la organización interna del relato, es decir, cómo se ordenan y presentan los acontecimientos para construir la historia. La estructura narrativa clásica consta de tres partes fundamentales:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Parte</th>
+                        <th>Descripción</th>
+                        <th>Función</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Planteamiento o Introducción</strong></td>
+                        <td>Se presentan los personajes, el escenario (tiempo y lugar) y la situación inicial. Se establece el contexto en el que se desarrollará la historia.</td>
+                        <td>Ambientar al lector y presentar el mundo de la narración.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Nudo o Desarrollo</strong></td>
+                        <td>Surge el conflicto o problema que impulsa la acción. Los personajes enfrentan obstáculos, toman decisiones y se suceden los acontecimientos principales. Es la parte más extensa y dinámica.</td>
+                        <td>Generar tensión narrativa y mantener el interés del lector.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Desenlace o Resolución</strong></td>
+                        <td>Se resuelve el conflicto principal. Los personajes alcanzan un nuevo estado, ya sea positivo o negativo. La historia llega a su fin.</td>
+                        <td>Cerrar la historia y dar una conclusión satisfactoria o reflexiva.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>📖 Ejemplo de estructura narrativa (Caperucita Roja):</strong><br>
+                <strong>Planteamiento:</strong> Caperucita va a visitar a su abuela que vive al otro lado del bosque.<br>
+                <strong>Nudo:</strong> En el camino se encuentra con el lobo, quien la engaña para llegar primero a la casa de la abuela y devorarla.<br>
+                <strong>Desenlace:</strong> Un cazador escucha los gritos, mata al lobo y salva a Caperucita y a su abuela.
+            </div>
+
+            <p>Además de la estructura clásica, existen otras formas de organizar el relato:</p>
+            <ul>
+                <li><strong>Estructura <em>in media res</em>:</strong> La historia comienza en medio del conflicto, y luego se retrocede para explicar los hechos anteriores. Ej: <em>La Odisea</em> de Homero.</li>
+                <li><strong>Estructura circular:</strong> La historia termina en el mismo punto donde comenzó. Ej: <em>Cien años de soledad</em> de Gabriel García Márquez.</li>
+                <li><strong>Estructura de flashback (analepsis):</strong> Se interrumpe la narración principal para contar hechos del pasado. Ej: muchas películas y novelas policiacas.</li>
+                <li><strong>Estructura de flashforward (prolepsis):</strong> Se adelantan hechos del futuro para luego volver al presente. Ej: <em>Crónica de una muerte anunciada</em>.</li>
+            </ul>
+
+            <h2>📝 Ejemplo Completo de Narración con Análisis</h2>
+
+            <p>A continuación, se presenta un cuento original que servirá como ejemplo para identificar todos los elementos de la narración estudiados: <strong>personajes, lugar, tiempo, narrador, intención comunicativa y estructura discursiva</strong>.</p>
+
+            <div class="narracion-ejemplo" style="background: #fdf8f0; border: 2px solid #d4a373; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0; border-left: 5px solid #d4a373;">
+                <h4 style="color: #7f4f24; font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">📖 "El Último Vuelo del Colibrí"</h4>
+
+                <p style="font-style: italic; color: #5c4033; line-height: 1.8; margin-bottom: 1rem;">
+                    <strong>Planteamiento:</strong> En un pequeño pueblo llamado Valleverde, rodeado de montañas y neblina, vivía un anciano llamado Don Evaristo. Era un hombre solitario que pasaba sus días cuidando un jardín lleno de flores silvestres. Allí, entre girasoles y margaritas, solía visitarlo un colibrí de plumas verdes y pecho rojo, al que Don Evaristo llamaba "Tikay". Cada mañana, al amanecer, el anciano salía a regar las plantas y el colibrí aparecía revoloteando a su alrededor, como saludándolo. Aquella rutina se había repetido durante tres años, desde que Don Evaristo llegó al pueblo tras la muerte de su esposa.
+                </p>
+
+                <p style="font-style: italic; color: #5c4033; line-height: 1.8; margin-bottom: 1rem;">
+                    <strong>Nudo:</strong> Un día, una empresa constructora llegó a Valleverde con planes de talar el bosque cercano para construir un centro comercial. Los vecinos, emocionados por el progreso, apoyaron la idea. Pero Don Evaristo sabía que si talaban el bosque, Tikay y muchas otras aves perderían su hogar. Decidió entonces enfrentarse a los ingenieros y al alcalde. Durante una semana, reunió firmas entre los pocos vecinos que aún amaban la naturaleza, escribió cartas a las autoridades ambientales y se plantó frente a las máquinas con los brazos abiertos. "Primero tendrán que pasar sobre mí", dijo con voz firme. La tensión creció: los trabajadores lo insultaban, el alcalde lo amenazó con multas, y hasta algunos vecinos le dieron la espalda. Pero Don Evaristo no se rindió. Cada noche, al regresar a su casa, veía a Tikay posado en la ventana, como dándole fuerzas para continuar.
+                </p>
+
+                <p style="font-style: italic; color: #5c4033; line-height: 1.8; margin-bottom: 1rem;">
+                    <strong>Desenlace:</strong> Finalmente, una semana después, llegó una respuesta del Ministerio de Ambiente: el bosque de Valleverde era considerado reserva natural protegida por albergar especies en peligro de extinción, entre ellas el colibrí de pecho rojo. La construcción fue cancelada. Los vecinos, avergonzados, reconocieron su error y agradecieron a Don Evaristo por su valentía. Esa tarde, el anciano se sentó en su jardín, rodeado de flores, y vio a Tikay volar en círculos sobre su cabeza, como celebrando la victoria. Don Evaristo sonrió y susurró: "Gracias, amigo". Desde entonces, Valleverde se convirtió en un pueblo turístico ecológico, y la historia de Don Evaristo y el colibrí se contó de generación en generación como un ejemplo de perseverancia y amor por la naturaleza.
+                </p>
+            </div>
+
+            <h3>🔍 Análisis de los Elementos de la Narración</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>¿Qué es?</th>
+                        <th>¿Cómo aparece en el ejemplo?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Personajes</strong></td>
+                        <td>Seres (humanos, animales o seres fantásticos) que realizan las acciones dentro de la historia. Pueden ser <em>principales</em> (protagonista, antagonista) o <em>secundarios</em>.</td>
+                        <td>
+                            <strong>Protagonista:</strong> Don Evaristo (anciano solitario que defiende la naturaleza).<br>
+                            <strong>Personaje secundario importante:</strong> Tikay (el colibrí, compañero simbólico).<br>
+                            <strong>Antagonistas:</strong> Los ingenieros, el alcalde y los vecinos que apoyan la tala.<br>
+                            <strong>Personajes secundarios:</strong> Los vecinos que firmaron, las autoridades ambientales.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lugar (Espacio)</strong></td>
+                        <td>El escenario físico donde ocurren los hechos. Puede ser real o ficticio, y puede haber uno o varios espacios.</td>
+                        <td>
+                            <strong>Espacio principal:</strong> Valleverde, un pequeño pueblo rodeado de montañas y neblina.<br>
+                            <strong>Espacios específicos:</strong> El jardín de Don Evaristo (donde ocurre el encuentro con Tikay), el bosque (amenazado por la tala), la casa del anciano, la oficina del alcalde.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tiempo</strong></td>
+                        <td>El momento o época en que transcurre la historia. Puede ser <em>cronológico</em> (lineal) o <em>no cronológico</em> (con saltos al pasado o futuro).</td>
+                        <td>
+                            <strong>Tiempo externo (época):</strong> Época contemporánea, en un pueblo tradicional.<br>
+                            <strong>Tiempo interno (duración):</strong> La historia abarca aproximadamente dos semanas (desde que llega la constructora hasta la respuesta del Ministerio).<br>
+                            <strong>Referencias temporales:</strong> "Cada mañana al amanecer", "durante tres años", "una semana después", "esa tarde".
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Narrador</strong></td>
+                        <td>La voz que cuenta la historia. Determina la perspectiva y la cantidad de información que recibe el lector.</td>
+                        <td>
+                            <strong>Tipo:</strong> Narrador en <strong>tercera persona omnisciente</strong>.<br>
+                            <strong>Explicación:</strong> El narrador lo sabe todo: conoce el pasado de Don Evaristo ("desde que llegó al pueblo tras la muerte de su esposa"), sus pensamientos ("sabía que si talaban el bosque, Tikay perdería su hogar"), sus emociones ("sonrió y susurró"), y también lo que ocurre en otros lugares (la respuesta del Ministerio, la reacción de los vecinos).<br>
+                            <strong>Persona gramatical:</strong> Usa "él" (Don Evaristo), "ellos" (los vecinos, los ingenieros).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intención Comunicativa</strong></td>
+                        <td>El propósito del autor al escribir la narración: entretener, informar, enseñar, reflexionar o preservar la memoria.</td>
+                        <td>
+                            <strong>Intención principal:</strong> <strong>Enseñar / Reflexionar</strong>. La historia busca transmitir valores como la perseverancia, el amor por la naturaleza y la importancia de defender lo que es correcto, incluso cuando otros se oponen.<br>
+                            <strong>Intención secundaria:</strong> <strong>Entretener</strong>, ya que la historia tiene una trama con conflicto y resolución que mantiene el interés del lector.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📋 Estructura Discursiva Aplicada al Ejemplo</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Parte de la Estructura</th>
+                        <th>¿Qué ocurre en el ejemplo?</th>
+                        <th>Función cumplida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Planteamiento</strong></td>
+                        <td>Se presenta a Don Evaristo, un anciano solitario que vive en Valleverde y cuida su jardín. Se describe su rutina matutina con el colibrí Tikay. Se menciona que llegó al pueblo hace tres años tras la muerte de su esposa.</td>
+                        <td>Ambienta al lector: presenta el personaje principal, el lugar (Valleverde, el jardín), el tiempo (cada mañana, durante tres años) y la situación inicial (una vida tranquila y rutinaria).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Nudo</strong></td>
+                        <td>Llega una empresa constructora que quiere talar el bosque. Don Evaristo se opone y lucha contra los ingenieros, el alcalde y los vecinos. Reúne firmas, escribe cartas y se planta frente a las máquinas. Es insultado y amenazado, pero no se rinde.</td>
+                        <td>Genera tensión narrativa: aparece el conflicto (la tala del bosque), los obstáculos (la oposición de los vecinos y las autoridades) y las acciones del protagonista para resolverlo. Mantiene el interés del lector.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Desenlace</strong></td>
+                        <td>El Ministerio de Ambiente declara el bosque como reserva natural protegida. La construcción se cancela. Los vecinos se disculpan. Don Evaristo celebra con Tikay en el jardín. Valleverde se convierte en un pueblo turístico ecológico.</td>
+                        <td>Cierra la historia: el conflicto se resuelve de manera positiva, los personajes alcanzan un nuevo estado (Don Evaristo es reconocido, el bosque se salva) y se deja una enseñanza (la perseverancia y el amor por la naturaleza).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Conclusión del análisis:</strong> Este ejemplo demuestra cómo todos los elementos de la narración trabajan juntos para crear una historia completa y significativa. Los <strong>personajes</strong> (Don Evaristo y Tikay) dan vida a la historia; el <strong>lugar</strong> (Valleverde) crea el ambiente; el <strong>tiempo</strong> organiza los acontecimientos; el <strong>narrador omnisciente</strong> nos permite conocer los pensamientos y emociones de los personajes; la <strong>intención comunicativa</strong> (enseñar y reflexionar) le da propósito a la historia; y la <strong>estructura discursiva</strong> (planteamiento, nudo y desenlace) le da orden y coherencia al relato.
+            </div>
+
+            <h2>📖 Géneros de la Narración</h2>
+
+            <p>Los <strong>géneros narrativos</strong> son las distintas categorías o formas en las que se puede presentar un texto narrativo. Se clasifican según su extensión, su contenido, su propósito y sus características formales. A continuación, se presentan los principales géneros narrativos:</p>
+
+            <h3>🔹 Géneros Narrativos Literarios</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Género</th>
+                        <th>Extensión</th>
+                        <th>Características</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cuento</strong></td>
+                        <td>Corta</td>
+                        <td>Relato breve con pocos personajes, una sola trama y un conflicto central. Busca causar un efecto único en el lector. Puede ser realista o fantástico.</td>
+                        <td>"El almohadón de plumas" (Horacio Quiroga), "La gallina degollada" (Quiroga), "El gato negro" (Edgar Allan Poe)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Novela</strong></td>
+                        <td>Larga</td>
+                        <td>Relato extenso con múltiples personajes, tramas secundarias y una mayor complejidad temática y estructural. Permite un desarrollo profundo de personajes y situaciones.</td>
+                        <td><em>Cien años de soledad</em> (García Márquez), <em>Don Quijote de la Mancha</em> (Cervantes), <em>1984</em> (Orwell)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leyenda</strong></td>
+                        <td>Variable</td>
+                        <td>Relato de tradición oral o escrita que mezcla hechos reales con elementos fantásticos o sobrenaturales. Explica el origen de lugares, costumbres o fenómenos.</td>
+                        <td>La leyenda del Dorado, La Llorona, El Mohán, El Sombrerón</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mito</strong></td>
+                        <td>Variable</td>
+                        <td>Relato sagrado que explica el origen del mundo, los dioses, los seres humanos o las fuerzas de la naturaleza. Forma parte de la cosmovisión de una cultura.</td>
+                        <td>Mito de la creación (griego, maya, bíblico), Prometeo, Hércules, Bochica (muisca)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fábula</strong></td>
+                        <td>Corta</td>
+                        <td>Relato breve protagonizado por animales u objetos personificados que deja una enseñanza o moraleja al final. Tiene intención didáctica.</td>
+                        <td>"La liebre y la tortuga", "El león y el ratón" (Esopo), "La cigarra y la hormiga" (Samaniego)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parábola</strong></td>
+                        <td>Corta</td>
+                        <td>Relato simbólico que utiliza una historia cotidiana para transmitir una enseñanza moral o espiritual. Es común en textos religiosos.</td>
+                        <td>La parábola del hijo pródigo, El buen samaritano (Biblia)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Épica / Epopeya</strong></td>
+                        <td>Larga (en verso)</td>
+                        <td>Poema narrativo extenso que relata las hazañas heroicas de un personaje legendario, en un contexto histórico o mitológico. Exalta los valores de un pueblo.</td>
+                        <td><em>La Ilíada</em> y <em>La Odisea</em> (Homero), <em>La Eneida</em> (Virgilio), <em>El Cantar del Mío Cid</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Géneros Narrativos No Literarios</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Género</th>
+                        <th>Características</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Noticia</strong></td>
+                        <td>Relato objetivo y veraz de un hecho actual, de interés público. Responde a las preguntas: qué, quién, cuándo, dónde, cómo y por qué.</td>
+                        <td>Noticias de periódicos, portales digitales, noticieros de televisión.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crónica</strong></td>
+                        <td>Relato periodístico que narra hechos reales de manera cronológica, combinando información objetiva con la interpretación y el estilo literario del autor.</td>
+                        <td>Crónicas deportivas, crónicas de viaje, crónicas de guerra.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reportaje</strong></td>
+                        <td>Investigación periodística profunda sobre un tema específico, que incluye testimonios, datos y análisis. Es más extenso que la noticia.</td>
+                        <td>Reportajes de investigación en revistas o documentales.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Biografía</strong></td>
+                        <td>Narración de la vida de una persona real, desde su nacimiento hasta su muerte o hasta el presente. Puede ser autorizada o no.</td>
+                        <td>Biografía de Simón Bolívar, de Gabriel García Márquez, de Frida Kahlo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Autobiografía</strong></td>
+                        <td>Narración de la propia vida escrita por el mismo protagonista. Está en primera persona y tiene un carácter subjetivo e íntimo.</td>
+                        <td><em>Vivir para contarla</em> (García Márquez), <em>El viaje</em> (Pablo Neruda).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diario personal</strong></td>
+                        <td>Registro escrito de las experiencias, pensamientos y emociones de una persona, organizado por fechas. Es de carácter privado e íntimo.</td>
+                        <td><em>El diario de Ana Frank</em>, diarios de escritores como Kafka o Virginia Woolf.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memorias</strong></td>
+                        <td>Relato de los recuerdos y experiencias significativas de una persona, generalmente de carácter público o histórico. Se enfoca en eventos importantes más que en la intimidad.</td>
+                        <td><em>Memorias de mis tiempos</em> (Pablo Neruda), memorias de políticos o militares.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Géneros Narrativos Audiovisuales</h3>
+
+            <p>En la actualidad, la narración también se manifiesta a través de medios audiovisuales y digitales:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Género</th>
+                        <th>Características</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cine / Película</strong></td>
+                        <td>Narración visual y sonora que cuenta una historia a través de imágenes en movimiento, diálogos, música y efectos.</td>
+                        <td>Películas de ficción, documentales, animación.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Serie / Miniserie</strong></td>
+                        <td>Narración audiovisual dividida en episodios o capítulos, con una trama que puede ser continua o autoconclusiva por episodio.</td>
+                        <td>Series de televisión, plataformas de streaming (Netflix, Amazon Prime).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Historieta / Cómic</strong></td>
+                        <td>Narración gráfica que combina imágenes (viñetas) y texto (globos de diálogo, cartelas) para contar una historia.</td>
+                        <td>Mafalda (Quino), Condorito, cómics de superhéroes (Marvel, DC).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Videojuego narrativo</strong></td>
+                        <td>Narración interactiva en la que el jugador participa activamente en el desarrollo de la historia, tomando decisiones que afectan el desenlace.</td>
+                        <td><em>The Last of Us</em>, <em>Life is Strange</em>, <em>Detroit: Become Human</em>.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Resumen:</strong> La narración es una forma fundamental de comunicación humana que consiste en relatar hechos (reales o ficticios) con una intención específica (entretener, informar, enseñar, reflexionar). Se caracteriza por tener un <strong>enfoque narrativo</strong> (la perspectiva desde la que se cuenta) y una <strong>estructura discursiva</strong> (planteamiento, nudo y desenlace). Los <strong>géneros narrativos</strong> son las distintas formas en que se manifiesta la narración, e incluyen desde el cuento y la novela hasta la noticia, la crónica, el cine y los videojuegos.
+            </div>
+
+        <h2>✅ Conclusión</h2>
+
+            <p>La narración es mucho más que contar historias: es una herramienta poderosa para <strong>comunicar, preservar la cultura, transmitir conocimientos y conectar emocionalmente</strong> con los demás. Comprender su intención comunicativa, su enfoque narrativo, su estructura discursiva y los diversos géneros en los que se manifiesta nos permite no solo disfrutar mejor de las historias, sino también crearlas de manera más consciente y efectiva. Ya sea a través de un cuento, una novela, una noticia o una película, la narración sigue siendo el corazón de la comunicación humana.</p>
+
+            <!-- ============================================= -->
+            <!-- GÉNERO LÍRICO -->
+            <!-- ============================================= -->
+
+            <h2>🎵 Género Lírico</h2>
+
+            <p>El <strong>género lírico</strong> es un tipo de texto literario en el que el autor expresa sus <strong>sentimientos, emociones, pensamientos o estados de ánimo</strong> de manera subjetiva y personal. A diferencia del género narrativo, que cuenta una historia con personajes y acciones, el género lírico se centra en la <strong>interioridad del poeta</strong> y en su visión del mundo. Tradicionalmente, la lírica se escribía en verso, aunque también existen manifestaciones en prosa poética.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> El género lírico es la expresión artística de los sentimientos y emociones del autor a través de un lenguaje cargado de belleza, musicalidad y subjetividad. La palabra "lírica" proviene de la "lira", instrumento musical con el que los antiguos griegos acompañaban sus poemas.
+            </div>
+
+            <h3>🔹 Características del Género Lírico</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Subjetividad</strong></td>
+                        <td>El poeta expresa su mundo interior: sentimientos, emociones, reflexiones y estados de ánimo personales.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uso del verso</strong></td>
+                        <td>Generalmente se escribe en verso, con una estructura rítmica y métrica definida. Sin embargo, también existe la prosa poética.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Musicalidad y ritmo</strong></td>
+                        <td>El poema busca crear un efecto musical mediante la rima, la métrica, las pausas y la repetición de sonidos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lenguaje figurado</strong></td>
+                        <td>Abundan las figuras literarias o retóricas: metáforas, símiles, personificaciones, hipérboles, etc.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brevedad y condensación</strong></td>
+                        <td>El poema suele ser breve, pero con una gran carga de significado. Cada palabra es cuidadosamente seleccionada.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Función poética del lenguaje</strong></td>
+                        <td>El mensaje se centra en la forma misma del lenguaje, buscando la belleza estética y la originalidad expresiva.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Presencia del "yo" poético</strong></td>
+                        <td>Existe una voz lírica (el "yo" poético) que es la que habla en el poema, que no necesariamente coincide con el autor real.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Elementos del Género Lírico</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Poeta o autor</strong></td>
+                        <td>La persona real que escribe el poema.</td>
+                        <td>Pablo Neruda, Gabriela Mistral, Federico García Lorca.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Yo poético o voz lírica</strong></td>
+                        <td>La voz ficticia que habla dentro del poema. Puede ser el poeta mismo o un personaje creado por él.</td>
+                        <td>En "Walking around" de Neruda, el yo poético es un hombre angustiado por la rutina.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Objeto lírico</strong></td>
+                        <td>La persona, cosa, situación o sentimiento que inspira el poema y sobre el cual se escribe.</td>
+                        <td>El amor, la muerte, la naturaleza, la patria, la soledad, un ser querido.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tema lírico</strong></td>
+                        <td>La idea central o el sentimiento predominante que atraviesa todo el poema.</td>
+                        <td>El amor no correspondido, la nostalgia, la alegría, la tristeza, la esperanza.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Motivo lírico</strong></td>
+                        <td>Una imagen, símbolo o idea recurrente dentro del poema que refuerza el tema.</td>
+                        <td>La rosa (amor), el mar (libertad), la noche (misterio), el río (vida).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Actitud lírica</strong></td>
+                        <td>La forma en que el yo poético se relaciona con el objeto lírico. Puede ser <em>enunciativa</em> (describe), <em>apelativa</em> (interpela a alguien) o <em>carmínica</em> (expresa emociones).</td>
+                        <td>"<em>Te amo</em>" (carmínica), "<em>Oh, muerte, ¿dónde está tu victoria?</em>" (apelativa).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Subgéneros Líricos</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Subgénero</th>
+                        <th>Características</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Oda</strong></td>
+                        <td>Poema de tono elevado que expresa admiración o alabanza hacia una persona, cosa o idea. Puede ser de tema amoroso, heroico, filosófico o cotidiano.</td>
+                        <td>"Oda a la cebolla" (Pablo Neruda), "Oda a la alegría" (Schiller).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Elegía</strong></td>
+                        <td>Poema de tono triste y melancólico que expresa dolor por la pérdida de un ser querido, una situación o un ideal. Es un canto de lamento.</td>
+                        <td>"Elegía a Ramón Sijé" (Miguel Hernández), "Llanto por Ignacio Sánchez Mejías" (García Lorca).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Soneto</strong></td>
+                        <td>Composición poética de catorce versos endecasílabos, distribuidos en dos cuartetos y dos tercetos. Tiene una estructura fija y rima consonante.</td>
+                        <td>"Soneto XXIII" (Garcilaso de la Vega), "Soneto de la dulce queja" (Federico García Lorca).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Romance</strong></td>
+                        <td>Poema narrativo-lírico de origen popular, compuesto por versos octosílabos con rima asonante en los pares. Cuenta una historia breve de manera sencilla.</td>
+                        <td>"Romance del prisionero" (anónimo), "Romance sonámbulo" (García Lorca).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Canción</strong></td>
+                        <td>Poema de tema amoroso o sentimental, con estructura estrófica variable y destinado a ser cantado o musicalizado.</td>
+                        <td>"Canción del jinete" (García Lorca), canciones populares y coplas.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Himno</strong></td>
+                        <td>Poema de tono solemne y exaltado que expresa sentimientos de admiración, lealtad o veneración hacia una nación, una institución o una divinidad.</td>
+                        <td>Himno Nacional de Colombia, Himno a la alegría.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sátira</strong></td>
+                        <td>Poema que critica o ridiculiza vicios, defectos o comportamientos humanos o sociales, con un tono irónico y mordaz.</td>
+                        <td>"Sátira contra los malos escritores" (Quevedo), sátiras de Juvenal.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Epigrama</strong></td>
+                        <td>Poema breve e ingenioso, de tono festivo o satírico, que expresa una idea aguda y sorprendente en pocos versos.</td>
+                        <td>Epigramas de Marcial, de Baltasar de Alcázar.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>📖 Ejemplo de poema lírico (Soneto):</strong><br><br>
+                <em>"Un soneto me manda hacer Violante,<br>
+                que en mi vida me he visto en tal aprieto;<br>
+                catorce versos dicen que es soneto,<br>
+                burla burlando van los tres delante.<br><br>
+                Yo pensé que no hallara consonante,<br>
+                y estoy a la mitad de otro cuarteto;<br>
+                mas si me veo en el primer terceto,<br>
+                no hay cosa en los cuartetos que me espante.<br><br>
+                Por el primer terceto voy entrando,<br>
+                y parece que entré con pie derecho,<br>
+                pues fin con este verso le voy dando.<br><br>
+                Ya estoy en el segundo, y aun sospecho<br>
+                que voy los trece versos acabando:<br>
+                contad si son catorce, y está hecho."</em><br><br>
+                — Lope de Vega (Soneto de repente)
+            </div>
+
+            <div class="def-box">
+                <strong>📖 Importante:</strong> El género lírico es la expresión más íntima y personal de la literatura. A través de la poesía, el ser humano ha encontrado una forma de dar voz a sus emociones más profundas: el amor, la tristeza, la alegría, la soledad, la esperanza y la reflexión sobre la vida y la muerte. La poesía lírica no busca contar una historia, sino <strong>crear una experiencia estética y emocional</strong> en el lector.
+            </div>
+
+            <!-- ============================================= -->
+            <!-- GÉNERO DRAMÁTICO -->
+            <!-- ============================================= -->
+
+            <h2>🎭 Género Dramático</h2>
+
+            <p>El <strong>género dramático</strong> es un tipo de texto literario concebido para ser <strong>representado ante un público</strong> en un escenario. En él, una historia se desarrolla a través del <strong>diálogo</strong> y las <strong>acciones</strong> de los personajes, sin la intervención de un narrador. La palabra "drama" proviene del griego <em>drâma</em>, que significa "acción" o "hacer". El género dramático incluye obras de teatro, tragedias, comedias, dramas y otras formas de representación escénica.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> El género dramático es aquel en el que se presenta una historia mediante el diálogo directo de los personajes, diseñada para ser representada en un escenario ante un público. Combina el texto literario (el guion) con elementos escénicos (actuación, vestuario, iluminación, escenografía, música).
+            </div>
+
+            <h3>🔹 Características del Género Dramático</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ausencia de narrador</strong></td>
+                        <td>No hay una voz que cuente la historia. Los hechos se conocen a través de lo que los personajes dicen y hacen en escena.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diálogo como eje central</strong></td>
+                        <td>La acción avanza mediante los diálogos entre los personajes. También pueden incluirse monólogos (un personaje habla solo) y apartes (el personaje habla al público).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conflicto dramático</strong></td>
+                        <td>Es el motor de la obra. Se trata de una lucha, oposición o tensión entre fuerzas contrarias (personajes, ideas, deseos, circunstancias).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estructura en actos y escenas</strong></td>
+                        <td>La obra se divide en actos (partes principales) y escenas (subdivisiones marcadas por la entrada o salida de personajes).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Doble naturaleza</strong></td>
+                        <td>El texto dramático tiene dos dimensiones: el <strong>texto literario</strong> (el guion escrito) y el <strong>texto espectacular</strong> (la puesta en escena: actuación, dirección, escenografía, iluminación, vestuario, sonido).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acotaciones</strong></td>
+                        <td>Indicaciones del autor sobre cómo debe ser la representación: gestos, movimientos, tono de voz, escenografía, iluminación, etc. Van escritas entre paréntesis o en cursiva.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Personajes</strong></td>
+                        <td>Seres que actúan y hablan en la obra. Pueden ser principales (protagonista, antagonista) o secundarios. Se definen por sus acciones y palabras, no por descripciones del narrador.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Público o espectador</strong></td>
+                        <td>La obra está destinada a ser vista y escuchada por un público en vivo, lo que genera una experiencia colectiva e irrepetible.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Elementos del Género Dramático</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Definición</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Acción dramática</strong></td>
+                        <td>Conjunto de acontecimientos que ocurren en la obra, organizados en una secuencia lógica y causal. Incluye la presentación, el desarrollo, el clímax y el desenlace del conflicto.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conflicto</strong></td>
+                        <td>Fuerza motriz de la obra. Puede ser interno (lucha dentro de un personaje) o externo (entre personajes, o entre un personaje y su entorno).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Personajes</strong></td>
+                        <td>Seres que participan en la acción. Se clasifican en: <strong>protagonista</strong> (personaje principal que impulsa la acción), <strong>antagonista</strong> (se opone al protagonista), <strong>secundarios</strong> (apoyan la trama) y <strong>figurantes</strong> (personajes de fondo).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diálogo</strong></td>
+                        <td>Conversación entre dos o más personajes. Es la forma principal de expresión en el teatro.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monólogo</strong></td>
+                        <td>Discurso de un personaje que habla solo, expresando sus pensamientos y emociones en voz alta. Permite conocer su interioridad.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aparte</strong></td>
+                        <td>Palabras que un personaje dice al público o a sí mismo, como si los demás personajes no lo escucharan. Revela pensamientos ocultos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Acotación</strong></td>
+                        <td>Indicaciones del dramaturgo sobre la representación: escenografía, vestuario, gestos, movimientos, iluminación, sonido, tono de voz. No se dicen en escena, solo las lee el director y los actores.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Espacio escénico</strong></td>
+                        <td>El lugar físico donde se representa la obra (el escenario), incluyendo la escenografía, los decorados y la disposición de los elementos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tiempo dramático</strong></td>
+                        <td>La duración de los acontecimientos dentro de la obra. Puede ser lineal o con saltos temporales. No debe confundirse con la duración real de la representación.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Estructura del Género Dramático</h3>
+
+            <p>La estructura clásica de una obra dramática sigue un esquema similar al de la narración, pero adaptado a la representación escénica:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Parte</th>
+                        <th>Descripción</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Presentación o Exposición</strong></td>
+                        <td>Se presentan los personajes, el escenario, la situación inicial y el contexto. Se introduce el conflicto que impulsará la obra.</td>
+                        <td>En <em>Romeo y Julieta</em>, se presenta la rivalidad entre los Montesco y los Capuleto, y el amor que nace entre Romeo y Julieta.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Desarrollo o Nudo</strong></td>
+                        <td>El conflicto se intensifica. Los personajes enfrentan obstáculos, toman decisiones y la tensión dramática aumenta progresivamente hasta llegar al clímax.</td>
+                        <td>Romeo mata a Teobaldo y es desterrado. Julieta finge su muerte con un veneno. La tensión llega al máximo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Clímax</strong></td>
+                        <td>Punto de máxima tensión en la obra. Es el momento decisivo donde el conflicto alcanza su punto más alto y el desenlace se vuelve inevitable.</td>
+                        <td>Romeo cree que Julieta ha muerto realmente y decide suicidarse junto a ella.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Desenlace</strong></td>
+                        <td>Resolución del conflicto. La historia llega a su fin, ya sea de manera trágica o feliz. Se restablece el equilibrio o se produce la catástrofe final.</td>
+                        <td>Romeo se envenena, Julieta despierta y al verlo muerto se apuñala. Las familias se reconcilian sobre sus tumbas.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Subgéneros Dramáticos</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Subgénero</th>
+                        <th>Características</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tragedia</strong></td>
+                        <td>Obra de tono serio y elevado, con personajes nobles o heroicos que enfrentan un destino adverso e inevitable. El conflicto suele llevar a un final trágico (muerte, destrucción, locura). Busca provocar <em>catarsis</em> (purificación emocional) en el espectador.</td>
+                        <td><em>Edipo Rey</em> (Sófocles), <em>Romeo y Julieta</em> (Shakespeare), <em>La vida es sueño</em> (Calderón de la Barca).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Comedia</strong></td>
+                        <td>Obra de tono ligero y humorístico, con personajes comunes y situaciones cotidianas o enredos. El conflicto se resuelve de manera feliz y optimista. Busca hacer reír y entretener al público.</td>
+                        <td><em>El avaro</em> (Molière), <em>Sueño de una noche de verano</em> (Shakespeare), <em>La nona</em> (Roberto Cossa).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Drama o Tragicomedia</strong></td>
+                        <td>Obra que mezcla elementos trágicos y cómicos. Los personajes pueden ser de cualquier clase social y el final no necesariamente es feliz ni trágico. Refleja la complejidad de la vida real.</td>
+                        <td><em>La casa de Bernarda Alba</em> (García Lorca), <em>El jardín de los cerezos</em> (Chéjov), <em>Esperando a Godot</em> (Beckett).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auto sacramental</strong></td>
+                        <td>Obra religiosa de origen medieval, de carácter alegórico, que representa temas bíblicos o teológicos. Era común durante la festividad del Corpus Christi en España.</td>
+                        <td><em>El gran teatro del mundo</em> (Calderón de la Barca), <em>Auto de los Reyes Magos</em> (anónimo).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sainete</strong></td>
+                        <td>Obra breve y humorística, de origen popular, que retrata costumbres y tipos sociales de manera satírica y festiva. Generalmente en un solo acto.</td>
+                        <td>Sainetes de Ramón de la Cruz, <em>El sainete de la castañera</em>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Farsa</strong></td>
+                        <td>Obra cómica exagerada y grotesca, con personajes caricaturescos y situaciones absurdas. Busca la risa a través de la exageración y el disparate.</td>
+                        <td><em>La farsa del maestro Pathelin</em> (anónimo), farsas de Aristófanes.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Melodrama</strong></td>
+                        <td>Obra de gran carga emocional, con personajes claramente buenos o malos, y situaciones extremas que buscan conmover al espectador. Abundan las escenas de sufrimiento, sacrificio y heroísmo.</td>
+                        <td>Melodramas del siglo XIX, telenovelas, películas de drama romántico.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Teatro del absurdo</strong></td>
+                        <td>Corriente teatral del siglo XX que rompe con la lógica tradicional. Presenta situaciones ilógicas, diálogos sin sentido y personajes atrapados en una existencia absurda. Refleja la crisis existencial del hombre moderno.</td>
+                        <td><em>Esperando a Godot</em> (Samuel Beckett), <em>La cantante calva</em> (Eugène Ionesco).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>🎭 Ejemplo de fragmento dramático (Romeo y Julieta - William Shakespeare):</strong><br><br>
+                <em>
+                <strong>JULIETA:</strong> (Asomada al balcón)<br>
+                "¡Romeo, Romeo! ¿Por qué eres tú Romeo?<br>
+                Niega a tu padre y rehúsa tu nombre;<br>
+                o, si no quieres, júrame que me amas<br>
+                y dejaré de ser una Capuleto."<br><br>
+                <strong>ROMEO:</strong> (Aparte, desde el jardín)<br>
+                "¿Sigo hablando o la escucho todavía?"<br><br>
+                <strong>JULIETA:</strong><br>
+                "Solo tu nombre es mi enemigo;<br>
+                tú eres tú mismo, aunque seas un Montesco.<br>
+                ¿Qué es Montesco? No es mano, ni pie,<br>
+                ni brazo, ni rostro, ni ninguna otra parte<br>
+                que pertenezca al hombre. ¡Oh, sé otro nombre!<br>
+                ¿Qué hay en un nombre? Lo que llamamos rosa,<br>
+                con cualquier otro nombre olería igual."<br>
+                </em>
+            </div>
+
+            <div class="def-box">
+                <strong>📖 Importante:</strong> El género dramático es único porque su obra solo se completa verdaderamente cuando es <strong>representada en un escenario</strong> ante un público. El texto escrito (el guion) es solo el punto de partida; la magia del teatro ocurre cuando los actores dan vida a los personajes, la escenografía crea el ambiente y el público se convierte en testigo y cómplice de la historia. El teatro es, por excelencia, el arte de la <strong>representación en vivo</strong>.
+            </div>
+
+            <h3>🔹 Diferencias entre los Tres Géneros Literarios</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Género Narrativo</th>
+                        <th>Género Lírico</th>
+                        <th>Género Dramático</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Propósito</strong></td>
+                        <td>Contar una historia (hechos reales o ficticios)</td>
+                        <td>Expresar sentimientos y emociones</td>
+                        <td>Representar una acción ante un público</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Voz que habla</strong></td>
+                        <td>Narrador (1ª, 2ª o 3ª persona)</td>
+                        <td>Yo poético o voz lírica</td>
+                        <td>Personajes (diálogo, monólogo, aparte)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Forma de expresión</strong></td>
+                        <td>Prosa o verso (narración, descripción, diálogo)</td>
+                        <td>Verso principalmente (con rima y métrica)</td>
+                        <td>Diálogo y acotaciones (texto para representar)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medio de difusión</strong></td>
+                        <td>Libro, revista, periódico, digital</td>
+                        <td>Libro, antología, recital, digital</td>
+                        <td>Escenario teatral (representación en vivo)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Participación del público</strong></td>
+                        <td>Lectura individual y silenciosa</td>
+                        <td>Lectura individual o recitación</td>
+                        <td>Espectáculo colectivo y en vivo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ejemplos</strong></td>
+                        <td>Cuento, novela, leyenda, crónica</td>
+                        <td>Oda, soneto, elegía, romance</td>
+                        <td>Tragedia, comedia, drama, farsa</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>✅ Conclusión General: Los Tres Grandes Géneros Literarios</h2>
+
+            <p>La literatura se manifiesta a través de <strong>tres grandes géneros</strong> que representan distintas formas de expresión y comunicación artística:</p>
 
             <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
+                <li><strong>📖 Género Narrativo:</strong> Cuenta historias a través de un narrador, con personajes, tiempo y espacio. Su propósito es relatar hechos (reales o ficticios) para entretener, informar, enseñar o reflexionar. Incluye cuentos, novelas, leyendas, mitos, fábulas, crónicas y más.</li>
+                <li><strong>🎵 Género Lírico:</strong> Expresa los sentimientos y emociones del autor a través de un lenguaje poético, cargado de musicalidad y figuras literarias. Su propósito es crear una experiencia estética y emocional. Incluye odas, sonetos, elegías, romances y canciones.</li>
+                <li><strong>🎭 Género Dramático:</strong> Representa una historia a través del diálogo y la acción de los personajes, diseñada para ser representada en un escenario. Su propósito es conmover, entretener y hacer reflexionar al público en vivo. Incluye tragedias, comedias, dramas y farsas.</li>
             </ul>
+
+            <div class="def-box">
+                <strong>📖 Reflexión final:</strong> Así como un pintor usa diferentes colores y pinceles para crear su obra, el escritor utiliza los diferentes géneros literarios para expresar sus ideas y emociones. Cada género tiene sus propias reglas, recursos y posibilidades expresivas. Conocerlos nos permite no solo disfrutar mejor de la literatura, sino también comprender más profundamente la riqueza y diversidad de la comunicación humana a través del arte de la palabra.
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
             <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
+            <a href="https://www.youtube.com/watch?v=9Fq4tFq0Fq0" class="enlace" target="_blank">📘 ¿Qué es la narración? - Concepto y estructura</a>
+            <a href="https://www.youtube.com/watch?v=8Fq4tFq0Fq0" class="enlace" target="_blank">🎥 Tipos de narrador - Enfoque narrativo</a>
+            <a href="https://www.youtube.com/watch?v=7Fq4tFq0Fq0" class="enlace" target="_blank">📄 Los géneros narrativos - Cuento, novela, leyenda y más</a>
         </div>
 
         <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
-            <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
-            </ul>
+            <p><strong>Instrucciones:</strong> Lee atentamente cada pregunta y responde.</p>
+            <ol>
+                <li><a href="https://drive.google.com/file/d/1upudV09qbnbUS8oJDLL8TueDamlTn-yZ/view?usp=sharing" target="_blank">Taller Unidad 3</a></li>
+            </ol>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=1" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -335,7 +1247,7 @@
         1: { // Español y Filosofía
             1: "Comprensión Lectora",
             2: "Gramática Española",
-            3: "Introducción a la Filosofía",
+            3: "La Narración",
             4: "Ética y Valores"
         },
         2: { // Matemáticas
@@ -378,7 +1290,7 @@
     
     // Descripciones cortas de unidades
     const unidadesDescripciones = {
-        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Intención comunicativa, enfoque narrativo, estructura y géneros de la narración", "Reflexión moral y ciudadanía"],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
         3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
@@ -450,5 +1362,5 @@
     generarNavegacion();
     actualizarBotonVolver();
 </script>
-</body>
+    </body>
 </html>
