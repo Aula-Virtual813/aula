@@ -468,20 +468,30 @@ form.addEventListener("submit",async function(e){
             const base64 =
             reader.result.split(",")[1];
 
+            const finalFileName =
+            `${studentName} - ${file.name}`;
+
+            // El Apps Script espera un UNICO campo de FormData llamado
+            // "payload" con un string JSON adentro (ver e.parameters.payload[0]
+            // en el doPost). Enviar "file"/"fileName" sueltos, como antes,
+            // hacia que el script no reconociera nada.
+            const payloadObj = {
+                fecha: new Date().toLocaleString('es-CO'),
+                estudiante: studentName,
+                materia: 'General',
+                unidad: '1',
+                tituloUnidad: 'Entrega de trabajo',
+                tipoEntrega: 'pdf',
+                pdfBase64: base64,
+                archivoNombre: finalFileName
+            };
+
             const formData =
             new FormData();
 
-            const finalFileName =
-            `${studentName} ${file.name}`;
-
             formData.append(
-                "file",
-                base64
-            );
-
-            formData.append(
-                "fileName",
-                finalFileName
+                "payload",
+                JSON.stringify(payloadObj)
             );
 
             const response =
@@ -507,7 +517,9 @@ form.addEventListener("submit",async function(e){
                 throw new Error("El servidor no devolvio una respuesta valida. Verifica que el Apps Script este bien desplegado (acceso 'Cualquiera, incluso anonimo').");
             }
 
-            if(result.success){
+            // El script responde con { ok: true } o { ok: false, error: ... },
+            // no con "success"/"url" (eso era del script viejo).
+            if(result.ok){
 
                 statusDiv.className =
                 "status success";
@@ -516,10 +528,8 @@ form.addEventListener("submit",async function(e){
                 "block";
 
                 statusDiv.innerHTML =
-                `✅ PDF enviado correctamente<br><br>
-                <a href="${result.url}" target="_blank">
-                Ver archivo en Drive
-                </a>`;
+                `✅ Trabajo enviado correctamente.<br>
+                Quedó registrado para el profesor.`;
 
                 form.reset();
 
