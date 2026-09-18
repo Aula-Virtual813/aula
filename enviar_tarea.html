@@ -415,6 +415,41 @@ form.addEventListener("submit",async function(e){
         resetButton();
     };
 
+    function esperar(ms){
+        return new Promise(function(resolve){ setTimeout(resolve, ms); });
+    }
+
+    // Hace el POST al Apps Script con reintentos automaticos.
+    // "Failed to fetch" contra script.google.com suele ser un fallo
+    // intermitente de red/CORS del lado de Google, no un error real
+    // del archivo. En vez de rendirse al primer intento, reintenta
+    // unas cuantas veces antes de mostrar el error al estudiante.
+    async function subirConReintentos(url, opciones, intentos){
+        var ultimoError = null;
+        for(var i = 0; i < intentos; i++){
+            try{
+                submitBtn.innerHTML = i === 0
+                    ? "⏳ Subiendo PDF..."
+                    : `⏳ Reintentando (${i + 1}/${intentos})...`;
+
+                var respuesta = await fetch(url, opciones);
+                return respuesta;
+
+            }catch(err){
+                ultimoError = err;
+                if(err.name === "AbortError"){
+                    // Se acabo el tiempo de espera de ESTE intento: no
+                    // tiene sentido reintentar, ya tardo demasiado.
+                    throw err;
+                }
+                if(i < intentos - 1){
+                    await esperar(1500 * (i + 1));
+                }
+            }
+        }
+        throw ultimoError;
+    }
+
     // IMPORTANTE: este bloque es async y va DENTRO de su propio
     // try/catch, porque un try/catch que envuelve solo la llamada a
     // reader.readAsDataURL(file) NO captura errores que ocurran
@@ -450,13 +485,14 @@ form.addEventListener("submit",async function(e){
             );
 
             const response =
-            await fetch(
+            await subirConReintentos(
             "https://script.google.com/macros/s/AKfycbxWYUpQwvgb4rvT8CRVf-DPJ1vOCtR9YhpBjkcNyP5KO6iSCnGoD3C7YaO4mFijctW6aA/exec",
             {
                 method:"POST",
                 body:formData,
                 signal: controller.signal
-            });
+            },
+            3);
 
             clearTimeout(timeoutId);
 
@@ -501,6 +537,8 @@ form.addEventListener("submit",async function(e){
 
             if(error.name === "AbortError"){
                 showError("El envio tardo demasiado (posible problema de red o del Apps Script). Intenta de nuevo.");
+            }else if(error.message === "Failed to fetch"){
+                showError("No se pudo conectar con el servidor tras varios intentos. Revisa tu conexion a internet e intenta de nuevo en un momento.");
             }else{
                 showError("Error al subir el PDF: " + error.message);
             }
