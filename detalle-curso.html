@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Aula Virtual | Todos los Cursos</title>
+    <title>Aula Virtual | Detalle del Curso</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', sans-serif;
         }
 
         body {
@@ -20,11 +20,11 @@
 
         .container {
             max-width: 1300px;
-            width: 100%;
             margin: 0 auto;
         }
 
-        .courses-page {
+        .detail-page {
+            position: relative;
             background: rgba(255, 255, 255, 0.591);
             border-radius: 2.5rem;
             padding: 2rem 2rem 3rem;
@@ -32,82 +32,130 @@
             border: 1px solid rgba(255, 255, 240, 0.7);
         }
 
-        .courses-header {
+        .detail-header {
             text-align: center;
             margin-bottom: 2.5rem;
         }
 
-        .courses-header h1 {
+        .course-emoji-big {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 1rem;
+            filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
+        }
+
+        .detail-header h1 {
             font-size: 2.8rem;
             font-weight: 700;
             background: linear-gradient(120deg, #030b10, #1294db);
-            background-clip: text;
             -webkit-background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .courses-header p {
-            color: #4a627a;
+        .detail-header p {
+            color: #041123;
             margin-top: 0.5rem;
             font-size: 1.1rem;
         }
 
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.8rem;
-            margin-top: 1.5rem;
-        }
-
-        .course-btn {
-            background: rgba(255, 255, 255, 0.677);
-            border: none;
-            border-radius: 1.8rem;
-            padding: 1.4rem 0.8rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #1f3e54;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            box-shadow: 0 8px 14px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #030b10, #1294db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 2rem 0 1.5rem;
             text-align: center;
-            border: 1px solid rgba(100, 148, 180, 0.2);
-            width: 100%;
         }
 
-        .course-btn:hover {
+        .unidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .unidad-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(18, 148, 219, 0.2);
+            text-decoration: none;
+            display: block;
+        }
+
+        .unidad-card:hover {
             transform: translateY(-8px);
-            background: linear-gradient(145deg, #ffffff, #f6fafd);
-            box-shadow: 0 20px 25px -12px rgba(31, 62, 84, 0.25);
-            border-color: #9bbdd0;
+            border-color: #1294db;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.2);
+            background: white;
         }
 
-        .course-emoji {
-            font-size: 2.8rem;
-            filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));
+        .unidad-numero {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
         }
 
-        .course-title {
+        .unidad-titulo {
             font-size: 1.3rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #1d3e57, #2a5a78);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #1f3e54;
+            margin-bottom: 0.5rem;
         }
 
-        .course-badge {
-            background: #eef3fc;
-            border-radius: 40px;
-            padding: 0.2rem 1rem;
+        .unidad-desc {
+            font-size: 0.85rem;
+            color: #5e7f97;
+            line-height: 1.4;
+        }
+
+        .unidad-icono {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .course-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 1.5rem;
+        }
+
+        .info-item {
+            text-align: center;
+            padding: 0.8rem;
+        }
+
+        .info-label {
             font-size: 0.75rem;
-            font-weight: 500;
-            color: #2c6280;
-            margin-top: 4px;
+            color: #5e7f97;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1f3e54;
+            margin-top: 0.3rem;
         }
 
         .toast-msg {
@@ -135,326 +183,79 @@
             transform: translateX(-50%) scale(1);
         }
 
-        /* === ESTILOS DEL BOTÓN DE CANDADO DEL PROFESOR === */
-        .teacher-lock-container {
+        .admin-controls {
+            position: absolute;
+            top: 1.8rem;
+            right: 1.8rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
+            justify-content: flex-end;
+            z-index: 10;
         }
 
-        .teacher-lock-btn {
-            background: linear-gradient(135deg, #1e3e5c, #2c4863);
-            border: none;
-            padding: 0;
-            width: 60px;
-            height: 60px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50%;
+        .admin-btn {
+            background: linear-gradient(135deg, #1294db, #0d6fa5);
             color: white;
+            padding: 0.8rem 1.3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 25px rgba(18, 148, 219, 0.25);
+            transition: 0.3s;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+            border: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            letter-spacing: 0.5px;
         }
 
-        .teacher-lock-btn:hover {
+        .admin-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .admin-btn:hover:not(:disabled) {
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(18, 148, 219, 0.35);
         }
 
-        .teacher-lock-btn:active {
-            transform: translateY(1px);
-        }
-
-        .teacher-lock-btn.unlocked {
-            background: linear-gradient(135deg, #1b7a2b, #28a745);
-            box-shadow: 0 8px 18px rgba(40, 167, 69, 0.3);
-        }
-
-        .teacher-lock-btn.unlocked:hover {
-            box-shadow: 0 15px 25px -8px rgba(40, 167, 69, 0.4);
-        }
-
-        .lock-icon {
-            font-size: 1.4rem;
-        }
-
-        /* === PANEL DE ADMINISTRACIÓN DE MESES (PROFESOR) === */
-        .admin-panel-btn {
-            background: linear-gradient(135deg, #1e3e5c, #2c4863);
-            border: none;
-            padding: 0.9rem 1.4rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 40px;
-            color: white;
-            cursor: pointer;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-        }
-
-        .admin-panel-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .course-btn.locked-course {
-            opacity: 0.6;
-        }
-
-        .course-badge.badge-locked {
-            background: #f8e5e5;
-            color: #b23b3b;
-        }
-
-        .admin-panel-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.55);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-        }
-
-        .admin-panel-overlay.active {
-            display: flex;
-        }
-
-        .admin-panel {
-            background: #fff;
-            border-radius: 1.5rem;
-            padding: 1.8rem;
-            width: 100%;
-            max-width: 640px;
-            max-height: 85vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        .admin-panel h2 {
-            color: #1f3e54;
-            margin-bottom: 0.3rem;
-        }
-
-        .admin-panel p.hint {
-            color: #5e7f97;
-            font-size: 0.85rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .admin-global-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: #eef3fc;
-            border-radius: 1rem;
-            padding: 0.8rem 1rem;
-            margin-bottom: 1rem;
-            gap: 1rem;
-        }
-
-        .admin-row {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.7rem 0.4rem;
-            border-bottom: 1px solid #eef3fc;
-        }
-
-        .admin-row .admin-course-name {
-            flex: 1;
-            font-weight: 600;
-            color: #1f3e54;
-            font-size: 0.95rem;
-        }
-
-        .admin-row select {
-            padding: 0.4rem 0.6rem;
-            border-radius: 0.6rem;
-            border: 1px solid #c3d4e0;
-            font-size: 0.9rem;
-        }
-
-        .admin-row label.envio-check {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.8rem;
-            color: #4a627a;
-            white-space: nowrap;
-        }
-
-        .admin-panel-actions {
-            display: flex;
-            gap: 0.8rem;
-            margin-top: 1.4rem;
-        }
-
-        .admin-panel-actions button {
-            flex: 1;
-            padding: 0.8rem;
-            border: none;
-            border-radius: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .btn-guardar-config {
-            background: #28a745;
-            color: white;
-        }
-
-        .btn-cerrar-config {
-            background: #eef3fc;
-            color: #1f3e54;
-        }
-
-        /* Modal de contraseña */
-        .password-modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .password-modal-overlay.active {
-            display: flex;
-        }
-
-        .password-modal {
-            background: white;
-            border-radius: 2rem;
-            padding: 2.5rem 2rem;
-            max-width: 400px;
-            width: 90%;
+        .curso-bloqueado {
             text-align: center;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-            animation: modalPop 0.3s ease;
+            padding: 3rem 2rem;
         }
 
-        @keyframes modalPop {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
+        .curso-bloqueado .emoji-grande {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
         }
 
-        .password-modal h2 {
-            font-size: 1.8rem;
+        .curso-bloqueado h2 {
             color: #1f3e54;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
         }
 
-        .password-modal p {
+        .curso-bloqueado p {
             color: #5e7f97;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .password-modal .lock-big {
-            font-size: 3.5rem;
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        .password-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .password-input-group input {
-            padding: 1rem 1.2rem;
-            border: 2px solid #cbdde9;
-            border-radius: 50px;
             font-size: 1.1rem;
-            text-align: center;
-            outline: none;
-            transition: border-color 0.3s;
-            letter-spacing: 2px;
-        }
-
-        .password-input-group input:focus {
-            border-color: #1294db;
-        }
-
-        .password-input-group input::placeholder {
-            letter-spacing: 0;
-            color: #a0b8cc;
-        }
-
-        .password-modal-btns {
-            display: flex;
-            gap: 0.8rem;
-            justify-content: center;
-        }
-
-        .password-modal-btns button {
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
-        }
-
-        .btn-confirm-password {
-            background: linear-gradient(135deg, #1294db, #0d6fa5);
-            color: white;
-            flex: 1;
-        }
-
-        .btn-confirm-password:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(18, 148, 219, 0.3);
-        }
-
-        .btn-cancel-password {
-            background: #e8edf2;
-            color: #4a627a;
-        }
-
-        .btn-cancel-password:hover {
-            background: #d5dce4;
-        }
-
-        .password-error {
-            color: #dc3545;
-            font-size: 0.85rem;
-            margin-top: -0.5rem;
-            display: none;
-        }
-
-        .password-error.show {
-            display: block;
         }
 
         @media (max-width: 700px) {
             body {
                 padding: 1rem;
             }
-            .courses-header h1 {
-                font-size: 2rem;
+            .detail-header h1 {
+                font-size: 1.8rem;
             }
-            .courses-grid {
+            .section-title {
+                font-size: 1.4rem;
+            }
+            .unidades-grid {
                 grid-template-columns: 1fr;
-                gap: 1.2rem;
             }
             .toast-msg {
                 white-space: normal;
@@ -462,430 +263,386 @@
                 width: 90%;
                 font-size: 0.9rem;
             }
-            .teacher-lock-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 0.95rem;
+            .admin-controls {
+                position: static;
+                margin: 1rem auto 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
             }
-            .password-modal {
-                padding: 1.8rem 1.2rem;
+            .admin-btn {
+                position: static;
+                margin: 0;
+                right: auto;
+                top: auto;
+                display: inline-flex;
+                font-size: 0.9rem;
+                padding: 0.7rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="courses-page">
-        <div class="courses-header">
-            <h1>📖 Nuestros Cursos</h1>
-            <p>Selecciona cualquiera para comenzar tu formación</p>
-        </div>
+    <div class="container">
+        <div class="detail-page">
 
-        <!-- === BOTÓN DE CANDADO DEL PROFESOR === -->
-        <div class="teacher-lock-container">
-            <button id="teacherLockBtn" class="teacher-lock-btn" type="button">
-                <span class="lock-icon" id="lockIcon"></span>
-            </button>
-            <button id="openAdminPanelBtn" class="admin-panel-btn" type="button" style="display:none;">⚙️ Editar meses de materias</button>
-        </div>
+            <div class="admin-controls">
+                <button id="sendWorkBtn" class="admin-btn" type="button" disabled>⚠️ Cargando...</button>
+            </div>
 
-        <div class="courses-grid" id="coursesGrid">
-            <!-- Los 7 cursos se generarán con JavaScript -->
-        </div>
-        <div style="text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #5e7f97;">
-            🌟 7 cursos exclusivos para ti 🌟
+            <div class="detail-header">
+                <span class="course-emoji-big" id="courseEmoji">📚</span>
+                <h1 id="courseTitle">Cargando curso...</h1>
+                <p id="courseDesc">Descripción del curso</p>
+            </div>
+
+            <div class="course-info-grid" id="courseInfo"></div>
+
+            <h2 class="section-title">📚 Unidades del Curso</h2>
+            <div class="unidades-grid" id="unidadesGrid"></div>
         </div>
     </div>
-</div>
 
-<!-- Modal de contraseña -->
-<div id="passwordModal" class="password-modal-overlay">
-    <div class="password-modal">
-        <span class="lock-big">🔒</span>
-        <h2>Acceso Profesor</h2>
-        <div class="password-input-group">
-            <input type="password" id="passwordInput" placeholder="Contraseña" autocomplete="off">
-            <div class="password-error" id="passwordError">❌ Contraseña incorrecta</div>
-        </div>
-        <div class="password-modal-btns">
-            <button class="btn-cancel-password" id="cancelPasswordBtn">Cancelar</button>
-            <button class="btn-confirm-password" id="confirmPasswordBtn">Abrir</button>
-        </div>
-    </div>
-</div>
+    <div id="toastMessage" class="toast-msg">✨ Mensaje</div>
 
-<!-- Panel de administración de meses (profesor) -->
-<div id="adminPanelOverlay" class="admin-panel-overlay">
-    <div class="admin-panel">
-        <h2>⚙️ Editar meses de materias</h2>
-        <p class="hint">Asigna el mes en que cada materia estará disponible. Los cambios se guardan directamente en Google Sheets.</p>
+    <script>
+        // CONFIGURACION - URL DE APPS SCRIPT
+        const CONFIG_URL = 'https://script.google.com/macros/s/AKfycby2y23kLt5P-r52eRWdUvs7s8oBEUasjcvUbTo3sAuugLF9br3qpTOFNRwlE_5R301E_w/exec';
 
-        <div id="adminRowsContainer"></div>
-
-        <div class="admin-panel-actions">
-            <button class="btn-cerrar-config" id="cerrarAdminPanelBtn" type="button">Cancelar</button>
-            <button class="btn-guardar-config" id="guardarAdminPanelBtn" type="button">💾 Guardar en Sheets</button>
-        </div>
-    </div>
-</div>
-
-<div id="toastMessage" class="toast-msg">✨ Mensaje</div>
-
-<script>
-// =============================================
-// CONFIGURACIÓN - URL DE APPS SCRIPT (GOOGLE SHEETS)
-// =============================================
-const CONFIG_URL = 'https://script.google.com/macros/s/AKfycby2y23kLt5P-r52eRWdUvs7s8oBEUasjcvUbTo3sAuugLF9br3qpTOFNRwlE_5R301E_w/exec';
-const DEFAULT_MESES = { 1: 4, 2: 6, 3: 10, 4: 7, 5: 5, 6: 9, 7: 8 };
-const DEFAULT_ENVIOS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true };
-const MESES_NOMBRES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-let configActual = null;
-
-async function obtenerConfiguracion(forzarRecarga) {
-    if (configActual && !forzarRecarga) return configActual;
-    try {
-        const response = await fetch(CONFIG_URL, { cache: 'no-store' });
-        if (!response.ok) {
-            throw new Error('HTTP ' + response.status + ' - Verifica que el Apps Script esté desplegado como "Aplicación web" con acceso "Cualquiera, incluso anónimo".');
-        }
-        const text = await response.text();
-        const lines = text.split('\n').filter(function (line) { return line.trim(); });
-        const dataLines = lines.slice(1);
-        const config = {
-            meses: Object.assign({}, DEFAULT_MESES),
-            envios: Object.assign({}, DEFAULT_ENVIOS),
-            global: null
+        // DATOS DE CADA CURSO (LOS 7 CURSOS)
+        const cursosDetalle = {
+            1: {
+                title: "Español y Filosofía",
+                emoji: "📖",
+                desc: "Literatura, gramática y pensamiento crítico",
+                duracion: "4 semanas",
+                nivel: "Básico",
+                unidades: [
+                    { num: 1, titulo: "La Oración y su Clasificación", desc: "Semana 1", icono: "📖", link: "unidad1-1.html" },
+                    { num: 2, titulo: "Variaciones Lexicas", desc: "Semana 2", icono: "✍️", link: "unidad1-2.html" },
+                    { num: 3, titulo: "La Narracion", desc: "Semana 3", icono: "💭", link: "unidad1-3.html" },
+                    { num: 4, titulo: "Filosofis y Lectura Critica", desc: "Semana 4", icono: "⚖️", link: "unidad1-4.html" }
+                ]
+            },
+            2: {
+                title: "Matemáticas",
+                emoji: "🧮",
+                desc: "Aritmética, álgebra y razonamiento lógico",
+                duracion: "4 semanas",
+                nivel: "Básico",
+                unidades: [
+                    { num: 1, titulo: "Potenciación y Radicación", desc: "Semana 1", icono: "🔢", link: "unidad2-1.html" },
+                    { num: 2, titulo: "Recta Numérica y Fracciones", desc: "Semana 2", icono: "✖️", link: "unidad2-2.html" },
+                    { num: 3, titulo: "Geometría y Decimales", desc: "Semana 3", icono: "📐", link: "unidad2-3.html" },
+                    { num: 4, titulo: "Repaso de la materia", desc: "Semana 4", icono: "📊", link: "unidad2-4.html" }
+                ]
+            },
+            3: {
+                title: "Sociales",
+                emoji: "🌍",
+                desc: "Historia, geografía y cultura general",
+                duracion: "4 semanas",
+                nivel: "Básico",
+                unidades: [
+                    { num: 1, titulo: "Etapas de la Historia", desc: "Semana 1", icono: "🏛️", link: "unidad3-1.html" },
+                    { num: 2, titulo: "Cómo surge la Economía", desc: "Semana 2", icono: "🗺️", link: "unidad3-2.html" },
+                    { num: 3, titulo: "Constitución Política de Colombia", desc: "Semana 3", icono: "🇨🇴", link: "unidad3-3.html" },
+                    { num: 4, titulo: "Capitalismo y Socialismo", desc: "Semana 4", icono: "🗳️", link: "unidad3-4.html" }
+                ]
+            },
+            4: {
+                title: "Física",
+                emoji: "⚡",
+                desc: "Movimiento, energía y leyes del universo",
+                duracion: "4 semanas",
+                nivel: "Intermedio",
+                unidades: [
+                    { num: 1, titulo: "Movimiento y Aceleración", desc: "Semana 1", icono: "🏃", link: "unidad4-1.html" },
+                    { num: 2, titulo: "Movimiento Uniforme Acelerado", desc: "Semana 2", icono: "⚙️", link: "unidad4-2.html" },
+                    { num: 3, titulo: "Principio de ARQUIMIDES y principio de PASCAL", desc: "Semana 3", icono: "💡", link: "unidad4-3.html" },
+                    { num: 4, titulo: "REPASO COMPLETO", desc: "Semana 4", icono: "🔌", link: "unidad4-4.html" }
+                ]
+            },
+            5: {
+                title: "Química",
+                emoji: "🧪",
+                desc: "Estructura de la materia y reacciones",
+                duracion: "4 semanas",
+                nivel: "Intermedio",
+                unidades: [
+                    { num: 1, titulo: "Modelos Atómicos", desc: "Semana 1", icono: "⚛️", link: "unidad5-1.html" },
+                    { num: 2, titulo: "Números Cuánticos y Configuración Electrónica", desc: "Semana 2", icono: "📊", link: "unidad5-2.html" },
+                    { num: 3, titulo: "Enlaces Químicos y Estructuras de Lewis", desc: "Semana 3", icono: "🧪", link: "unidad5-3.html" },
+                    { num: 4, titulo: "Resumen General y Consolidación EXAMEN", desc: "Semana 4", icono: "🧴", link: "unidad5-4.html" }
+                ]
+            },
+            6: {
+                title: "Inglés",
+                emoji: "🇬🇧",
+                desc: "Vocabulario, gramática y conversación",
+                duracion: "4 semanas",
+                nivel: "Básico",
+                unidades: [
+                    { num: 1, titulo: "Verb TO BE", desc: "Semana 1", icono: "👋", link: "unidad6-1.html" },
+                    { num: 2, titulo: "Numbers and Prepositions of Place: AT, IN, ON", desc: "Semana 2", icono: "📝", link: "unidad6-2.html" },
+                    { num: 3, titulo: "Adjectives & Colors", desc: "Semana 3", icono: "🏠", link: "unidad6-3.html" },
+                    { num: 4, titulo: "Question Words & Course Review", desc: "Semana 4", icono: "✈️", link: "unidad6-4.html" }
+                ]
+            },
+            7: {
+                title: "Biología",
+                emoji: "🧬",
+                desc: "Células, seres vivos y ecosistemas",
+                duracion: "4 semanas",
+                nivel: "Básico",
+                unidades: [
+                    { num: 1, titulo: "La Célula", desc: "Semana 1", icono: "🦠", link: "unidad7-1.html" },
+                    { num: 2, titulo: "Reinos de la Naturaleza", desc: "Semana 2", icono: "🌿", link: "unidad7-2.html" },
+                    { num: 3, titulo: "Cuerpo Humano", desc: "Semana 3", icono: "🧠", link: "unidad7-3.html" },
+                    { num: 4, titulo: "Ecología", desc: "Semana 4", icono: "🌎", link: "unidad7-4.html" }
+                ]
+            }
         };
-        dataLines.forEach(function (line) {
-            const cols = line.split(',').map(function (c) { return c.trim(); });
-            const id = parseInt(cols[0]);
-            const mes = parseInt(cols[1]);
-            const envios = cols[2] ? cols[2].toLowerCase() === 'true' : false;
-            if (!isNaN(id) && !isNaN(mes)) {
-                if (id === 0) {
-                    config.global = envios;
+
+        // FUNCIONES DE CONFIGURACION CON APPS SCRIPT
+        let configCache = null;
+        let ultimaActualizacion = 0;
+        const CACHE_TIME = 60000;
+
+        const DEFAULT_MESES = { 1: 4, 2: 6, 3: 10, 4: 7, 5: 5, 6: 9, 7: 8 };
+        const DEFAULT_ENVIOS = { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true };
+
+        async function obtenerConfiguracion() {
+            const ahora = Date.now();
+            if (configCache && (ahora - ultimaActualizacion) < CACHE_TIME) {
+                return configCache;
+            }
+
+            try {
+                const response = await fetch(CONFIG_URL, { cache: 'no-store' });
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status + ' - Verifica que el Apps Script esté desplegado como "Aplicación web" con acceso "Cualquiera, incluso anónimo".');
+                }
+                const text = await response.text();
+                const lines = text.split('\n').filter(function(line) { return line.trim(); });
+                const dataLines = lines.slice(1);
+                const config = {
+                    meses: Object.assign({}, DEFAULT_MESES),
+                    envios: Object.assign({}, DEFAULT_ENVIOS),
+                    global: null
+                };
+                dataLines.forEach(function(line) {
+                    const cols = line.split(',').map(function(c) { return c.trim(); });
+                    const id = parseInt(cols[0]);
+                    const mes = parseInt(cols[1]);
+                    const envios = cols[2] ? cols[2].toLowerCase() === 'true' : false;
+                    if (!isNaN(id) && !isNaN(mes)) {
+                        if (id === 0) {
+                            config.global = envios;
+                        } else {
+                            config.meses[id] = mes;
+                            if (cols[2] !== undefined) {
+                                config.envios[id] = envios;
+                            }
+                        }
+                    }
+                });
+                configCache = config;
+                ultimaActualizacion = ahora;
+                console.log('Configuracion cargada:', config);
+                return config;
+            } catch (error) {
+                let errorMsg = '⚠️ No se pudo conectar a Google Sheets. ';
+                if (error.message && error.message.includes('HTTP')) {
+                    errorMsg += 'El script web no está desplegado o tiene problemas de permisos.';
+                } else if (error.name === 'TypeError') {
+                    errorMsg += 'Error de red/CORS. Asegúrate de que el script tenga cabeceras CORS y acceso público.';
                 } else {
-                    config.meses[id] = mes;
-                    if (cols[2] !== undefined) config.envios[id] = envios;
+                    errorMsg += 'Verifica tu conexión e intenta recargar la página.';
+                }
+                console.error(errorMsg, error);
+                showToast(errorMsg, 'error');
+                return { meses: Object.assign({}, DEFAULT_MESES), envios: Object.assign({}, DEFAULT_ENVIOS), global: null };
+            }
+        }
+
+        async function getMesCurso(cursoId) {
+            const config = await obtenerConfiguracion();
+            return config.meses[cursoId] || 0;
+        }
+
+        async function isSendEnabled(cursoId) {
+            const config = await obtenerConfiguracion();
+            if (config.global !== null) return config.global;
+            return config.envios[cursoId] !== false;
+        }
+
+        async function isVisibleThisMonth(cursoId) {
+            const mes = await getMesCurso(cursoId);
+            if (!mes || mes === 0) return true;
+            const hoy = new Date();
+            return (hoy.getMonth() + 1) === mes;
+        }
+
+        // ACCESO PROFESOR
+        const TEACHER_STORAGE_KEY = 'aula_teacher_unlocked';
+        const TEACHER_EXPIRY_KEY = 'aula_teacher_expiry';
+
+        function isTeacherUnlocked() {
+            const unlocked = localStorage.getItem(TEACHER_STORAGE_KEY) === 'true';
+            if (!unlocked) return false;
+            const expiry = localStorage.getItem(TEACHER_EXPIRY_KEY);
+            if (expiry) {
+                const now = Date.now();
+                if (now > parseInt(expiry)) {
+                    localStorage.removeItem(TEACHER_STORAGE_KEY);
+                    localStorage.removeItem(TEACHER_EXPIRY_KEY);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // SISTEMA DE TOAST
+        let toastTimeout = null;
+
+        function showToast(message, type) {
+            type = type || 'info';
+            const toast = document.getElementById('toastMessage');
+            toast.textContent = message;
+            toast.className = 'toast-msg show';
+            if (type === 'success') toast.style.background = '#28a745e6';
+            else if (type === 'error') toast.style.background = '#dc3545e6';
+            else toast.style.background = '#1f3e54e6';
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(function() {
+                toast.className = 'toast-msg';
+            }, 3000);
+        }
+
+        function getMonthName(monthNumber) {
+            var meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+            if (!monthNumber || monthNumber < 1 || monthNumber > 12) return 'mes invalido';
+            return meses[monthNumber - 1];
+        }
+
+        function isSendDay() {
+            var hoy = new Date();
+            var dia = hoy.getDay();
+            return dia === 4 || dia === 5;
+        }
+
+        // LEER PARAMETROS DE LA URL
+        var params = new URLSearchParams(window.location.search);
+        var courseId = parseInt(params.get('id')) || 1;
+        var curso = cursosDetalle[courseId];
+
+        // INICIALIZAR DETALLE DEL CURSO
+        var sendBtn = document.getElementById('sendWorkBtn');
+
+        async function updateSendButtonState() {
+            var sendToday = isSendDay();
+            var enabled = await isSendEnabled(courseId);
+            var active = enabled && sendToday;
+            sendBtn.disabled = !active;
+            if (active) {
+                sendBtn.textContent = 'Enviar tarea disponible';
+                sendBtn.title = 'Haz clic para enviar tu tarea';
+            } else if (!sendToday) {
+                sendBtn.textContent = 'Envios solo jueves y viernes';
+                sendBtn.title = 'Hoy no es dia de envio';
+            } else if (!enabled) {
+                sendBtn.textContent = 'Envios deshabilitados por el profesor';
+                sendBtn.title = 'El profesor deshabilito los envios';
+            } else {
+                sendBtn.textContent = 'Envios deshabilitados';
+                sendBtn.title = 'Contacta al profesor';
+            }
+        }
+
+        sendBtn.addEventListener('click', function() {
+            if (!this.disabled) {
+                window.location.href = 'enviar_tarea.html';
+            } else {
+                var text = this.textContent;
+                if (text.indexOf('jueves y viernes') !== -1) {
+                    showToast('Los envios solo estan activos jueves y viernes.', 'info');
+                } else if (text.indexOf('deshabilitados por el profesor') !== -1) {
+                    showToast('El profesor ha deshabilitado los envios.', 'error');
+                } else {
+                    showToast('El envio de tareas no esta disponible.', 'info');
                 }
             }
         });
-        configActual = config;
-        return config;
-    } catch (error) {
-        let errorMsg = '⚠️ No se pudo conectar a Google Sheets. ';
-        if (error.message && error.message.includes('HTTP')) {
-            errorMsg += 'El script web no está desplegado o tiene problemas de permisos.';
-        } else if (error.name === 'TypeError') {
-            errorMsg += 'Error de red/CORS. Asegúrate de que el script tenga cabeceras CORS y acceso público.';
-        } else {
-            errorMsg += 'Verifica tu conexión e intenta recargar la página.';
+
+        async function initDetalleCurso() {
+            if (!curso) {
+                document.getElementById('courseTitle').textContent = 'Curso no encontrado';
+                return;
+            }
+            document.getElementById('courseEmoji').textContent = curso.emoji;
+            document.getElementById('courseTitle').textContent = curso.title;
+            document.getElementById('courseDesc').textContent = curso.desc;
+            document.title = 'Aula Virtual | ' + curso.title;
+
+            var infoContainer = document.getElementById('courseInfo');
+            var unidadesGrid = document.getElementById('unidadesGrid');
+
+            var visible = await isVisibleThisMonth(courseId);
+            var mesConfig = await getMesCurso(courseId);
+
+            if (!visible && !isTeacherUnlocked()) {
+                var mesNombre = getMonthName(mesConfig);
+                infoContainer.innerHTML = `
+                    <div class="curso-bloqueado" style="grid-column:1/-1;">
+                        <span class="emoji-grande">🔒</span>
+                        <h2>Curso no disponible</h2>
+                        <p>Este curso estara disponible en <strong>${mesNombre}</strong>.</p>
+                        <p style="margin-top:0.5rem; font-size:0.9rem; color:#8aa3b9;">Si eres profesor, activa el modo profesor para verlo.</p>
+                    </div>
+                `;
+                unidadesGrid.innerHTML = '';
+                sendBtn.disabled = true;
+                sendBtn.textContent = 'Curso bloqueado';
+                return;
+            }
+
+            infoContainer.innerHTML = `
+                <div class="info-item"><div class="info-label">Duracion</div><div class="info-value">${curso.duracion}</div></div>
+                <div class="info-item"><div class="info-label">Nivel</div><div class="info-value">${curso.nivel}</div></div>
+                <div class="info-item"><div class="info-label">Certificado</div><div class="info-value">Incluido</div></div>
+                <div class="info-item"><div class="info-label">Modalidad</div><div class="info-value">Virtual</div></div>
+            `;
+
+            if (curso.unidades && curso.unidades.length > 0) {
+                var unidadesOrdenadas = curso.unidades.slice().sort(function(a, b) {
+                    return a.num - b.num;
+                });
+                var htmlUnidades = '';
+                unidadesOrdenadas.forEach(function(unidad) {
+                    htmlUnidades += `
+                        <a href="${unidad.link}" class="unidad-card">
+                            <span class="unidad-icono">${unidad.icono}</span>
+                            <div class="unidad-numero">${unidad.num}</div>
+                            <div class="unidad-titulo">${unidad.titulo}</div>
+                            <div class="unidad-desc">${unidad.desc}</div>
+                        </a>
+                    `;
+                });
+                unidadesGrid.innerHTML = htmlUnidades;
+            } else {
+                unidadesGrid.innerHTML = '<p style="text-align:center; grid-column:1/-1;">Unidades en construccion</p>';
+            }
+
+            await updateSendButtonState();
         }
-        console.error(errorMsg, error);
-        showToast(errorMsg);
-        return { meses: Object.assign({}, DEFAULT_MESES), envios: Object.assign({}, DEFAULT_ENVIOS), global: null };
-    }
-}
 
-async function guardarConfiguracion(config) {
-    try {
-        const response = await fetch(CONFIG_URL, {
-            method: 'POST',
-            // text/plain evita una petición CORS previa y Apps Script recibe el JSON en postData.contents.
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body: JSON.stringify({ config: config })
-        });
-        if (!response.ok) {
-            throw new Error('HTTP ' + response.status);
-        }
-        const data = await response.json();
-        if (!data.success) {
-            throw new Error(data.error || 'Error desconocido al guardar');
-        }
-        return data;
-    } catch (error) {
-        let errorMsg = '❌ No se pudo guardar en Google Sheets. ';
-        if (error.message && error.message.includes('HTTP')) {
-            errorMsg += 'Verifica que el script esté desplegado y tenga acceso público.';
-        } else if (error.name === 'TypeError') {
-            errorMsg += 'Error de red/CORS. Asegúrate de que el script tenga cabeceras CORS configuradas.';
-        } else {
-            errorMsg += 'Verifica tu conexión e intenta de nuevo.';
-        }
-        console.error(errorMsg, error);
-        throw new Error(errorMsg);
-    }
-}
+        setInterval(async function() {
+            await updateSendButtonState();
+        }, 60000);
 
-function isVisibleThisMonth(mes) {
-    if (!mes || mes === 0) return true;
-    const hoy = new Date();
-    return (hoy.getMonth() + 1) === mes;
-}
-
-// =============================================
-// CONFIGURACIÓN DEL ACCESO PROFESOR
-// =============================================
-const TEACHER_PASSWORD = "salondeclase2026alba"; // Cambia esta contraseña si lo deseas
-const TEACHER_STORAGE_KEY = 'aula_teacher_unlocked';
-const TEACHER_EXPIRY_KEY = 'aula_teacher_expiry';
-
-// =============================================
-// FUNCIONES DEL SISTEMA DE CANDADO
-// =============================================
-
-function isTeacherUnlocked() {
-    const unlocked = localStorage.getItem(TEACHER_STORAGE_KEY) === 'true';
-    if (!unlocked) return false;
-
-    const expiry = localStorage.getItem(TEACHER_EXPIRY_KEY);
-    if (expiry) {
-        const now = Date.now();
-        if (now > parseInt(expiry)) {
-            localStorage.removeItem(TEACHER_STORAGE_KEY);
-            localStorage.removeItem(TEACHER_EXPIRY_KEY);
-            return false;
-        }
-    }
-    return true;
-}
-
-function unlockTeacherAccess() {
-    const now = Date.now();
-    const expiry = now + (24 * 60 * 60 * 1000); // 24 horas
-    localStorage.setItem(TEACHER_STORAGE_KEY, 'true');
-    localStorage.setItem(TEACHER_EXPIRY_KEY, expiry.toString());
-    updateLockUI();
-    renderCourses();
-    showToast('✅ Acceso profesor desbloqueado por 24 horas');
-}
-
-function lockTeacherAccess() {
-    localStorage.removeItem(TEACHER_STORAGE_KEY);
-    localStorage.removeItem(TEACHER_EXPIRY_KEY);
-    updateLockUI();
-    renderCourses();
-    showToast('🔒 Acceso profesor bloqueado');
-}
-
-function updateLockUI() {
-    const btn = document.getElementById('teacherLockBtn');
-    const icon = document.getElementById('lockIcon');
-    const adminBtn = document.getElementById('openAdminPanelBtn');
-
-    if (isTeacherUnlocked()) {
-        btn.classList.add('unlocked');
-        icon.textContent = '🔓';
-        adminBtn.style.display = 'inline-flex';
-    } else {
-        btn.classList.remove('unlocked');
-        icon.textContent = '🔒';
-        adminBtn.style.display = 'none';
-    }
-}
-
-function showPasswordModal() {
-    const modal = document.getElementById('passwordModal');
-    const input = document.getElementById('passwordInput');
-    const error = document.getElementById('passwordError');
-    modal.classList.add('active');
-    input.value = '';
-    error.classList.remove('show');
-    setTimeout(() => input.focus(), 100);
-}
-
-function hidePasswordModal() {
-    document.getElementById('passwordModal').classList.remove('active');
-}
-
-function handleTeacherLockClick() {
-    if (isTeacherUnlocked()) {
-        if (confirm('¿Deseas bloquear el acceso de profesor? Los cursos volverán a tener restricciones.')) {
-            lockTeacherAccess();
-        }
-    } else {
-        showPasswordModal();
-    }
-}
-
-function verifyPassword() {
-    const input = document.getElementById('passwordInput');
-    const error = document.getElementById('passwordError');
-    const password = input.value.trim();
-
-    if (password === TEACHER_PASSWORD) {
-        unlockTeacherAccess();
-        hidePasswordModal();
-    } else {
-        error.classList.add('show');
-        input.value = '';
-        input.focus();
-    }
-}
-
-// =============================================
-// DEFINICIÓN DE LOS 7 CURSOS
-// =============================================
-const coursesData = [
-    { id: 1, title: "Español y Filosofía", emoji: "📖", description: "Mes 1." },
-    { id: 5, title: "Química", emoji: "🧪", description: "Mes 2." },
-    { id: 2, title: "Matemáticas", emoji: "🧮", description: "Mes 3." },
-    { id: 4, title: "Física", emoji: "⚡", description: "Mes 4." },
-    { id: 7, title: "Biología", emoji: "🧬", description: "Mes 5." },
-    { id: 6, title: "Inglés", emoji: "🇬🇧", description: "Mes 6." },
-    { id: 3, title: "Sociales", emoji: "🌍", description: "Mes 7." }
-];
-
-let toastTimeout = null;
-function showToast(message) {
-    const toast = document.getElementById('toastMessage');
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add('show');
-    if (toastTimeout) clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => {
-        toast.classList.remove('show');
-    }, 2000);
-}
-
-function handleCourseClick(course) {
-    showToast(`✅ Abriendo: ${course.title} 🎓`);
-    setTimeout(() => {
-        window.location.href = `detalle-curso.html?id=${course.id}`;
-    }, 1000);
-}
-
-async function renderCourses() {
-    const gridContainer = document.getElementById('coursesGrid');
-    if (!gridContainer) return;
-
-    const config = await obtenerConfiguracion();
-    const teacherMode = isTeacherUnlocked();
-
-    let html = '';
-    coursesData.forEach(course => {
-        const mes = config.meses[course.id] || 0;
-        const visible = isVisibleThisMonth(mes);
-        const bloqueado = !visible && !teacherMode;
-        const mesNombre = mes ? mes + ' (' + MESES_NOMBRES[mes - 1] + ')' : '—';
-        const badgeTexto = bloqueado ? `🔒 Disponible en ${MESES_NOMBRES[mes - 1]}` : `📅 Mes ${mesNombre}`;
-        html += `
-            <button class="course-btn ${bloqueado ? 'locked-course' : ''}" data-id="${course.id}" data-title="${course.title.replace(/"/g, '"')}">
-                <div class="course-emoji">${course.emoji}</div>
-                <div class="course-title">${course.title}</div>
-                <div class="course-badge ${bloqueado ? 'badge-locked' : ''}">${badgeTexto}</div>
-            </button>
-        `;
-    });
-    gridContainer.innerHTML = html;
-
-    const buttons = document.querySelectorAll('.course-btn');
-    buttons.forEach(btn => {
-        const courseId = parseInt(btn.getAttribute('data-id'));
-        const course = coursesData.find(c => c.id === courseId);
-        if (course) {
-            btn.addEventListener('click', () => handleCourseClick(course));
-        }
-    });
-}
-
-// =============================================
-// PANEL DE ADMINISTRACIÓN DE MESES
-// =============================================
-async function abrirAdminPanel() {
-    const config = await obtenerConfiguracion(true);
-    const container = document.getElementById('adminRowsContainer');
-
-    let html = '';
-    coursesData.forEach(course => {
-        const mesActual = config.meses[course.id] || 1;
-        let options = '';
-        for (let m = 1; m <= 12; m++) {
-            options += `<option value="${m}" ${m === mesActual ? 'selected' : ''}>${m} - ${MESES_NOMBRES[m - 1]}</option>`;
-        }
-        html += `
-            <div class="admin-row" data-course-id="${course.id}">
-                <span class="admin-course-name">${course.emoji} ${course.title}</span>
-                <select class="admin-mes-select">${options}</select>
-            </div>
-        `;
-    });
-    container.innerHTML = html;
-
-    document.getElementById('adminPanelOverlay').classList.add('active');
-}
-
-function cerrarAdminPanel() {
-    document.getElementById('adminPanelOverlay').classList.remove('active');
-}
-
-async function guardarCambiosAdmin() {
-    const btn = document.getElementById('guardarAdminPanelBtn');
-    const originalText = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = '💾 Guardando...';
-
-    try {
-        const meses = {};
-        document.querySelectorAll('#adminRowsContainer .admin-row').forEach(row => {
-            const id = row.getAttribute('data-course-id');
-            meses[id] = parseInt(row.querySelector('.admin-mes-select').value);
-        });
-
-        // Se conservan las opciones de envío existentes; este panel solo modifica meses.
-        await guardarConfiguracion({
-            meses: meses,
-            envios: Object.assign({}, configActual ? configActual.envios : DEFAULT_ENVIOS),
-            global: configActual ? configActual.global : null
-        });
-
-        configActual = null; // forzar recarga en próxima consulta
-        showToast('✅ Meses actualizados y guardados en Sheets');
-        cerrarAdminPanel();
-        await renderCourses();
-    } catch (error) {
-        console.error(error);
-        showToast('❌ Error al guardar: ' + error.message);
-    } finally {
-        btn.disabled = false;
-        btn.textContent = originalText;
-    }
-}
-
-// =============================================
-// INICIALIZACIÓN
-// =============================================
-renderCourses();
-updateLockUI();
-
-document.getElementById('openAdminPanelBtn').addEventListener('click', abrirAdminPanel);
-document.getElementById('cerrarAdminPanelBtn').addEventListener('click', cerrarAdminPanel);
-document.getElementById('guardarAdminPanelBtn').addEventListener('click', guardarCambiosAdmin);
-document.getElementById('adminPanelOverlay').addEventListener('click', function (e) {
-    if (e.target === this) cerrarAdminPanel();
-});
-
-document.getElementById('teacherLockBtn').addEventListener('click', handleTeacherLockClick);
-document.getElementById('confirmPasswordBtn').addEventListener('click', verifyPassword);
-document.getElementById('cancelPasswordBtn').addEventListener('click', hidePasswordModal);
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        hidePasswordModal();
-    }
-});
-
-document.getElementById('passwordInput').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-        verifyPassword();
-    }
-});
-
-document.getElementById('passwordModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-        hidePasswordModal();
-    }
-});
-</script>
+        initDetalleCurso();
+    </script>
 </body>
 </html>
