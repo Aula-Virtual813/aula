@@ -397,12 +397,38 @@ form.addEventListener("submit",async function(e){
     submitBtn.innerHTML =
     "⏳ Subiendo PDF...";
 
-    try{
+    const reader =
+    new FileReader();
 
-        const reader =
-        new FileReader();
+    // Tiempo maximo de espera para el envio (30s).
+    // Si el Apps Script no responde en ese tiempo, se muestra error
+    // en vez de dejar el boton trabado para siempre.
+    const TIMEOUT_MS = 30000;
 
-        reader.onload = async function(){
+    function resetButton(){
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "🚀 Enviar Trabajo";
+    }
+
+    reader.onerror = function(){
+        showError("No se pudo leer el archivo PDF. Intenta de nuevo.");
+        resetButton();
+    };
+
+    // IMPORTANTE: este bloque es async y va DENTRO de su propio
+    // try/catch, porque un try/catch que envuelve solo la llamada a
+    // reader.readAsDataURL(file) NO captura errores que ocurran
+    // despues, dentro de reader.onload (fetch, await response.json(),
+    // errores de red o de CORS). Si no se captura aqui, el boton se
+    // queda para siempre en "Subiendo PDF..." sin avisar al usuario.
+    reader.onload = async function(){
+
+        const controller = new AbortController();
+        const timeoutId = setTimeout(function(){
+            controller.abort();
+        }, TIMEOUT_MS);
+
+        try{
 
             const base64 =
             reader.result.split(",")[1];
@@ -428,11 +454,22 @@ form.addEventListener("submit",async function(e){
             "https://script.google.com/macros/s/AKfycbxWYUpQwvgb4rvT8CRVf-DPJ1vOCtR9YhpBjkcNyP5KO6iSCnGoD3C7YaO4mFijctW6aA/exec",
             {
                 method:"POST",
-                body:formData
+                body:formData,
+                signal: controller.signal
             });
 
-            const result =
-            await response.json();
+            clearTimeout(timeoutId);
+
+            if(!response.ok){
+                throw new Error(`El servidor respondio con estado ${response.status}`);
+            }
+
+            let result;
+            try{
+                result = await response.json();
+            }catch(parseErr){
+                throw new Error("El servidor no devolvio una respuesta valida. Verifica que el Apps Script este bien desplegado (acceso 'Cualquiera, incluso anonimo').");
+            }
 
             if(result.success){
 
@@ -455,26 +492,28 @@ form.addEventListener("submit",async function(e){
 
             }else{
 
-                showError(result.error);
+                showError(result.error || "El servidor rechazo el archivo.");
             }
 
-            submitBtn.disabled = false;
+        }catch(error){
 
-            submitBtn.innerHTML =
-            "🚀 Enviar Trabajo";
-        };
+            clearTimeout(timeoutId);
 
-        reader.readAsDataURL(file);
+            if(error.name === "AbortError"){
+                showError("El envio tardo demasiado (posible problema de red o del Apps Script). Intenta de nuevo.");
+            }else{
+                showError("Error al subir el PDF: " + error.message);
+            }
 
-    }catch(error){
+            console.error("Error subiendo PDF:", error);
 
-        showError("Error al subir el PDF");
+        }finally{
 
-        submitBtn.disabled = false;
+            resetButton();
+        }
+    };
 
-        submitBtn.innerHTML =
-        "🚀 Enviar Trabajo";
-    }
+    reader.readAsDataURL(file);
 });
 
 
