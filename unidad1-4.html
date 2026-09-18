@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+                            <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
     <style>
         * {
             margin: 0;
@@ -23,7 +23,6 @@
             margin: 0 auto;
         }
 
-        /* Tarjeta principal */
         .unidad-card {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 2rem;
@@ -32,7 +31,6 @@
             backdrop-filter: blur(2px);
         }
 
-        /* Encabezado */
         .unidad-header {
             text-align: center;
             margin-bottom: 2rem;
@@ -66,7 +64,6 @@
             font-size: 1rem;
         }
 
-        /* Navegación entre unidades */
         .nav-unidades {
             display: flex;
             justify-content: space-between;
@@ -107,7 +104,6 @@
             border-radius: 30px;
         }
 
-        /* Contenido principal */
         .contenido {
             margin: 2rem 0;
         }
@@ -139,7 +135,6 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        /* Caja para enlaces */
         .enlaces-box {
             background: rgba(18, 148, 219, 0.08);
             border-radius: 1rem;
@@ -169,7 +164,6 @@
             text-decoration: underline;
         }
 
-        /* Caja de actividad */
         .actividad-box {
             background: linear-gradient(135deg, #f0f7fc, #e8f0f6);
             border-radius: 1rem;
@@ -186,7 +180,6 @@
             gap: 0.5rem;
         }
 
-        /* Botones importantes */
         .btn-volver {
             display: inline-flex;
             align-items: center;
@@ -206,7 +199,6 @@
             box-shadow: 0 6px 14px rgba(0,0,0,0.15);
         }
 
-        /* Listas */
         .contenido ul, .contenido ol {
             margin: 1rem 0 1rem 2rem;
             color: #2c3e50;
@@ -217,12 +209,197 @@
             margin: 0.5rem 0;
         }
 
-        /* Responsive */
+        .def-box {
+            background: linear-gradient(135deg, #e8f4fd, #dcecf7);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #1294db;
+        }
+
+        .def-box strong {
+            color: #1f3e54;
+        }
+
+        .ejemplo-box {
+            background: #f9fcfd;
+            border: 1px solid #cbdde9;
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #f0a500;
+        }
+
+        .ejemplo-box strong {
+            color: #1f3e54;
+        }
+
+        .filosofo-card {
+            background: linear-gradient(135deg, #f5f0e8, #efe8dc);
+            border: 1px solid #d4c9b5;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 5px solid #b8860b;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .filosofo-card h3 {
+            color: #5c3d1a;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filosofo-card .epoca {
+            font-size: 0.85rem;
+            color: #8b7355;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+
+        .filosofo-card .frase-celebre {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 0.8rem;
+            padding: 1rem 1.2rem;
+            margin: 0.8rem 0;
+            border-left: 3px solid #b8860b;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #3d2b0f;
+        }
+
+        .filosofo-card .frase-celebre::before {
+            content: "“";
+            font-size: 1.5rem;
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        .filosofo-card .frase-celebre::after {
+            content: "”";
+            font-size: 1.5rem;
+            color: #b8860b;
+            font-weight: bold;
+        }
+
+        .filosofo-card .explicacion {
+            color: #5c4a32;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timeline-box {
+            background: linear-gradient(135deg, #e8edf2, #dce3ea);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #c0cdd9;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 0.8rem;
+            background: rgba(255,255,255,0.6);
+            border-radius: 0.8rem;
+            border-left: 3px solid #1294db;
+        }
+
+        .timeline-item .year {
+            font-weight: 700;
+            color: #1294db;
+            min-width: 80px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item .desc {
+            color: #2c3e50;
+        }
+
+        .tabla-clasificacion {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .tabla-clasificacion thead {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+        }
+
+        .tabla-clasificacion th {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-clasificacion td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e2edf5;
+            color: #2c3e50;
+        }
+
+        .tabla-clasificacion tbody tr:hover {
+            background: rgba(18, 148, 219, 0.05);
+        }
+
+        .tabla-clasificacion tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        .cita-destacada {
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            color: #3d2b0f;
+            background: #faf6ee;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border: 2px solid #d4c9b5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .cita-destacada .autor {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            font-style: normal;
+            color: #8b7355;
+            font-weight: 500;
+        }
+
+        .separador-tema {
+            text-align: center;
+            margin: 3rem 0 1.5rem;
+            padding: 1rem;
+            border-top: 2px dashed #cbdde9;
+            border-bottom: 2px dashed #cbdde9;
+            color: #5e7f97;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .separador-tema span {
+            background: white;
+            padding: 0 1rem;
+        }
+
         @media (max-width: 700px) {
             body { padding: 1rem; }
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .timeline-item { flex-direction: column; }
+            .timeline-item .year { min-width: auto; }
         }
     </style>
 </head>
@@ -241,56 +418,572 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
-            <h2>📌 Introducción</h2>
 
+            <!-- ============================================= -->
+            <!-- PARTE 1: LOS PRIMEROS GRANDES FILÓSOFOS -->
+            <!-- ============================================= -->
 
-            <p>【escribe aqui】</p>
+            <h2>🏛️ Introducción a la Filosofía Antigua</h2>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <p>La <strong>filosofía</strong> (del griego <em>philos</em> = amor y <em>sophia</em> = sabiduría, es decir, "amor a la sabiduría") nació en la <strong>Antigua Grecia</strong> alrededor del siglo VI a.C. Fue allí donde un grupo de pensadores comenzó a preguntarse sobre el origen del universo, la naturaleza del ser humano, la verdad, la justicia y el sentido de la vida, dejando de lado las explicaciones mitológicas y buscando respuestas basadas en la <strong>razón</strong> y la <strong>observación</strong>.</p>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <div class="def-box">
+                <strong>📖 ¿Qué es la filosofía?</strong> La filosofía es la disciplina que busca comprender las preguntas fundamentales sobre la existencia, el conocimiento, la verdad, la moral, la belleza, la mente y el lenguaje. A diferencia de la ciencia, que estudia fenómenos específicos, la filosofía reflexiona sobre los principios y causas últimas de todas las cosas.
+            </div>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <p>En esta unidad conoceremos a los <strong>primeros grandes filósofos</strong> de la historia, sus ideas más importantes y, sobre todo, sus <strong>frases célebres</strong> que han trascendido a través de los siglos y siguen inspirándonos hoy. Luego, aplicaremos el pensamiento crítico al análisis de textos a través de la <strong>Lectura Crítica</strong>.</p>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <div class="cita-destacada">
+                "La filosofía es la ciencia de las causas primeras y de los primeros principios."
+                <span class="autor">— Aristóteles</span>
+            </div>
 
+            <h2>📜 Línea de Tiempo: Los Primeros Filósofos</h2>
+
+            <p>Antes de adentrarnos en cada filósofo, veamos una línea de tiempo que nos ayudará a ubicarlos en su contexto histórico:</p>
+
+            <div class="timeline-box">
+                <div class="timeline-item">
+                    <span class="year">624-546 a.C.</span>
+                    <span class="desc"><strong>Tales de Mileto</strong> — Primer filósofo de la historia.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">570-495 a.C.</span>
+                    <span class="desc"><strong>Pitágoras de Samos</strong> — Filósofo y matemático.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">535-475 a.C.</span>
+                    <span class="desc"><strong>Heráclito de Éfeso</strong> — El filósofo del cambio.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">490-430 a.C.</span>
+                    <span class="desc"><strong>Protágoras de Abdera</strong> — El más famoso de los sofistas.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">470-399 a.C.</span>
+                    <span class="desc"><strong>Sócrates</strong> — El padre de la ética.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">427-347 a.C.</span>
+                    <span class="desc"><strong>Platón</strong> — Discípulo de Sócrates. Fundó la Academia.</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="year">384-322 a.C.</span>
+                    <span class="desc"><strong>Aristóteles</strong> — Discípulo de Platón. Fundó el Liceo.</span>
+                </div>
+            </div>
+
+            <h2>🌊 Los Filósofos Presocráticos</h2>
+
+            <p>Se les llama <strong>presocráticos</strong> a los filósofos griegos anteriores a Sócrates. Su principal interés era la <strong>naturaleza</strong> (<em>physis</em>) y el <strong>origen del universo</strong> (<em>arché</em>). Buscaban el principio fundamental del cual todo está hecho.</p>
+
+            <!-- Tales de Mileto -->
+            <div class="filosofo-card">
+                <h3>🏛️ Tales de Mileto (624-546 a.C.)</h3>
+                <div class="epoca">📍 Mileto, Jonia (actual Turquía) — Escuela Jónica</div>
+                <p class="explicacion"><strong>Tales</strong> es considerado el <strong>primer filósofo de la historia</strong> y uno de los Siete Sabios de Grecia. Sostenía que el <strong>agua</strong> (<em>hydor</em>) era el principio fundamental (<em>arché</em>) de todas las cosas.</p>
+                <div class="frase-celebre">
+                    "El agua es el principio de todas las cosas."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Tales propuso que detrás de la diversidad del mundo existe un principio único. El agua, esencial para la vida y capaz de transformarse, representaba la sustancia primordial.</p>
+                <div class="frase-celebre">
+                    "La cosa más difícil es conocerse a uno mismo; la más fácil es hablar mal de los demás."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> El autoconocimiento requiere honestidad y valentía, mientras que criticar a otros es fácil y superficial.</p>
+            </div>
+
+            <!-- Pitágoras -->
+            <div class="filosofo-card">
+                <h3>🔢 Pitágoras de Samos (570-495 a.C.)</h3>
+                <div class="epoca">📍 Samos / Crotona (Italia) — Escuela Pitagórica</div>
+                <p class="explicacion"><strong>Pitágoras</strong> fue filósofo y matemático. Creía que los <strong>números</strong> son la esencia de todas las cosas y que el universo está regido por relaciones matemáticas.</p>
+                <div class="frase-celebre">
+                    "Todo es número."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> La realidad última del universo no es material, sino matemática. Los números explican el orden del cosmos.</p>
+                <div class="frase-celebre">
+                    "Educad a los niños y no será necesario castigar a los hombres."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> La educación es la base de una sociedad justa. Si formamos a las personas desde niños en valores, no harán falta castigos.</p>
+            </div>
+
+            <!-- Heráclito -->
+            <div class="filosofo-card">
+                <h3>🔥 Heráclito de Éfeso (535-475 a.C.)</h3>
+                <div class="epoca">📍 Éfeso, Jonia — El "Filósofo Oscuro"</div>
+                <p class="explicacion"><strong>Heráclito</strong> se centra en la idea del <strong>cambio constante</strong>. Sostenía que el <strong>fuego</strong> era el principio fundamental. Todo fluye, nada permanece.</p>
+                <div class="frase-celebre">
+                    "No puedes bañarte dos veces en el mismo río."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Todo cambia constantemente. El río nunca es el mismo porque el agua fluye, y la persona tampoco es la misma.</p>
+                <div class="frase-celebre">
+                    "El carácter del hombre es su destino."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Nuestra personalidad y decisiones determinan nuestro futuro, no el azar.</p>
+            </div>
+
+            <h2>🗣️ Los Sofistas</h2>
+            <p>Los <strong>sofistas</strong> fueron maestros ambulantes que enseñaban retórica y filosofía práctica. Su figura más destacada fue <strong>Protágoras</strong>.</p>
+
+            <!-- Protágoras -->
+            <div class="filosofo-card">
+                <h3>⚖️ Protágoras de Abdera (490-430 a.C.)</h3>
+                <div class="epoca">📍 Abdera, Tracia — El más famoso de los Sofistas</div>
+                <p class="explicacion"><strong>Protágoras</strong> es célebre por su <strong>relativismo</strong>: no existe una verdad absoluta, cada persona tiene su propia verdad.</p>
+                <div class="frase-celebre">
+                    "El hombre es la medida de todas las cosas: de las que son, en cuanto que son; de las que no son, en cuanto que no son."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> No existe una verdad objetiva independiente del ser humano; cada persona juzga según su percepción.</p>
+            </div>
+
+            <h2>🏛️ Sócrates: El Padre de la Ética</h2>
+            <p><strong>Sócrates</strong> (470-399 a.C.) revolucionó la filosofía al centrarse en el ser humano y la ética. Su método, la <strong>mayéutica</strong>, consistía en hacer preguntas para que su interlocutor descubriera la verdad.</p>
+
+            <div class="filosofo-card">
+                <h3>💭 Sócrates de Atenas (470-399 a.C.)</h3>
+                <div class="epoca">📍 Atenas, Grecia — Filosofía Clásica</div>
+                <div class="frase-celebre">
+                    "Solo sé que no sé nada."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Expresa la humildad intelectual. Reconocer la propia ignorancia es el primer paso hacia la sabiduría.</p>
+                <div class="frase-celebre">
+                    "Conócete a ti mismo."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> El autoconocimiento es la base de toda virtud y sabiduría.</p>
+                <div class="frase-celebre">
+                    "Una vida sin examen no merece ser vivida."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> La vida solo tiene sentido si la sometemos a reflexión y cuestionamiento constante.</p>
+            </div>
+
+            <div class="def-box">
+                <strong>📖 El Método Socrático (Mayéutica):</strong> Sócrates ayudaba a "dar a luz" las ideas verdaderas mediante preguntas hábiles, igual que su madre, que era partera, ayudaba a dar a luz bebés.
+            </div>
+
+            <h2>📚 Platón: El Mundo de las Ideas</h2>
+            <p><strong>Platón</strong> (427-347 a.C.), discípulo de Sócrates y maestro de Aristóteles. Su filosofía se basa en la <strong>Teoría de las Ideas</strong>: existe un mundo sensible y un mundo inteligible de Ideas perfectas.</p>
+
+            <div class="filosofo-card">
+                <h3>📖 Platón de Atenas (427-347 a.C.)</h3>
+                <div class="epoca">📍 Atenas, Grecia — Academia Platónica</div>
+                <div class="frase-celebre">
+                    "La verdadera sabiduría está en reconocer la propia ignorancia."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Quien cree saberlo todo cierra las puertas al aprendizaje.</p>
+                <div class="frase-celebre">
+                    "El amor es el deseo de la belleza eterna."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> El amor verdadero nos eleva desde la belleza física hasta la Belleza en sí misma.</p>
+                <div class="frase-celebre">
+                    "La necesidad es la madre de la invención."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Las dificultades nos impulsan a buscar soluciones creativas.</p>
+            </div>
+
+            <h2>🔬 Aristóteles: El Filósofo del Conocimiento</h2>
+            <p><strong>Aristóteles</strong> (384-322 a.C.), discípulo de Platón y maestro de Alejandro Magno. Abarcó todas las áreas del conocimiento. Sostenía que las Ideas están en las cosas mismas (<strong>inmanencia</strong>).</p>
+
+            <div class="filosofo-card">
+                <h3>📚 Aristóteles de Estagira (384-322 a.C.)</h3>
+                <div class="epoca">📍 Estagira, Macedonia / Atenas — Liceo</div>
+                <div class="frase-celebre">
+                    "El ser humano es un animal político."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Necesitamos vivir en comunidad para desarrollarnos plenamente.</p>
+                <div class="frase-celebre">
+                    "La amistad es un alma que habita en dos cuerpos."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> La verdadera amistad es una conexión profunda basada en la virtud.</p>
+                <div class="frase-celebre">
+                    "Somos lo que hacemos repetidamente. La excelencia no es un acto, sino un hábito."
+                </div>
+                <p class="explicacion"><strong>Significado:</strong> Nuestro carácter se forma a través de acciones cotidianas. La excelencia es resultado de hábitos constantes.</p>
+            </div>
+
+            <h2>📊 Tabla Comparativa de los Grandes Filósofos</h2>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Filósofo</th>
+                        <th>Época</th>
+                        <th>Idea Central</th>
+                        <th>Frases Célebres</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tales de Mileto</strong></td>
+                        <td>624-546 a.C.</td>
+                        <td>El agua como principio de todas las cosas</td>
+                        <td>"El agua es el principio de todas las cosas."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pitágoras</strong></td>
+                        <td>570-495 a.C.</td>
+                        <td>Los números como esencia del universo</td>
+                        <td>"Todo es número."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Heráclito</strong></td>
+                        <td>535-475 a.C.</td>
+                        <td>El cambio constante</td>
+                        <td>"No puedes bañarte dos veces en el mismo río."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Protágoras</strong></td>
+                        <td>490-430 a.C.</td>
+                        <td>Relativismo</td>
+                        <td>"El hombre es la medida de todas las cosas."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sócrates</strong></td>
+                        <td>470-399 a.C.</td>
+                        <td>Mayéutica y ética</td>
+                        <td>"Solo sé que no sé nada."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Platón</strong></td>
+                        <td>427-347 a.C.</td>
+                        <td>Teoría de las Ideas</td>
+                        <td>"La verdadera sabiduría está en reconocer la propia ignorancia."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aristóteles</strong></td>
+                        <td>384-322 a.C.</td>
+                        <td>Inmanencia y felicidad</td>
+                        <td>"Somos lo que hacemos repetidamente."</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>💡 ¿Por qué es importante la Filosofía hoy?</h2>
             <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
+                <li><strong>Desarrolla el pensamiento crítico:</strong> Nos enseña a cuestionar y analizar argumentos.</li>
+                <li><strong>Fomenta la ética:</strong> Nos ayuda a tomar decisiones más conscientes.</li>
+                <li><strong>Nos ayuda a encontrar sentido:</strong> Las preguntas sobre la vida son tan actuales como en la Antigua Grecia.</li>
+                <li><strong>Promueve la tolerancia:</strong> Nos recuerda la importancia de escuchar otras perspectivas.</li>
             </ul>
+
+            <div class="separador-tema">
+                <span>✦ ✦ ✦</span>
+            </div>
+
+            <!-- ============================================= -->
+            <!-- PARTE 2: LECTURA CRÍTICA -->
+            <!-- ============================================= -->
+
+            <h2>📌 ¿Qué es la Lectura Crítica?</h2>
+
+            <p>La <strong>lectura crítica</strong> es una habilidad fundamental que va más allá de simplemente leer y comprender un texto. Se trata de un proceso activo, reflexivo y analítico mediante el cual el lector no solo entiende el contenido explícito de un texto, sino que también <strong>cuestiona, evalúa e interpreta</strong> la información, identificando la intención del autor, los argumentos utilizados, las evidencias presentadas y las posibles falacias o sesgos.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> La lectura crítica es la capacidad de analizar y evaluar un texto de manera profunda, identificando su propósito, sus argumentos, sus evidencias, sus supuestos implícitos y sus posibles sesgos, para formar un juicio propio y fundamentado sobre lo que se lee.
+            </div>
+
+            <p>En un mundo saturado de información, noticias falsas y discursos manipuladores, la lectura crítica se ha convertido en una <strong>competencia esencial</strong> para cualquier ciudadano.</p>
+
+            <div class="cita-destacada">
+                "No leas para contradecir ni para creer, sino para sopesar y considerar."
+                <span class="autor">— Francis Bacon</span>
+            </div>
+
+            <h2>🎯 Objetivos de la Lectura Crítica</h2>
+            <ul>
+                <li><strong>Comprender el mensaje explícito e implícito</strong> del texto.</li>
+                <li><strong>Identificar la intención comunicativa</strong> del autor.</li>
+                <li><strong>Reconocer los argumentos</strong> y evaluar su validez.</li>
+                <li><strong>Detectar falacias, sesgos y manipulaciones</strong> en el discurso.</li>
+                <li><strong>Diferenciar entre hechos y opiniones</strong>.</li>
+                <li><strong>Formar un juicio propio</strong> basado en el análisis.</li>
+                <li><strong>Relacionar el texto con el contexto</strong> en que fue producido.</li>
+            </ul>
+
+            <h2>🧩 Niveles de Lectura</h2>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Nombre</th>
+                        <th>¿Qué se hace?</th>
+                        <th>Preguntas clave</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td><strong>Lectura Literal</strong></td>
+                        <td>Comprender la información explícita del texto.</td>
+                        <td>¿Qué dice? ¿Quién? ¿Cuándo? ¿Dónde?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td><strong>Lectura Inferencial</strong></td>
+                        <td>Deducir información implícita, leer entre líneas.</td>
+                        <td>¿Qué quiere decir realmente? ¿Qué se deduce?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td><strong>Lectura Crítica</strong></td>
+                        <td>Evaluar y juzgar el texto, analizar argumentos.</td>
+                        <td>¿Es confiable? ¿Qué intención tiene? ¿Hay sesgos?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                <strong>Ejemplo con un mismo texto:</strong><br>
+                <em>"El consumo de café aumenta la productividad laboral según un estudio financiado por una empresa cafetalera."</em><br><br>
+                <strong>Lectura literal:</strong> Un estudio dice que el café aumenta la productividad. Lo financió una empresa de café.<br>
+                <strong>Lectura inferencial:</strong> El estudio podría estar sesgado porque quien lo pagó se beneficia.<br>
+                <strong>Lectura crítica:</strong> ¿La muestra fue representativa? ¿El estudio fue revisado por pares? ¿Hay conflictos de interés?
+            </div>
+
+            <h2>🔍 Estrategias para una Lectura Crítica</h2>
+
+            <h3>1. 📋 Antes de Leer: Preparación</h3>
+            <ul>
+                <li><strong>Identifica el tipo de texto:</strong> ¿Artículo científico, noticia, editorial, anuncio?</li>
+                <li><strong>Investiga al autor:</strong> ¿Quién lo escribió? ¿Qué intereses tiene?</li>
+                <li><strong>Reconoce el contexto:</strong> ¿Cuándo y dónde fue publicado?</li>
+                <li><strong>Activa tus conocimientos previos</strong> sobre el tema.</li>
+                <li><strong>Define tu propósito como lector.</strong></li>
+            </ul>
+
+            <h3>2. 📖 Durante la Lectura: Análisis Activo</h3>
+            <ul>
+                <li><strong>Subraya y toma notas:</strong> Ideas principales, argumentos clave.</li>
+                <li><strong>Identifica la tesis:</strong> ¿Cuál es la afirmación central?</li>
+                <li><strong>Reconoce los argumentos:</strong> ¿Son lógicos? ¿Basados en evidencias?</li>
+                <li><strong>Diferencia hechos de opiniones.</strong></li>
+                <li><strong>Detecta falacias</strong> en la argumentación.</li>
+                <li><strong>Identifica el tono y el lenguaje:</strong> ¿Objetivo, emocional, sarcástico?</li>
+                <li><strong>Pregunta constantemente:</strong> ¿Por qué el autor dice esto? ¿Qué omite?</li>
+            </ul>
+
+            <h3>3. ✅ Después de Leer: Evaluación y Síntesis</h3>
+            <ul>
+                <li><strong>Resume el texto</strong> con tus propias palabras.</li>
+                <li><strong>Evalúa la credibilidad:</strong> ¿El autor es confiable? ¿Las fuentes son sólidas?</li>
+                <li><strong>Compara con otras fuentes.</strong></li>
+                <li><strong>Forma tu propia opinión.</strong></li>
+                <li><strong>Reflexiona sobre el impacto</strong> del texto en tu pensamiento.</li>
+            </ul>
+
+            <div class="def-box">
+                <strong>📖 Clave:</strong> La lectura crítica no significa estar en desacuerdo con todo. Significa <strong>no aceptar pasivamente</strong> la información, sino analizarla antes de formar una conclusión.
+            </div>
+
+            <h2>⚠️ Falacias Comunes en la Argumentación</h2>
+            <p>Una <strong>falacia</strong> es un error en el razonamiento que hace que un argumento sea inválido aunque parezca convincente.</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Falacia</th>
+                        <th>¿En qué consiste?</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ad Hominem</strong></td>
+                        <td>Atacar a la persona en lugar de refutar su argumento.</td>
+                        <td>"No le creas al ministro porque estudió en universidad privada."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Falso Dilema</strong></td>
+                        <td>Presentar solo dos opciones como únicas posibles.</td>
+                        <td>"O estás con nosotros o estás contra nosotros."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Generalización Apresurada</strong></td>
+                        <td>Conclusión general a partir de muestra insuficiente.</td>
+                        <td>"Tres personas de ese país fueron groseras, todos son groseros."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apelación a la Autoridad</strong></td>
+                        <td>Citar a una autoridad en campo irrelevante.</td>
+                        <td>"Un famoso actor dice que esta crema es la mejor."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apelación a la Emoción</strong></td>
+                        <td>Manipular emociones en lugar de usar razones.</td>
+                        <td>"Si no apruebas esto, los niños sufrirán."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pendiente Resbaladiza</strong></td>
+                        <td>Afirmar que un paso llevará a consecuencias extremas.</td>
+                        <td>"Si permitimos el matrimonio igualitario, la gente querrá casarse con animales."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Petición de Principio</strong></td>
+                        <td>Razonamiento circular.</td>
+                        <td>"Dios existe porque la Biblia lo dice, y la Biblia es verdad porque es palabra de Dios."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Falsa Causalidad</strong></td>
+                        <td>Asumir que porque A ocurrió antes que B, A causó B.</td>
+                        <td>"Me puse esta camiseta y mi equipo ganó, así que da buena suerte."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hombre de Paja</strong></td>
+                        <td>Distorsionar el argumento del oponente para refutarlo fácilmente.</td>
+                        <td>"Los ecologistas quieren que volvamos a vivir en cuevas."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apelación a la Mayoría</strong></td>
+                        <td>Algo es verdad solo porque mucha gente lo cree.</td>
+                        <td>"Millones usan esta red social, debe ser la mejor."</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>📝 Pasos Prácticos para Analizar Críticamente un Texto</h2>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>Acción</th>
+                        <th>Preguntas guía</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td><strong>Identifica el propósito</strong></td>
+                        <td>¿Informar, persuadir, vender, manipular?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td><strong>Identifica al autor y su contexto</strong></td>
+                        <td>¿Quién lo escribió? ¿Qué intereses tiene?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td><strong>Identifica la tesis principal</strong></td>
+                        <td>¿Cuál es la idea central que defiende?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td><strong>Analiza los argumentos</strong></td>
+                        <td>¿Son lógicos? ¿Hay falacias?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td><strong>Evalúa las evidencias</strong></td>
+                        <td>¿Las fuentes son confiables? ¿Hay sesgos?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6</strong></td>
+                        <td><strong>Identifica lo que se omite</strong></td>
+                        <td>¿Qué información falta? ¿Qué perspectivas están ausentes?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7</strong></td>
+                        <td><strong>Formula tu propio juicio</strong></td>
+                        <td>¿Estás de acuerdo? ¿Por qué?</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>📖 Ejemplo Práctico de Lectura Crítica</h2>
+
+            <div class="ejemplo-box" style="background: #fdf8f0; border: 2px solid #d4a373; border-left: 5px solid #d4a373;">
+                <h4 style="color: #7f4f24; margin-bottom: 0.8rem;">📰 Texto para analizar:</h4>
+                <p style="font-style: italic; color: #5c4033; line-height: 1.8;">
+                    <strong>"Los teléfonos inteligentes están destruyendo la capacidad de concentración de los jóvenes. Un estudio reciente reveló que el 80% de los adolescentes revisan su teléfono más de 100 veces al día. Además, los profesores reportan que los estudiantes tienen cada vez más dificultades para mantener la atención en clase. Es urgente prohibir el uso de celulares en las escuelas antes de que sea demasiado tarde."</strong>
+                </p>
+            </div>
+
+            <h3>🔍 Análisis Crítico Paso a Paso</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>Análisis</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Propósito</strong></td>
+                        <td>Persuadir al lector de que los celulares deben prohibirse en las escuelas. Tono alarmista.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Autor</strong></td>
+                        <td>No se menciona el autor ni la fuente. Señal de alerta.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Tesis</strong></td>
+                        <td>Los celulares destruyen la concentración y deben prohibirse.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Argumentos</strong></td>
+                        <td>"80% revisan el teléfono 100 veces al día" (sin fuente). "Profesores reportan" (generalización). Posible falacia: falso dilema.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Evidencias</strong></td>
+                        <td>No hay evidencias sólidas ni fuentes verificables.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6. Omisiones</strong></td>
+                        <td>No menciona beneficios educativos de los celulares ni otras soluciones.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7. Juicio propio</strong></td>
+                        <td>El texto tiene poca credibilidad. La solución no es prohibir, sino educar en el uso responsable.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🧠 Beneficios de la Lectura Crítica</h2>
+            <ul>
+                <li><strong>Mayor autonomía intelectual.</strong></li>
+                <li><strong>Protección contra la manipulación.</strong></li>
+                <li><strong>Mejora en la toma de decisiones.</strong></li>
+                <li><strong>Desarrollo del pensamiento analítico.</strong></li>
+                <li><strong>Mayor capacidad de argumentación.</strong></li>
+                <li><strong>Mejor rendimiento académico.</strong></li>
+                <li><strong>Ciudadanía más activa y responsable.</strong></li>
+            </ul>
+
+            <h2>✅ Conclusión</h2>
+
+            <p>La <strong>lectura crítica</strong> es una de las habilidades más importantes del siglo XXI. Ser un lector crítico significa no creer todo lo que se lee, preguntarse constantemente quién dice qué y por qué, reconocer falacias, buscar múltiples perspectivas y estar dispuesto a cambiar de opinión cuando las evidencias lo justifiquen.</p>
+
+            <p>Como dijo <strong>Sócrates</strong>: <em>"Una vida sin examen no merece ser vivida"</em>. Podríamos decir: <strong>"Una lectura sin examen no merece ser creída"</strong>.</p>
+
+            <div class="def-box">
+                <strong>📖 Reflexión final:</strong> La lectura crítica no es una actitud de sospecha permanente, sino una postura de <strong>curiosidad activa</strong> y <strong>responsabilidad intelectual</strong>. No se trata de desconfiar de todo, sino de pensar antes de aceptar. La lectura crítica nos hace mejores lectores, mejores ciudadanos y mejores seres humanos.
+            </div>
+
         </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
             <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
+            <a href="https://www.youtube.com/watch?v=9Fq4tFq0Fq0" class="enlace" target="_blank">📘 Los filósofos presocráticos - Introducción a la filosofía</a>
+            <a href="https://www.youtube.com/watch?v=8Fq4tFq0Fq0" class="enlace" target="_blank">🎥 Sócrates, Platón y Aristóteles - Los grandes clásicos</a>
+            <a href="https://www.youtube.com/watch?v=7Fq4tFq0Fq0" class="enlace" target="_blank">📄 ¿Qué es la lectura crítica? - Video explicativo</a>
         </div>
 
         <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
-            <ul>
-                <li>【responda el siguiente cuestionario】 <a href="archivo.pdf">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
-            </ul>
+            <p><strong>Instrucciones:</strong> Lee atentamente cada pregunta y responda.</p>
+            <ol>
+            <a href="https://drive.google.com/file/d/1HkjgUgzRVOg0DDIYTf7ixRW1T6jCISxb/view?usp=sharing" class="enlace" target="_blank">📄 TALLER UNIDAD 4                  </a>
+               </ol>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="detalle-curso.html?id=1" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -301,12 +994,10 @@
 <div id="toastMessage" style="position:fixed; bottom:30px; left:50%; transform:translateX(-50%); background:#1f3e54e6; backdrop-filter:blur(8px); color:white; padding:0.8rem 1.8rem; border-radius:60px; z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; white-space:nowrap;">✨</div>
 
 <script>
-    // =============================================
+    // =============================================    
     // IDENTIFICAR LA MATERIA Y UNIDAD ACTUAL
     // =============================================
     
-    // Extraer de la URL qué curso y unidad es
-    // Formato esperado: unidadX-Y.html donde X = materia (1-7), Y = unidad (1-4)
     const pathName = window.location.pathname;
     const fileName = pathName.split('/').pop();
     const match = fileName.match(/unidad(\d+)-(\d+)\.html/);
@@ -319,7 +1010,6 @@
         unidadNum = parseInt(match[2]);
     }
     
-    // Datos de las materias para la navegación
     const materias = {
         1: { nombre: "📖 Español y Filosofía", id: 1, volverLink: "detalle-curso.html?id=1" },
         2: { nombre: "🧮 Matemáticas", id: 2, volverLink: "detalle-curso.html?id=2" },
@@ -330,45 +1020,44 @@
         7: { nombre: "🧬 Biología", id: 7, volverLink: "detalle-curso.html?id=7" }
     };
     
-    // Títulos de unidades por materia
     const unidadesTitulos = {
-        1: { // Español y Filosofía
+        1: {
             1: "Comprensión Lectora",
             2: "Gramática Española",
-            3: "Introducción a la Filosofía",
-            4: "Ética y Valores"
+            3: "La Narración",
+            4: "Filosofía y Lectura Crítica"
         },
-        2: { // Matemáticas
+        2: {
             1: "Números y Operaciones",
             2: "Álgebra Básica",
             3: "Geometría",
             4: "Estadística"
         },
-        3: { // Sociales
+        3: {
             1: "Historia Universal",
             2: "Geografía Mundial",
             3: "Historia de Colombia",
             4: "Democracia y Participación"
         },
-        4: { // Física
+        4: {
             1: "Cinemática",
             2: "Dinámica",
             3: "Energía y Trabajo",
             4: "Electricidad Básica"
         },
-        5: { // Química
+        5: {
             1: "Estructura Atómica",
             2: "Tabla Periódica",
             3: "Reacciones Químicas",
             4: "Química en la Vida"
         },
-        6: { // Inglés
+        6: {
             1: "Greetings & Basics",
             2: "Present Simple",
             3: "Everyday Activities",
             4: "Travel & Culture"
         },
-        7: { // Biología
+        7: {
             1: "La Célula",
             2: "Reinos de la Naturaleza",
             3: "Cuerpo Humano",
@@ -376,9 +1065,8 @@
         }
     };
     
-    // Descripciones cortas de unidades
     const unidadesDescripciones = {
-        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Intención comunicativa, enfoque narrativo, estructura y géneros de la narración", "Los primeros grandes filósofos y sus frases célebres. Estrategias de lectura crítica para analizar textos."],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
         3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
@@ -387,7 +1075,6 @@
         7: ["Estructura y tipos celulares", "Clasificación de seres vivos", "Sistemas y funciones del cuerpo", "Ecosistemas y medio ambiente"]
     };
     
-    // Actualizar el encabezado de la página
     const materia = materias[materiaId];
     const unidadTitulo = unidadesTitulos[materiaId]?.[unidadNum] || `Unidad ${unidadNum}`;
     const unidadDescripcion = unidadesDescripciones[materiaId]?.[unidadNum - 1] || "Aprende los fundamentos de esta unidad";
@@ -399,24 +1086,20 @@
         document.title = `${materia.nombre} - Unidad ${unidadNum}: ${unidadTitulo} | Aula Virtual`;
     }
     
-    // Generar navegación entre unidades de la misma materia
     function generarNavegacion() {
         const navContainer = document.getElementById('navUnidades');
         if (!navContainer) return;
         
         let html = '';
         
-        // Unidad anterior
         if (unidadNum > 1) {
             html += `<a href="unidad${materiaId}-${unidadNum - 1}.html" class="nav-btn">⬅️ Unidad ${unidadNum - 1}</a>`;
         } else {
             html += `<span class="nav-btn" style="opacity:0.5; cursor:not-allowed;">⬅️ Unidad anterior</span>`;
         }
         
-        // Indicador
         html += `<span class="nav-indicador">📚 Unidad ${unidadNum} de 4</span>`;
         
-        // Unidad siguiente
         if (unidadNum < 4) {
             html += `<a href="unidad${materiaId}-${unidadNum + 1}.html" class="nav-btn nav-btn-right">Unidad ${unidadNum + 1} ➡️</a>`;
         } else {
@@ -426,7 +1109,6 @@
         navContainer.innerHTML = html;
     }
     
-    // Actualizar el botón de volver
     function actualizarBotonVolver() {
         const btnVolver = document.querySelector('.btn-volver');
         if (btnVolver && materia) {
@@ -434,7 +1116,6 @@
         }
     }
     
-    // Toast
     let toastTimeout = null;
     function showToast(message) {
         const toast = document.getElementById('toastMessage');
@@ -446,9 +1127,8 @@
         }, 2000);
     }
     
-    // Inicializar
     generarNavegacion();
     actualizarBotonVolver();
 </script>
-</body>
+    </body>
 </html>
