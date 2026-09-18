@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
+                            <title>【Materia】- Unidad 【Número】: 【Título】 | Aula Virtual</title>
     <style>
         * {
             margin: 0;
@@ -217,12 +217,79 @@
             margin: 0.5rem 0;
         }
 
+        /* Tablas */
+        .tabla-clasificacion {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .tabla-clasificacion thead {
+            background: linear-gradient(135deg, #1e3e5c, #2c4863);
+            color: white;
+        }
+
+        .tabla-clasificacion th {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .tabla-clasificacion td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #e0e8ef;
+            color: #2c3e50;
+        }
+
+        .tabla-clasificacion tbody tr:hover {
+            background: rgba(18, 148, 219, 0.05);
+        }
+
+        .tabla-clasificacion tbody tr:nth-child(even) {
+            background: #f7fafc;
+        }
+
+        /* Caja de definición */
+        .def-box {
+            background: linear-gradient(135deg, #e8f4fd, #dcecf7);
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+            border-left: 4px solid #1294db;
+        }
+
+        .def-box strong {
+            color: #1f3e54;
+        }
+
+        /* Caja de ejemplo */
+        .ejemplo-box {
+            background: #f9fcfd;
+            border: 1px solid #cbdde9;
+            border-radius: 0.8rem;
+            padding: 1rem 1.3rem;
+            margin: 0.8rem 0 1.2rem 0;
+            font-style: italic;
+            color: #3a5a70;
+        }
+
+        .ejemplo-box::before {
+            content: "💡 Ejemplo: ";
+            font-style: normal;
+            font-weight: 600;
+            color: #1294db;
+        }
+
         /* Responsive */
         @media (max-width: 700px) {
             body { padding: 1rem; }
             .unidad-card { padding: 1.5rem; }
             .unidad-titulo-principal { font-size: 1.5rem; }
             .nav-unidades { flex-direction: column; }
+            .tabla-clasificacion { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -241,56 +308,765 @@
             <!-- Se llena con JS -->
         </div>
 
-        <!-- CONTENIDO PRINCIPAL - ¡EDITA AQUÍ! -->
+        <!-- CONTENIDO PRINCIPAL -->
         <div class="contenido">
             <h2>📌 Introducción</h2>
 
+            <p>La <strong>oración</strong> es la unidad mínima de comunicación con sentido completo. Está formada por un conjunto de palabras organizadas que expresan una idea, un pensamiento, un sentimiento o una acción. Toda oración se caracteriza por tener <strong>autonomía sintáctica</strong> (no depende de otra estructura) y <strong>entonación propia</strong>.</p>
 
-            <p>【hola】</p>
+            <p>En esta unidad estudiaremos cómo se clasifican las oraciones según distintos criterios y cuáles son sus componentes esenciales. Comprender estos conceptos es fundamental para mejorar nuestra expresión escrita y oral.</p>
 
-            <h2>📖 Contenido Principal</h2>
-            <p>【Desarrolla aquí el contenido principal de la unidad. Puedes agregar texto, imágenes, listas, etc.】</p>
+            <div class="def-box">
+                <strong>📖 Definición:</strong> La oración es un conjunto de palabras con sentido completo que contiene al menos un verbo conjugado y expresa una idea autónoma. Por ejemplo: <em>"El sol brilla en el cielo"</em>.
+            </div>
+<!-- organizar la oracion, el parrafo y las comunicaciones orde -->
+ 
+          <h2>📖 Clasificación de la Oración</h2>
 
-            <!-- Ejemplo de imagen (reemplaza la URL con tu imagen) -->
-            <!-- <img src="https://ejemplo.com/tu-imagen.jpg" alt="Descripción de la imagen"> -->
+            <h3>🔹 Según la Actitud del Hablante (Intención Comunicativa)</h3>
+            <p>Esta clasificación atiende a la <strong>intención</strong> que tiene el hablante al emitir la oración, es decir, qué propósito persigue con su mensaje.</p>
 
-            <h3>📌 Punto importante 1</h3>
-            <p>【Desarrolla el primer subtema】</p>
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Intención</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Enunciativa o Declarativa</strong></td>
+                        <td>Informar o declarar un hecho de manera objetiva.</td>
+                        <td><em>"Hoy es lunes."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interrogativa</strong></td>
+                        <td>Preguntar o solicitar información.</td>
+                        <td><em>"¿Cómo te llamas?"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exclamativa</strong></td>
+                        <td>Expresar emociones o sentimientos intensos.</td>
+                        <td><em>"¡Qué hermoso paisaje!"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Imperativa o Exhortativa</strong></td>
+                        <td>Dar una orden, un ruego o un consejo.</td>
+                        <td><em>"Cierra la puerta, por favor."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dubitativa</strong></td>
+                        <td>Expresar duda o incertidumbre.</td>
+                        <td><em>"Quizás vaya mañana."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Desiderativa u Optativa</strong></td>
+                        <td>Expresar un deseo.</td>
+                        <td><em>"Ojalá llueva esta noche."</em></td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <h3>📌 Punto importante 2</h3>
-            <p>【Desarrolla el segundo subtema】</p>
+            <h3>🔹 Según su Estructura (Número de Verbos)</h3>
+            <p>Atiende a la <strong>cantidad de verbos conjugados</strong> que posee la oración y a la relación entre ellos.</p>
 
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Característica</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Oración Simple</strong></td>
+                        <td>Tiene un solo verbo conjugado (un solo predicado).</td>
+                        <td><em>"María estudia todos los días."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oración Compuesta</strong></td>
+                        <td>Tiene dos o más verbos conjugados. Puede ser por coordinación, subordinación o yuxtaposición.</td>
+                        <td><em>"María estudia y su hermano juega."</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Según la Naturaleza del Predicado</h3>
+            <p>Se clasifican según el <strong>tipo de verbo</strong> que funciona como núcleo del predicado.</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Característica</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Copulativa (Atributiva)</strong></td>
+                        <td>Usa verbos copulativos (ser, estar, parecer) y lleva un atributo.</td>
+                        <td><em>"Ella es muy inteligente."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Predicativa</strong></td>
+                        <td>Usa verbos no copulativos (predicativos) que expresan acción, proceso o estado.</td>
+                        <td><em>"El niño corre en el parque."</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🧩 Componentes Básicos de la Oración</h2>
+
+            <p>Toda oración bimembre (la mayoría de las oraciones) está compuesta por dos elementos fundamentales: el <strong>sujeto</strong> y el <strong>predicado</strong>.</p>
+
+            <h3>📌 El Sujeto</h3>
+            <p>Es la parte de la oración que indica <strong>quién realiza la acción</strong> o de quién se habla. Su núcleo es un <strong>sustantivo</strong> o un <strong>pronombre</strong>.</p>
+
+            <div class="def-box">
+                <strong>📖 Núcleo del Sujeto (NS):</strong> Es la palabra más importante del sujeto, generalmente un sustantivo o pronombre. <br>
+                <strong>Ejemplo:</strong> En <em>"El perro café corre rápido"</em>, el núcleo del sujeto es <strong>"perro"</strong>.
+            </div>
+
+            <p><strong>Modificadores del sujeto:</strong></p>
             <ul>
-                <li>【Elemento importante 1】</li>
-                <li>【Elemento importante 2】</li>
-                <li>【Elemento importante 3】</li>
+                <li><strong>Modificador Directo (MD):</strong> Artículos y adjetivos que acompañan al núcleo. Ej: <em>"La <u>casa</u> <strong>blanca</strong>"</em> → "La" (MD) y "blanca" (MD).</li>
+                <li><strong>Modificador Indirecto (MI):</strong> Frase preposicional que complementa al núcleo. Ej: <em>"<u>El libro</u> <strong>de matemáticas</strong>"</em> → "de matemáticas" (MI).</li>
+                <li><strong>Aposición (Apo):</strong> Sustantivo o frase que explica al núcleo. Ej: <em>"<u>Bogotá</u>, <strong>capital de Colombia</strong>"</em>.</li>
             </ul>
-        </div>
+
+            <div class="ejemplo-box">
+                "Los estudiantes <strong>de la tarde</strong> presentaron el examen." → Sujeto: "Los estudiantes de la tarde" (NS: "estudiantes", MD: "Los", MI: "de la tarde").
+            </div>
+
+            <h3>📌 El Predicado</h3>
+            <p>Es la parte de la oración que indica <strong>lo que se dice del sujeto</strong>. Su núcleo es un <strong>verbo conjugado</strong>.</p>
+
+            <div class="def-box">
+                <strong>📖 Núcleo del Predicado (NP):</strong> Es el verbo conjugado principal de la oración. <br>
+                <strong>Ejemplo:</strong> En <em>"Los niños <u>juegan</u> en el parque"</em>, el núcleo del predicado es <strong>"juegan"</strong>.
+            </div>
+
+            <p><strong>Complementos del predicado:</strong></p>
+            <ul>
+                <li><strong>Objeto Directo (OD):</strong> Recibe directamente la acción del verbo. Responde a "¿qué?" o "¿quién?". Ej: <em>"Juan <u>compra</u> <strong>pan</strong>"</em>.</li>
+                <li><strong>Objeto Indirecto (OI):</strong> Indica el destinatario de la acción. Responde a "¿a quién?" o "¿para quién?". Ej: <em>"María <u>dio</u> un regalo <strong>a su madre</strong>"</em>.</li>
+                <li><strong>Circunstancial (CC):</strong> Indica las circunstancias de la acción (tiempo, lugar, modo, etc.). Ej: <em>"Viajaremos <strong>mañana</strong>"</em> (CC Tiempo).</li>
+                <li><strong>Complemento de Régimen (CR):</strong> Va introducido por una preposición exigida por el verbo. Ej: <em>"Hablamos <strong>de política</strong>"</em>.</li>
+                <li><strong>Atributo (Atrib):</strong> Aparece con verbos copulativos (ser, estar, parecer). Ej: <em>"Ella es <strong>médico</strong>"</em>.</li>
+            </ul>
+
+            <div class="ejemplo-box">
+                "El profesor <strong>explicó</strong> la lección a los estudiantes con paciencia." → NP: "explicó", OD: "la lección", OI: "a los estudiantes", CC Modo: "con paciencia".
+            </div>
+
+            <h2>📝 Clasificación de las Palabras según su Función (Categorías Gramaticales)</h2>
+
+            <p>Las palabras se clasifican en <strong>categorías gramaticales</strong> según la función que cumplen dentro de la oración. Conocer estas categorías es esencial para analizar y construir oraciones correctamente.</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Función</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sustantivo</strong></td>
+                        <td>Nombra personas, animales, cosas, lugares, ideas o sentimientos. Es el núcleo del sujeto.</td>
+                        <td><em>casa, perro, María, amor, Colombia, libertad</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Artículo</strong></td>
+                        <td>Determina y acompaña al sustantivo para indicar su género y número. Puede ser definido (el, la, los, las) o indefinido (un, una, unos, unas).</td>
+                        <td><em>el, la, los, las, un, una, unos, unas</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adjetivo</strong></td>
+                        <td>Califica o determina al sustantivo, expresando cualidades, características o relaciones.</td>
+                        <td><em>alto, hermoso, inteligente, grande, rojo, primero</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Verbo</strong></td>
+                        <td>Expresa acciones, procesos o estados. Es el núcleo del predicado y se conjuga en tiempo, modo, número y persona.</td>
+                        <td><em>correr, saltar, estudiar, ser, estar, tener, vivir</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pronombre</strong></td>
+                        <td>Sustituye al sustantivo para evitar su repetición. Puede ser personal, posesivo, demostrativo, etc.</td>
+                        <td><em>yo, tú, él, ella, nosotros, ellos, mío, tuyo, este, ese</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adverbio</strong></td>
+                        <td>Modifica al verbo, al adjetivo o a otro adverbio, indicando circunstancias de tiempo, lugar, modo, cantidad, etc.</td>
+                        <td><em>hoy, aquí, rápido, mucho, sí, no, quizás, también</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Preposición</strong></td>
+                        <td>Relaciona palabras dentro de la oración, introduciendo complementos. Son palabras invariables.</td>
+                        <td><em>a, ante, bajo, con, contra, de, desde, en, entre, hacia, hasta, para, por, según, sin, sobre, tras</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Conjunción</strong></td>
+                        <td>Une palabras, frases u oraciones, estableciendo relaciones de coordinación o subordinación.</td>
+                        <td><em>y, e, ni, o, u, pero, aunque, porque, si, cuando, mientras, que</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Interjección</strong></td>
+                        <td>Expresa emociones o sentimientos de forma exclamativa. Son palabras invariables que funcionan como oraciones unimembres.</td>
+                        <td><em>¡Ay!, ¡Oh!, ¡Eh!, ¡Guau!, ¡Bravo!, ¡Caramba!, ¡Hola!</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Importante:</strong> Una misma palabra puede pertenecer a diferentes categorías según el contexto. Por ejemplo, <em>"<strong>como</strong>"</em> puede ser verbo (<em>"Yo como frutas"</em>), adverbio (<em>"Tan grande como tú"</em>) o conjunción (<em>"Como no estudió, perdió"</em>).
+            </div>
+
+            <div class="ejemplo-box">
+            "Los <strong>tres</strong> <u>estudiantes</u> <strong>nuevos</strong> <u>llegaron</u> <strong>temprano</strong> <strong>a</strong> <u>clase</u> <strong>y</strong> <u>saludaron</u>."<br>
+            → <strong>Artículo:</strong> "Los" | <strong>Adjetivo:</strong> "tres", "nuevos" | <strong>Sustantivo:</strong> "estudiantes", "clase" | <strong>Verbo:</strong> "llegaron", "saludaron" | <strong>Adverbio:</strong> "temprano" | <strong>Preposición:</strong> "a" | <strong>Conjunción:</strong> "y"
+            </div>
+
+            <h2>📊 Resumen Visual</h2>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Componente</th>
+                        <th>Definición</th>
+                        <th>Núcleo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sujeto</strong></td>
+                        <td>De quién o qué se habla</td>
+                        <td>Sustantivo o pronombre</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Predicado</strong></td>
+                        <td>Lo que se dice del sujeto</td>
+                        <td>Verbo conjugado</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Existen también las <strong>oraciones unimembres</strong>, que no pueden dividirse en sujeto y predicado porque carecen de verbo conjugado o expresan una idea completa con una sola palabra. Por ejemplo: <em>"Gracias"</em>, <em>"Buenos días"</em>, <em>"Llueve mucho"</em> (en este último caso es impersonal).</p>
+
+            <h2>✅ Conclusión</h2>
+            <p>La oración es la base de la comunicación humana. Conocer su clasificación según la intención del hablante y su estructura, así como identificar sus componentes básicos (sujeto y predicado), nos permite expresarnos con mayor claridad, precisión y riqueza lingüística. Dominar estos conceptos es el primer paso para un uso correcto y consciente del lenguaje.</p>
+        </div> 
+
+
+<h2>📌 El Párrafo</h2>
+
+            <p>El <strong>párrafo</strong> es una unidad de un texto compuesta por una o varias oraciones que desarrollan una misma idea. Se reconoce visualmente porque comienza con mayúscula y termina con un punto y aparte. Es la estructura intermedia entre la oración y el texto completo.</p>
+
+            <div class="def-box">
+                <strong>📖 Definición:</strong> El párrafo es un conjunto de oraciones que tratan sobre un mismo tema o idea. Está formado por una <strong>oración principal</strong> (que contiene la idea central) y <strong>oraciones secundarias</strong> (que amplían, explican o complementan dicha idea).
+            </div>
+
+            <h3>🔹 Estructura del Párrafo</h3>
+            <p>Todo párrafo bien construido posee tres partes fundamentales:</p>
+            <ul>
+                <li><strong>Oración Principal o Temática:</strong> Es la oración que contiene la idea más importante del párrafo. Por lo general suele aparecer al inicio, aunque puede estar al final o en medio. Ej: <em>"La lectura es una de las actividades más beneficiosas para el ser humano."</em></li>
+                <li><strong>Oraciones Secundarias o de Apoyo:</strong> Son aquellas que desarrollan, explican, ejemplifican o amplían la idea principal. Ej: <em>"Mejora la concentración, enriquece el vocabulario y estimula la imaginación."</em></li>
+                <li><strong>Oración de Cierre (opcional):</strong> Concluye o sintetiza la idea del párrafo, aunque no todos los párrafos la incluyen. Ej: <em>"Por todo esto, leer debería ser un hábito diario."</em></li>
+            </ul>
+
+            <h3>🔹 Características del Párrafo</h3>
+            <ul>
+                <li><strong>Unidad temática:</strong> Todas las oraciones del párrafo giran en torno a un mismo tema o idea central.</li>
+                <li><strong>Coherencia:</strong> Las ideas se presentan de manera lógica y ordenada, facilitando la comprensión del lector.</li>
+                <li><strong>Cohesión:</strong> Las oraciones están conectadas entre sí mediante el uso de conectores, pronombres, sinónimos y otros recursos lingüísticos.</li>
+                <li><strong>Extensión variable:</strong> Un párrafo puede ser corto (una sola oración) o largo (varias oraciones), según la necesidad del texto.</li>
+            </ul>
+
+            <h3>🔹 Tipos de Párrafo según su Función</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Función</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Introductorio</strong></td>
+                        <td>Presenta el tema general del texto y capta la atención del lector.</td>
+                        <td><em>"En el siguiente ensayo analizaremos la influencia de la tecnología en la educación moderna."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De desarrollo</strong></td>
+                        <td>Expone, explica o argumenta las ideas principales del texto.</td>
+                        <td><em>"La tecnología ha transformado la forma en que los estudiantes acceden al conocimiento..."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De cierre o conclusión</strong></td>
+                        <td>Resume las ideas expuestas y ofrece una conclusión final.</td>
+                        <td><em>"En conclusión, la tecnología es una herramienta invaluable cuando se usa con responsabilidad."</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 Tipos de Párrafo según su Contenido</h3>
+            <ul>
+                <li><strong>Narrativo:</strong> Cuenta una historia o secuencia de hechos. Ej: <em>"Era una tarde lluviosa cuando Juan decidió salir a caminar..."</em></li>
+                <li><strong>Descriptivo:</strong> Describe personas, objetos, lugares o situaciones. Ej: <em>"La casa era antigua, con paredes de piedra y un tejado cubierto de musgo."</em></li>
+                <li><strong>Argumentativo:</strong> Defiende una opinión o tesis mediante razones y evidencias. Ej: <em>"Es necesario proteger el medio ambiente porque de él depende nuestra supervivencia..."</em></li>
+                <li><strong>Expositivo o Explicativo:</strong> Explica o informa sobre un tema de manera objetiva. Ej: <em>"La fotosíntesis es el proceso mediante el cual las plantas convierten la luz solar en energía."</em></li>
+                <li><strong>Dialogado:</strong> Reproduce una conversación entre dos o más personas. Ej: <em>"—¿A qué hora llegaste? —preguntó María. —Hace apenas diez minutos —respondió Pedro."</em></li>
+            </ul>
+
+            <div class="ejemplo-box">
+                <strong>Párrafo Expositivo:</strong> "El calentamiento global es un fenómeno que afecta a todo el planeta. Se produce por la acumulación de gases de efecto invernadero en la atmósfera. Como consecuencia, la temperatura media de la Tierra ha aumentado significativamente en las últimas décadas. Por esta razón, es fundamental tomar medidas para reducir las emisiones contaminantes."<br>
+                → <strong>Oración principal:</strong> "El calentamiento global es un fenómeno que afecta a todo el planeta."<br>
+                → <strong>Oraciones secundarias:</strong> Explican la causa y la consecuencia.<br>
+                → <strong>Oración de cierre:</strong> "Por esta razón, es fundamental tomar medidas..."
+            </div>
+
+            <div class="def-box">
+                <strong>📖 Importancia del párrafo:</strong> El párrafo es la unidad básica de la redacción. Su correcta construcción permite:<br>
+                • Organizar las ideas de manera clara y ordenada.<br>
+                • Facilitar la lectura y comprensión del texto.<br>
+                • Dar ritmo y fluidez a la escritura.<br>
+                • Diferenciar y separar los distintos temas dentro de un mismo escrito.
+            </div>
+
+            <h3>🔹 Conectores más comunes en los Párrafos</h3>
+            <p>Los <strong>conectores</strong> son palabras o expresiones que vinculan las oraciones dentro de un párrafo, asegurando la cohesión y la fluidez del texto.</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo de Conector</th>
+                        <th>Función</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>De adición</strong></td>
+                        <td>Añaden información.</td>
+                        <td><em>además, también, asimismo, igualmente, por otra parte</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De contraste u oposición</strong></td>
+                        <td>Introducen una idea contraria.</td>
+                        <td><em>pero, sin embargo, no obstante, aunque, en cambio, por el contrario</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De causa y consecuencia</strong></td>
+                        <td>Expresan razón o resultado.</td>
+                        <td><em>porque, ya que, puesto que, por lo tanto, en consecuencia, así que</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De orden</strong></td>
+                        <td>Organizan la secuencia de ideas.</td>
+                        <td><em>primero, luego, después, finalmente, en primer lugar, por último</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>De ejemplificación</strong></td>
+                        <td>Introducen ejemplos.</td>
+                        <td><em>por ejemplo, como, tal como, a saber, en particular</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>💬 La Comunicación</h2>
+
+            <p>La <strong>comunicación</strong> es el proceso mediante el cual un <strong>emisor</strong> transmite un <strong>mensaje</strong> a un <strong>receptor</strong> a través de un <strong>canal</strong>, utilizando un <strong>código</strong> común y en un <strong>contexto</strong> determinado. Es la base de toda interacción humana y social.</p>
+
+            <h3>🔹 Elementos de la Comunicación</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Emisor</strong></td>
+                        <td>Quien produce y envía el mensaje.</td>
+                        <td><em>"Un profesor explicando la clase"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Receptor</strong></td>
+                        <td>Quien recibe e interpreta el mensaje.</td>
+                        <td><em>"Los estudiantes escuchando al profesor"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mensaje</strong></td>
+                        <td>La información que se transmite.</td>
+                        <td><em>"El contenido de la explicación"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Código</strong></td>
+                        <td>El sistema de signos y reglas usado (idioma, señas, etc.).</td>
+                        <td><em>"El idioma español"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Canal</strong></td>
+                        <td>El medio físico por el que viaja el mensaje.</td>
+                        <td><em>"El aire (sonido), el papel (escritura)"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Contexto</strong></td>
+                        <td>La situación o entorno en que se produce la comunicación.</td>
+                        <td><em>"Un salón de clases"</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>🔹 El Signo Lingüístico</h3>
+            <p>El <strong>signo lingüístico</strong> es la unidad mínima de comunicación verbal. Está compuesto por dos partes inseparables:</p>
+            <ul>
+                <li><strong>Significante:</strong> La imagen acústica o gráfica del signo (cómo suena o se escribe). Ej: la palabra <em>"árbol"</em> (sonido / letras).</li>
+                <li><strong>Significado:</strong> El concepto o idea mental que representa. Ej: la imagen mental de un árbol (tronco, hojas, raíces).</li>
+            </ul>
+
+            <div class="def-box">
+                <strong>📖 Características del signo lingüístico:</strong><br>
+                <strong>• Arbitrariedad:</strong> No existe relación natural entre el significante y el significado (la palabra "perro" no se parece a un perro).<br>
+                <strong>• Linealidad:</strong> Los signos se suceden uno tras otro en el tiempo (no se pueden decir dos palabras a la vez).<br>
+                <strong>• Inmutabilidad y mutabilidad:</strong> El signo es fijo en un momento dado, pero puede cambiar con el tiempo (ej: "vos" vs "tú").
+            </div>
+
+            <div class="ejemplo-box">
+                Signo lingüístico "casa" → <strong>Significante:</strong> /kasa/ (sonidos) o "casa" (escritura) → <strong>Significado:</strong> construcción con techo y paredes destinada a ser habitada.
+            </div>
+
+            <h3>🔹 El Signo No Lingüístico</h3>
+            <p>Los <strong>signos no lingüísticos</strong> son aquellos que transmiten información sin utilizar el lenguaje verbal. Se clasifican en:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Definición</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Señales</strong></td>
+                        <td>Signos convencionales creados para transmitir información específica.</td>
+                        <td><em>Señales de tránsito (🚦), semáforos, letreros</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Símbolos</strong></td>
+                        <td>Signos que representan una idea o concepto por convención social.</td>
+                        <td><em>La cruz (✝️), la bandera, el corazón (❤️)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iconos</strong></td>
+                        <td>Signos que se parecen físicamente a lo que representan.</td>
+                        <td><em>Un dibujo de una persona en la puerta del baño, emoticonos (😊)</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indicios o Síntomas</strong></td>
+                        <td>Signos naturales que indican algo por relación causa-efecto.</td>
+                        <td><em>El humo indica fuego, las nubes grises indican lluvia</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gestos y Lenguaje Corporal</strong></td>
+                        <td>Movimientos del cuerpo que transmiten mensajes sin palabras.</td>
+                        <td><em>Saludar con la mano, asentir con la cabeza, encogerse de hombros</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Diferencia clave:</strong> El <strong>signo lingüístico</strong> utiliza palabras (lenguaje verbal), mientras que el <strong>signo no lingüístico</strong> transmite información a través de imágenes, sonidos, gestos, señales o símbolos sin usar palabras.
+            </div>
+
+            <h2>📝 Reglas Ortográficas Esenciales</h2>
+
+            <p>La <strong>ortografía</strong> es el conjunto de normas que regulan la escritura correcta de una lengua. Dominar las reglas ortográficas es fundamental para comunicarnos de forma clara, precisa y profesional. A continuación, estudiaremos las reglas más importantes del español.</p>
+
+            <h3>🔹 Uso de la B y la V</h3>
+            <p>Una de las confusiones más frecuentes en español es el uso de <strong>"b"</strong> y <strong>"v"</strong>, ya que en muchos dialectos suenan igual. Estas son las reglas principales:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Se escribe con <strong>B</strong></th>
+                        <th>Se escribe con <strong>V</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Después de <em>m</em>: <strong>ambos, cambiar, sombra</strong></td>
+                        <td>Después de <em>n</em>: <strong>envío, invitar, conversar</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Las terminaciones <em>-aba, -abas, -ábamos, -aban</em> del pretérito imperfecto: <strong>cantaba, jugabas, soñábamos</strong></td>
+                        <td>Las palabras que empiezan con <em>vice-, villa-, villar-</em>: <strong>vicepresidente, villancico, Villarreal</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Las palabras que comienzan con <em>bu-, bur-, bus-</em>: <strong>bueno, burro, buscar</strong></td>
+                        <td>Los adjetivos terminados en <em>-ava, -ave, -avo, -eva, -eve, -evo, -iva, -ivo</em>: <strong>octava, suave, esclavo, nueva, leve, longevo, activa, positivo</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Los verbos terminados en <em>-bir</em> (excepto <em>hervir, servir, vivir</em>): <strong>escribir, recibir, subir</strong></td>
+                        <td>Los verbos terminados en <em>-olver</em>: <strong>absolver, disolver, resolver</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                "El <u>nuevo</u> <strong>vicepresidente</strong> <u>escribía</u> <strong>sobre</strong> <u>su</u> <strong>vida</strong> <u>en</u> <strong>una</strong> <u>cabaña</u> <strong>cerca</strong> <u>del</u> <strong>bosque</strong>." → Palabras con B: escribía, cabaña, bosque. Palabras con V: nuevo, vicepresidente, vida.
+            </div>
+
+            <h3>🔹 Uso de la G y la J</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Se escribe con <strong>G</strong></th>
+                        <th>Se escribe con <strong>J</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Las palabras que llevan el grupo <em>-gen-</em>: <strong>gente, imagen, agente, general</strong></td>
+                        <td>Las palabras que terminan en <em>-aje, -eje, -jería</em>: <strong>viaje, equipaje, eje, conserjería, relojería</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Los verbos terminados en <em>-ger, -gir</em> (excepto <em>tejer, crujir</em>): <strong>coger, elegir, dirigir, proteger</strong></td>
+                        <td>Las palabras que comienzan con <em>aje-</em> y <em>eje-</em>: <strong>ajedrez, ajeno, ejemplo, ejercicio</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Las palabras que empiezan con <em>geo-</em>: <strong>geografía, geometría, geología</strong></td>
+                        <td>Los verbos terminados en <em>-jear</em>: <strong>canjear, flojear, hojear</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                "El <u>general</u> <strong>eligió</strong> <u>un</u> <strong>viaje</strong> <u>de</u> <strong>geografía</strong> <u>para</u> <strong>proteger</strong> <u>el</u> <strong>paisaje</strong>." → G: general, eligió, geografía, proteger. J: viaje, paisaje.
+            </div>
+
+            <h3>🔹 Uso de la C, la S y la Z</h3>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Letra</th>
+                        <th>Reglas principales</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>C</strong></td>
+                        <td>Los verbos terminados en <em>-cer, -cir</em> (excepto <em>ser, toser, asir</em>). Los sustantivos terminados en <em>-ción</em> que derivan de verbos terminados en <em>-ar</em>.</td>
+                        <td><em>nacer, conducir, ofrecer / canción, educación, navegación</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>S</strong></td>
+                        <td>Los adjetivos terminados en <em>-oso, -osa</em>. Los superlativos terminados en <em>-ísimo, -ísima</em>. Las palabras que terminan en <em>-sión</em> cuando derivan de verbos terminados en <em>-der, -dir, -ter, -tir</em>.</td>
+                        <td><em>hermoso, cariñosa / altísimo, grandísima / comprensión, diversión</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Z</strong></td>
+                        <td>Los sustantivos terminados en <em>-anza, -azo, -eza, -ez</em>. Los verbos terminados en <em>-izar</em>.</td>
+                        <td><em>confianza, portazo, belleza, honradez / realizar, organizar, analizar</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Regla práctica:</strong> Muchas palabras que en español se escriben con <strong>c</strong> (sonido suave) o <strong>z</strong> pueden confundirse con la <strong>s</strong> (seseo). Para evitar errores, recuerda que los plurales de palabras terminadas en <em>-z</em> cambian a <em>-ces</em>: <strong>luz → luces, pez → peces, voz → voces</strong>.
+            </div>
+
+            <h3>🔹 Uso de la H</h3>
+            <p>La <strong>h</strong> es la única letra del español que no tiene sonido (es muda). Su uso es puramente ortográfico y sigue estas reglas:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Se escribe con <strong>H</strong></th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Las palabras que empiezan con <em>hie-, hue-, hui-, hia-</em></td>
+                        <td><em>hielo, hierba, huevo, huella, huir, hiato, hiél</em></td>
+                    </tr>
+                    <tr>
+                        <td>Las palabras que empiezan con los prefijos <em>hidro-, hiper-, hipo-, hemi-, hepta-, hexa-, hetero-, homo-</em></td>
+                        <td><em>hidráulico, hipertensión, hipotermia, hemiciclo, heptágono, hexágono, heterosexual, homogéneo</em></td>
+                    </tr>
+                    <tr>
+                        <td>Las palabras derivadas de verbos que llevan h en su infinitivo</td>
+                        <td><em>hablar → hablado, hablante / hacer → hecho, hacedor / haber → había, habrá</em></td>
+                    </tr>
+                    <tr>
+                        <td>Las interjecciones: ¡ah!, ¡eh!, ¡oh!, ¡huy!, ¡hola!</td>
+                        <td><em>¡Ah, ya entiendo! / ¡Eh, ven aquí! / ¡Hola, ¿cómo estás?!</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="ejemplo-box">
+                "El <u>huevo</u> <strong>estaba</strong> <u>hecho</u> <strong>en</strong> <u>agua</u> <strong>hirviendo</strong> <u>con</u> <strong>hierbas</strong> <u>aromáticas</u>." → Palabras con H: huevo, hecho, hirviendo, hierbas.
+            </div>
+
+            <h3>🔹 Reglas de Acentuación (Uso de la Tilde)</h3>
+            <p>El <strong>acento ortográfico</strong> o <strong>tilde</strong> es la marca escrita (´) que se coloca sobre una vocal para indicar la sílaba tónica de una palabra. Las reglas generales son:</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Tipo de palabra</th>
+                        <th>¿Cuándo lleva tilde?</th>
+                        <th>Ejemplos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Agudas</strong> (última sílaba tónica)</td>
+                        <td>Llevan tilde cuando terminan en <em>n, s</em> o <em>vocal</em>.</td>
+                        <td><em>canción, además, café, mamá, reloj</em> (reloj NO lleva tilde porque termina en <em>j</em>)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Graves o Llanas</strong> (penúltima sílaba tónica)</td>
+                        <td>Llevan tilde cuando <strong>NO</strong> terminan en <em>n, s</em> o <em>vocal</em>.</td>
+                        <td><em>árbol, lápiz, cárcel, fácil, trébol</em> (casa NO lleva tilde porque termina en vocal)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Esdrújulas</strong> (antepenúltima sílaba tónica)</td>
+                        <td><strong>Siempre</strong> llevan tilde.</td>
+                        <td><em>pájaro, música, médico, teléfono, esdrújula, brújula</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sobresdrújulas</strong> (anterior a la antepenúltima)</td>
+                        <td><strong>Siempre</strong> llevan tilde.</td>
+                        <td><em>cómetelo, explícaselo, dígamelo, fácilmente</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Acento diacrítico:</strong> Es la tilde que se usa para diferenciar palabras que se escriben igual pero tienen distinto significado o función gramatical. Ejemplos:<br>
+                • <strong>tú</strong> (pronombre personal) vs <strong>tu</strong> (adjetivo posesivo)<br>
+                • <strong>él</strong> (pronombre) vs <strong>el</strong> (artículo)<br>
+                • <strong>mí</strong> (pronombre) vs <strong>mi</strong> (posesivo o nota musical)<br>
+                • <strong>sí</strong> (afirmación o pronombre) vs <strong>si</strong> (condicional)<br>
+                • <strong>más</strong> (cantidad) vs <strong>mas</strong> (pero)<br>
+                • <strong>té</strong> (bebida) vs <strong>te</strong> (pronombre)
+            </div>
+
+            <div class="ejemplo-box">
+                "<strong>Tú</strong> <u>prefieres</u> <strong>el</strong> <u>té</u> <strong>pero</strong> <u>él</u> <strong>prefiere</strong> <u>el</u> <strong>café</strong>. <u>¿Y</u> <strong>tú</strong>? <u>¿Qué</u> <strong>prefieres</strong> <u>tomar</u> <strong>más</strong> <u>seguido</u>?" → Tilde diacrítica en: tú, él, té, más.
+            </div>
+
+            <h3>🔹 Signos de Puntuación</h3>
+            <p>Los <strong>signos de puntuación</strong> son marcas gráficas que indican pausas, entonación y relaciones entre las partes del discurso. Su uso correcto es esencial para la claridad del texto.</p>
+
+            <table class="tabla-clasificacion">
+                <thead>
+                    <tr>
+                        <th>Signo</th>
+                        <th>Función principal</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Punto (.)</strong></td>
+                        <td>Indica el final de una oración o párrafo. Existen tres tipos: punto y seguido (dentro del mismo párrafo), punto y aparte (cambia de párrafo) y punto final (termina el texto).</td>
+                        <td><em>"Hoy hace sol. Mañana lloverá."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coma (,)</strong></td>
+                        <td>Indica una pausa breve. Se usa para separar elementos de una enumeración, incisos, vocativos, aposiciones, etc.</td>
+                        <td><em>"Juan, María y Pedro llegaron tarde."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Punto y coma (;)</strong></td>
+                        <td>Indica una pausa mayor que la coma pero menor que el punto. Separa oraciones relacionadas entre sí.</td>
+                        <td><em>"Llegamos temprano; sin embargo, la sala ya estaba llena."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dos puntos (:)</strong></td>
+                        <td>Introducen una enumeración, una cita textual, una explicación o una consecuencia.</td>
+                        <td><em>"Compra lo siguiente: pan, leche y huevos."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Comillas (" ")</strong></td>
+                        <td>Se usan para citar textualmente las palabras de alguien, destacar títulos o indicar que una palabra se usa en sentido figurado.</td>
+                        <td><em>Ella dijo: "Llegaré a las cinco".</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Signos de interrogación (¿?)</strong></td>
+                        <td>Encierran preguntas directas. En español se usan tanto de apertura como de cierre.</td>
+                        <td><em>"¿Cómo te llamas?"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Signos de exclamación (¡!)</strong></td>
+                        <td>Encierran expresiones exclamativas o emociones intensas.</td>
+                        <td><em>"¡Qué sorpresa verte aquí!"</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paréntesis ()</strong></td>
+                        <td>Introducen información complementaria o aclaratoria dentro de una oración.</td>
+                        <td><em>"La RAE (Real Academia Española) regula el idioma."</em></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Guion (–) y Raya (—)</strong></td>
+                        <td>El guion une palabras compuestas. La raya se usa para introducir diálogos o incisos.</td>
+                        <td><em>"Era un estudiante <strong>hispano</strong>-<strong>americano</strong>." / "—¿Vienes? —preguntó."</em></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="def-box">
+                <strong>📖 Importancia de la ortografía:</strong> Escribir correctamente no solo demuestra dominio del idioma, sino que también:<br>
+                • Evita malentendidos y ambigüedades en la comunicación.<br>
+                • Proyecta una imagen profesional y cuidadosa.<br>
+                • Facilita la lectura y comprensión del texto.<br>
+                • Es un requisito fundamental en el ámbito académico y laboral.
+            </div>
+
+            <div class="ejemplo-box">
+                <strong>Antes (sin puntuación):</strong> "Vamos a comer niños" → ¡Parece que nos vamos a comer a los niños!<br>
+                <strong>Después (con coma):</strong> "Vamos a comer, niños" → Ahora está claro que se les dice a los niños que van a comer.<br>
+                ✅ <strong>Moraleja:</strong> Los signos de puntuación pueden cambiar completamente el significado de una oración.
+            </div>
 
         <!-- Enlaces útiles -->
         <div class="enlaces-box">
             <h4>🔗 Enlaces de interés</h4>
-            <a href="https://www.youtube.com/watch?v=WYFV91Hnssw&list=RDPc2Hl2w_7qM&index=13" class="enlace" target="_blank">📘 【video de trap】</a>
-            <a href="https://www.ejemplo2.com" class="enlace" target="_blank">🎥 【Nombre del recurso 2 - Video】</a>
-            <a href="https://www.ejemplo3.com" class="enlace" target="_blank">📄 【Nombre del recurso 3 - PDF/Artículo】</a>
+            <a href="https://www.youtube.com/watch?v=9v5cF5mE5aA" class="enlace" target="_blank">📘 La oración y sus clases - Video educativo</a>
+            <a href="https://www.youtube.com/watch?v=8s3bD0V7i0I" class="enlace" target="_blank">🎥 Sujeto y predicado - Fácil y rápido</a>
+            <a href="https://www.rae.es/" class="enlace" target="_blank">📄 Real Academia Española (RAE) - Consulta gramatical</a>
         </div>
 
         <!-- Actividad -->
         <div class="actividad-box">
             <h4>✍️ Actividad de la unidad</h4>
-            <p>【Describe aquí la actividad que deben realizar los estudiantes. Puede ser:】</p>
+            <p>Pon en práctica lo aprendido con las siguientes actividades:</p>
             <ul>
-                <li>【responda el siguiente cuestionario】 <a href="https://docs.google.com/document/d/1tUtIhonCl5d06Hh6uO-Qy4fjRS0HzBiFi7G-lIglaRw/edit?usp=drive_link">aquí </a>.</li>
-                
-                <li>【Realizar un ejercicio práctico】</li>
-                <li>【Investigar sobre un tema relacionado】</li>
-                <li>【Completar un cuestionario】</li>
+                <li>📝 Responde el siguiente taller sobre la oración y su clasificación: <a href="https://drive.google.com/file/d/1cFBxH8pz-IcIWy8-oQTKZ_stTID7O8rt/view?usp=sharing" target="_blank">Cuestionario aquí</a>.</li>
             </ul>
         </div>
 
         <!-- Botón para volver al curso -->
         <div style="text-align: center; margin-top: 2rem;">
-            <a href="detalle-curso.html?id=【ID_MATERIA】" class="btn-volver">
+            <a href="https://drive.google.com/file/d/1bmJMU6eyuI2sSqUaVDIPAImNyrLe320h/view?usp=sharing" class="btn-volver">
                 ⬅️ Volver al curso
             </a>
         </div>
@@ -333,7 +1109,7 @@
     // Títulos de unidades por materia
     const unidadesTitulos = {
         1: { // Español y Filosofía
-            1: "Comprensión Lectora",
+            1: "La Oración y su Clasificación",
             2: "Gramática Española",
             3: "Introducción a la Filosofía",
             4: "Ética y Valores"
@@ -378,7 +1154,7 @@
     
     // Descripciones cortas de unidades
     const unidadesDescripciones = {
-        1: ["Técnicas de lectura y análisis de textos", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
+        1: ["Comunicación, signo lingüístico/no lingüístico, categorías gramaticales y clasificación de la oración", "Reglas ortográficas y sintaxis", "Grandes pensadores y sus ideas", "Reflexión moral y ciudadanía"],
         2: ["Propiedades y operaciones básicas", "Ecuaciones y expresiones algebraicas", "Figuras, áreas y perímetros", "Gráficos y medidas de tendencia"],
         3: ["Grandes civilizaciones", "Mapas y regiones del mundo", "Independencia y cultura colombiana", "Derechos y deberes ciudadanos"],
         4: ["Movimiento y velocidad", "Fuerzas y leyes de Newton", "Tipos y transformaciones de energía", "Circuitos y corriente eléctrica"],
@@ -450,5 +1226,5 @@
     generarNavegacion();
     actualizarBotonVolver();
 </script>
-</body>
+    </body>
 </html>
